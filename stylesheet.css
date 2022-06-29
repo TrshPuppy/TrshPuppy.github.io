@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Trispace&display=swap');
+
+body
+{
+    background-image: url(../odin-landing-page/img/backdrop.gif);
+    background-size: 60%;
+    background-attachment: fixed;
+    background-color: #5A1D61;
+    font-family: 'Trispace', sans-serif;
+    color: #43E0C6;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    flex: auto;
+}
+
+.tickertape
+{
+    background-color: #10474B;
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1 1 auto;
+    max-width: 1500px;
+}
+
+.header
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex: 1 1 50%;
+    padding-right: 300px;
+    padding-left: 300px;
+    margin-top: 16px;
+}
+
+.header .logo
+{
+    max-width: 200px;
+    border-color: #050429;
+    border-radius: 100%;
+}
+
+.links
+{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link
+{
+    padding-inline: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.section1
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 300px;
+    padding-right: 300px;   
+}
+
+.section1 .welcome
+{
+    font-size: 20px;
+    text-align: left;
+    max-width: 400px;
+    min-width:auto;
+}
+
+.welcome .context
+{
+    font-family: 'Inconsolata', Arial, sans-serif;
+    font-size: 20px;
+    max-width: 400;
+}
+
+ .button
+{
+    background: #E68CC6;
+    color: #351D61;
+    font-weight: bold;
+    font-size: small;
+    cursor: pointer;
+    border: #351D61;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.section1 .pic
+{
+    min-width: 400px;
+    max-width: 400px
+}
+
+.headshot
+{
+    max-width: 300px;
+    padding: 18px;
+}
+
+.section2
+{
+    display: flex;
+    flex-flow: column nowrap;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #E68CC6;
+    color: #10474B;
+}
+.section2 .context
+{
+    align-items: center;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.section2 .link_boxes
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inconsolata', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.link_boxes .linkbox
+{
+    max-width: min-content;
+    text-align: center;
+}
+
+.linkbox .link_pic
+{
+    max-height: 125px;
+    padding: 8px;
+}
+
+.section3
+{
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background: #EEDD99;
+    color: #351D61;
+    font-family: 'Inconsolata',Arial, sans-serif;
+    
+}
+
+.section3 .quote
+{
+    text-align: center;
+    font-size: 32px;
+}
+
+.section3 .author
+{
+    text-align: right;
+    font-family: 'Trispace', sans-serif;
+}
+
+.header_butt
+{
+    color:#43E0C6;
+    text-decoration: none;
+    font-family: 'Trispace', sans-serif;
+    padding-inline: 20px;
+}
+
+.section4
+{
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color:#EEDD99
+}
+
+.section4 .sec4_box
+{
+    background-color:#351D61;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 900px;
+}
+
+.section4 .left_side
+{
+   max-width: 300px;
+   text-align: center;
+   padding: 25px;
+}
+
+.left_side .context
+{
+    font-family: 'Inconsolata', Arial, sans-serif;
+    max-width: 400px;
+    text-align: center;
+}
+
+.section4 .right_side
+{
+    max-width: 300px;
+    text-align: center;
+    padding: 25px;
+}
+
+.footer
+{
+    text-align: center;
+
+}
+
+.footer_link
+{
+    color:#43E0C6;
+}
