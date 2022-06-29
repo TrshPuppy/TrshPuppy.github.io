@@ -2,7 +2,7 @@
 
 body
 {
-    background-image: url(../odin-landing-page/img/backdrop.gif);
+    background-image: url(./img/backdrop.gif);
     background-size: 60%;
     background-attachment: fixed;
     background-color: #5A1D61;
