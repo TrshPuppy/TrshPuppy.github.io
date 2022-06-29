@@ -1,5 +1,7 @@
 # TrshPuppy.github.io
 
+# LIVE PREVIEW HERE: https://trshpuppy.github.io
+
 This is a live preview of the webpage I have made for an Odin Project project (see here: https://www.theodinproject.com/lessons/foundations-landing-page).
 
 The included files/directories are copied over from the original repository which you can see here: https://github.com/TrshPuppy/odin-landing-page.
