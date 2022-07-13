@@ -3,7 +3,7 @@
 body
 {
     background-image: url(./rps-img/backdrop.gif);
-    background-size: 105vh;
+    background-size: 60%;
     background-attachment: fixed;
     display: flex;
     flex-flow: column nowrap;
