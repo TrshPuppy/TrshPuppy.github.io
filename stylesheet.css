@@ -87,18 +87,18 @@ body
     color:#43E0C6;
 }
 
- .button
+ button
 {
     background: #E68CC6;
     color: #351D61;
     font-weight: bold;
     font-size: small;
     cursor: pointer;
-    border: #351D61;
+    
     border-radius: 8px;
     padding: 8px;
     margin-bottom: 8px;
-    text-decoration: none;
+    
 }
 
 .section1 .pic
