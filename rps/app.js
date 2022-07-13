@@ -17,17 +17,17 @@ const SELECTIONS =
 [
     {
         name: 'rock',
-        image: "<img class = 'scoreboard' src = 'img/rock.gif'>",
+        image: "<img class = 'scoreboard' src = 'rps-img/rock.gif'>",
         beats: 'scissors'
     },
     {
         name: 'paper',
-        image: "<img class = 'scoreboard' src = 'img/paper.gif'>",
+        image: "<img class = 'scoreboard' src = 'rps-img/paper.gif'>",
         beats: 'rock'
     },
     {
         name: 'scissors',
-        image: "<img class = 'scoreboard' src = 'img/scissors.gif'>",
+        image: "<img class = 'scoreboard' src = 'rps-img/scissors.gif'>",
         beats: 'paper'
     }
 ]
@@ -35,15 +35,15 @@ const COMPUTERCHOICES =
 [
     {
         name: 'rock',
-        image: "<img class = 'scoreboard' src = 'img/rock.gif'>"
+        image: "<img class = 'scoreboard' src = 'rps-img/rock.gif'>"
     },
     {
         name: 'paper',
-        image: "<img class = 'scoreboard' src = 'img/paper.gif'>"
+        image: "<img class = 'scoreboard' src = 'rps-img/paper.gif'>"
     },
     {
         name: 'scissors',
-        image: "<img class = 'scoreboard' src = 'img/scissors.gif'>"
+        image: "<img class = 'scoreboard' src = 'rps-img/scissors.gif'>"
     }
 ];
 
