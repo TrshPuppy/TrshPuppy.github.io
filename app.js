@@ -1,3 +1,4 @@
+// Logo on hover animation:
 const logo = document.getElementById("logo");
 console.log(logo);
 
