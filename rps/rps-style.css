@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&family=Trispace&display=swap');
+
+body
+{
+    background-image: url(./img/backdrop.gif);
+    background-size: 60%;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+header
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: space-around;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+    color: #ECFC04;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.intro
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vh;
+    transition: opacity 0.6s ease;
+
+}
+
+.instructions
+{
+    font-family: 'Trispace', sans-serif;
+    padding: 10px;
+    color:#ECFC04;
+    text-align: center;
+}
+
+.intro button
+{
+    padding: 10px;
+    max-width: fit-content;
+    cursor: pointer;
+}
+
+.scoreboard
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100%;
+    color:#ECFC04;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: small;
+    text-align: center;
+}
+
+.player-score
+{
+    min-width: 50%;
+    padding: 50px;
+}
+
+.computer-score
+{
+    min-width: 50%;
+    padding: 50px;
+}
+
+.options
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1500px;
+    padding: 20px;
+}
+
+button
+{
+    background-color:#BCAFDC;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #301E51;
+    max-width: 20%;
+    cursor: pointer;
+    text-align: center;
+}
+
+#rock-gif
+{
+    max-width: 80%;
+}
+
+.paper-gif
+{
+    max-width: 80%;
+}
+
+.scissors-gif
+{
+    max-width: 80%;
+}
+
+.faceoff
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1500px;
+    background-color: #B2FFFF80;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Trispace', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    position: absolute;
+    transform: translate(-25%, -75%);
+    height: 50vh;
+    transition: opacity 0.5s ease 0.6s;
+
+}
+
+.player-choices
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #301E51;
+}
+
+div.fadeOut
+{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.computer-choice
+{
+    min-width: 10%;
+}
+
+.computer-choice .scoreboard
+{
+    max-width: 20%;
+    transform: rotateY(180deg);
+}
+
+.player-choice
+{
+    min-width: 10%
+}
+
+.player-choice .scoreboard
+{
+    max-width: 20%;
+}
+
+.winner-screen
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 1500px;
+    min-width: fit-content;
+    color: #FF4E4E;
+    font-family: 'Press Start 2P', sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    position: center;
+    transform:  translateY(-75%);
+    height: 50vh;
+    transition: opacity 0.7s ease;
+}
