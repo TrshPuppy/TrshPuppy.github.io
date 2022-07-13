@@ -35,11 +35,12 @@ body
     margin-bottom: 16px;
 }
 
-.header .logo
+.header #logo
 {
     max-width: 200px;
     border-color: #050429;
     border-radius: 100%;
+    
 }
 
 .links
