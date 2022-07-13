@@ -32,6 +32,7 @@ body
     padding-right: 300px;
     padding-left: 300px;
     margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .header .logo
@@ -134,7 +135,7 @@ body
 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-family: 'Inconsolata', Arial, sans-serif;
     font-size: 20px;
