@@ -3,7 +3,7 @@
 body
 {
     background-image: url(./rps-img/backdrop.gif);
-    background-size: 60%;
+    background-size: 105vh;
     background-attachment: fixed;
     display: flex;
     flex-flow: column nowrap;
@@ -34,7 +34,6 @@ header
     justify-content: space-around;
     height: 50vh;
     transition: opacity 0.6s ease;
-
 }
 
 .instructions
@@ -129,7 +128,6 @@ button
     transform: translate(-25%, -75%);
     height: 50vh;
     transition: opacity 0.5s ease 0.6s;
-
 }
 
 .player-choices
@@ -196,8 +194,9 @@ div.fadeIn
 {
     text-align: center;
     color: #FF4E4E;
-    transform: translateY(1000%);
+    transform: translateY(1900%);
     font-family: 'Trispace', sans-serif;
+    position: fixed;
 }
 
 .game
@@ -207,5 +206,6 @@ div.fadeIn
 
 .home-link
 {
-    transform: translate(500%,-100%);
+    transform: translate(400%,-100%);
+    min-width:75%;
 }
