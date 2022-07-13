@@ -74,6 +74,8 @@ body
     max-width: 400px;
     min-width:auto;
     font-family: 'Press Start 2P', sans serif;
+    color:#EEDD99;
+    text-align: center;
 }
 
 .welcome .context
@@ -81,6 +83,7 @@ body
     font-family: 'Inconsolata', Arial, sans-serif;
     font-size: 20px;
     max-width: 400;
+    color:#43E0C6;
 }
 
  .button
