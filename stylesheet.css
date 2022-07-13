@@ -65,7 +65,8 @@ body
     justify-content: space-between;
     align-items: center;
     padding-left: 300px;
-    padding-right: 300px;   
+    padding-right: 300px;
+    padding-bottom: 20px; 
 }
 
 .section1 .welcome
@@ -102,7 +103,8 @@ body
 .section1 .pic
 {
     min-width: 400px;
-    max-width: 400px
+    max-width: 400px;
+    transform: translateY(5%)
 }
 
 .headshot
