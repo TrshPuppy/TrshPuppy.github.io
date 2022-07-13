@@ -244,3 +244,16 @@ body
 {
     color:#43E0C6;
 }
+
+.about-pic
+{
+    border-radius: 50%;
+    max-width: 45%;
+    border-style: dashed;
+    border-color:#E68CC6;
+}
+
+.about-btn
+{
+    transform: translateX(225%);
+}
