@@ -259,3 +259,11 @@ body
 {
     transform: translateX(225%);
 }
+
+.contact-pic
+{
+    border-radius: 50%;
+    border-style: dashed;
+    border-color:#EEDD99;
+    max-width: 40%;
+}
