@@ -76,7 +76,7 @@ body
     min-width:auto;
     font-family: 'Press Start 2P', sans serif;
     color:#EEDD99;
-    text-align: center;
+    text-align: left;
 }
 
 .welcome .context
@@ -94,11 +94,9 @@ body
     font-weight: bold;
     font-size: small;
     cursor: pointer;
-    
     border-radius: 8px;
     padding: 8px;
     margin-bottom: 8px;
-    
 }
 
 .section1 .pic
