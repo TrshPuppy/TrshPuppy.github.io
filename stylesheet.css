@@ -132,11 +132,11 @@ body
     padding-bottom: 25px;
 }
 
-.section2 .link_boxes
+.link_boxes
 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     font-family: 'Inconsolata', Arial, sans-serif;
     font-size: 20px;
@@ -147,12 +147,18 @@ body
 {
     max-width: min-content;
     text-align: center;
+    padding-inline: 20px;
 }
 
 .linkbox .link_pic
 {
     max-height: 125px;
     padding: 8px;
+}
+
+#flower-gif
+{
+    max-height: 100px;
 }
 
 .section3
