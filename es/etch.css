@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&family=Trispace&display=swap');
+
+body
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color:#bca6f4;
+}
+
+.home-btn
+{
+    transform: translate(-190%, 10%);
+}
+.backdrop
+{
+    display:grid;
+    width: 200vh;
+    height: 100vh;
+}
+
+.main
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    z-index: 1;
+    background-color: orangered;
+    border-radius: 8px;
+}
+
+h1
+{
+    font-family: 'Press Start 2P', sans-serif;
+    color: blanchedalmond;
+    font-size: 40px;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.canvas
+{
+    width: 70vh;
+    height: 70vh;
+    display:grid;
+    border-style: double;
+    border-radius: 8px;
+    border-width: 10px;
+    border-color: #333333;
+}
+
+#menu
+{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    align-items:center;
+    padding: 5px;
+    font-size: 20px;
+}
+
+button
+{
+    background-color: blanchedalmond;
+    border-radius: 8px;
+    font-family: 'Trispace', sans-serif;
+    padding: 8px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#reset-btn
+{
+    margin-left: 120px;
+}
+
+.footer
+{
+    padding-top: 8px;
+}
