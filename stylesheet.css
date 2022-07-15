@@ -101,6 +101,10 @@ body
     margin-bottom: 8px;
 }
 
+.home-btn
+{
+    transform: translateX(100%);
+}
 .section1 .pic
 {
     min-width: 400px;
