@@ -101,10 +101,6 @@ body
     margin-bottom: 8px;
 }
 
-.home-btn
-{
-    transform: translateX(100%);
-}
 .section1 .pic
 {
     min-width: 400px;
@@ -163,6 +159,7 @@ body
 #flower-gif
 {
     max-height: 100px;
+    padding-bottom: 30px;
 }
 
 .section3
