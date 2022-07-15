@@ -1,6 +1,6 @@
 # TrshPuppy.github.io
 
-# LIVE PREVIEW HERE: https://trshpuppy.github.io
+## LIVE PREVIEW HERE: https://trshpuppy.github.io
 
 This is a live preview of the webpage I've made for an Odin Project project (see here: https://www.theodinproject.com/lessons/foundations-landing-page).
 
@@ -12,5 +12,13 @@ I hope for this to eventually become an actual webpage for personal and professi
 
 P.S. please respect the work I've put into this and the included pixelart. If you want to copy/paste/use anything please ask <3.
 
+## Included projects with live previews:
+### Rock-Paper-Scissors: 
+#### Made w/ Javascript, CSS, HTML.
+#### Original repository: https://github.com/TrshPuppy/rock-paper-scissors.
+#### See README.md for project details!
 
-EDIT: TrshPuppy.github.io now includes a playable rock-paper-scissors game I designed! You can checkout the original code for the game at https://github.com/TrshPuppy/rock-paper-scissors. Make sure to read the README.md for a description of the project, and as always ENJOY!
+### Etch-a-Sketch:
+#### Javascript, HTML, CSS.
+#### Original repository: https://github.com/TrshPuppy/etch-a-sketch
+#### See README.md for proejct details!
