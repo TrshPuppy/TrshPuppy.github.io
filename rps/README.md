@@ -9,4 +9,4 @@ The game must include a UI with emphasis on integrating Javascript, HTML, and CS
 
 ENJOY!
 
-Total time spent: 7 hours.
+Total time spent: 19 hours.
