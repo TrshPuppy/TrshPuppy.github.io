@@ -163,6 +163,13 @@ body
     padding-left: 10px;
 }
 
+#calculator-gif
+{
+    max-height: 60px;
+    padding-bottom: 50px;
+    padding-top:20px;
+}
+
 .section3
 {
     padding-left: 300px;
