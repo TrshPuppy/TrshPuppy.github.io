@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&family=Trispace&display=swap');
+
+body
+{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to left,#EEDD99,#5A1D61);
+    font-family: 'Trispace', monospace;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title
+{
+    font-family: "Press Start 2P", monospace;
+    font-size: 2rem;
+    padding: 50px;
+    margin-top: 50px;
+    color:#EEDD99;
+}
+.calculator-grid
+{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 60vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+button
+{
+    cursor: pointer;
+    font-family: 'Trispace', monospace;
+    font-size: large;
+    background-color: rgba(255,255,255, .3);
+    border-radius: 5%;
+}
+button:hover
+{
+    background-color: rgba(255,255,255, .5);
+}
+
+.span-two
+{
+    grid-column: span 2;
+}
+
+.screen
+{
+    grid-column: span 4;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items: flex-end;
+    justify-content: space-around;
+    background-color: rgba(0,0,0, .3);
+    color: white;
+    font-family: 'Press Start 2P', monospace;
+    font-size: large;
+    padding:10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 2%;
+}
+
+.previous-operand
+{
+    font-size: small;
+    color: rgba(255,255,255,.7)
+}
+
+footer
+{
+    text-align: center;
+    padding-top:80px;
+}
