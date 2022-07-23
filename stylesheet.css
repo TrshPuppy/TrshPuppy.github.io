@@ -35,7 +35,7 @@ nav
 }
 #logo:hover
 {
-    box-shadow: 5px 5px #43E0C6;
+    box-shadow: 6px 6px #43E0C6;
     transform: translatey(-5%);
 }
 
@@ -75,7 +75,6 @@ button:hover
     background-color:#10474B;
     width:70vw;
 }
-
 .welcome
 {
     display:flex;
@@ -109,7 +108,30 @@ button:hover
     margin-bottom: 0;
 }
 
-
+.section2
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#E68CC6;
+    width:70vw;
+    font-family: 'Trispace', Courier;
+    text-align: center;
+    color:#10474B;
+}
+.linkbox-container
+{
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+}
+.linkbox
+{
+    width:25%;
+}
 
 
 
