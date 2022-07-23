@@ -44,9 +44,21 @@ nav
 .menu button
 {
     font-family: 'Trispace', monospace;
+    font-size: medium;
+    color:white;
+    padding:5px;
+    border: 2px solid #E68CC6;
+    cursor:pointer;
+    background-color: transparent;
+    box-shadow: 2px 2px #10474B;
+    border-radius: 2px;;
 }
 
-
+.menu button:hover
+{
+    box-shadow: 5px 5px #10474B;
+    transform: translatey(-5%);
+}
 
 
 
