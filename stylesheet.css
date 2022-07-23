@@ -28,7 +28,16 @@ nav
     max-width: 200px;
     border-color: #050429;
     border-radius: 100%;
-    padding:20px;
+    padding:0px;
+    margin:20px;
+    box-shadow: 2px 2px #10474B;
+    border:2px solid #E68CC6;
+}
+
+#logo:hover
+{
+    box-shadow: 5px 5px #10474B;
+    transform: translatey(-5%);
 }
 
 .menu
