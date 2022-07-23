@@ -18,9 +18,9 @@ nav
     display:flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
-    width:50vw;
-    background-color: #4F6F74;
+    justify-content: space-around;
+    width:70vw;
+    background-color: #10474B;
 }
 
 #logo
@@ -30,13 +30,12 @@ nav
     border-radius: 100%;
     padding:0px;
     margin:20px;
-    box-shadow: 2px 2px #10474B;
+    box-shadow: 2px 2px #4F6F74;
     border:2px solid #E68CC6;
 }
-
 #logo:hover
 {
-    box-shadow: 5px 5px #10474B;
+    box-shadow: 5px 5px #4F6F74;
     transform: translatey(-5%);
 }
 
@@ -49,8 +48,7 @@ nav
     width:40%;
     padding:20px;
 }
-
-.menu button
+button
 {
     font-family: 'Trispace', monospace;
     font-size: medium;
@@ -59,19 +57,57 @@ nav
     border: 2px solid #E68CC6;
     cursor:pointer;
     background-color: transparent;
-    box-shadow: 2px 2px #10474B;
+    box-shadow: 2px 2px #4F6F74;
     border-radius: 2px;;
 }
-
-.menu button:hover
+button:hover
 {
-    box-shadow: 5px 5px #10474B;
+    box-shadow: 5px 5px #4F6F74;
     transform: translatey(-5%);
 }
 
+.section1
+{
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#10474B;
+    width:70vw;
+}
 
+.welcome
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width:30%;
+    margin:20px;
+    color:#EEDD99;
+    font-family: 'Press Start 2P', monospace;
+}
+.welcome h3
+{
+    font-family: 'Trispace', Courier;
+    color:#E68CC6;
+    padding-right: 50px;
+}
+.welcome button
+{
+    margin-right:290px;
+}
 
-
+.pic
+{
+    width: 30%;
+}
+.welcome-pic
+{
+    margin:20px;
+    width:100%;
+    margin-bottom: 0;
+}
 
 
 
