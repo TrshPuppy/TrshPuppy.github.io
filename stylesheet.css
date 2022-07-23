@@ -23,6 +23,29 @@ nav
     background-color: #4F6F74;
 }
 
+#logo
+{
+    max-width: 200px;
+    border-color: #050429;
+    border-radius: 100%;
+    padding:20px;
+}
+
+.menu
+{
+    display:flex;
+    flex-flow:row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width:40%;
+    padding:20px;
+}
+
+.menu button
+{
+    font-family: 'Trispace', monospace;
+}
+
 
 
 
