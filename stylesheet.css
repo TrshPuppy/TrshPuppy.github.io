@@ -3,6 +3,29 @@
 body
 {
     background-image: url(./img/backdrop.gif);
+    background-position-y: 20%;
+    background-size: 80%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body
+{
+    background-image: url(./img/backdrop.gif);
     background-size: 60%;
     background-attachment: fixed;
     background-color: #5A1D61;
@@ -282,4 +305,4 @@ body
     border-style: dashed;
     border-color:#EEDD99;
     max-width: 40%;
-}
+} */
