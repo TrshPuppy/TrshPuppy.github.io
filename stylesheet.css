@@ -72,7 +72,6 @@ button:hover
     justify-content: center;
     background-color:#10474B;
     width:70vw;
-    
 }
 .welcome
 {
@@ -111,7 +110,7 @@ button:hover
     display:flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color:#E68CC6;
     width:70vw;
     font-family: 'Trispace', Courier;
@@ -124,7 +123,7 @@ button:hover
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    width:100%;
+    width:90%;
 }
 .linkbox
 {
@@ -151,7 +150,7 @@ button:hover
 #tp-happy
 {
     max-width: 50%;
-    padding-top:20px;
+    padding-top:10px;
     padding-bottom:20px;
 }
 
