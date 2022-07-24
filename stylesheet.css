@@ -105,6 +105,7 @@ button:hover
     margin:20px;
     width:100%;
     margin-bottom: 0;
+    transform: translateY(1%);
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .section2
