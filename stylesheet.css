@@ -123,15 +123,41 @@ button:hover
 .linkbox-container
 {
     display:flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width:100%;
 }
 .linkbox
 {
-    width:25%;
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width:23%;
 }
+.linkbox-btn
+{
+    border-color:transparent;
+    box-shadow: none;
+}
+.linkbox-btn:hover
+{
+    box-shadow: none;
+}
+.gif
+{
+    max-width: 50%;
+    text-align: center;
+}
+#tp-happy
+{
+    max-width: 35%;
+    padding-top:20px;
+    padding-bottom:30px;
+}
+
+
 
 
 
