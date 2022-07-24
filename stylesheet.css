@@ -12,7 +12,7 @@ body
     margin: 0;
     padding: 0;
 }
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 nav
 {
     display:flex;
@@ -22,7 +22,6 @@ nav
     width:70vw;
     background-color: #10474B;
 }
-
 #logo
 {
     max-width: 200px;
@@ -38,7 +37,6 @@ nav
     box-shadow: 6px 6px #43E0C6;
     transform: translatey(-5%);
 }
-
 .menu
 {
     display:flex;
@@ -65,7 +63,7 @@ button:hover
     box-shadow: 5px 5px #43E0C6;
     transform: translatey(-5%);
 }
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .section1
 {
     display:flex;
@@ -96,7 +94,6 @@ button:hover
 {
     margin-right:290px;
 }
-
 .pic
 {
     width: 30%;
@@ -107,7 +104,7 @@ button:hover
     width:100%;
     margin-bottom: 0;
 }
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .section2
 {
     display:flex;
