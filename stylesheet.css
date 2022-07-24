@@ -18,7 +18,7 @@ nav
     display:flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width:70vw;
     background-color: #10474B;
 }
@@ -69,9 +69,10 @@ button:hover
     display:flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background-color:#10474B;
     width:70vw;
+    
 }
 .welcome
 {
