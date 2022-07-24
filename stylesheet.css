@@ -194,8 +194,65 @@ button:hover
    align-self: flex-end;
    padding-inline: 100px;
 }
-
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.section4
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin:20px;
+    padding-top:50px;
+    padding-bottom:50px;
+    background-color: #10474B;
+    width:70vw;
+    border-radius: 5px;
+}
+.sec4-box
+{
+    display:flex;
+    flex-flow:row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 1;
+    background-color: #351D61;
+    max-width: 40vw;
+    border-radius: 5px;
+    color:#43E0C6;
+    font-family: 'Inconsolata', monospace;
+    padding:20px;
+}
+.left-side
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    width: 50%;
+    text-align: center;
+}
+.call4action
+{
+    font-family: 'Press Start 2P';
+    color:#EEDD99;
+    flex-shrink: 1;
+}
+.context
+{
+    flex-shrink: 1;
+}
+.right-side
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    width:50%;
+    text-align: center;
+    color:#EEDD99
+}
 
 
 
