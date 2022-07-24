@@ -7,8 +7,8 @@ body
     align-items: center;
     justify-content: center;
     background-image: url(./img/backdrop.gif);
-    background-position-y: 20%;
-    background-size: 80%;
+    background-position-y: 60%;
+    background-size: 70%;
     background-attachment: fixed;
     margin: 40px;
     padding: 0;
