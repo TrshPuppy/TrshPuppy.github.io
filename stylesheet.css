@@ -9,7 +9,8 @@ body
     background-image: url(./img/backdrop.gif);
     background-position-y: 20%;
     background-size: 80%;
-    margin: 0;
+    background-attachment: fixed;
+    margin: 40px;
     padding: 0;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -21,6 +22,9 @@ nav
     justify-content: center;
     width:70vw;
     background-color: #10474B;
+    padding-top:20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .logo
 {
@@ -75,6 +79,8 @@ button:hover
     background-color:#10474B;
     width:70vw;
     margin-bottom: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .welcome
 {
@@ -121,6 +127,7 @@ button:hover
     font-family: 'Trispace', Courier;
     text-align: center;
     color:#10474B;
+    border-radius: 5px;;
 }
 .linkbox-container
 {
@@ -174,6 +181,7 @@ button:hover
     margin:20px;
     padding-top: 100px;
     padding-bottom: 50px;
+    border-radius: 5px;
 }
 .quote
 {
