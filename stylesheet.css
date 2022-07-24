@@ -134,7 +134,7 @@ button:hover
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    max-width:23%;
+    max-width:20%;
 }
 .linkbox-btn
 {
@@ -147,14 +147,14 @@ button:hover
 }
 .gif
 {
-    max-width: 50%;
+    max-width: 60%;
     text-align: center;
 }
 #tp-happy
 {
-    max-width: 35%;
+    max-width: 50%;
     padding-top:20px;
-    padding-bottom:30px;
+    padding-bottom:20px;
 }
 
 
