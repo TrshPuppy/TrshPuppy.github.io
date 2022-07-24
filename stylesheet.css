@@ -16,23 +16,25 @@ body
 nav
 {
     display:flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     width:70vw;
     background-color: #10474B;
 }
-#logo
+.logo
+{
+    align-self: flex-start;
+}
+#logo-pic
 {
     max-width: 200px;
     border-color: #050429;
     border-radius: 100%;
-    padding:0px;
-    margin:20px;
     box-shadow: 2px 2px #43E0C6;
     border:2px solid #E68CC6;
 }
-#logo:hover
+#logo-pic:hover
 {
     box-shadow: 6px 6px #43E0C6;
     transform: translatey(-5%);
@@ -40,9 +42,9 @@ nav
 .menu
 {
     display:flex;
-    flex-flow:row nowrap;
-    align-items: center;
-    justify-content: space-between;
+    flex-flow:row wrap;
+    align-items: flex-end;
+    justify-content: space-around;
     width:40%;
     padding:20px;
 }
@@ -76,11 +78,11 @@ button:hover
 .welcome
 {
     display:flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: space-between;
     width:30%;
-    margin:20px;
+
     color:#EEDD99;
     font-family: 'Press Start 2P', monospace;
 }
@@ -96,7 +98,7 @@ button:hover
 }
 .pic
 {
-    width: 30%;
+    width: 28%;
 }
 .welcome-pic
 {
@@ -108,7 +110,7 @@ button:hover
 .section2
 {
     display:flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: space-between;
     background-color:#E68CC6;
@@ -120,10 +122,10 @@ button:hover
 .linkbox-container
 {
     display:flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    width:90%;
+    width:87%;
 }
 .linkbox
 {
