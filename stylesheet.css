@@ -78,7 +78,7 @@ button:hover
 .welcome
 {
     display:flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
     width:30%;
@@ -111,7 +111,7 @@ button:hover
 .section2
 {
     display:flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
     background-color:#E68CC6;
@@ -156,9 +156,34 @@ button:hover
     padding-top:10px;
     padding-bottom:20px;
 }
-
-
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.section3
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#EEDD99;
+    width:70vw;
+    font-family: 'Trispace', Courier;
+    text-align: center;
+    color:#351D61;
+    font-size: 1.8rem;
+    margin:20px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.quote
+{
+    padding-inline: 20px;
+    padding-bottom: 30px;
+}
+.author
+{
+   font-size: 1.5rem;
+   align-self: flex-end;
+   padding-inline: 100px;
+}
 
 
 
