@@ -90,9 +90,9 @@ button:hover
     color:#43E0C6;
     padding-right: 50px;
 }
-.welcome button
+.welcome a
 {
-    margin-right:290px;
+    align-self:flex-start;
 }
 .pic
 {
