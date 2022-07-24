@@ -74,6 +74,7 @@ button:hover
     justify-content: center;
     background-color:#10474B;
     width:70vw;
+    margin-bottom: 20px;
 }
 .welcome
 {
@@ -116,6 +117,7 @@ button:hover
     justify-content: space-between;
     background-color:#E68CC6;
     width:70vw;
+    margin:20px;
     font-family: 'Trispace', Courier;
     text-align: center;
     color:#10474B;
