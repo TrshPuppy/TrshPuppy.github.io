@@ -89,7 +89,6 @@ button:hover
     align-items: center;
     justify-content: space-between;
     width:30%;
-
     color:#EEDD99;
     font-family: 'Press Start 2P', monospace;
 }
@@ -127,7 +126,7 @@ button:hover
     font-family: 'Trispace', Courier;
     text-align: center;
     color:#10474B;
-    border-radius: 5px;;
+    border-radius: 5px;
 }
 .linkbox-container
 {
