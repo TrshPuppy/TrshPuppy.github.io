@@ -22,21 +22,39 @@
     h1
     {
         align-self:flex-start;
+        color:#E68CC6;
     }
     .section2
     {
-        background-color: rgba(90, 29, 97,1);
-        color:#43E0C6;
+        background-color: #EEDD99;
+        color:rgba(90, 29, 97,1);;
     }
     .linkbox-container
     {
         justify-content: space-between;
+        padding:40px;
     }
     .linkbox
     {
-        background-color: #EEDD99;
+        justify-content: space-evenly;
+        background-color: rgba(90, 29, 97,1);
         border-radius: 5px;
-        color:#351D61;
+        color:#EEDD99;
+        height:20vh;
+    }
+    .contact-link
+    {
+        width:50%
+    }
+    #youtube
+    {
+        width:70%;
+        padding-bottom:20px;
+        padding-top:20px;
+    }
+    #github
+    {
+        width:60%;
     }
     </style>
 </head>
@@ -62,13 +80,13 @@
         </div>
         <div class="linkbox-container">
             <div class="linkbox">Twitter
-                <a href="portfolio.html"><button class="linkbox-btn"><img class="gif" src="img/paper.gif" ></button></a>
+                <a href="https://twitter.com/trshpuppy" target="_blank"><button class="linkbox-btn"><img class="contact-link" src="./img/twitter.png" ></button></a>
             </div>
             <div class="linkbox">Youtube
-                <a href="about.html"><button class="linkbox-btn"><img class="gif" id="tp-happy"src="img/tp-happy.png"></button></a>
+                <a href="https://www.youtube.com/channel/UC8xHnIoLYHB9QszSK6ZWStw" target="_blank"><button class="linkbox-btn"><img class="contact-link"id="youtube" src="./img/youtube.png"></button></a>
             </div>
             <div class="linkbox">GitHub
-                <a href="portfolio.html"><button class="linkbox-btn"> <img class="gif" src="img/scissors.gif"></button></a>
+                <a href="https://github.com/TrshPuppy" target="_blank"><button class="linkbox-btn"> <img class="contact-link" id="github"src="./img/Octocat.png"></button></a>
             </div>
         </div>
     </div>
