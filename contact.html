@@ -14,10 +14,29 @@
         max-width: 100%;
         background-image: url(./img/contact-pix.jpg);
     }
-    
+    .section1
+    {
+        padding-top:20px;
+        padding-bottom:20px;
+    }
     h1
     {
         align-self:flex-start;
+    }
+    .section2
+    {
+        background-color: rgba(90, 29, 97,1);
+        color:#43E0C6;
+    }
+    .linkbox-container
+    {
+        justify-content: space-between;
+    }
+    .linkbox
+    {
+        background-color: #EEDD99;
+        border-radius: 5px;
+        color:#351D61;
     }
     </style>
 </head>
@@ -35,6 +54,22 @@
         </div>
         <div class="pic">
             <img class="contact-pic" src="img/contact-pix.jpg">
+        </div>
+    </div>
+    <div class="section2">
+        <div class="context">
+            <h2>Here are some ways to find me:</h2>
+        </div>
+        <div class="linkbox-container">
+            <div class="linkbox">Twitter
+                <a href="portfolio.html"><button class="linkbox-btn"><img class="gif" src="img/paper.gif" ></button></a>
+            </div>
+            <div class="linkbox">Youtube
+                <a href="about.html"><button class="linkbox-btn"><img class="gif" id="tp-happy"src="img/tp-happy.png"></button></a>
+            </div>
+            <div class="linkbox">GitHub
+                <a href="portfolio.html"><button class="linkbox-btn"> <img class="gif" src="img/scissors.gif"></button></a>
+            </div>
         </div>
     </div>
     <script src="contact.js"></script>
