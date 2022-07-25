@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trash Puppy | Skills</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        .section2
+        {
+            background-color: #10474B;
+            color:#43E0C6;
+            padding-top:20px;
+            padding-bottom:20px;
+            margin:0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .linkbox-container
+        {
+            justify-content: space-evenly;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -14,11 +30,36 @@
             <a href="index.html"><button>Back to Home</button></a> 
         </div>
     </nav>
-    <div class="section1" style="justify-content:center;">
-        <div class="welcome" style="text-align:center;width:25%;padding:60px;">
-            <h1 style="padding-top:0px;"> Welcome to my portfolio!</h1>
+    <div class="section2">
+        <div class="context">
+            <h2>Here are some skills I'm proficient in</h2>
+            <h3>(and always improving):</h3>
         </div>
-        <h3 style="color:#43E0C6;width:25%;text-align: center;padding:60px;">Here you will find links to some live projects I'm working on. All of the source code is public on GitHub!</h3>
+        <div class="linkbox-container">
+            <div class="linkbox">Git
+                <button class="linkbox-btn"><img src="img/git.svg" alt="Git Icon by Icons8"></button>
+            </div>
+            <div class="linkbox">HTML
+                <button class="linkbox-btn"><img src="img/html.svg" alt="HTML Icon by Icons8"></button>
+            </div>
+            <div class="linkbox">CSS
+                <button class="linkbox-btn"><img src="img/css.svg" alt="CSS3 logo by Icons8"></button>
+            </div>
+            <div class="linkbox">JavaScript
+               <button class="linkbox-btn"> <img src="img/js.svg" alt="JavaScript logo icon by Icons8"></button>
+            </div>
+            <div class="linkbox">Command Line
+                <button class="linkbox-btn"> <img src="img/cli.png" alt="Command Line Icon by Icons8">
+             </div>
+         </div>
+        </div>
     </div>
+    <div class="section3">
+        <div class="quote"><i> "There's no dog in this whole world cuter than Loki!"  </i></div>
+        <div class="author"><strong> - Me </strong></div>
+    </div>
+    <footer>
+        Copyright © <a href="https://github.com/TrshPuppy" target="_blank" class="footer_link"> TrshPuppy</a><br>In conjunction with <a href = "https://www.theodinproject.com" target="_blank" class="footer_link">The Odin Project</a>
+    </footer>
 </body>
 </html>
