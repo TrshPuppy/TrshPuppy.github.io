@@ -163,6 +163,9 @@ input
 }
 .submit-btn
 {
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
     padding:10px;
 }
 .submit-btn p
