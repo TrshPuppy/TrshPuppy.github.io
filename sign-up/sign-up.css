@@ -32,7 +32,7 @@ body
     align-items: center;
     justify-content: space-around;
     flex-shrink: 2;
-    background-image: url(./img/background.jpg);
+    background-image: url(./su-img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
