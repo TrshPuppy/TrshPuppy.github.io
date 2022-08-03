@@ -5,8 +5,12 @@
 This website functions as both a project and professional portfolio. I hope for this to become an actual webpage for personal and professional use, but for now, I hope you enjoy!
 
 ## Included projects with live previews:
-### Calculator:
+### Sign-Up Form:
 ###### Made w/ Javascript, CSS, HTML.
+Original repository here: https://github.com/TrshPuppy/sign-up-form
+
+### Calculator:
+###### Javascript, CSS, HTML.
 Original repository here: https://github.com/TrshPuppy/calculator
 
 ### Etch-a-Sketch:
