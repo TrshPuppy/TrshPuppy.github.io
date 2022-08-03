@@ -163,9 +163,6 @@ input
 }
 .submit-btn
 {
-    display:flex;
-    flex-flow: row wrap;
-    align-items: center;
     padding:10px;
 }
 .submit-btn p
@@ -202,4 +199,9 @@ button:active
 .submit-btn a
 {
     color:white;
+}
+.back-btn
+{
+    padding:40px;
+    padding-bottom: 0px;
 }
