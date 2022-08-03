@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Puppy | Sign Up</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="content">
+        <div class="picture">
+            <div class="logo-strip">
+                <a href="https://trshpuppy.github.io"target="_blank"> <img class="logo"src="./img/logo.png" alt="Akita Icon by Icons8"></a>
+                <p>Trash <br>Puppy</p>
+            </div>
+            <div class="author">
+                <p>Photo by <a href="https://unsplash.com/photos/OHPdgstNFGs" target="_blank">Vinicius Amano</a> on <a href="https://unsplash.com/" target="_blank">Unsplash</a>.
+                </p>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="context">
+                <p>This is the online service <strong><i>of your dreams!</i></strong> You know you need this in your life, right?<br><br> Trash? Puppies?! Who could resist?</p>
+                <br>
+                <p class="p2"><i>I</i> know that <i>you</i> know you want to!</p>
+            </div>
+            <form action="" method="get">
+                <fieldset class="form-macro">
+                    <div class="input">
+                        <label for="first-name">First Name*</label>
+                        <input type="text"
+                        id="first-name"
+                        name="first_name"
+                        placeholder="Puppy"
+                        pattern="[a-zA-Z]+"
+                        maxlength="15"
+                        required>
+                    </div>
+                    <div class="input">
+                        <label for="last-name">Last Name</label>
+                        <input type="text"
+                        id="last-name"
+                        name="last_name"
+                        placeholder="Doe"
+                        pattern="[a-zA-Z]+"
+                        maxlength="15">
+                    </div>
+                    <div class="input">
+                        <label for="email">Email*</label>
+                        <input type="email"
+                        id="email"
+                        name="email"
+                        placeholder="puppydoe@email.com"
+                        max-length="25"
+                        required>
+                    </div>
+                    <div class="input">
+                        <label for="number">Phone #</label>
+                        <input type="text"
+                        id="number"
+                        name="phone_number"
+                        placeholder="000-000-0000"
+                        pattern="[0-9-]+"
+                        minlength="10"
+                        maxlength="12">
+                    </div>
+                    <div class="input">
+                        <label for="password">Password*</label>
+                        <input type="password"
+                        id="password"
+                        name="password"
+                        pattern="[A-Za-z0-9.,!?/@#$%&+=-_]+"
+                        minlength="10"
+                        maxlength="25"
+                        required>
+                    </div>
+                    <div class="input">
+                        <label for="confirm-password">Confirm Password*</label>
+                        <input type="password"
+                        id="confirm-password"
+                        name="confirm_password"
+                        pattern="[A-Za-z0-9.,!?/@#$%&+=-_]+"
+                        minlength="10"
+                        max-length="25"
+                        required>
+                    </div>
+                </fieldset>
+                <fieldset class="submit-btn">
+                    <button type="submit">Create Account</button>
+                    <p class="error-text" hidden>Your Passwords don't match!</p>
+                    <p>Already have an account?<br><a href="https://trshpuppy.github.io"target="_blank">Login</a></p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script>
+        //Script validates passwords:
+        const password = document.querySelector("#password");
+        const confirmPassword = document.querySelector("#confirm-password");
+        const submitButton = document.querySelector("button");
+        const errorText = document.querySelector(".error-text");
+
+        submitButton.addEventListener("click", () =>
+        {
+            checkPassword(password, confirmPassword);
+        });
+
+        function checkPassword(pass1, pass2)
+        {
+            if(pass1.value === pass2.value)
+            {
+                pass2.classList.remove("invalid");
+                pass2.classList.add("valid");
+                submitButton.type = "submit";
+            }
+            else
+            {
+                pass2.classList.remove("valid");
+                pass2.classList.add("invalid");
+                submitButton.type = "button";
+                errorText.removeAttribute("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

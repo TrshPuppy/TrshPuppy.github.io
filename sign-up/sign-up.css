@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&family=Trispace&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color:  #797081;
+    height:100vh;
+}
+
+.content
+{
+    display:flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    height:90vh;
+}
+
+.picture
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 2;
+    background-image: url(./img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: clamp(45ch, 30%,32%);
+    border-radius: 10px;
+    min-height: 25%;
+}
+.logo-strip
+{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    background-color: rgba(0,0,0,.5);
+    color:white;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2.2rem;
+    padding:10px;
+}
+.logo-strip p
+{
+    padding: 10px;
+}
+.logo
+{
+    padding:10px;
+    width:90%;
+}
+.author
+{
+    color:white;
+    font-family: 'Trispace', sans-serif;
+    font-size: .8rem;
+}
+.author a
+{
+    color:inherit;
+}
+
+.form-container
+{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(0,0,0,.5);
+    width: max(50%, 45ch);
+    border-radius: 10px;
+    padding:50px;
+    box-sizing: border-box;
+}
+.context
+{
+    background-color: #797081;
+    box-sizing: border-box;
+    padding:50px;
+    font-family: 'Inconsolata', monospace;
+    border-radius: 10px;
+    margin-bottom:50px;
+    color:white;
+}
+.context p
+{
+    font-size: clamp(1.5rem, 2rem, 2vw);
+}
+.context .p2
+{
+    font-weight: bold;
+}
+form
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    background-color:#77301E;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding:20px;
+    font-family: 'Trispace', monospace;
+    align-self: stretch;
+    color:white;
+}
+.form-macro
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width:80%;
+}
+fieldset
+{
+    border: 3px solid #008AD2;
+    border-top: transparent;
+    border-bottom: transparent;
+    border-right: transparent;
+    border-radius: 10px;
+}
+.input
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding:10px;
+    box-sizing: border-box;
+    width: fit-content;
+}
+input
+{
+    padding:8px;
+    border-radius: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-size: .95rem;
+    margin:5px 0px;
+    border: 2px solid #008AD2;
+}
+#confirm-password:invalid
+{
+    border: 2px solid red;
+}
+#confirm-password:valid
+{
+    border: 2px solid #008AD2;
+}
+.submit-btn
+{
+    padding:10px;
+}
+.submit-btn p
+{
+    padding: 10px;
+}
+.error-text
+{
+    color:red;
+}
+button
+{
+    padding:15px;
+    cursor:pointer;
+    font-family: 'Press Start 2P', monospace;
+    font-size: .8rem;
+    font-weight: bolder;
+    border-radius: 10px;
+    color:white;
+    border:3px solid #008AD2;
+    background-color: transparent;
+    box-shadow: 5px 5px rgba(0,0,0,.5);
+}
+button:hover
+{
+    background-color:#DE5F10;
+    color:white;
+}
+button:active
+{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+.submit-btn a
+{
+    color:white;
+}
