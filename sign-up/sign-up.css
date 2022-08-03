@@ -200,8 +200,13 @@ button:active
 {
     color:white;
 }
+
 .back-btn
 {
     padding:40px;
     padding-bottom: 0px;
+}
+.back-btn button
+{
+    font-size: .7rem;
 }
