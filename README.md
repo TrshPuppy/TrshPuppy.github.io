@@ -5,8 +5,12 @@
 This website functions as both a project and professional portfolio. I hope for this to become an actual webpage for personal and professional use, but for now, I hope you enjoy!
 
 ## Included projects with live previews:
+### Admin Dashboard:
+###### Made w/ Primarily HTML and CSS (w/ some JS).
+Original repository here: https://github.com/TrshPuppy/admin-dashboard
+
 ### Sign-Up Form:
-###### Made w/ Javascript, CSS, HTML.
+###### Javascript, CSS, HTML.
 Original repository here: https://github.com/TrshPuppy/sign-up-form
 
 ### Calculator:
@@ -26,5 +30,5 @@ Original repository: https://github.com/TrshPuppy/rock-paper-scissors.
 See original project requirements/specifications from the Odin Project here: https://www.theodinproject.com/lessons/foundations-landing-page
 Original repository here: https://github.com/TrshPuppy/odin-landing-page
 
-#### All of the files/directories including pixelart and photos in this repository are my own and belong to me (except for the twitter and github logos of course).
+#### All of the files/directories including pixelart and photos in this repository are my own and belong to me (except for the Twitter/GitHub/Youtube/etc. logos of course).
 Please respect the work I've put into this and the included pixelart. If you want to copy/paste/use anything please ask <3.
