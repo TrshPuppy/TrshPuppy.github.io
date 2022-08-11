@@ -177,7 +177,7 @@ button:hover
 }
 button:active
 {
-    box-shadow: 2px 2px 2px#080808;
+    box-shadow: 2px 2px 2px#2b2a2a;
     transform: translateY(5px);
 }
 
