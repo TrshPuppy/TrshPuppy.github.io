@@ -9,13 +9,13 @@ modeButton.addEventListener('click', e =>
     if(darkModeCurrent === false)
     {
         body.classList.add('dark');
-        e.target.src="./img/lightmode.png";
+        e.target.src="./dash-img/lightmode.png";
         darkModeCurrent = true;
     }
     else if(darkModeCurrent === true)
     {
         body.classList.remove('dark');
-        e.target.src="./img/darkmode.png"
+        e.target.src="./dash-img/darkmode.png"
         darkModeCurrent = false;
     }
 });
