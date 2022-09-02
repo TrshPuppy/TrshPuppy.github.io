@@ -1,93 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trash Puppy | Portfolio</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css" />
     <style>
-        .section1 a
-        {
-            color:#E68CC6;
-        }
-        .section2
-        {
-            background-color: transparent;
-            flex-flow:column wrap;
-            margin-top:0;
-        }
-        .linkbox-container
-        {
-            justify-content: space-between;
-            align-content: space-between;
-            width:70vw;
-        }
-        .linkbox
-        {
-            background-color: #E68CC6;
-            border-radius: 5px;
-            box-shadow: 2px 2px #43E0C6;
-            border:5px solid rgba(90, 29, 97, .6);
-            min-width:45%;
-            margin-bottom:20px;
-            margin-top:20px;
-            padding:10px;
-        }
-        .linkbox:hover
-        {
-            transform:translateY(-5%);
-            box-shadow: 5px 5px #43E0C6;
-        }
-        .linkbox-btn:hover
-        {
-            transform:none;
-        }
-        .gif
-        {
-            border-radius: 5px;
-            padding:10px;
-        }
+      .section1 a {
+        color: #e68cc6;
+      }
+      .section2 {
+        background-color: transparent;
+        flex-flow: column wrap;
+        margin-top: 0;
+      }
+      .linkbox-container {
+        justify-content: space-between;
+        align-content: space-between;
+        width: 70vw;
+      }
+      .linkbox {
+        background-color: #e68cc6;
+        border-radius: 5px;
+        box-shadow: 2px 2px #43e0c6;
+        border: 5px solid rgba(90, 29, 97, 0.6);
+        min-width: 45%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      .linkbox:hover {
+        transform: translateY(-5%);
+        box-shadow: 5px 5px #43e0c6;
+      }
+      .linkbox-btn:hover {
+        transform: none;
+      }
+      .gif {
+        border-radius: 5px;
+        padding: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="logo" style="align-self:center;"><a href="index.html"><img id="logo-pic" src="./img/logo.png" alt="logo"> </a></div>
-        <div class="menu"style="justify-content:flex-end;">
-            <a href="index.html"><button type="button">Back to Home</button></a> 
-        </div>
+      <div class="logo" style="align-self: center">
+        <a href="index.html"
+          ><img id="logo-pic" src="./img/logo.png" alt="logo" />
+        </a>
+      </div>
+      <div class="menu" style="justify-content: flex-end">
+        <a href="index.html"><button type="button">Back to Home</button></a>
+      </div>
     </nav>
-    <div class="section1" style="justify-content:center;">
-        <div class="welcome" style="text-align:center;width:25%;padding:60px;">
-            <h1 style="padding-top:0px;"> Welcome to my portfolio!</h1>
-        </div>
-        <h3 style="color:#43E0C6;width:25%;text-align: center;padding:60px;">Here you will find links to some live projects I'm working on. All of the source code is public on <a href="https://github.com/TrshPuppy"target="_blank">GitHub</a>!</h3>
+    <div class="section1" style="justify-content: center">
+      <div
+        class="welcome"
+        style="text-align: center; width: 25%; padding: 60px"
+      >
+        <h1 style="padding-top: 0px">Welcome to my portfolio!</h1>
+      </div>
+      <h3 style="color: #43e0c6; width: 25%; text-align: center; padding: 60px">
+        Here you will find links to some live projects I'm working on. All of
+        the source code is public on
+        <a href="https://github.com/TrshPuppy" target="_blank">GitHub</a>!
+      </h3>
     </div>
-    <div class="section2" style="padding-top:20px;">
-        <div class="linkbox-container">
-            <div class="linkbox">Admin-Dashboard
-                <a href="./dashboard/dash.html" target="_blank"><button type="button" class="linkbox-btn"><img class="gif" src="img/dashboard.png" alt="Admin Dashboard Preview"></button></a>
-            </div>
-            <div class="linkbox">Sign-Up Form
-                <a href="./sign-up/sign-up.html" target="_blank"><button type="button" class="linkbox-btn"><img class="gif" src="img/sign-up.png" alt="Sign-Up Preview"></button></a>
-            </div>
-            <div class="linkbox">Calculator
-                <a href="./calculator/calculator.html"><button type="button" class="linkbox-btn"><img class="gif" src="img/calculator.png" alt="Calculator preview"></button></a>
-            </div>
-            <div class="linkbox">Rock-Paper-Scissors
-                <a href="./rps/rps.html"><button type="button" class="linkbox-btn"> <img class="gif" src="img/rps.png" alt="Rock-Paper-Scissors Preview"></button></a>
-            </div>
-            <div class="linkbox" id="contact-linkbox">Etch-a-Sketch
-                <a href="./es/etch.html"><button type="button" class="linkbox-btn"><img class="gif"src="img/es.png" alt="Etch-a-Sketch preview"></button></a>
-            </div>
+    <div class="section2" style="padding-top: 20px">
+      <div class="linkbox-container">
+        <div class="linkbox">
+          Library App
+          <a href="./library/library.html" target="_blank"
+            ><button type="button" class="linkbox-btn">
+              <img
+                class="gif"
+                src="img/library.png"
+                alt="Admin Dashboard Preview"
+              /></button
+          ></a>
         </div>
+        <div class="linkbox">
+          Admin-Dashboard
+          <a href="./dashboard/dash.html" target="_blank"
+            ><button type="button" class="linkbox-btn">
+              <img
+                class="gif"
+                src="img/dashboard.png"
+                alt="Admin Dashboard Preview"
+              /></button
+          ></a>
+        </div>
+        <div class="linkbox">
+          Sign-Up Form
+          <a href="./sign-up/sign-up.html" target="_blank"
+            ><button type="button" class="linkbox-btn">
+              <img
+                class="gif"
+                src="img/sign-up.png"
+                alt="Sign-Up Preview"
+              /></button
+          ></a>
+        </div>
+        <div class="linkbox">
+          Calculator
+          <a href="./calculator/calculator.html"
+            ><button type="button" class="linkbox-btn">
+              <img
+                class="gif"
+                src="img/calculator.png"
+                alt="Calculator preview"
+              /></button
+          ></a>
+        </div>
+        <div class="linkbox">
+          Rock-Paper-Scissors
+          <a href="./rps/rps.html"
+            ><button type="button" class="linkbox-btn">
+              <img
+                class="gif"
+                src="img/rps.png"
+                alt="Rock-Paper-Scissors Preview"
+              /></button
+          ></a>
+        </div>
+        <div class="linkbox" id="contact-linkbox">
+          Etch-a-Sketch
+          <a href="./es/etch.html"
+            ><button type="button" class="linkbox-btn">
+              <img
+                class="gif"
+                src="img/es.png"
+                alt="Etch-a-Sketch preview"
+              /></button
+          ></a>
+        </div>
+      </div>
     </div>
     <div class="section3">
-        <div class="quote"><i> "The only thing standing between you and outrageous success is continuous progress."  </i></div>
-        <div class="author"><strong> - Dan Waldschmidt </strong></div>
+      <div class="quote">
+        <i>
+          "The only thing standing between you and outrageous success is
+          continuous progress."
+        </i>
+      </div>
+      <div class="author"><strong> - Dan Waldschmidt </strong></div>
     </div>
     <footer>
-        Copyright © <a href="https://github.com/TrshPuppy" target="_blank" class="footer_link"> TrshPuppy</a><br>In conjunction with <a href = "https://www.theodinproject.com" target="_blank" class="footer_link">The Odin Project</a>
+      Copyright ©
+      <a
+        href="https://github.com/TrshPuppy"
+        target="_blank"
+        class="footer_link"
+      >
+        TrshPuppy</a
+      ><br />In conjunction with
+      <a
+        href="https://www.theodinproject.com"
+        target="_blank"
+        class="footer_link"
+        >The Odin Project</a
+      >
     </footer>
-</body>
+  </body>
 </html>

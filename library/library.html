@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Puppy | Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+    <div id="modal-add-book" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">X</span>
+            <form action="" method="get">
+                <h3>Add a Book:</h3>
+                <input type="text"
+                    id="title"
+                    placeholder="Title"
+                    required="required" 
+                    maxlength="25">
+                    <input type="text"
+                    id="author"
+                    placeholder="Author"
+                    maxlength="50">
+                    <div class="modal-alert-box">
+                    </div>
+                    <div class="is-read">
+                        <label for="read">Mark as read:</label>
+                        <input type="checkbox" id="read"class="read">
+                    </div>
+                   <button type="button" class="submit-book-button">Add Book</button>
+            </form>
+          </div>
+        </div>
+        <div id="modal-edit-book" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">X</span>
+                <form action="" method="get">
+                    <h3>Edit Book:</h3>
+                    <input type="text"
+                        id="title" 
+                        class="edit-title"
+                        placeholder="Title"
+                        maxlength="25">
+                        <input type="text"
+                        id="author"
+                        class="edit-author"
+                        placeholder="Author"
+                        maxlength="50">
+                        <div class="modal-alert-box" id="modal-edit-alert">
+                            <p>That book already exists in your library!</p>
+                        </div>
+                        <div class="is-read">
+                            <label for="read">Mark as read:</label>
+                            <input type="checkbox" id="read"class="edit-read">
+                        </div>
+                    <button type="button" class="submit-book-button" id="submit-edit-book-btn">Add Book</button>
+                </form>
+            </div>
+            </div>
+    </div>
+    <div class="main">
+        <div class="header">
+            <div class="header-logo">
+                <img src="./lib-img/library-logo.png" alt="Library logo" class="header-logo-img">             
+            </div>
+            <div class="header-buttons">
+                <button type="button"class="add-book" title="Add book">Add Book</button>
+            </div>
+        </div>
+        <div class="library">
+            <div class="left-panel">
+                <p>Your Shelves:</p>
+                <div class="shelves">
+                    <div class="shelf-box">
+                        <div class="shelf-box-title">
+                            <h4>Unread:</h4>
+                            <h5 class="unread-tally"></h5>
+                        </div>
+                        <!-- <ul>
+                            <li>
+                                <div class="shelf-box-book">
+                                    <div class="shelf-box-book-title">
+                                     
+                                    </div>
+                                    <div class="shelf-box-book-author">
+                                     
+                                    </div>
+                                 </div>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="shelf-box">
+                        <div class="shelf-box-title">
+                            <h4>Read:</h4>
+                            <h5 class="read-tally"></h5>
+                        </div>
+                        <!-- <ul>
+                            <li>
+                                <div class="shelf-box-book">
+                                    <div class="shelf-box-book-title">
+                                     
+                                    </div>
+                                    <div class="shelf-box-book-author">
+                                     
+                                    </div>
+                                 </div>
+                            </li>
+                            <li>
+                                <div class="shelf-box-book">
+                                    <div class="shelf-box-book-title">
+                                     
+                                    </div>
+                                    <div class="shelf-box-book-author">
+                                     
+                                    </div>
+                                 </div>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <!-- <div class="shelf-box">
+                        <div class="shelf-box-title">
+                            <h4>Horror:</h4>
+                            <h5 class="tally">(1)</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="shelf-box-book">
+                                    <div class="shelf-box-book-title">
+                                     Carrie
+                                    </div>
+                                    <div class="shelf-box-book-author">
+                                     Stephen King
+                                    </div>
+                                 </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shelf-box">
+                        <div class="shelf-box-title">
+                            <h4>Philosophy:</h4>
+                            <h5 class="tally">(1)</h5>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="shelf-box-book">
+                                    <div class="shelf-box-book-title">
+                                     The Republic
+                                    </div>
+                                    <div class="shelf-box-book-author">
+                                     Plato
+                                    </div>
+                                 </div>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            <div class="desk">
+                
+            </div>
+        </div>
+    </div>
+    <script src="library2.js"></script>    
+</body>
+</html>
