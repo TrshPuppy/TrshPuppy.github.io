@@ -5,6 +5,10 @@
 This website functions as both a project and professional portfolio. I hope for this to become an actual webpage for personal and professional use, but for now, I hope you enjoy!
 
 ## Included projects with live previews:
+### Tic-Tac-Toe:
+###### Made w/ Primarily HTML and CSS (w/ some JS).
+Original repository here: https://github.com/TrshPuppy/tic-tac-toe
+
 ### Library App:
 ###### Made primarily w/ JS.
 Original repo here: https://github.com/TrshPuppy/library
