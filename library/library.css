@@ -8,7 +8,7 @@
 body {
   color: var(--main-font-color);
   background-color: var(--off-white);
-  background-image: url(./img/backdrop-light.jpg);
+  background-image: url(./lib-img/backdrop-light.jpg);
   background-position: center;
   background-repeat: no-repeat;
   font-family: "Insonsolata", monospace;
