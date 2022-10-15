@@ -1,69 +1,75 @@
-<!-- Rock, paper, scissors game made by Rose Pineau. "rps-ui" branch from main. Initial branch commit 7/9/2022. See README.md for further info.-->
-
 <!-- commit: Add "first to score 5 wins." -->
 <!DOCTYPE html>
-<html lang = 'en'>
-    <head>
-        <meta charset = "UTF-8">
-        <title> Rock Paper Scissors</title>
-        <link rel = "stylesheet" href = "rps-style.css">
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="rps-style.css" />
+  </head>
 
-    <body>
-        <header> ROCK PAPER SCISSORS 
-            <a href = "/portfolio.html"> <button class = "home-link"> Back to Portfolio</button> </a>
-        </header>
-        
-        <section class = "game">
-            <div class="intro">
-                <h2 class="instructions">
-                    It's a lovely evening for some good 'ol R.P.S. <br>
-                    Play your best against the computer!
-                    <br>
-                    <br>
-                    <br>
-                    First to score 5 wins!
-                </h2>
-                <button> Play! </button>
-            </div>
+  <body>
+    <header>
+      ROCK PAPER SCISSORS
+      <a href="/portfolio.html">
+        <button class="home-link">Back to Portfolio</button>
+      </a>
+    </header>
 
-            <div class="faceoff fadeOut">
-                <div class = "scoreboard">
-                    <div class="player-score">
-                        <h3> Player </h3>
-                        <p> 0 </p>
-                    </div>
-                    <div class="player-choice">
+    <section class="game">
+      <div class="intro">
+        <h2 class="instructions">
+          It's a lovely evening for some good 'ol R.P.S. <br />
+          Play your best against the computer!
+          <br />
+          <br />
+          <br />
+          First to score 5 wins!
+        </h2>
+        <button>Play!</button>
+      </div>
 
-                    </div>
-                    <div class="computer-choice">
-
-                    </div>
-                    <div class="computer-score">
-                        <h3> Computer </h3>
-                        <p> 0 </p>
-                    </div>
-                </div>
-
-                <div class="options">
-                    <button class = "selection" data-selection = 'rock'> <img src = "rps-img/rock.gif" id = "rock-gif"> </button>
-                    <button class = "selection" data-selection = 'paper'> <img class = "paper-gif" src = "rps-img/paper.gif"> </button>
-                    <button class = "selection"data-selection = 'scissors'> <img class = "scissors-gif" src = "rps-img/scissors.gif"> </button>
-                </div>
-            </div>
-
-            <div class="winner-screen fadeOut">
-                <div class = "text">
-
-                </div>
-                <button> Play again? </button>
-            </div>
-        </section>
-        
-        <div class="footer">
-            Copyright © <a href = "https://github.com/TrshPuppy" class = "footer_link"> TrshPuppy</a> Inc.<br>
-            In conjunction with <a href = "https://www.theodinproject.com" class = "footer_link"> The Odin Project </a>
+      <div class="faceoff fadeOut">
+        <div class="scoreboard">
+          <div class="player-score">
+            <h3>Player</h3>
+            <p>0</p>
+          </div>
+          <div class="player-choice"></div>
+          <div class="computer-choice"></div>
+          <div class="computer-score">
+            <h3>Computer</h3>
+            <p>0</p>
+          </div>
         </div>
-        <script src = "app.js" charset = "UTF-8"></script>
-    </body>
+
+        <div class="options">
+          <button class="selection" data-selection="rock">
+            <img src="rps-img/rock.gif" id="rock-gif" />
+          </button>
+          <button class="selection" data-selection="paper">
+            <img class="paper-gif" src="rps-img/paper.gif" />
+          </button>
+          <button class="selection" data-selection="scissors">
+            <img class="scissors-gif" src="rps-img/scissors.gif" />
+          </button>
+        </div>
+      </div>
+
+      <div class="winner-screen fadeOut">
+        <div class="text"></div>
+        <button>Play again?</button>
+      </div>
+    </section>
+
+    <div class="footer">
+      Copyright ©
+      <a href="https://github.com/TrshPuppy" class="footer_link"> TrshPuppy</a>
+      Inc.<br />
+      In conjunction with
+      <a href="https://www.theodinproject.com" class="footer_link">
+        The Odin Project
+      </a>
+    </div>
+    <script src="app.js" charset="UTF-8"></script>
+  </body>
 </html>
