@@ -2,7 +2,7 @@
 
 body
 {
-    display:flex;
+    display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
@@ -17,18 +17,18 @@ body
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 nav
 {
-    display:flex;
+    display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    width:70vw;
-    background-color: #10474B;
-    padding-top:20px;
+    width: 70vw;
+    background-color: #10474b;
+    padding-top: 20px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    position:sticky;
-    top:0;
-    z-index:1;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .logo
 {
@@ -118,6 +118,10 @@ button:hover
     width:100%;
     margin-bottom: 0;
     transform: translateY(1%);
+}
+.welcome-btn 
+{
+    margin-bottom: 0.5em;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .section2
@@ -215,26 +219,26 @@ button:hover
 }
 .sec4-box
 {
-    display:flex;
-    flex-flow:row nowrap;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
-    flex-shrink: 1;
-    background-color: #351D61;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    background-color: #351d61;
     max-width: 40vw;
     border-radius: 5px;
-    color:#43E0C6;
+    color: #43e0c6;
     font-family: 'Inconsolata', monospace;
-    padding:20px;
+    padding: 20px;
 }
 .left-side
 {
-    display:flex;
-    flex-flow: column nowrap;
+    grid-column: 1 / 2;
+    display: grid;
     align-items: center;
     justify-content: center;
-    flex-shrink: 1;
-    width: 50%;
+    width: 100%;
+    grid-template-rows: 50% 50%;
     text-align: center;
 }
 .call4action
@@ -249,14 +253,14 @@ button:hover
 }
 .right-side
 {
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 1;
-    width:50%;
-    text-align: center;
-    color:#EEDD99
+  grid-column: 2 / 3;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  grid-template-rows: 50% 50%;
+  text-align: center;
+  color: #eedd99;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 footer
@@ -274,4 +278,120 @@ footer a
 {
     color:#E68CC6;
     padding:10px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 600px) {
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    h1,
+    h3,
+    p 
+    {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    nav 
+    {
+      position: relative;
+      margin-top: 6dvh;
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .logo 
+    {
+      grid-column: 1 / 2;
+      padding-left: 10px;
+    }
+
+    .menu 
+    {
+      grid-column: 2 / 3;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      padding-left: 2rem;
+    }
+
+    #logo-pic 
+    {
+      max-width: 150px;
+    }
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    .section1 
+    {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.5fr 0.25fr;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .welcome 
+    {
+      width: 100%;
+      grid-row: 1 / 2;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .welcome h1,
+    .welcome h3,
+    .welcome a 
+    {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .pic 
+    {
+      width: 100%;
+      grid-row: 2 / 3;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+    }
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    .linkbox-container 
+    {
+      flex-direction: column;
+    }
+    .gif 
+    {
+      max-width: 100%;
+    }
+    .sec4-box 
+    {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr 1fr;
+    }
+    .left-side 
+    {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      display: grid;
+    }
+    .right-side 
+    {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      display: grid;
+    }
+  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media only screen and (max-width: 350px) {
+    nav 
+    {
+      display: flex;
+    }
 }
