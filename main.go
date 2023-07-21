@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+	"fmt"
+)
 
-func main() {
-	fmt.Println("tiddies!")
+func main(){
+	fmt.Println("Main has started...")	
 }
