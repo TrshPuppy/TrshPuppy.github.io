@@ -6,7 +6,7 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request){
-	w.Write([]byte("<h1>Hello Tiddies!</h1>"))
+	w.Write([]byte("<h1>Hello World!</h1>"))
 }
 
 func main(){
@@ -22,7 +22,7 @@ func main(){
 	HTTPMux := http.NewServeMux()
 	HTTPMux.HandleFunc("/", indexHandler)
 	
-	http.ListenAndServe(Server.address + ":" + Server.port, HTTPMux)
+	http.ListenAndServe(":" + Server.port, HTTPMux)
 	
 	fmt.Printf("The server is running at %s:%s\n", Server.address, Server.port)
 
