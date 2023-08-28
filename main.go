@@ -44,20 +44,23 @@ func aboutHandler(respWriter http.ResponseWriter, req *http.Request){
 	// ** find byte offset:   file.Read()?  bufio.newScanner() <-- line by line
 	offset_line := "  <body>" // <-- probably should be something like "includes '<body" instead
 	scanner := bufio.NewScanner(index_file)
-	line_count := 1
 
 	// loop through file line by line:
 	for scanner.Scan(){
+		// Read current line & save line number:
 		current_line_txt := scanner.Text()
+		
 		fmt.Printf(current_line_txt)
+		// Compare line to offset_line
 		if current_line_txt == offset_line{
-			fmt.Printf("wow biotch, u did it, the line is %s", line_count)
-			return
+			// Get # bytes into file that offset pattern happens
+			fmt.Printf("wow biotch, u did it, the line is %s", len(scanner.Bytes()))
+			break
 		}
-		line_count++
-	
 	}
 
+	// Use byte offset to set where we edit file...
+	// starting_line := line_count++
 
 
 	// // Create new template
