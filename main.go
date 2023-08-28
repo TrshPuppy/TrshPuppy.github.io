@@ -6,9 +6,13 @@ import (
 	"html/template"
 )
 
-var tpl = template.Must(template.ParseFiles("index.html"))
+// // Create template from parsed index.html:
+// var tpl = template.Must(template.ParseFiles("index.html"))
 
 func indexHandler(respWriter http.ResponseWriter, req *http.Request){
+	// Create template from parsed index.html:
+	var tpl = template.Must(template.ParseFiles("index.html"))
+
 	// respWriter.Write([]byte("<h1>Hello World!</h1>"))
 	tpl.Execute(respWriter, nil)
 }
@@ -31,11 +35,11 @@ func main(){
 	HTTPMux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	HTTPMux.HandleFunc("/", indexHandler)
 	
-	// http.HandleFunc("/", indexHandler)
+	// Have server listen at address:port
 	http.ListenAndServe(Server.address + ":" + Server.port, HTTPMux)
 	
 	fmt.Printf("The server is running at %s:%s\n", Server.address, Server.port)
-	// http.ListenAndServe()
+	
 }
 
 // Resource Links:
