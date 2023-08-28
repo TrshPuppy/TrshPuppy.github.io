@@ -4,7 +4,8 @@ import (
 	"net/http"
 	"fmt"
 	"html/template"
-	//"os"
+	"os"
+	"bufio"
 )
 
 // HTML content funcs:
@@ -34,6 +35,26 @@ func aboutHandler(respWriter http.ResponseWriter, req *http.Request){
 
 	// modify index.html
 	// modify_index := modify_index_html() // this should return an HTML file/ change the index.html file in root dir
+	index_file, err := os.Open("index.html")
+	if err != nil {
+		fmt.Printf("ERROR: line 40 :)")
+		return
+	}
+	// ** file.WriteAt <-- writes starting at a specific length of bytes into file (need length offset)
+	// ** find byte offset:   file.Read()?  bufio.newScanner() <-- line by line
+	// offset_line := "<body>\n"
+	scanner := bufio.NewScanner(index_file)
+	line_count := 1
+
+	// loop through file line by line:
+	for scanner.Scan(){
+		current_line_txt := scanner.Text()
+		fmt.Printf(current_line_txt)
+		// if current_line_txt == offset_line
+		line_count++
+	}
+
+
 
 	// // Create new template
 	// var about_tpl = template.Must(template.ParseFiles("index.html"))
