@@ -42,7 +42,7 @@ func aboutHandler(respWriter http.ResponseWriter, req *http.Request){
 	}
 	// ** file.WriteAt <-- writes starting at a specific length of bytes into file (need length offset)
 	// ** find byte offset:   file.Read()?  bufio.newScanner() <-- line by line
-	// offset_line := "<body>\n"
+	offset_line := "  <body>" // <-- probably should be something like "includes '<body" instead
 	scanner := bufio.NewScanner(index_file)
 	line_count := 1
 
@@ -50,8 +50,12 @@ func aboutHandler(respWriter http.ResponseWriter, req *http.Request){
 	for scanner.Scan(){
 		current_line_txt := scanner.Text()
 		fmt.Printf(current_line_txt)
-		// if current_line_txt == offset_line
+		if current_line_txt == offset_line{
+			fmt.Printf("wow biotch, u did it, the line is %s", line_count)
+			return
+		}
 		line_count++
+	
 	}
 
 
