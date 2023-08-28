@@ -27,16 +27,14 @@ func main(){
 	HTTPMux := http.NewServeMux()
 
 	// // Tell the server which function to call to handle request to the root path
+	fs := http.FileServer(http.Dir("assets"))
+	HTTPMux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	HTTPMux.HandleFunc("/", indexHandler)
 	
 	// http.HandleFunc("/", indexHandler)
 	http.ListenAndServe(Server.address + ":" + Server.port, HTTPMux)
 	
 	fmt.Printf("The server is running at %s:%s\n", Server.address, Server.port)
-
-	// fs := http.FileServer(http.Dir("assets/"))
-	// http.Handle("/static/", http.StripPrefix("/static/", fs))
-
 	// http.ListenAndServe()
 }
 
