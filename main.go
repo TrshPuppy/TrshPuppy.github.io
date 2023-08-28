@@ -4,7 +4,17 @@ import (
 	"net/http"
 	"fmt"
 	"html/template"
+	//"os"
 )
+
+// HTML content funcs:
+func get_about_content() string {
+	// Make about content? Giant string?
+	about_content := "<h1> About Tiddies </h1>"
+
+	// return
+	return about_content
+}
 
 // // Create template from parsed index.html:
 // var tpl = template.Must(template.ParseFiles("index.html"))
@@ -20,21 +30,16 @@ func indexHandler(respWriter http.ResponseWriter, req *http.Request){
 func aboutHandler(respWriter http.ResponseWriter, req *http.Request){
 	// get the new content for index.html:
 	about_html := get_about_content()
+	fmt.Printf("About: " + about_html)
 
 	// modify index.html
-	modify_index := modify_index_html() // this should return an HTML file/ change the index.html file in root dir
+	// modify_index := modify_index_html() // this should return an HTML file/ change the index.html file in root dir
 
-	// Create new template
-	var about_tpl = template.Must(template.ParseFiles("index.html"))
+	// // Create new template
+	// var about_tpl = template.Must(template.ParseFiles("index.html"))
 
-	// Execute new template:
-	about_tpl.Execute(respWriter, nil)
-
-	// // Create template from parsed index.html:
-	// var tpl = template.Must(template.ParseFiles("index.html"))
-
-	// // respWriter.Write([]byte("<h1>Hello World!</h1>"))
-	// tpl.Execute(respWriter, nil)
+	// // Execute new template:
+	// about_tpl.Execute(respWriter, nil)
 }
 
 
@@ -47,7 +52,6 @@ func main(){
 	}{
 		address: "127.0.0.1",
 		port: "8080",
-
 	}
 
 	// Create the server/ multiplexer
@@ -59,7 +63,7 @@ func main(){
 	HTTPMux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 
 	// ** Tell the server which function to call to handle request to the root/index path
-	// HTTPMux.HandleFunc("/", indexHandler)
+	HTTPMux.HandleFunc("/", indexHandler)
 	HTTPMux.HandleFunc("/about", aboutHandler)
 
 	
