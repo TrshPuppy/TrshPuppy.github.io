@@ -1,68 +1,20 @@
-# TrshPuppy.github.io
+# TrshPuppy.io
 
 ## LIVE PREVIEW HERE: https://trshpuppy.github.io
 
-This website functions as both a project and professional portfolio. I hope for this to become an actual webpage for personal and professional use, but for now, I hope you enjoy!
+This is the new and improv(ing) TrshPuppy.io! All of the same retro-pixelart vibes you love, served now using dynamic Golang HTML manipulation!
 
-## Included projects with live previews:
+## New Content?
+Yes! My webdev days, though foundational, are over and I have more interesting projects in the works! Think Hacking & Cybersecurity!
 
-### Tic-Tac-Toe:
+## Goals:
+- Keep it simple, static files rule!
+- Use Golang & templating (because I can!)
+- Host `.md` files parsed into `.html` (ooh!)
+- Hacking walkthroughs and tutorials
 
-###### Made w/ Primarily HTML and CSS (w/ some JS).
+## This is a work in progress as always!
+Come enjoy the journey over on [Twitch](https://twitch.tv/trshpuppy)
 
-Original repository here: https://github.com/TrshPuppy/tic-tac-toe
-
-### Library App:
-
-###### Made primarily w/ JS.
-
-Original repo here: https://github.com/TrshPuppy/library
-
-### Admin Dashboard:
-
-###### Made w/ Primarily HTML and CSS (w/ some JS).
-
-Original repository here: https://github.com/TrshPuppy/admin-dashboard
-
-### Sign-Up Form:
-
-###### Javascript, CSS, HTML.
-
-Original repository here: https://github.com/TrshPuppy/sign-up-form
-
-### Calculator:
-
-###### Javascript, CSS, HTML.
-
-Original repository here: https://github.com/TrshPuppy/calculator
-
-### Etch-a-Sketch:
-
-###### Javascript, HTML, CSS.
-
-Original repository: https://github.com/TrshPuppy/etch-a-sketch
-
-### Rock-Paper-Scissors:
-
-###### Javascript, CSS, HTML.
-
-Original repository: https://github.com/TrshPuppy/rock-paper-scissors.
-
-### Landing Page:
-
-###### Javascript, CSS, HTML.
-
-See original project requirements/specifications from the Odin Project here: https://www.theodinproject.com/lessons/foundations-landing-page
-Original repository here: https://github.com/TrshPuppy/odin-landing-page
-
-#### All of the files/directories including pixelart and photos in this repository are my own and belong to me (except for the Twitter/GitHub/Youtube/etc. logos of course).
-
-Please respect the work I've put into this and the included pixelart. If you want to copy/paste/use anything please ask <3.
-
-##### Notes:
-
-run w/ `docker run -P` to publish all exposed ports. The server will be listening on a random port on localhost of the host
-
-OR
-
-run w/ `docker -p 8080:8080` to publish the exposed port to localhost:8080
+### P.S.
+All of the pixelart assets are made by me, including the background! Please respect the hours I put into making them and I hope you enjoy!
