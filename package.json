@@ -2,10 +2,10 @@
   "name": "trshpuppy.github.io",
   "module": "app.js",
   "type": "module",
+  "scripts": {
+    "start": "bun run app.js"
+  },
   "devDependencies": {
     "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
   }
 }
