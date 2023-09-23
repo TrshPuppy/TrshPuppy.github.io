@@ -1,0 +1,11 @@
+{
+  "name": "trshpuppy.github.io",
+  "module": "app.js",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

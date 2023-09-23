@@ -1,5 +1,7 @@
 # TP Custom:
 .git
+bun.lockb
+node_modules
 
 # Golang .gitignore template
 # If you prefer the allow list template instead of the deny list, see community template:
