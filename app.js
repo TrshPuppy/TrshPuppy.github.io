@@ -1,11 +1,19 @@
-// Logo on hover animation:
-const logo = document.getElementById("logo");
-console.log(logo);
+/* MAIN:
+ * Bun Quickstart reference: https://bun.sh/docs/quickstart
+ * Shodownjs reference:      https://showdownjs.com/docs/quickstart/
+ *
+ */
 
-logo.addEventListener("mouseenter", (e) => {
-  e.target.style = "transform:scale(1.1,1.1);";
-});
+// Create and run Bun HTTP server:
+const Server = {
+  port: 5500,
+  host: "0.0.0.0", // <-- change this for production, we're running in a VM...
+};
 
-logo.addEventListener("mouseleave", (e) => {
-  e.target.style = "transform:scale(1,1);";
+Bun.serve({
+  port: Server.port,
+  hostname: Server.host,
+  fetch(reqst) {
+    return new Response("BUN!");
+  },
 });
