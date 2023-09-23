@@ -4,6 +4,16 @@
  *
  */
 
+// PATH HANDLERS:
+/* Notes:
+ * Paths:
+ * - home
+ * - about
+ * - contact
+ * - writeups/ portfolio
+ *
+ */
+
 // Create and run Bun HTTP server:
 const Server = {
   port: 5500,
@@ -14,6 +24,6 @@ Bun.serve({
   port: Server.port,
   hostname: Server.host,
   fetch(reqst) {
-    return new Response("BUN!");
+    return new Response(Bun.file("index.html"));
   },
 });
