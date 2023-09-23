@@ -4,6 +4,9 @@
  *
  */
 import BunBridge from "./bun.js";
+import "./assets/stylesheet.css";
+
+// const stylesheet = "./assets/stylesheet.css";
 
 // PATH HANDLERS:
 /* Notes:
@@ -15,18 +18,18 @@ import BunBridge from "./bun.js";
  *
  */
 
-// // Create and run Bun HTTP server:
-// const Server = {
-//   port: 5500,
-//   host: "0.0.0.0", // <-- change this for production, we're running in a VM...
-// };
-
-// Bun.serve({
-//   port: Server.port,
-//   hostname: Server.host,
-//   fetch(reqst) {
-//     return new Response(Bun.file("index.html"));
+// Bundler:
+const entrypoints = ["./app.js", "./assets/stylesheet.css"];
+const outdir = "./out";
+// await Bun.build({
+//   entrypoints: entrypoints,
+//   outdir: outdir,
+//   naming: {
+//     asset: "[name].[ext]",
 //   },
 // });
 
+await BunBridge.bundle(entrypoints, outdir);
+
+// // Create and run Bun HTTP server:
 BunBridge.startServer();

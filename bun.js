@@ -1,3 +1,7 @@
+import html from "./out/index.html";
+// import { file } from "bun";
+const file = Bun.file;
+
 // Create and run Bun HTTP server:
 const Server = {
   port: 5500,
@@ -10,7 +14,16 @@ const BunBridge = {
       port: Server.port,
       hostname: Server.host,
       fetch(reqst) {
-        return new Response(Bun.file("index.html"));
+        return new Response(file(html));
+      },
+    });
+  },
+  bundle: async (ep, od) => {
+    await Bun.build({
+      entrypoints: ep,
+      outdir: od,
+      naming: {
+        asset: "[name].[ext]",
       },
     });
   },

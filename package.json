@@ -7,5 +7,11 @@
   },
   "devDependencies": {
     "bun-types": "latest"
+  },
+  "dependencies": {
+    "bun": "^1.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
