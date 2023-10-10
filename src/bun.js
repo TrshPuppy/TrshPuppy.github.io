@@ -1,11 +1,26 @@
-import html from "../out/index.html";
-// import { file } from "bun";
+import Renderer from "renderer.js";
 const file = Bun.file;
 
 // Create and run Bun HTTP server:
 const Server = {
   port: 5500,
   host: "0.0.0.0", // <-- change this for production, we're running in a VM...
+  getResponse: (URLpath) => {
+    switch (URLpath) {
+      case "/portfolio": {
+        return Server.endpoint.portfolio();
+      }
+      default: {
+        return Server.endpoint.root();
+      }
+    }
+  },
+
+  endpoint: {
+    portfolio: () => {
+      Renderer.renderPortfolio();
+    },
+  },
 };
 
 const BunBridge = {
@@ -14,7 +29,9 @@ const BunBridge = {
       port: Server.port,
       hostname: Server.host,
       fetch(reqst) {
-        return new Response(file(html));
+        return Server.GetResponse(reqst.url);
+        // console.log("REQUEST: " + reqst.url);
+        // return new Response(file(html));
       },
     });
   },

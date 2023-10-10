@@ -4,9 +4,6 @@
  *
  */
 import BunBridge from "./src/bun.js";
-import "./assets/stylesheet.css";
-
-// const stylesheet = "./assets/stylesheet.css";
 
 // PATH HANDLERS:
 /* Notes:
@@ -21,15 +18,7 @@ import "./assets/stylesheet.css";
 // Bundler:
 const entrypoints = ["./app.js"];
 const outdir = "out";
-// await Bun.build({
-//   entrypoints: entrypoints,
-//   outdir: outdir,
-//   naming: {
-//     asset: "[name].[ext]",
-//   },
-// });
-
 await BunBridge.bundle(entrypoints, outdir);
 
-// // Create and run Bun HTTP server:
+// Create and run Bun HTTP server:
 BunBridge.startServer();
