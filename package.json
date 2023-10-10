@@ -3,7 +3,8 @@
   "module": "app.js",
   "type": "module",
   "scripts": {
-    "start": "bun run app.js"
+    "start": "bun run app.js",
+    "build": "npx nakedjsx src --out out --pretty"
   },
   "devDependencies": {
     "bun-types": "latest"
