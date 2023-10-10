@@ -1,4 +1,4 @@
-import html from "./out/index.html";
+import html from "../out/index.html";
 // import { file } from "bun";
 const file = Bun.file;
 

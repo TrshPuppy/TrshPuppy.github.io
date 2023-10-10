@@ -3,7 +3,7 @@
  * Shodownjs reference:      https://showdownjs.com/docs/quickstart/
  *
  */
-import BunBridge from "./bun.js";
+import BunBridge from "./src/bun.js";
 import "./assets/stylesheet.css";
 
 // const stylesheet = "./assets/stylesheet.css";
@@ -20,7 +20,7 @@ import "./assets/stylesheet.css";
 
 // Bundler:
 const entrypoints = ["./app.js"];
-const outdir = "./out";
+const outdir = "out";
 // await Bun.build({
 //   entrypoints: entrypoints,
 //   outdir: outdir,
