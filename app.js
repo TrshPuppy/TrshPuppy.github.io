@@ -19,7 +19,7 @@ import "./assets/stylesheet.css";
  */
 
 // Bundler:
-const entrypoints = ["./app.js", "./assets/stylesheet.css"];
+const entrypoints = ["./app.js"];
 const outdir = "./out";
 // await Bun.build({
 //   entrypoints: entrypoints,
