@@ -1,4 +1,4 @@
-import Renderer from "renderer.js";
+// import Renderer from "./src/renderer.js";
 const file = Bun.file;
 
 // Create and run Bun HTTP server:
@@ -6,19 +6,39 @@ const Server = {
   port: 5500,
   host: "0.0.0.0", // <-- change this for production, we're running in a VM...
   getResponse: (URLpath) => {
-    switch (URLpath) {
-      case "/portfolio": {
-        return Server.endpoint.portfolio();
+    console.log("URL PATH: " + URLpath);
+    const splitPath = URLpath.split("/");
+    const fixedPath = splitPath[splitPath.length - 1];
+    console.log(fixedPath);
+
+    switch (fixedPath) {
+      case "portfolio": {
+        console.log("portfolio requested");
+        // return Server.endpoint.portfolio();
+        break;
+      }
+      case "about": {
+        console.log("about requested");
+        break;
+      }
+      case "contact": {
+        console.log("contact requested");
+        break;
+      }
+      case "home": {
+        console.log("home requested");
+        break;
       }
       default: {
-        return Server.endpoint.root();
+        console.log("default");
+        // return Server.endpoint.root();
       }
     }
   },
 
   endpoint: {
     portfolio: () => {
-      Renderer.renderPortfolio();
+      console.log("portfolio");
     },
   },
 };
@@ -29,7 +49,7 @@ const BunBridge = {
       port: Server.port,
       hostname: Server.host,
       fetch(reqst) {
-        return Server.GetResponse(reqst.url);
+        return Server.getResponse(reqst.url);
         // console.log("REQUEST: " + reqst.url);
         // return new Response(file(html));
       },
