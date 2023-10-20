@@ -10,7 +10,8 @@
     "bun-types": "latest"
   },
   "dependencies": {
-    "bun": "^1.0.3"
+    "bun": "^1.0.3",
+    "preact": "^10.18.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
