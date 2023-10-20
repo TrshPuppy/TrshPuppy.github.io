@@ -5,40 +5,54 @@ const file = Bun.file;
 const Server = {
   port: 5500,
   host: "0.0.0.0", // <-- change this for production, we're running in a VM...
-  getResponse: (URLpath) => {
-    console.log("URL PATH: " + URLpath);
-    const splitPath = URLpath.split("/");
-    const fixedPath = splitPath[splitPath.length - 1];
-    console.log(fixedPath);
+  getResponse: (rURL) => {
+    console.log("URL PATH: " + rURL.pathname);
+    // const splitPath = rURL.split("/");
+    // const fixedPath = splitPath[splitPath.length - 1];
+    // console.log(fixedPath);
 
-    switch (fixedPath) {
-      case "portfolio": {
+    switch (rURL.pathname) {
+      case "/portfolio": {
         console.log("portfolio requested");
-        // return Server.endpoint.portfolio();
+        Server.endpoint.portfolio();
         break;
       }
-      case "about": {
+      case "/about": {
         console.log("about requested");
+        return Server.endpoint.about();
         break;
       }
-      case "contact": {
+      case "/contact": {
         console.log("contact requested");
+        return Server.endpoint.contact();
         break;
       }
-      case "home": {
+      case "/": {
         console.log("home requested");
+        return Server.endpoint.root();
         break;
       }
       default: {
         console.log("default");
+        Server.endpoint.root();
+        throw new Error("Request for non-existent path");
         // return Server.endpoint.root();
       }
     }
   },
 
   endpoint: {
+    root: () => {
+      console.log("root");
+    },
     portfolio: () => {
       console.log("portfolio");
+    },
+    about: () => {
+      console.log("about");
+    },
+    contact: () => {
+      console.log("contact");
     },
   },
 };
@@ -46,12 +60,12 @@ const Server = {
 const BunBridge = {
   startServer: () => {
     Bun.serve({
+      development: true,
       port: Server.port,
       hostname: Server.host,
       fetch(reqst) {
-        return Server.getResponse(reqst.url);
-        // console.log("REQUEST: " + reqst.url);
-        // return new Response(file(html));
+        const requestedURL = new URL(reqst.url);
+        return Server.getResponse(requestedURL);
       },
     });
   },

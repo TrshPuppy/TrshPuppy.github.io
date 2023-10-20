@@ -5,16 +5,6 @@
  */
 import BunBridge from "./src/bun.js";
 
-// PATH HANDLERS:
-/* Notes:
- * Paths:
- * - home
- * - about
- * - contact
- * - writeups/ portfolio
- *
- */
-
 // Bundler:
 const entrypoints = ["./app.js"];
 const outdir = "out";
