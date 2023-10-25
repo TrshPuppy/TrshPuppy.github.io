@@ -1,18 +1,21 @@
 {
-  "name": "trshpuppy.github.io",
-  "module": "app.js",
+  "private": true,
   "type": "module",
   "scripts": {
-    "start": "bun run app.js",
-    "build": "npx nakedjsx src --out out --pretty"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "bun": "^1.0.3",
-    "preact": "^10.18.1"
+    "preact": "^10.13.1"
   },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.5.0",
+    "vite": "^4.3.2",
+    "bun-types": "latest"
+  },
+  "name": "trshpuppy.github.io",
+  "module": "index.ts",
   "peerDependencies": {
     "typescript": "^5.0.0"
   }

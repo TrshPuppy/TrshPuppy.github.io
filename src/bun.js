@@ -1,8 +1,3 @@
-// import Renderer from "./src/renderer.js";
-//import { jsx } from "react/jsx-runtime"
-import renderRoot from "./index-page";
-// import { h } from "preact";
-
 // Create and run Bun HTTP server:
 const Server = {
   port: 5500,
@@ -10,36 +5,36 @@ const Server = {
   getResponse: (rURL) => {
     console.log("URL PATH: " + rURL.pathname);
     return new Response(renderRoot());
-    // switch (rURL.pathname) {
-    //   case "/portfolio": {
-    //     console.log("portfolio requested");
-    //     Server.endpoint.portfolio();
-    //     break;
-    //   }
-    //   case "/about": {
-    //     console.log("about requested");
-    //     return Server.endpoint.about();
-    //     break;
-    //   }
-    //   case "/contact": {
-    //     console.log("contact requested");
-    //     return Server.endpoint.contact();
-    //     break;
-    //   }
-    //   case "/home": {
-    //     console.log("home requested");
-    //     return new Response(renderRoot());
-    //     // return Server.endpoint.root();
-    //     break;
-    //   }
-    //   // default: {
-    //   //   console.log("default");
-    //   //   return new Response(<div>TIDDIES</div>);
-    //   //   // Server.endpoint.root();
-    //   //   // throw new Error("Request for non-existent path");
-    //   //   // return Server.endpoint.root();
-    //   // }
-    // }
+    switch (rURL.pathname) {
+      case "/portfolio": {
+        console.log("portfolio requested");
+        Server.endpoint.portfolio();
+        break;
+      }
+      case "/about": {
+        console.log("about requested");
+        return Server.endpoint.about();
+        break;
+      }
+      case "/contact": {
+        console.log("contact requested");
+        return Server.endpoint.contact();
+        break;
+      }
+      case "/home": {
+        console.log("home requested");
+        return new Response(renderRoot());
+        // return Server.endpoint.root();
+        break;
+      }
+      // default: {
+      //   console.log("default");
+      //   return new Response(<div>TIDDIES</div>);
+      //   // Server.endpoint.root();
+      //   // throw new Error("Request for non-existent path");
+      //   // return Server.endpoint.root();
+      // }
+    }
   },
 
   endpoint: {
