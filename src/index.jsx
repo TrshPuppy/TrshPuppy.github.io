@@ -3,6 +3,7 @@ import { useEffect, useState } from 'preact/hooks';
 import DivThing from './portfolio';
 import Nav from './fragments/nav';
 import './style.css';
+import Portfolio from './portfolio';
 
 
 function App() {
@@ -10,15 +11,12 @@ function App() {
 		<div>
 			<Nav/>
 			<Content />
-			<DivThing
-			text="TIDDIES"
-			 />
 		</div>
 	);
 }
 
-export function Content(props){
-	const [endPoint, setEndpoint] =useState("index");
+export function Content(){
+	const [endPoint, setEndpoint] = useState("index");
 
 	const onURLChange = () => {
 		const currentURL = window.location.href.split("/")[3]
@@ -30,13 +28,16 @@ export function Content(props){
 		window.addEventListener("load", onURLChange);
 		return () => window.removeEventListener("load", onURLChange)
 	},[]);
-
+	console.log(`endpoint = ${endPoint}`)
 	switch(endPoint){
+		
 		case "portfolio":
+			console.log('switch portfolio')
 			return <div>
-				<p>Wlecom to the portfolio</p>
-			</div>
+				<Portfolio/>
+				</div>
 		default:
+			console.log('switch default')
 			return <div>
 				<p>this is the defualt</p>
 			</div>

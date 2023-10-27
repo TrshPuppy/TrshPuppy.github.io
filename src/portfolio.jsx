@@ -1,3 +1,3 @@
-export default function DivThing(props){
-    return <div>{props.text}</div>
+export default function Portfolio(){
+    return <div>Portfolio</div>
 }

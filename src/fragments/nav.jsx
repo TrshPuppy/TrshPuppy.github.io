@@ -30,7 +30,7 @@ export default function Nav(props){
                 </button>
             </a>
             <a
-            href="potfolio">
+            href="portfolio">
                 <button
                 type="button">
                    { "Portfolio" }
