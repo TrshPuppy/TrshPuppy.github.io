@@ -1,10 +1,11 @@
-import { render } from 'preact';
+import { render} from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import DivThing from './portfolio';
 import Nav from './fragments/nav';
 import './style.css';
 
 
-export function App() {
+function App() {
 	return (
 		<div>
 			<Nav/>
@@ -12,19 +13,25 @@ export function App() {
 			<DivThing
 			text="TIDDIES"
 			 />
-				
-			
 		</div>
 	);
 }
 
-function Content(props){
-	// Get current URL from window:
-	const currentEndpoint = window.location.href;
-	console.log(currentEndpoint.split("/")[3])
-	
-	// Make decisions regarding content to serve based on endpoint:
-	switch(currentEndpoint.split("/")[3]){
+export function Content(props){
+	const [endPoint, setEndpoint] =useState("index");
+
+	const onURLChange = () => {
+		const currentURL = window.location.href.split("/")[3]
+		setEndpoint(currentURL);
+		return;
+	}
+
+	useEffect(() =>{
+		window.addEventListener("load", onURLChange);
+		return () => window.removeEventListener("load", onURLChange)
+	},[]);
+
+	switch(endPoint){
 		case "portfolio":
 			return <div>
 				<p>Wlecom to the portfolio</p>
@@ -36,8 +43,10 @@ function Content(props){
 	}
 }
 
-
 render(<App />, document.getElementById('app'));
+
+
+
 /*
 BASIC HTML STRUCTURE:
 	Nav bar  <----always the same
