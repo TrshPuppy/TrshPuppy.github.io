@@ -1,8 +1,7 @@
 import { render} from 'preact';
 import { useEffect, useState } from 'preact/hooks';
-import DivThing from './portfolio';
 import Nav from './fragments/nav';
-import './style.css';
+import './assets/style.css';
 import Portfolio from './portfolio';
 
 
@@ -33,9 +32,8 @@ export function Content(){
 		
 		case "portfolio":
 			console.log('switch portfolio')
-			return <div>
-				<Portfolio/>
-				</div>
+			return <Portfolio/>
+				
 		default:
 			console.log('switch default')
 			return <div>
