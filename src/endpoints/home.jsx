@@ -11,7 +11,7 @@ export default function Home() {
             {
               type: "p",
               attrs: undefined,
-              text: "This is the home for all things Trash Puppy! Be curious and take a look around!",
+              text: "We are currently under construction!",
               child: undefined,
             },
             {
