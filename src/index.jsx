@@ -10,8 +10,12 @@ import Contact from "./endpoints/contact";
 function App() {
   return (
     <div>
-      <Nav />
-      <Content />
+      <div className="nav-container">
+        <Nav />
+      </div>
+      <div className="contentContainer">
+        <Content />
+      </div>
     </div>
   );
 }

@@ -6,34 +6,45 @@ body
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    background-image: url(./img/backdrop.gif);
-    background-position-y: 60%;
-    background-size: 70%;
-    background-attachment: fixed;
+    width: 100vw;
+    margin:0;
+    padding:0;
+    background-color:#E68CC6;
+    /* /* background-position-y: 60%;
+    background-size: 70%; */
+    /* background-attachment: fixed;
     margin: 40px;
     padding: 0;
-    z-index: 1;
+    z-index: 1; */
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.nav-container{
+  display:flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  background-color: #10474b;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 nav
 {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: center;
-    width: 70vw;
-    background-color: #10474b;
+    justify-content: space-evenly;
+    width:60vw;
+    padding:5px;
     padding-top: 20px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
-.logo
-{
-    align-self: flex-start;
-}
+/* .logo{
+  padding-right:50px;
+  padding-left:50px;
+} */
 #logo-pic
 {
     max-width: 200px;
@@ -47,84 +58,72 @@ nav
     box-shadow: 6px 6px #43E0C6;
     transform: translatey(-5%);
 }
-.menu
+menu
 {
     display:flex;
     flex-flow:row wrap;
-    align-items: flex-end;
-    justify-content: space-around;
-    width:40%;
-    padding:20px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+}
+menu > a{
+  padding:5px 50px;
 }
 button
 {
     font-family: 'Trispace', monospace;
     font-size: medium;
     color:white;
-    padding:5px;
+    padding:10px;
+    margin:5px;
     border: 2px solid #E68CC6;
     cursor:pointer;
     background-color: transparent;
     box-shadow: 2px 2px #43E0C6;
     border-radius: 2px;;
 }
+
 button:hover
 {
     box-shadow: 5px 5px #43E0C6;
     transform: translatey(-5%);
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.section1
-{
-    display:flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    background-color:#10474B;
-    width:70vw;
-    margin-bottom: 20px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
 .welcome
 {
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
-    width:30%;
-    color:#EEDD99;
-    font-family: 'Press Start 2P', monospace;
+  display:flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  background-color:#10474B;
+  width:90vw;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-family: "Press Start 2P";
 }
-.welcome h3
-{
-    font-family: 'Trispace', Courier;
-    color:#43E0C6;
-    padding-right: 50px;
+.welcome p{
+  font-family: 'Trispace', Courier;
+  color:#43E0C6;
 }
-.welcome a
-{
-    align-self:flex-start;
-}
-.pic
-{
-    width: 28%;
-    position:relative;
-    z-index: 0;
+.section-row{
+  display:flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color:#10474B;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .welcome-pic
 {
-    margin:20px;
     width:100%;
-    margin-bottom: 0;
     transform: translateY(1%);
-}
-.welcome-btn 
-{
-    margin-bottom: 0.5em;
+    background-color: transparent;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.section2
+/* .section2
 {
     display:flex;
     flex-flow: column nowrap;
@@ -173,9 +172,9 @@ button:hover
     max-width: 50%;
     padding-top:10px;
     padding-bottom:20px;
-}
+} */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.section3
+/* .section3
 {
     display:flex;
     flex-flow: column nowrap;
@@ -202,9 +201,9 @@ button:hover
    font-size: 1.5rem;
    align-self: flex-end;
    padding-inline: 100px;
-}
+} */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.section4
+/* .section4
 {
     display:flex;
     flex-flow: column nowrap;
@@ -245,8 +244,8 @@ button:hover
 {
     font-family: 'Press Start 2P';
     color:#EEDD99;
-    flex-shrink: 1;
-}
+    flex-shrink: 1; */
+/* }
 .context
 {
     flex-shrink: 1;
@@ -261,9 +260,9 @@ button:hover
   grid-template-rows: 50% 50%;
   text-align: center;
   color: #eedd99;
-}
+} */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-footer
+/* footer
 {
     background-color:#351D61;
     margin: 20px;
@@ -278,12 +277,12 @@ footer a
 {
     color:#E68CC6;
     padding:10px;
-}
+} */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) { */
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    h1,
+    /* h1,
     h3,
     p 
     {
@@ -316,11 +315,11 @@ footer a
     #logo-pic 
     {
       max-width: 150px;
-    }
+    } */
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    .section1 
+    /* .section1 
     {
       display: grid;
       grid-template-columns: 1fr;
@@ -353,11 +352,11 @@ footer a
       display: grid;
       align-items: center;
       justify-content: center;
-    }
+    } */
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    .linkbox-container 
+    /* .linkbox-container 
     {
       flex-direction: column;
     }
@@ -385,13 +384,9 @@ footer a
       grid-row: 2 / 3;
       display: grid;
     }
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-}
+
+} */
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-@media only screen and (max-width: 350px) {
-    nav 
-    {
-      display: flex;
-    }
-}
+/* 
+ */
