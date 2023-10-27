@@ -1,50 +1,50 @@
-import { render} from 'preact';
-import { useEffect, useState } from 'preact/hooks';
-import Nav from './fragments/nav';
-import './assets/style.css';
-import Portfolio from './portfolio';
-
+import { render } from "preact";
+import { useEffect, useState } from "preact/hooks";
+import Nav from "./fragments/nav";
+import "./assets/style.css";
+import Home from "./endpoints/home";
+import About from "./endpoints/about";
+import Portfolio from "./endpoints/portfolio";
+import Contact from "./endpoints/contact";
 
 function App() {
-	return (
-		<div>
-			<Nav/>
-			<Content />
-		</div>
-	);
+  return (
+    <div>
+      <Nav />
+      <Content />
+    </div>
+  );
 }
 
-export function Content(){
-	const [endPoint, setEndpoint] = useState("index");
+function Content() {
+  const [endPoint, setEndpoint] = useState("index");
 
-	const onURLChange = () => {
-		const currentURL = window.location.href.split("/")[3]
-		setEndpoint(currentURL);
-		return;
-	}
+  const onURLChange = () => {
+    const currentURL = window.location.href.split("/")[3];
+    setEndpoint(currentURL);
+    return;
+  };
 
-	useEffect(() =>{
-		window.addEventListener("load", onURLChange);
-		return () => window.removeEventListener("load", onURLChange)
-	},[]);
-	console.log(`endpoint = ${endPoint}`)
-	switch(endPoint){
-		
-		case "portfolio":
-			console.log('switch portfolio')
-			return <Portfolio/>
-				
-		default:
-			console.log('switch default')
-			return <div>
-				<p>this is the defualt</p>
-			</div>
-	}
+  useEffect(() => {
+    window.addEventListener("load", onURLChange);
+    return () => window.removeEventListener("load", onURLChange);
+  }, []);
+
+  switch (endPoint) {
+    case "index":
+      return <Home />;
+    case "portfolio":
+      return <Portfolio />;
+    case "about":
+      return <About />;
+    case "contact":
+      return <Contact />;
+    default:
+      return <Home />;
+  }
 }
 
-render(<App />, document.getElementById('app'));
-
-
+render(<App />, document.getElementById("app"));
 
 /*
 BASIC HTML STRUCTURE:
