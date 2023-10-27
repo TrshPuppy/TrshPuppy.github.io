@@ -3,43 +3,58 @@ import DivThing from './portfolio';
 import Nav from './fragments/nav';
 import './style.css';
 
+
 export function App() {
 	return (
 		<div>
 			<Nav/>
-			<h1>Get Started building Vite-powered Preact Apps </h1>
-			<section>
+			<Content />
 			<DivThing
 			text="TIDDIES"
 			 />
-				<Resource
-					title="Learn Preact"
-					description="If you're new to Preact, try the interactive tutorial to learn important concepts"
-					href="https://preactjs.com/tutorial"
-				/>
-				<Resource
-					title="Differences to React"
-					description="If you're coming from React, you may want to check out our docs to see where Preact differs"
-					href="https://preactjs.com/guide/v10/differences-to-react"
-				/>
-				<Resource
-					title="Learn Vite"
-					description="To learn more about Vite and how you can customize it to fit your needs, take a look at their excellent documentation"
-					href="https://vitejs.dev"
-				/>
-			</section>
+				
+			
 		</div>
 	);
 }
 
-function Resource(props) {
-	return (
-		<a href={props.href} target="_blank" class="resource">
-			<h2>{props.title}</h2>
-			<p>{props.description}</p>
-		</a>
-	);
+function Content(props){
+	// Get current URL from window:
+	const currentEndpoint = window.location.href;
+	console.log(currentEndpoint.split("/")[3])
+	
+	// Make decisions regarding content to serve based on endpoint:
+	switch(currentEndpoint.split("/")[3]){
+		case "portfolio":
+			return <div>
+				<p>Wlecom to the portfolio</p>
+			</div>
+		default:
+			return <div>
+				<p>this is the defualt</p>
+			</div>
+	}
 }
 
-render(<DivThing />, document.getElementById('app'));
+
 render(<App />, document.getElementById('app'));
+/*
+BASIC HTML STRUCTURE:
+	Nav bar  <----always the same
+		logo
+		about
+		home
+	Section <---- different but mostly the same (image + description p)
+	Section <------ differs
+		About:
+			description
+			link bar
+		Contact
+			grid of contact buttons w/ images
+		Portfolio
+			list of writeups
+	...
+	Footer
+
+
+*/
