@@ -1,7 +1,6 @@
 # TP Custom:
 # public
-bun.lockb
-package-lock.json
+
 .vite
 # src/endpoints/markdown/md-parser.js
 
