@@ -1,6 +1,6 @@
 # TP Custom:
 # public
-
+package-lock.json
 .vite
 # src/endpoints/markdown/md-parser.js
 
@@ -14,7 +14,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-# dist
+dist
 dist-ssr
 *.local
 
