@@ -12,14 +12,14 @@ export default function Nav(props) {
         </a>
       </div>
       <menu>
+        <a href="portfolio">
+          <button type="button">{"Portfolio"}</button>
+        </a>
         <a href="about">
           <button type="button">{"About"}</button>
         </a>
         <a href="contact">
           <button type="button">{"Contact"}</button>
-        </a>
-        <a href="portfolio">
-          <button type="button">{"Portfolio"}</button>
         </a>
       </menu>
     </nav>
