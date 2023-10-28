@@ -1,5 +1,11 @@
+import WriteUps from "./writeups";
+
 export default function Portfolio() {
-  return <div>Portfolio</div>;
+  return (
+    <>
+      <WriteUps></WriteUps>
+    </>
+  );
 }
 /*
 LAYOUT:
