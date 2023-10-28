@@ -5,6 +5,7 @@ import "./assets/style.css";
 import Home from "./endpoints/home";
 import About from "./endpoints/about";
 import Portfolio from "./endpoints/portfolio";
+import WriteUps from "./endpoints/writeups";
 import Contact from "./endpoints/contact";
 
 function App() {
@@ -43,6 +44,8 @@ function Content() {
       return <About />;
     case "contact":
       return <Contact />;
+    case "writeups":
+      return <WriteUps></WriteUps>;
     default:
       return <Home />;
   }

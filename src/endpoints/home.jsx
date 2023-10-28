@@ -60,7 +60,7 @@ export default function Home() {
               },
               {
                 type: "a",
-                attrs: { href: "portfolio" },
+                attrs: { href: "writeups" },
                 text: undefined,
                 child: (
                   <button type="button">
