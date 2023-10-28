@@ -7,9 +7,17 @@ export default function Section(props) {
   // Build array of child elements:
   const chillinsArr = [];
   for (let c of chillins) {
-    let chilEle = createElement(c.type, c.attrs, c.text || c.child);
-    chillinsArr.push(chilEle);
+    if (c.type == "section") {
+      chillinsArr.push(c.element);
+    } else {
+      let chilEle = createElement(c.type, c.attrs, c.text || c.child);
+      chillinsArr.push(chilEle);
+    }
   }
 
-  return <div className={`section-${orientation}`}>{chillinsArr}</div>;
+  return (
+    <div className={`section-${orientation} section-${props.tag}`}>
+      {chillinsArr}
+    </div>
+  );
 }
