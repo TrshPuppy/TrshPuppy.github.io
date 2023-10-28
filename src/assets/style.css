@@ -105,15 +105,23 @@ button:hover
   border-bottom-right-radius: 5px;
   font-family: "Press Start 2P";
 }
+.welcome h1 {
+  color:#EEDD99;
+}
 .welcome p{
   font-family: 'Trispace', Courier;
   color:#43E0C6;
+}
+ .writeups{
+  background-color:#050429;
+
 }
 .section-row{
   display:flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
 }
 .section-column{
   display:flex;
@@ -124,9 +132,15 @@ button:hover
 }
 .welcome-pic
 {
-    width:100%;
+    width:200px;
     transform: translateY(1%);
     background-color: transparent;
+}
+.section-p{
+  width:50%;
+}
+.context-container{
+  width: 70vw;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .linkbox{
@@ -155,16 +169,19 @@ button:hover
   display:flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width:100%;
   background-color:#A84887;
  border-radius: 5px;
 }
-.linkbox-btn{
-  width: 10vw;
-}
+
 .linkbox button{
   background-color: #10474B;
+}
+.section-writeup-btn button{
+  display:flex;
+  background-color: #050429;
+
 }
 
 

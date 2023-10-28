@@ -7,6 +7,7 @@ export default function convertThis(md) {
   const converter = new showdown.Converter();
   const html = converter.makeHtml(md);
 }
+
 // export default function parseThis(md) {
 //   // Create a trie of tokens, leaf nodes are functions
 //   const tokenTrie = {};

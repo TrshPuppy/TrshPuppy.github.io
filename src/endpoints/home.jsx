@@ -3,7 +3,7 @@ import Section from "../fragments/section";
 export default function Home() {
   return (
     <>
-      <div className="welcome">
+      <div className="welcome home">
         <h1>Welcome to my Trash Heap!</h1>
         <Section
           tag="welcome"
