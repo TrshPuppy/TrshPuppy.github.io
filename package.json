@@ -22,7 +22,7 @@
     "vite": "^4.3.2"
   },
   "name": "trshpuppy.github.io",
-  "module": "./src/index.jsx",
+  "module": "index.html",
   "peerDependencies": {
     "typescript": "^5.0.0"
   }
