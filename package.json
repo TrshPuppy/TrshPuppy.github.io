@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "preact": "^10.13.1",
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "@preact/preset-vite": "^2.5.0",
+    "bun-types": "latest",
+    "gh-pages": "^6.0.0",
+    "vite": "^4.3.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
@@ -19,7 +23,7 @@
     "vite": "^4.3.2"
   },
   "name": "trshpuppy.github.io",
-  "module": "index.ts",
+  "module": "./src/index.jsx",
   "peerDependencies": {
     "typescript": "^5.0.0"
   }

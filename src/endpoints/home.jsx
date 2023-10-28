@@ -19,7 +19,7 @@ export default function Home() {
               type: "img",
               attrs: {
                 class: "welcome-pic",
-                src: "./src/assets/trash-puppy.gif",
+                src: "./trash-puppy.gif",
                 alt: "Trash Puppy Gif",
               },
               text: undefined,
@@ -66,7 +66,7 @@ export default function Home() {
                   <button type="button">
                     <img
                       id="tp-happy"
-                      src="./src/assets/tp-happy.png"
+                      src="./tp-happy.png"
                       alt="Trash Puppy Happy"
                     ></img>
                   </button>
@@ -92,7 +92,7 @@ export default function Home() {
                   <button type="button">
                     <img
                       id="tp-happy"
-                      src="./src/assets/tp-happy.png"
+                      src="./tp-happy.png"
                       alt="Trash Puppy Happy"
                     ></img>
                   </button>
@@ -118,7 +118,7 @@ export default function Home() {
                   <button type="button">
                     <img
                       id="tp-happy"
-                      src="./src/assets/tp-happy.png"
+                      src="./tp-happy.png"
                       alt="Trash Puppy Happy"
                     ></img>
                   </button>
@@ -144,7 +144,7 @@ export default function Home() {
                   <button type="button">
                     <img
                       id="tp-happy"
-                      src="./src/assets/tp-happy.png"
+                      src="./tp-happy.png"
                       alt="Trash Puppy Happy"
                     ></img>
                   </button>

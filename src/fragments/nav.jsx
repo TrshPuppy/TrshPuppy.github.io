@@ -5,7 +5,7 @@ export default function Nav(props) {
         <a href="index">
           <img
             id="logo-pic"
-            src="./src/assets/logo.png"
+            src="./logo.png"
             alt="TrshPuppy logo"
             style="image-rendering: pixelated"
           ></img>
