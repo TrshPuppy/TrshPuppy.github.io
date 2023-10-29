@@ -1,8 +1,8 @@
 export default function Nav(props) {
   return (
     <nav>
-      <div class="logo">
-        <a href="index">
+      <div id="home-btn" class="logo">
+        <a href="/">
           <img
             id="logo-pic"
             src="./logo.png"
@@ -12,14 +12,20 @@ export default function Nav(props) {
         </a>
       </div>
       <menu>
-        <a href="portfolio">
-          <button type="button">{"Portfolio"}</button>
+        <a href="">
+          <button id="portfolio-btn" type="button">
+            {"Portfolio"}
+          </button>
         </a>
-        <a href="about">
-          <button type="button">{"About"}</button>
+        <a href="">
+          <button id="about-btn" type="button">
+            {"About"}
+          </button>
         </a>
-        <a href="contact">
-          <button type="button">{"Contact"}</button>
+        <a href="">
+          <button id="contact-btn" type="button">
+            {"Contact"}
+          </button>
         </a>
       </menu>
     </nav>

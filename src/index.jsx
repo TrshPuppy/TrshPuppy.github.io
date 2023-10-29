@@ -22,21 +22,44 @@ function App() {
 }
 
 function Content() {
-  const [endPoint, setEndpoint] = useState("index");
+  const [endPoint, setEndpoint] = useState("home");
+  const navButtons = [
+    document.getElementById("portfolio-btn"),
+    document.getElementById("home-btn"),
+    document.getElementById("contact-btn"),
+    document.getElementById("about-btn"),
+  ];
 
-  const onURLChange = () => {
-    const currentURL = window.location.href.split("/")[3];
-    setEndpoint(currentURL);
+  const onURLChange = (e, setEndpoint) => {
+    switch (e.target.id) {
+      case "portfolio-btn":
+        setEndpoint("portfolio");
+        break;
+      case "home-btn":
+        setEndpoint("home");
+        break;
+      case "contact-btn":
+        setEndpoint("conmtact");
+        break;
+      case "about-btn":
+        setEndpoint("about");
+        break;
+      default:
+        setEndpoint("home");
+        break;
+    }
     return;
   };
 
   useEffect(() => {
-    window.addEventListener("load", onURLChange);
-    return () => window.removeEventListener("load", onURLChange);
-  }, []);
+    const butt = document.getElementById("portfolio-btn");
+    butt.addEventListener("click", onURLChange);
+
+    return butt;
+  }, [setEndpoint]);
 
   switch (endPoint) {
-    case "index":
+    case "home":
       return <Home />;
     case "portfolio":
       return <Portfolio />;
@@ -45,12 +68,11 @@ function Content() {
     case "contact":
       return <Contact />;
     case "writeups":
-      return <WriteUps></WriteUps>;
+      return <WriteUps />;
     default:
       return <Home />;
   }
 }
-
 render(<App />, document.getElementById("app"));
 
 /*
