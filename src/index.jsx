@@ -22,7 +22,8 @@ function App() {
 }
 
 function Content() {
-  const [endPoint, setEndpoint] = useState("home");
+  const [endPoint, setEndpoint] = useState(<Home />);
+  // Create list of buttons for endpoints (in nav bar):
   const navButtons = [
     document.getElementById("portfolio-btn"),
     document.getElementById("home-btn"),
@@ -30,49 +31,33 @@ function Content() {
     document.getElementById("about-btn"),
   ];
 
-  const onURLChange = (e, setEndpoint) => {
-    switch (e.target.id) {
-      case "portfolio-btn":
-        setEndpoint("portfolio");
-        break;
-      case "home-btn":
-        setEndpoint("home");
-        break;
-      case "contact-btn":
-        setEndpoint("conmtact");
-        break;
-      case "about-btn":
-        setEndpoint("about");
-        break;
-      default:
-        setEndpoint("home");
-        break;
-    }
-    return;
-  };
+  // Add click event to buttons which chases the state for <Content />:
+  for (let butt of navButtons) {
+    butt.addEventListener("click", (e) => {
+      e.preventDefault();
 
-  useEffect(() => {
-    const butt = document.getElementById("portfolio-btn");
-    butt.addEventListener("click", onURLChange);
-
-    return butt;
-  }, [setEndpoint]);
-
-  switch (endPoint) {
-    case "home":
-      return <Home />;
-    case "portfolio":
-      return <Portfolio />;
-    case "about":
-      return <About />;
-    case "contact":
-      return <Contact />;
-    case "writeups":
-      return <WriteUps />;
-    default:
-      return <Home />;
+      console.log(`e.target.id = ${e.target.id}`);
+      switch (e.target.id) {
+        case "portfolio-btn":
+          setEndpoint(<Portfolio />);
+          break;
+        case "about-btn":
+          setEndpoint(<About />);
+          break;
+        case "contact-btn":
+          setEndpoint(<Contact />);
+          break;
+        case "home-btn":
+          setEndpoint(<Home />);
+          break;
+        default:
+          setEndpoint(<Home />);
+      }
+    });
   }
+  return endPoint;
 }
+
 render(<App />, document.getElementById("app"));
 
 /*
