@@ -36,8 +36,7 @@ function Content() {
     butt.addEventListener("click", (e) => {
       e.preventDefault();
 
-      console.log(`e.target.id = ${e.target.id}`);
-      switch (e.target.id) {
+      switch (e.target["id"]) {
         case "portfolio-btn":
           setEndpoint(<Portfolio />);
           break;
