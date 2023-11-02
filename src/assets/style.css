@@ -46,7 +46,7 @@ nav
   padding-right:50px;
   padding-left:50px;
 } */
-#logo-pic
+#home-btn
 {
     max-width: 150px;
     border-color: #050429;
@@ -54,7 +54,7 @@ nav
     box-shadow: 2px 2px #43E0C6;
     border:2px solid #E68CC6;
 }
-#logo-pic:hover
+#home-btn:hover
 {
     box-shadow: 6px 6px #43E0C6;
     transform: translatey(-5%);

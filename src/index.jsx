@@ -24,36 +24,79 @@ function App() {
 function Content() {
   const [endPoint, setEndpoint] = useState(<Home />);
   // Create list of buttons for endpoints (in nav bar):
-  const navButtons = [
-    document.getElementById("portfolio-btn"),
-    document.getElementById("home-btn"),
-    document.getElementById("contact-btn"),
-    document.getElementById("about-btn"),
-  ];
+  // const navButtons = [
+  //   document.getElementById("portfolio-btn"),
+  //   document.getElementById("home-btn"),
+  //   document.getElementById("contact-btn"),
+  //   document.getElementById("about-btn"),
+  // ];
 
   // Add click event to buttons which chases the state for <Content />:
-  for (let butt of navButtons) {
-    butt.addEventListener("click", (e) => {
-      e.preventDefault();
+  // for (let butt of navButtons) {
+  //   if (butt == null) {
+  //     continue;
+  //   }
+  //   butt.addEventListener("click", (e) => {
+  //     handleEndpointClick(e);
+  //     // e.preventDefault();
+  //     // console.log("click from index.tsx");
+  //     // switch (e.target["id"]) {
+  //     //   case "portfolio-btn":
+  //     //     setEndpoint(<Portfolio />);
+  //     //     break;
+  //     //   case "about-btn":
+  //     //     setEndpoint(<About />);
+  //     //     break;
+  //     //   case "contact-btn":
+  //     //     setEndpoint(<Contact />);
+  //     //     break;
+  //     //   case "home-btn":
+  //     //     setEndpoint(<Home />);
+  //     //     break;
+  //     //   default:
+  //     //     setEndpoint(<Home />);
+  //     // }
+  //   });
+  // }
 
-      switch (e.target["id"]) {
-        case "portfolio-btn":
-          setEndpoint(<Portfolio />);
-          break;
-        case "about-btn":
-          setEndpoint(<About />);
-          break;
-        case "contact-btn":
-          setEndpoint(<Contact />);
-          break;
-        case "home-btn":
-          setEndpoint(<Home />);
-          break;
-        default:
-          setEndpoint(<Home />);
-      }
-    });
+  useEffect(() => {
+    const contactBtn = document.getElementById("contact-btn");
+    contactBtn.addEventListener("click", handleEndpointClick);
+
+    const aboutBtn = document.getElementById("about-btn");
+    aboutBtn.addEventListener("click", handleEndpointClick);
+
+    const portfolioBtn = document.getElementById("portfolio-btn");
+    portfolioBtn.addEventListener("click", handleEndpointClick);
+
+    const homeBtn = document.getElementById("home-btn");
+    homeBtn.addEventListener("click", handleEndpointClick);
+  }, []);
+
+  function handleEndpointClick(e) {
+    e.preventDefault();
+    console.log("click from index.tsx" + `target = ${e.target["id"]}`);
+
+    switch (e.target["id"]) {
+      case "portfolio-btn":
+        setEndpoint(<Portfolio />);
+        break;
+      case "about-btn":
+        setEndpoint(<About />);
+        break;
+      case "contact-btn":
+        setEndpoint(<Contact />);
+        break;
+      case "home-btn":
+        setEndpoint(<Home />);
+        break;
+      default:
+        // setEndpoint(<Home />);
+        break;
+    }
+    return document.removeEventListener("click", handleEndpointClick);
   }
+
   return endPoint;
 }
 

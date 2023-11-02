@@ -1,10 +1,10 @@
 export default function Nav(props) {
   return (
     <nav>
-      <div id="home-btn" class="logo">
-        <a>
+      <div class="logo">
+        <a id="home-btn">
           <img
-            id="logo-pic"
+            id="home-btn"
             src="./logo.png"
             alt="TrshPuppy logo"
             style="image-rendering: pixelated"
