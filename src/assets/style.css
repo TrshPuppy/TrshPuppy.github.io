@@ -9,7 +9,7 @@ body
     width: 100vw;
     margin:0;
     padding:0;
-    background-color:#E68CC6;
+    background-color:#050429;
     text-align:center;
     /* /* background-position-y: 60%;
     background-size: 70%; */
@@ -20,6 +20,15 @@ body
 }
 .hidden {
   display:none;
+}
+h1{
+  font-family: 'Press Start 2P';
+}
+h2{
+  font-family: 'Trispace';
+}
+p{
+  font-family: 'Inconsolata';
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .nav-container{
