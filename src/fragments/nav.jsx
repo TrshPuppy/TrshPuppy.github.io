@@ -2,9 +2,9 @@ export default function Nav(props) {
   return (
     <nav>
       <div class="logo">
-        <a href="index">
+        <a id="home-btn">
           <img
-            id="logo-pic"
+            id="home-btn"
             src="./logo.png"
             alt="TrshPuppy logo"
             style="image-rendering: pixelated"
@@ -12,14 +12,20 @@ export default function Nav(props) {
         </a>
       </div>
       <menu>
-        <a href="portfolio">
-          <button type="button">{"Portfolio"}</button>
+        <a>
+          <button id="portfolio-btn" type="button">
+            {"Portfolio"}
+          </button>
         </a>
-        <a href="about">
-          <button type="button">{"About"}</button>
+        <a>
+          <button id="about-btn" type="button">
+            {"About"}
+          </button>
         </a>
-        <a href="contact">
-          <button type="button">{"Contact"}</button>
+        <a>
+          <button id="contact-btn" type="button">
+            {"Contact"}
+          </button>
         </a>
       </menu>
     </nav>

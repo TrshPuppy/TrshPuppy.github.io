@@ -5,7 +5,6 @@ import "./assets/style.css";
 import Home from "./endpoints/home";
 import About from "./endpoints/about";
 import Portfolio from "./endpoints/portfolio";
-import WriteUps from "./endpoints/writeups";
 import Contact from "./endpoints/contact";
 
 function App() {
@@ -22,33 +21,47 @@ function App() {
 }
 
 function Content() {
-  const [endPoint, setEndpoint] = useState("index");
-
-  const onURLChange = () => {
-    const currentURL = window.location.href.split("/")[3];
-    setEndpoint(currentURL);
-    return;
-  };
+  const [endPoint, setEndpoint] = useState(<Home />);
 
   useEffect(() => {
-    window.addEventListener("load", onURLChange);
-    return () => window.removeEventListener("load", onURLChange);
+    const contactBtn = document.getElementById("contact-btn");
+    contactBtn.addEventListener("click", handleEndpointClick);
+
+    const aboutBtn = document.getElementById("about-btn");
+    aboutBtn.addEventListener("click", handleEndpointClick);
+
+    const portfolioBtn = document.getElementById("portfolio-btn");
+    portfolioBtn.addEventListener("click", handleEndpointClick);
+
+    const homeBtn = document.getElementById("home-btn");
+    homeBtn.addEventListener("click", handleEndpointClick);
   }, []);
 
-  switch (endPoint) {
-    case "index":
-      return <Home />;
-    case "portfolio":
-      return <Portfolio />;
-    case "about":
-      return <About />;
-    case "contact":
-      return <Contact />;
-    case "writeups":
-      return <WriteUps></WriteUps>;
-    default:
-      return <Home />;
+  function handleEndpointClick(e) {
+    e.preventDefault();
+    console.log("click from index.tsx" + `target = ${e.target["id"]}`);
+
+    switch (e.target["id"]) {
+      case "portfolio-btn":
+        setEndpoint(<Portfolio />);
+        break;
+      case "about-btn":
+        setEndpoint(<About />);
+        break;
+      case "contact-btn":
+        setEndpoint(<Contact />);
+        break;
+      case "home-btn":
+        setEndpoint(<Home />);
+        break;
+      default:
+        // setEndpoint(<Home />);
+        break;
+    }
+    return document.removeEventListener("click", handleEndpointClick);
   }
+
+  return endPoint;
 }
 
 render(<App />, document.getElementById("app"));
