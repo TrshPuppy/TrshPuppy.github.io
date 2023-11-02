@@ -1,21 +1,17 @@
 import WriteUps from "./writeups";
 import { useEffect, useState } from "preact/hooks";
 import Section from "../fragments/section";
-import NavBanner from "../fragments/navbanner";
 
 export default function Portfolio() {
   return (
     <>
       <Nav />
-      {/* <Banner />
-      <Content /> */}
     </>
   );
 }
 
 function Nav() {
   const [currentDir, setCurrentDir] = useState("portfolio");
-  console.log("re render nav" + `currentdir is set to ${currentDir}`);
 
   useEffect(() => {
     document.addEventListener("click", cd);
@@ -56,171 +52,70 @@ function Nav() {
         <button id={currentDir == "portfolio" ? "writeups-dir" : "parent-dir"}>
           {currentDir == "portfolio" ? "Writeups" : "Back"}
         </button>
-        {/* <button id="coding-dir">Coding</button> */}
+        <button
+          id="coding-dir"
+          className={currentDir == "portfolio" ? "" : "hidden"}
+        >
+          {currentDir == "portfolio" ? "Coding" : ""}
+        </button>
       </div>
+      <Content currentDir={currentDir} />
     </>
   );
 }
 
-function Banner() {
-  // Create state variable:
-  const [banner, setBanner] = useState(<DefaultBanner />);
-
-  // Get list of buttonns to changes state and content:
-  const subsectionBtns = [
-    document.getElementById("writeups-btn"),
-    document.getElementById("coding-btn"),
-    document.getElementById("back-btn"),
-  ];
-
-  for (let butt of subsectionBtns) {
-    if (butt === null) {
-      setBanner(<DefaultBanner />);
-      break;
-    }
-    butt.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      if (e.target["id"] == "back-btn") {
-        setBanner(<DefaultBanner />);
-      } else {
-        setBanner(<NavBanner />);
-      }
-    });
-  }
-
-  return banner;
-}
-
-function Content() {
+function Content(props) {
   const [content, setContent] = useState(<DefaultContent />);
 
-  // Get list of buttonns to changes state and content:
-  const subsectionBtns = [
-    document.getElementById("writeups-btn"),
-    document.getElementById("coding-btn"),
-    document.getElementById("back-btn"),
-  ];
-
-  for (let butt of subsectionBtns) {
-    if (butt === null) {
+  useEffect(() => {
+    if (props.currentDir == "portfolio") {
       setContent(<DefaultContent />);
-      break;
-    }
-    butt.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      if (e.target["id"] == "back-btn") {
-        setContent(<DefaultContent />);
-      } else {
+    } else {
+      if (props.currentDir == "writeups") {
         setContent(<WriteUps />);
+      } else {
+        setContent(<p>Coding</p>);
       }
-    });
-  }
-  return content;
-}
+    }
+  });
 
-function DefaultBanner() {
-  return (
-    <>
-      <p>default bannder</p>
-    </>
-  );
-  // return (
-  //   <div className="context-container">
-  //     <Section
-  //       tag="writeups"
-  //       orientation="row"
-  //       chillins={[
-  //         {
-  //           type: "section",
-  //           element: (
-  //             <Section
-  //               tag="p"
-  //               orientation="column"
-  //               chillins={[
-  //                 {
-  //                   type: "p",
-  //                   attrs: undefined,
-  //                   text: `If you'd like to see cybersecurity writeups and content checkout 'Writeups'. Else, checkout 'Coding'.`,
-  //                   child: undefined,
-  //                 },
-  //               ]}
-  //             ></Section>
-  //           ),
-  //         },
-  //       ]}
-  //     ></Section>
-  //     <Section
-  //       tag="linkbox-btn"
-  //       orientation="row"
-  //       chillins={[
-  //         {
-  //           type: "a",
-  //           attrs: { id: "writeups-btn" },
-  //           text: undefined,
-  //           child: (
-  //             <button type="button">
-  //               <img
-  //                 id="tp-happy"
-  //                 src="./tp-happy.png"
-  //                 alt="Trash Puppy Happy"
-  //               ></img>
-  //             </button>
-  //           ),
-  //         },
-  //         {
-  //           type: "p",
-  //           attrs: undefined,
-  //           text: "Writeups",
-  //           child: undefined,
-  //         },
-  //       ]}
-  //     ></Section>
-  //     <Section
-  //       tag="linkbox-btn"
-  //       orientation="row"
-  //       chillins={[
-  //         {
-  //           type: "a",
-  //           attrs: { id: "coding-btn" },
-  //           text: undefined,
-  //           child: (
-  //             <button type="button">
-  //               <img
-  //                 id="tp-happy"
-  //                 src="./tp-happy.png"
-  //                 alt="Trash Puppy Happy"
-  //               ></img>
-  //             </button>
-  //           ),
-  //         },
-  //         {
-  //           type: "p",
-  //           attrs: undefined,
-  //           text: "Coding",
-  //           child: undefined,
-  //         },
-  //       ]}
-  //     ></Section>
-  //   </div>
-  // );
+  return content;
 }
 
 function DefaultContent(props) {
   return (
     <>
-      <p>Default content</p>
+      <h1>Welcome to my Portfolio!</h1>
+      <h2>
+        {" "}
+        Here you'll find various writeups and projects I've been working on, all
+        related to cybersecurity and coding!
+      </h2>
+      <div className="context-container">
+        <Section
+          tag="writeups"
+          orientation="row"
+          chillins={[
+            {
+              type: "section",
+              element: (
+                <Section
+                  tag="p"
+                  orientation="column"
+                  chillins={[
+                    {
+                      type: "p",
+                      attrs: undefined,
+                      text: `If you'd like to see cybersecurity writeups and content change directory into 'Writeups'. Else, cd into 'Coding'.`,
+                      child: undefined,
+                    },
+                  ]}
+                ></Section>
+              ),
+            },
+          ]}
+        ></Section>
+      </div>
     </>
   );
 }
-
-/*
-Portfolio
-  Nav
-    starts w/ correct buttons (all) /home/trshpuppy/portfolio
-    changes when not default:
-      just 'back' button /home/trshpuppy/portfolio/writeups
-
-
-*/

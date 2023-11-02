@@ -5,7 +5,6 @@ import "./assets/style.css";
 import Home from "./endpoints/home";
 import About from "./endpoints/about";
 import Portfolio from "./endpoints/portfolio";
-import WriteUps from "./endpoints/writeups";
 import Contact from "./endpoints/contact";
 
 function App() {
@@ -23,41 +22,6 @@ function App() {
 
 function Content() {
   const [endPoint, setEndpoint] = useState(<Home />);
-  // Create list of buttons for endpoints (in nav bar):
-  // const navButtons = [
-  //   document.getElementById("portfolio-btn"),
-  //   document.getElementById("home-btn"),
-  //   document.getElementById("contact-btn"),
-  //   document.getElementById("about-btn"),
-  // ];
-
-  // Add click event to buttons which chases the state for <Content />:
-  // for (let butt of navButtons) {
-  //   if (butt == null) {
-  //     continue;
-  //   }
-  //   butt.addEventListener("click", (e) => {
-  //     handleEndpointClick(e);
-  //     // e.preventDefault();
-  //     // console.log("click from index.tsx");
-  //     // switch (e.target["id"]) {
-  //     //   case "portfolio-btn":
-  //     //     setEndpoint(<Portfolio />);
-  //     //     break;
-  //     //   case "about-btn":
-  //     //     setEndpoint(<About />);
-  //     //     break;
-  //     //   case "contact-btn":
-  //     //     setEndpoint(<Contact />);
-  //     //     break;
-  //     //   case "home-btn":
-  //     //     setEndpoint(<Home />);
-  //     //     break;
-  //     //   default:
-  //     //     setEndpoint(<Home />);
-  //     // }
-  //   });
-  // }
 
   useEffect(() => {
     const contactBtn = document.getElementById("contact-btn");

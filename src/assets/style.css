@@ -18,6 +18,9 @@ body
     padding: 0;
     z-index: 1; */
 }
+.hidden {
+  display:none;
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .nav-container{
   display:flex;
