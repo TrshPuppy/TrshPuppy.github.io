@@ -40,9 +40,7 @@ function PortfolioNav() {
         break;
       default:
         return;
-        break;
     }
-    // return contentContainer.removeEventListener("click", cd);
   }
 
   return (
@@ -83,23 +81,34 @@ function PortfolioNav() {
 function Content(props) {
   const [content, setContent] = useState(<DefaultContent />);
 
-  useEffect(() => {
-    if (props.currentDir == "portfolio") {
-      setContent(<DefaultContent />);
+  // useEffect(() => {
+  //   if (props.currentDir == "portfolio") {
+  //     setContent(<DefaultContent />);
+  //   } else {
+  //     if (props.currentDir == "writeups") {
+  //       setContent(<WriteUps />);
+  //       // setContent(<p>writeups</p>);
+  //     } else {
+  //       setContent(<p>Coding</p>);
+  //     }
+  //   }
+  // });
+  if (props.currentDir == "portfolio") {
+    return <DefaultContent />;
+  } else {
+    if (props.currentDir == "writeups") {
+      return <WriteUps />;
+      // setContent(<p>writeups</p>);
     } else {
-      if (props.currentDir == "writeups") {
-        // setContent(<WriteUps />);
-        setContent(<p>writeups</p>);
-      } else {
-        setContent(<p>Coding</p>);
-      }
+      return <p>Coding</p>;
     }
-  });
+  }
 
-  return content;
+  return <DefaultContent />;
 }
 
 function DefaultContent(props) {
+  //return <p>default content</p>;
   return (
     <>
       <h1>Welcome to my Portfolio!</h1>

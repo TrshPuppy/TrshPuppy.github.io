@@ -3,13 +3,13 @@ import Section from "../fragments/section";
 import getMarkdownFiles from "./markdown/md-parser";
 
 export default function WriteUps() {
-  const html = getMarkdownFiles();
-  const mdBox = document.createElement("div");
-  mdBox.innerHTML = html;
+  // const html = getMarkdownFiles();
+  // const mdBox = document.createElement("div");
+  // mdBox.innerHTML = html;
 
-  document.appendChild(mdBox);
-  console.log(mdBox);
-  console.log(html);
+  // document.appendChild(mdBox);
+  // console.log(mdBox);
+  // console.log(html);
 
   return (
     <>
