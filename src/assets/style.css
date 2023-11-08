@@ -110,8 +110,8 @@ button:hover
   flex-flow:column nowrap;
   align-items: center;
   justify-content: center;
-  background-color:#EEDD99;
-  color:#050429;
+  background-color:#5a1d61;
+  /* color:#050429; */
 }
 
 #content-container button{
@@ -122,7 +122,6 @@ button:hover
 .port-nav-container{
   align-self: flex-start;
   font-family: "Inconsolata";
-
 }
 
 .port-content-container{
@@ -130,9 +129,9 @@ button:hover
 }
 .port-content-container p{
   font-size: 1.5rem;
-  background-color:#A8488780;
   border-radius: 5px;
   padding:10px;
+  color:#43E0C6;
 }
 
 
@@ -140,14 +139,17 @@ button:hover
 .welcome
 {
   display:flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   background-color:#10474B;
-  width:90vw;
+  /* width:90vw; */
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-family: "Press Start 2P";
+}
+ .home{
+  width: 90vw;
 }
 .welcome h1 {
   color:#EEDD99;
@@ -156,9 +158,15 @@ button:hover
   font-family: 'Trispace', Courier;
   color:#43E0C6;
 }
- .writeups{
-  background-color:#050429;
 
+.writeups{
+  background-color:#050429;
+  border-radius: 5px;
+
+}
+
+.writeups h1, h2{
+color:#EEDD99;
 }
 .section-row{
   display:flex;

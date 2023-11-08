@@ -84,20 +84,20 @@ function Content(props) {
   if (props.currentDir == "portfolio") {
     return (
       <div className="port-content-container">
-        <DefaultContent />;
+        <DefaultContent />
       </div>
     );
   } else {
     if (props.currentDir == "writeups") {
       return (
         <div className="port-content-container">
-          <WriteUps />;
+          <WriteUps />
         </div>
       );
     } else {
       return (
         <div className="port-content-container">
-          <p>Coding</p>;
+          <p>Coding</p>
         </div>
       );
     }

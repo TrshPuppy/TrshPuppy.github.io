@@ -58,7 +58,6 @@ function Content() {
         break;
       default:
         return;
-        break;
     }
   }
 
