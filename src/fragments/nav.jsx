@@ -2,7 +2,7 @@ export default function Nav(props) {
   return (
     <nav>
       <div class="logo">
-        <a id="home-btn">
+        <a>
           <img
             id="home-btn"
             src="./logo.png"

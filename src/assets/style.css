@@ -104,18 +104,52 @@ button:hover
     box-shadow: 5px 5px #43E0C6;
     transform: translatey(-5%);
 }
+
+#content-container{
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color:#5a1d61;
+  /* color:#050429; */
+}
+
+#content-container button{
+  background-color:#050429;
+}
+
+
+.port-nav-container{
+  align-self: flex-start;
+  font-family: "Inconsolata";
+}
+
+.port-content-container{
+  width: 70vw;
+}
+.port-content-container p{
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding:10px;
+  color:#43E0C6;
+}
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .welcome
 {
   display:flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
   background-color:#10474B;
-  width:90vw;
+  /* width:90vw; */
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   font-family: "Press Start 2P";
+}
+ .home{
+  width: 90vw;
 }
 .welcome h1 {
   color:#EEDD99;
@@ -124,9 +158,15 @@ button:hover
   font-family: 'Trispace', Courier;
   color:#43E0C6;
 }
- .writeups{
-  background-color:#050429;
 
+.writeups{
+  background-color:#050429;
+  border-radius: 5px;
+
+}
+
+.writeups h1, h2{
+color:#EEDD99;
 }
 .section-row{
   display:flex;
