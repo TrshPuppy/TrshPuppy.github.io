@@ -104,6 +104,38 @@ button:hover
     box-shadow: 5px 5px #43E0C6;
     transform: translatey(-5%);
 }
+
+#content-container{
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color:#EEDD99;
+  color:#050429;
+}
+
+#content-container button{
+  background-color:#050429;
+}
+
+
+.port-nav-container{
+  align-self: flex-start;
+  font-family: "Inconsolata";
+
+}
+
+.port-content-container{
+  width: 70vw;
+}
+.port-content-container p{
+  font-size: 1.5rem;
+  background-color:#A8488780;
+  border-radius: 5px;
+  padding:10px;
+}
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .welcome
 {

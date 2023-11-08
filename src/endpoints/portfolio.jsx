@@ -12,6 +12,7 @@ export default function Portfolio() {
 
 // Holds the bar just under main nav, buttons for going back and forth
 // between portfolio endpoints
+// Re renders on button click in nav bar
 function PortfolioNav() {
   const [currentDir, setCurrentDir] = useState("portfolio");
   const contentContainer = document.querySelector(".contentContainer");
@@ -78,29 +79,27 @@ function PortfolioNav() {
   );
 }
 
+// Re-renders when parent (PortfolioNAv) re-renders
 function Content(props) {
-  const [content, setContent] = useState(<DefaultContent />);
-
-  // useEffect(() => {
-  //   if (props.currentDir == "portfolio") {
-  //     setContent(<DefaultContent />);
-  //   } else {
-  //     if (props.currentDir == "writeups") {
-  //       setContent(<WriteUps />);
-  //       // setContent(<p>writeups</p>);
-  //     } else {
-  //       setContent(<p>Coding</p>);
-  //     }
-  //   }
-  // });
   if (props.currentDir == "portfolio") {
-    return <DefaultContent />;
+    return (
+      <div className="port-content-container">
+        <DefaultContent />;
+      </div>
+    );
   } else {
     if (props.currentDir == "writeups") {
-      return <WriteUps />;
-      // setContent(<p>writeups</p>);
+      return (
+        <div className="port-content-container">
+          <WriteUps />;
+        </div>
+      );
     } else {
-      return <p>Coding</p>;
+      return (
+        <div className="port-content-container">
+          <p>Coding</p>;
+        </div>
+      );
     }
   }
 
