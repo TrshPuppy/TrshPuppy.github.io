@@ -1,12 +1,38 @@
 import { Converter } from "showdown";
+import markdownTestFile from "./markdown-src/HTB-vaccine.md?raw";
 
-const showdown = require("showdown");
+export default function convertMarkdown() {
+  const converter = new Converter();
+  const text = markdownTestFile;
+  const html = converter.makeHtml(text);
 
-export default function convertThis(md) {
-  // 'md' should be a string of markdown text
-  const converter = new showdown.Converter();
-  const html = converter.makeHtml(md);
+  for (let i = 0; i < html.length; i++) {
+    if (html[i] == "<") {
+      i++;
+      const tag = [];
+      while (html[i] !== "/" || html[i] !== " ") {
+        tag.push(html[i]);
+      }
+      const currentNode = document.createElement(tag.join(""));
+
+      console.log("current node= " + currentNode);
+      break;
+    }
+  }
+
+  // console.log(html);
+  return html;
 }
+
+function parser(node) {}
+
+// getMarkdownFiles();
+/*
+    If the md file is in endpoints/markdown/markdown-src, it should appear 
+    on the writeups endpoint. (serve all the files  in the dir)
+
+
+*/
 
 // export default function parseThis(md) {
 //   // Create a trie of tokens, leaf nodes are functions
