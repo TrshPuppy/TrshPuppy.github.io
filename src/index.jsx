@@ -10,10 +10,10 @@ import Contact from "./endpoints/contact";
 function App() {
   return (
     <>
-      <div className="nav-container">
+      <div id="nav-container" className="nav-container">
         <Nav />
       </div>
-      <div className="contentContainer">
+      <div id="content-container" className="contentContainer">
         <Content />
       </div>
     </>
@@ -22,19 +22,21 @@ function App() {
 
 function Content() {
   const [endPoint, setEndpoint] = useState(<Home />);
+  const navArea = document.getElementById("nav-container");
 
   useEffect(() => {
-    const contactBtn = document.getElementById("contact-btn");
-    contactBtn.addEventListener("click", handleEndpointClick);
+    navArea.addEventListener("click", handleEndpointClick);
+    // const contactBtn = document.getElementById("contact-btn");
+    // contactBtn.addEventListener("click", handleEndpointClick);
 
-    const aboutBtn = document.getElementById("about-btn");
-    aboutBtn.addEventListener("click", handleEndpointClick);
+    // const aboutBtn = document.getElementById("about-btn");
+    // aboutBtn.addEventListener("click", handleEndpointClick);
 
-    const portfolioBtn = document.getElementById("portfolio-btn");
-    portfolioBtn.addEventListener("click", handleEndpointClick);
+    // const portfolioBtn = document.getElementById("portfolio-btn");
+    // portfolioBtn.addEventListener("click", handleEndpointClick);
 
-    const homeBtn = document.getElementById("home-btn");
-    homeBtn.addEventListener("click", handleEndpointClick);
+    // const homeBtn = document.getElementById("home-btn");
+    // homeBtn.addEventListener("click", handleEndpointClick);
   }, []);
 
   function handleEndpointClick(e) {
@@ -55,10 +57,9 @@ function Content() {
         setEndpoint(<Home />);
         break;
       default:
-        // setEndpoint(<Home />);
+        return;
         break;
     }
-    return document.removeEventListener("click", handleEndpointClick);
   }
 
   return endPoint;

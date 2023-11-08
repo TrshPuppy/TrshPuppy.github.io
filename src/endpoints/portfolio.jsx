@@ -5,23 +5,26 @@ import Section from "../fragments/section";
 export default function Portfolio() {
   return (
     <>
-      <Nav />
+      <PortfolioNav />
     </>
   );
 }
 
-function Nav() {
+// Holds the bar just under main nav, buttons for going back and forth
+// between portfolio endpoints
+function PortfolioNav() {
   const [currentDir, setCurrentDir] = useState("portfolio");
+  const contentContainer = document.querySelector(".contentContainer");
+  console.log(`CURRENT DIR + ${currentDir}`);
 
   useEffect(() => {
-    document.addEventListener("click", cd);
-  });
+    contentContainer.addEventListener("click", cd);
+  }, []);
 
   function cd(e) {
     e.preventDefault();
 
     const targetID = e.target["id"];
-    console.log(`target id = ${targetID}`);
     switch (targetID) {
       case "writeups-dir":
         setCurrentDir("writeups");
@@ -32,29 +35,42 @@ function Nav() {
       case "portfolio-dir":
         setCurrentDir("portfolio");
         break;
-      case "parent-dir":
+      case "portfolio-path-dir":
         setCurrentDir("portfolio");
         break;
       default:
+        return;
         break;
     }
-    return document.removeEventListener("click", cd);
+    // return contentContainer.removeEventListener("click", cd);
   }
 
   return (
     <>
-      <div style="display:flex">
+      <div className="port-nav-container" style="display:flex">
         <p>/home/trshpuppy/</p>
-        <p id={currentDir == "portfolio" ? "" : "portfolio-dir"}>portfolio/</p>
+        <p
+          id={currentDir === "portfolio" ? "" : "portfolio-path-dir"}
+          className={currentDir === "portfolio" ? "" : "portfolio-nav-btn"}
+        >
+          portfolio/
+        </p>
         <a style="margin:16px; margin-left:0;">
           {currentDir != "portfolio" ? currentDir : ""}
         </a>
-        <button id={currentDir == "portfolio" ? "writeups-dir" : "parent-dir"}>
+        <button
+          id={
+            currentDir === "portfolio" ? "writeups-dir" : "portfolio-path-dir"
+          }
+          className="portfolio-nav-btn"
+        >
           {currentDir == "portfolio" ? "Writeups" : "Back"}
         </button>
         <button
           id="coding-dir"
-          className={currentDir == "portfolio" ? "" : "hidden"}
+          className={
+            currentDir === "portfolio" ? "portfolio-nav-btn" : "hidden"
+          }
         >
           {currentDir == "portfolio" ? "Coding" : ""}
         </button>
@@ -72,7 +88,8 @@ function Content(props) {
       setContent(<DefaultContent />);
     } else {
       if (props.currentDir == "writeups") {
-        setContent(<WriteUps />);
+        // setContent(<WriteUps />);
+        setContent(<p>writeups</p>);
       } else {
         setContent(<p>Coding</p>);
       }
