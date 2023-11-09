@@ -1,5 +1,5 @@
 import { Converter } from "showdown";
-import markdownTestFile from "./markdown-src/HTB-vaccine.md?raw";
+import markdownTestFile from "./markdown-src/academy.md?raw";
 
 export default function convertMarkdown() {
   const converter = new Converter();
