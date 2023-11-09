@@ -6,19 +6,19 @@ export default function convertMarkdown() {
   const text = markdownTestFile;
   const html = converter.makeHtml(text);
 
-  for (let i = 0; i < html.length; i++) {
-    if (html[i] == "<") {
-      i++;
-      const tag = [];
-      while (html[i] !== "/" || html[i] !== " ") {
-        tag.push(html[i]);
-      }
-      const currentNode = document.createElement(tag.join(""));
+  // for (let i = 0; i < html.length; i++) {
+  //   if (html[i] == "<") {
+  //     i++;
+  //     const tag = [];
+  //     while (html[i] !== "/" || html[i] !== " ") {
+  //       tag.push(html[i]);
+  //     }
+  //     const currentNode = document.createElement(tag.join(""));
 
-      console.log("current node= " + currentNode);
-      break;
-    }
-  }
+  //     console.log("current node= " + currentNode);
+  //     break;
+  //   }
+  // }
 
   // console.log(html);
   return html;

@@ -206,7 +206,6 @@ button:hover
 .writeups{
   background-color:#050429;
   border-radius: 5px;
-
 }
 
 .writeups h1, h2{
@@ -237,6 +236,72 @@ color:#EEDD99;
 }
 .context-container{
   width: 70vw;
+}
+
+.markdown-div{
+  background-color: #050429;
+  border-radius: 10px;
+  padding:10px;
+  margin:5px;
+  font-family: 'Trispace';
+  h1 {
+    font-size: 2rem;
+    text-align: center; 
+    margin:0;
+    padding:5px;
+  };
+  h2 {
+    font-size: 2rem;
+    font-style: italic;
+    margin:0;
+    padding:5px;
+  };
+  h3{
+    font-size: 1.8rem;
+    font-style: italic;
+    margin:0;
+    padding:0;
+  };
+  h4{
+    font-size: 1.5rem;
+    font-style:italic;
+    font-family: 'Trispace';
+    margin:0;
+    padding:0;
+  };
+  h5{
+    font-size: 1.2rem;
+    font-style:italic;
+    margin:0;
+    padding:0;
+  };
+  h6{
+    font-size:1rem;
+    font-style: italic;
+    margin:0;
+    padding:0;
+  };
+  p{
+    font-size: 1.2rem;
+  };
+  li{
+    font-family: "Inconsolata";
+    padding-top:5px;
+    padding-bottom: 5px;
+  };
+  pre{
+    background-color:#1f1e22;
+    width:30vw;
+    color:#17c700;
+    border-radius: 5px;
+    padding:10px;
+    overflow: scroll;
+    word-wrap: break-word;
+    font-family: 'Inconsolata';
+    margin:10px;
+  };
+
+  text-align: left;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 

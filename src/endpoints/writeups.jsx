@@ -3,7 +3,14 @@ import Section from "../fragments/section";
 import getMarkdownFiles from "./markdown/md-parser";
 
 export default function WriteUps() {
-  // const html = getMarkdownFiles();
+  const html = { __html: getMarkdownFiles() };
+
+  return (
+    <>
+      <div className="markdown-div" dangerouslySetInnerHTML={html}></div>
+    </>
+  );
+
   // const mdBox = document.createElement("div");
   // mdBox.innerHTML = html;
 
@@ -11,20 +18,20 @@ export default function WriteUps() {
   // console.log(mdBox);
   // console.log(html);
 
-  return (
-    <>
-      <div className="welcome writeups">
-        <h1>Hacking & Cybersec Writeups</h1>
-        <h2>Welcome to the dark side!</h2>
-        <p>
-          This is a collection of all my writeups for various Capture the Flags
-          &other boxes I've hacked. Some come from working through Hack the Box.
-          Others from more obscure places.
-        </p>
-        <p>ENJOY!</p>
-      </div>
-    </>
-  );
+  // return (
+  //   <>
+  //     <div className="welcome writeups">
+  //       <h1>Hacking & Cybersec Writeups</h1>
+  //       <h2>Welcome to the dark side!</h2>
+  //       <p>
+  //         This is a collection of all my writeups for various Capture the Flags
+  //         &other boxes I've hacked. Some come from working through Hack the Box.
+  //         Others from more obscure places.
+  //       </p>
+  //       <p>ENJOY!</p>
+  //     </div>
+  //   </>
+  // );
 }
 
 /*
