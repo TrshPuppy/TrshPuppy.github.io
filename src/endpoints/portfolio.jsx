@@ -23,7 +23,7 @@ function PortfolioNav() {
   }, []);
 
   function cd(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     const targetID = e.target["id"];
     switch (targetID) {

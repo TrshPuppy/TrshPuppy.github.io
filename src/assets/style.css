@@ -274,7 +274,7 @@ color:#EEDD99;
   h4{
     font-size: 1.5rem;
     font-style:italic;
-    font-family: 'Trispace';
+    font-family: 'Trispace', 'Courier New', Courier, monospace;
     margin:0;
     padding:0;
   };
@@ -294,21 +294,24 @@ color:#EEDD99;
     font-size: 1.2rem;
   };
   li{
-    font-family: "Inconsolata";
+    font-family: "Inconsolata", monospace;
     padding-top:5px;
     padding-bottom: 5px;
   };
   pre{
     background-color:#1f1e22;
     width:clamp(500px,30vw, 40vw);
-    color:#17c700;
+    color:lime;
     border-radius: 5px;
     padding:10px;
     overflow: scroll;
     word-wrap: break-word;
-    font-family: 'Inconsolata';
+    font-family: 'Inconsolata', monospace;
     margin:10px;
   };
+  code{
+    color:lime;
+  }
   blockquote{
     background-color: #1f1e22;
     width:30vw;

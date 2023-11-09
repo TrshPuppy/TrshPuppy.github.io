@@ -52,7 +52,7 @@ function Content() {
   }, [endPoint]);
 
   function handleNavAreaClick(e) {
-    e.preventDefault();
+    // e.preventDefault();
     // console.log("click from index.tsx" + `target = ${e.target["id"]}`);
     switch (e.target["id"]) {
       case "portfolio-btn":
@@ -71,7 +71,7 @@ function Content() {
 
   function handleLinkboxClick(e){
     // console.log("linkbox click")
-    e.preventDefault();
+    // e.preventDefault();
     // console.log("click from index.tsx" + `target = ${e.target["id"]}`);
     switch (e.target["id"]) {
       case "paper-gif":
