@@ -1,6 +1,8 @@
 import Section from "../fragments/section";
 
-export default function Home() {
+export default function Home(props) {
+  const handleClick = props.handleClickCB;
+
   return (
     <>
       <div className="welcome home">
@@ -55,19 +57,20 @@ export default function Home() {
               {
                 type: "p",
                 attrs: undefined,
-                text: "Writeups",
+                text: "Portfolio",
                 child: undefined,
               },
               {
                 type: "a",
-                attrs: { href: "writeups" },
+                attrs: { id: "portfolio-linkbox" },
                 text: undefined,
                 child: (
-                  <button type="button">
+                  <button onClick={handleClick} type="button">
                     <img
-                      id="tp-happy"
-                      src="./tp-happy.png"
-                      alt="Trash Puppy Happy"
+                      className="home-linkbox-img"
+                      id="paper-gif"
+                      src="./paper.gif"
+                      alt="Trash Puppy Paper GIF"
                     ></img>
                   </button>
                 ),
@@ -81,19 +84,20 @@ export default function Home() {
               {
                 type: "p",
                 attrs: undefined,
-                text: "Writeups",
+                text: "About",
                 child: undefined,
               },
               {
                 type: "a",
-                attrs: { href: "portfolio" },
+                attrs: { id: "about-linkbox" },
                 text: undefined,
                 child: (
-                  <button type="button">
+                  <button onClick={handleClick} type="button">
                     <img
-                      id="tp-happy"
-                      src="./tp-happy.png"
-                      alt="Trash Puppy Happy"
+                      className="home-linkbox-img"
+                      id="tp-wag-gif"
+                      src="./tp-wag.gif"
+                      alt="Trash Puppy Happy GIF"
                     ></img>
                   </button>
                 ),
@@ -107,45 +111,20 @@ export default function Home() {
               {
                 type: "p",
                 attrs: undefined,
-                text: "Writeups",
+                text: "Contact",
                 child: undefined,
               },
               {
                 type: "a",
-                attrs: { href: "portfolio" },
+                attrs: { id: "contact-linkbox" },
                 text: undefined,
                 child: (
-                  <button type="button">
+                  <button onClick={handleClick} type="button">
                     <img
-                      id="tp-happy"
-                      src="./tp-happy.png"
-                      alt="Trash Puppy Happy"
-                    ></img>
-                  </button>
-                ),
-              },
-            ]}
-          ></Section>
-          <Section
-            tag="linkbox-btn"
-            orientation="column"
-            chillins={[
-              {
-                type: "p",
-                attrs: undefined,
-                text: "Writeups",
-                child: undefined,
-              },
-              {
-                type: "a",
-                attrs: { href: "portfolio" },
-                text: undefined,
-                child: (
-                  <button type="button">
-                    <img
-                      id="tp-happy"
-                      src="./tp-happy.png"
-                      alt="Trash Puppy Happy"
+                      className="home-linkbox-img"
+                      id="star-gif"
+                      src="./star.gif"
+                      alt="Trash Puppy Pant GIF"
                     ></img>
                   </button>
                 ),

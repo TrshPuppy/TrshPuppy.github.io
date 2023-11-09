@@ -5,7 +5,7 @@ export default function Nav(props) {
         <a>
           <img
             id="home-btn"
-            src="./logo.png"
+            src="./logo2.png"
             alt="TrshPuppy logo"
             style="image-rendering: pixelated"
           ></img>

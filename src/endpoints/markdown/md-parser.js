@@ -1,24 +1,24 @@
 import { Converter } from "showdown";
-import markdownTestFile from "./markdown-src/HTB-vaccine.md?raw";
+import markdownTestFile from "./markdown-src/academy.md?raw";
 
 export default function convertMarkdown() {
   const converter = new Converter();
   const text = markdownTestFile;
   const html = converter.makeHtml(text);
 
-  for (let i = 0; i < html.length; i++) {
-    if (html[i] == "<") {
-      i++;
-      const tag = [];
-      while (html[i] !== "/" || html[i] !== " ") {
-        tag.push(html[i]);
-      }
-      const currentNode = document.createElement(tag.join(""));
+  // for (let i = 0; i < html.length; i++) {
+  //   if (html[i] == "<") {
+  //     i++;
+  //     const tag = [];
+  //     while (html[i] !== "/" || html[i] !== " ") {
+  //       tag.push(html[i]);
+  //     }
+  //     const currentNode = document.createElement(tag.join(""));
 
-      console.log("current node= " + currentNode);
-      break;
-    }
-  }
+  //     console.log("current node= " + currentNode);
+  //     break;
+  //   }
+  // }
 
   // console.log(html);
   return html;

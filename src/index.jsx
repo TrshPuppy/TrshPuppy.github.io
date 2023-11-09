@@ -23,23 +23,17 @@ function App() {
 function Content() {
   const [endPoint, setEndpoint] = useState(<Home />);
   const navArea = document.getElementById("nav-container");
+  const linkboxArea = document.querySelector(".linkbox-container");
 
   useEffect(() => {
-    navArea.addEventListener("click", handleEndpointClick);
-    // const contactBtn = document.getElementById("contact-btn");
-    // contactBtn.addEventListener("click", handleEndpointClick);
-
-    // const aboutBtn = document.getElementById("about-btn");
-    // aboutBtn.addEventListener("click", handleEndpointClick);
-
-    // const portfolioBtn = document.getElementById("portfolio-btn");
-    // portfolioBtn.addEventListener("click", handleEndpointClick);
-
-    // const homeBtn = document.getElementById("home-btn");
-    // homeBtn.addEventListener("click", handleEndpointClick);
+    navArea.addEventListener("click", handleNavAreaClick);
   }, []);
 
-  function handleEndpointClick(e) {
+  // useEffect(() => {
+  //   linkboxArea.addEventListener("click", handleLinkboxClick);
+  // }, []);
+
+  function handleNavAreaClick(e) {
     e.preventDefault();
     console.log("click from index.tsx" + `target = ${e.target["id"]}`);
 
@@ -54,7 +48,26 @@ function Content() {
         setEndpoint(<Contact />);
         break;
       case "home-btn":
-        setEndpoint(<Home />);
+        setEndpoint(<Home handleClickCB={handleLinkboxClick} />);
+        break;
+      default:
+        return;
+    }
+  }
+
+  function handleLinkboxClick(e) {
+    e.preventDefault();
+    console.log("click from index.tsx" + `target = ${e.target["id"]}`);
+
+    switch (e.target["id"]) {
+      case "paper-gif":
+        setEndpoint(<Portfolio />);
+        break;
+      case "tp-wag-gif":
+        setEndpoint(<About />);
+        break;
+      case "star-gif":
+        setEndpoint(<Contact />);
         break;
       default:
         return;

@@ -11,12 +11,14 @@ body
     padding:0;
     background-color:#050429;
     text-align:center;
-    /* /* background-position-y: 60%;
-    background-size: 70%; */
-    /* background-attachment: fixed;
-    margin: 40px;
-    padding: 0;
-    z-index: 1; */
+    background-image: url(./public/background2.png);
+    background-position-x: 60%;
+    background-position-y:0%;
+    background-size: 100%;
+    background-attachment: fixed;
+    /* margin: 40px;
+    padding: 0; */
+    z-index: 1;
 }
 .hidden {
   display:none;
@@ -96,7 +98,7 @@ button
     cursor:pointer;
     background-color: transparent;
     box-shadow: 2px 2px #43E0C6;
-    border-radius: 2px;;
+    border-radius: 2px;
 }
 
 button:hover
@@ -110,7 +112,7 @@ button:hover
   flex-flow:column nowrap;
   align-items: center;
   justify-content: center;
-  background-color:#5a1d61;
+  background-color:#351D6199;
   /* color:#050429; */
 }
 
@@ -126,16 +128,18 @@ button:hover
 
 .port-content-container{
   width: 70vw;
+  background-color:#10474B;
+  border-radius: 10px;
 }
 .port-content-container p{
   font-size: 1.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   padding:10px;
   color:#43E0C6;
 }
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Home Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .welcome
 {
   display:flex;
@@ -159,42 +163,24 @@ button:hover
   color:#43E0C6;
 }
 
-.writeups{
-  background-color:#050429;
-  border-radius: 5px;
-
-}
-
-.writeups h1, h2{
-color:#EEDD99;
-}
-.section-row{
+.linkbox-container{
   display:flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
-  border-radius: 5px;
+  justify-content: space-around;
+  width:100%;
+  background-color:#A84887;
+  border-radius: 10px;
 }
-.section-column{
-  display:flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 5px;
+
+.linkbox button{
+  background-color: transparent;
 }
-.welcome-pic
-{
-    width:200px;
-    transform: translateY(1%);
-    background-color: transparent;
+
+.section-linkbox-btn {
+  background-color: transparent;
 }
-.section-p{
-  width:50%;
-}
-.context-container{
-  width: 70vw;
-}
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 .linkbox{
   display:flex;
   flex-flow: column wrap;
@@ -212,24 +198,131 @@ color:#EEDD99;
   font-size: 1.5rem;
 }
 
-#tp-happy
-{
-  max-width: 200px;
-  text-align: center;
-}
-.linkbox-container{
-  display:flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-  background-color:#A84887;
- border-radius: 5px;
+.home-linkbox-img{
+  width:15vw
 }
 
-.linkbox button{
-  background-color: #10474B;
+.star-gif{
+  width: 12vw;
 }
+
+/*                               WRITEUPS                          */
+.writeups{
+  background-color:#050429;
+  border-radius: 10px;
+}
+
+.writeups h1, h2{
+color:#EEDD99;
+}
+.section-row{
+  display:flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.section-column{
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.welcome-pic
+{
+    width:200px;
+    transform: translateY(1%);
+    background-color: transparent;
+}
+.section-p{
+  width:50%;
+}
+.context-container{
+  width: 70vw;
+}
+
+.markdown-div{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color:#050429;
+  border-radius: 10px;
+  padding:10px;
+  /* margin:5px; */
+  font-family: 'Trispace';
+  h1 {
+    font-size: 2rem;
+    align-self: center;
+    text-align: center; 
+    margin:0;
+    padding:5px;
+  };
+  h2 {
+    font-size: 2rem;
+    font-style: italic;
+    margin:0;
+    padding:5px;
+  };
+  h3{
+    font-size: 1.8rem;
+    font-style: italic;
+    margin:0;
+    padding:0;
+  };
+  h4{
+    font-size: 1.5rem;
+    font-style:italic;
+    font-family: 'Trispace';
+    margin:0;
+    padding:0;
+  };
+  h5{
+    font-size: 1.2rem;
+    font-style:italic;
+    margin:0;
+    padding:0;
+  };
+  h6{
+    font-size:1rem;
+    font-style: italic;
+    margin:0;
+    padding:0;
+  };
+  p{
+    font-size: 1.2rem;
+  };
+  li{
+    font-family: "Inconsolata";
+    padding-top:5px;
+    padding-bottom: 5px;
+  };
+  pre{
+    background-color:#1f1e22;
+    width:clamp(500px,30vw, 40vw);
+    color:#17c700;
+    border-radius: 5px;
+    padding:10px;
+    overflow: scroll;
+    word-wrap: break-word;
+    font-family: 'Inconsolata';
+    margin:10px;
+  };
+  blockquote{
+    background-color: #1f1e22;
+    width:30vw;
+    padding:10px;
+    border-radius: 5px;
+    align-self: center;
+    line-height: .8rem;
+  }
+
+  text-align: left;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
 .section-writeup-btn button{
   display:flex;
   background-color: #050429;
