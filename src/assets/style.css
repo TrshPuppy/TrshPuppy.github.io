@@ -135,7 +135,7 @@ button:hover
 }
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Home Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .welcome
 {
   display:flex;
@@ -159,6 +159,50 @@ button:hover
   color:#43E0C6;
 }
 
+.linkbox-container{
+  display:flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  width:100%;
+  background-color:#A84887;
+  border-radius: 5px;
+}
+
+.linkbox button{
+  background-color: transparent;
+}
+
+.section-linkbox-btn {
+  background-color: transparent;
+}
+
+.linkbox{
+  display:flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  background-color:#E68CC6;
+  width:90vw;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-family: "Press Start 2P";
+  color:#10474B;
+}
+.linkbox p{
+  font-family: "Inconsolata";
+  font-size: 1.5rem;
+}
+
+.home-linkbox-img{
+  width:15vw
+}
+
+.star-gif{
+  width: 12vw;
+}
+
+/*                               WRITEUPS                          */
 .writeups{
   background-color:#050429;
   border-radius: 5px;
@@ -195,41 +239,8 @@ color:#EEDD99;
   width: 70vw;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.linkbox{
-  display:flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  background-color:#E68CC6;
-  width:90vw;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-family: "Press Start 2P";
-  color:#10474B;
-}
-.linkbox p{
-  font-family: "Inconsolata";
-  font-size: 1.5rem;
-}
 
-#tp-happy
-{
-  max-width: 200px;
-  text-align: center;
-}
-.linkbox-container{
-  display:flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  width:100%;
-  background-color:#A84887;
- border-radius: 5px;
-}
 
-.linkbox button{
-  background-color: #10474B;
-}
 .section-writeup-btn button{
   display:flex;
   background-color: #050429;
