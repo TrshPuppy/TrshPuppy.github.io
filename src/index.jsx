@@ -1,5 +1,5 @@
 import { render } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState, useRef } from "preact/hooks";
 import Nav from "./fragments/nav";
 import "./assets/style.css";
 import Home from "./endpoints/home";
@@ -21,60 +21,91 @@ function App() {
 }
 
 function Content() {
-  const [endPoint, setEndpoint] = useState(<Home />);
-  const navArea = document.getElementById("nav-container");
-  const linkboxArea = document.querySelector(".linkbox-container");
+  const [endPoint, setEndpoint] = useState('Home');
+  const navArea = useRef(null);
+  const linkboxArea = useRef(null);
 
   useEffect(() => {
-    navArea.addEventListener("click", handleNavAreaClick);
-  }, []);
+    linkboxArea.current = document.querySelector(".linkbox-container");
+    navArea.current = document.getElementById("nav-container");
+    
+    if (navArea.current) {
+      console.log("Nav Area exists")
+      navArea.current.addEventListener("click", handleNavAreaClick);
+    }
 
-  // useEffect(() => {
-  //   linkboxArea.addEventListener("click", handleLinkboxClick);
-  // }, []);
+    if(linkboxArea.current){
+      console.log("linkbox exists")
+      linkboxArea.current.addEventListener("click", handleLinkboxClick);
+    }
+
+    return () => {
+      if (navArea.current) {
+        navArea.current.removeEventListener("click", handleNavAreaClick);
+      }
+
+      if (linkboxArea.current) {
+        linkboxArea.current.removeEventListener("click", handleLinkboxClick);
+      }
+    };
+ 
+  }, [endPoint]);
 
   function handleNavAreaClick(e) {
     e.preventDefault();
     console.log("click from index.tsx" + `target = ${e.target["id"]}`);
-
     switch (e.target["id"]) {
       case "portfolio-btn":
-        setEndpoint(<Portfolio />);
+        setEndpoint('Portfolio');
         break;
       case "about-btn":
-        setEndpoint(<About />);
+        setEndpoint('About');
         break;
       case "contact-btn":
-        setEndpoint(<Contact />);
-        break;
-      case "home-btn":
-        setEndpoint(<Home handleClickCB={handleLinkboxClick} />);
+        setEndpoint('Contact');
         break;
       default:
-        return;
+        setEndpoint('Home');
     }
   }
 
-  function handleLinkboxClick(e) {
+  function handleLinkboxClick(e){
+    console.log("linkbox click")
     e.preventDefault();
     console.log("click from index.tsx" + `target = ${e.target["id"]}`);
-
     switch (e.target["id"]) {
       case "paper-gif":
-        setEndpoint(<Portfolio />);
+        setEndpoint('Portfolio');
         break;
       case "tp-wag-gif":
-        setEndpoint(<About />);
+        setEndpoint('About');
         break;
       case "star-gif":
-        setEndpoint(<Contact />);
+        setEndpoint('Contact');
         break;
       default:
-        return;
+        setEndpoint('Home');
     }
   }
 
-  return endPoint;
+  let ComponentToRender;
+  switch (endPoint) {
+    case 'Portfolio':
+      ComponentToRender = Portfolio;
+      break;
+    case 'About':
+      ComponentToRender = About;
+      break;
+    case 'Contact':
+      ComponentToRender = Contact;
+      break;
+    default:
+      ComponentToRender = Home;
+  }
+
+  return (
+        <ComponentToRender />
+  );
 }
 
 render(<App />, document.getElementById("app"));
