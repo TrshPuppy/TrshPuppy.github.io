@@ -11,12 +11,14 @@ body
     padding:0;
     background-color:#050429;
     text-align:center;
-    /* /* background-position-y: 60%;
-    background-size: 70%; */
-    /* background-attachment: fixed;
-    margin: 40px;
-    padding: 0;
-    z-index: 1; */
+    background-image: url(./public/background2.png);
+    background-position-x: 60%;
+    background-position-y:0%;
+    background-size: 100%;
+    background-attachment: fixed;
+    /* margin: 40px;
+    padding: 0; */
+    z-index: 1;
 }
 .hidden {
   display:none;
@@ -96,7 +98,7 @@ button
     cursor:pointer;
     background-color: transparent;
     box-shadow: 2px 2px #43E0C6;
-    border-radius: 2px;;
+    border-radius: 2px;
 }
 
 button:hover
@@ -110,7 +112,7 @@ button:hover
   flex-flow:column nowrap;
   align-items: center;
   justify-content: center;
-  background-color:#5a1d61;
+  background-color:#351D6199;
   /* color:#050429; */
 }
 
@@ -126,10 +128,12 @@ button:hover
 
 .port-content-container{
   width: 70vw;
+  background-color:#10474B;
+  border-radius: 10px;
 }
 .port-content-container p{
   font-size: 1.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   padding:10px;
   color:#43E0C6;
 }
@@ -166,7 +170,7 @@ button:hover
   justify-content: space-around;
   width:100%;
   background-color:#A84887;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .linkbox button{
@@ -205,7 +209,7 @@ button:hover
 /*                               WRITEUPS                          */
 .writeups{
   background-color:#050429;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .writeups h1, h2{
@@ -216,14 +220,14 @@ color:#EEDD99;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .section-column{
   display:flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .welcome-pic
 {
@@ -239,13 +243,18 @@ color:#EEDD99;
 }
 
 .markdown-div{
-  background-color: #050429;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color:#050429;
   border-radius: 10px;
   padding:10px;
-  margin:5px;
+  /* margin:5px; */
   font-family: 'Trispace';
   h1 {
     font-size: 2rem;
+    align-self: center;
     text-align: center; 
     margin:0;
     padding:5px;
@@ -291,7 +300,7 @@ color:#EEDD99;
   };
   pre{
     background-color:#1f1e22;
-    width:30vw;
+    width:clamp(500px,30vw, 40vw);
     color:#17c700;
     border-radius: 5px;
     padding:10px;
@@ -300,6 +309,14 @@ color:#EEDD99;
     font-family: 'Inconsolata';
     margin:10px;
   };
+  blockquote{
+    background-color: #1f1e22;
+    width:30vw;
+    padding:10px;
+    border-radius: 5px;
+    align-self: center;
+    line-height: .8rem;
+  }
 
   text-align: left;
 }
