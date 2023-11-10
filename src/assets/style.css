@@ -15,8 +15,6 @@ body {
     background-position-y: 0%;
     background-size: 100%;
     background-attachment: fixed;
-    /* margin: 40px;
-    padding: 0; */
     z-index: 1;
 }
 
@@ -61,10 +59,6 @@ nav {
     padding-top: 20px;
 }
 
-/* .logo{
-  padding-right:50px;
-  padding-left:50px;
-} */
 #home-btn {
     max-width: 150px;
     border-color: #050429;
@@ -128,12 +122,14 @@ button:hover {
 .port-nav-container {
     align-self: flex-start;
     font-family: "Inconsolata";
+    margin:10px;
 }
 
 .port-content-container {
     width: 70vw;
     background-color: #10474B;
     border-radius: 10px;
+    margin:10px;
 }
 
 .port-content-container p {
@@ -220,7 +216,7 @@ button:hover {
     border-radius: 10px;
 }
 
-.writeups h1,
+.writeups h1
 h2 {
     color: #EEDD99;
 }
@@ -280,7 +276,7 @@ h2 {
         padding: 5px;
     }
 
-    ;
+    
 
     h2 {
         font-size: 2rem;
@@ -289,7 +285,7 @@ h2 {
         padding: 5px;
     }
 
-    ;
+    
 
     h3 {
         font-size: 1.8rem;
@@ -298,7 +294,7 @@ h2 {
         padding: 0;
     }
 
-    ;
+    
 
     h4 {
         font-size: 1.5rem;
@@ -308,7 +304,7 @@ h2 {
         padding: 0;
     }
 
-    ;
+    
 
     h5 {
         font-size: 1.2rem;
@@ -317,7 +313,7 @@ h2 {
         padding: 0;
     }
 
-    ;
+    
 
     h6 {
         font-size: 1rem;
@@ -326,13 +322,13 @@ h2 {
         padding: 0;
     }
 
-    ;
+    
 
     p {
         font-size: 1.2rem;
     }
 
-    ;
+    
 
     li {
         font-family: "Inconsolata", monospace;
@@ -340,7 +336,7 @@ h2 {
         padding-bottom: 5px;
     }
 
-    ;
+    
 
     pre {
         background-color: #1f1e22;
@@ -354,7 +350,7 @@ h2 {
         margin: 10px;
     }
 
-    ;
+    
 
     blockquote {
         background-color: #1f1e22;
@@ -379,270 +375,3 @@ h2 {
 
 
 
-/* .section2
-{
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-between;
-    background-color:#E68CC6;
-    width:70vw;
-    margin:20px;
-    font-family: 'Trispace', Courier;
-    text-align: center;
-    color:#10474B;
-    border-radius: 5px;
-}
-.linkbox-container
-{
-    display:flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    width:87%;
-}
-.linkbox
-{
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    max-width:20%;
-}
-.linkbox-btn
-{
-    border-color:transparent;
-    box-shadow: none;
-}
-.linkbox-btn:hover
-{
-    box-shadow: none;
-}
-.gif
-{
-    max-width: 60%;
-    text-align: center;
-}
-#tp-happy
-{
-    max-width: 50%;
-    padding-top:10px;
-    padding-bottom:20px;
-} */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 3~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* .section3
-{
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-around;
-    background-color:#EEDD99;
-    width:70vw;
-    font-family: 'Trispace', Courier;
-    text-align: center;
-    color:#351D61;
-    font-size: 1.8rem;
-    margin:20px;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    border-radius: 5px;
-}
-.quote
-{
-    padding-inline: 20px;
-    padding-bottom: 30px;
-}
-.author
-{
-   font-size: 1.5rem;
-   align-self: flex-end;
-   padding-inline: 100px;
-} */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* .section4
-{
-    display:flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    margin:20px;
-    padding-top:50px;
-    padding-bottom:50px;
-    background-color: #10474B;
-    width:70vw;
-    border-radius: 5px;
-}
-.sec4-box
-{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
-    background-color: #351d61;
-    max-width: 40vw;
-    border-radius: 5px;
-    color: #43e0c6;
-    font-family: 'Inconsolata', monospace;
-    padding: 20px;
-}
-.left-side
-{
-    grid-column: 1 / 2;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    grid-template-rows: 50% 50%;
-    text-align: center;
-}
-.call4action
-{
-    font-family: 'Press Start 2P';
-    color:#EEDD99;
-    flex-shrink: 1; */
-/* }
-.context
-{
-    flex-shrink: 1;
-}
-.right-side
-{
-  grid-column: 2 / 3;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  grid-template-rows: 50% 50%;
-  text-align: center;
-  color: #eedd99;
-} */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* footer
-{
-    background-color:#351D61;
-    margin: 20px;
-    width: 70vw;
-    text-align: center;
-    color:#E68CC6;
-    padding-top:20px;
-    padding-bottom:20px;
-    border-radius: 5px;;
-}
-footer a
-{
-    color:#E68CC6;
-    padding:10px;
-} */
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* @media only screen and (max-width: 600px) { */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* h1,
-    h3,
-    p 
-    {
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-
-    nav 
-    {
-      position: relative;
-      margin-top: 6dvh;
-      display: grid;
-      grid-template-columns: auto auto;
-    }
-    .logo 
-    {
-      grid-column: 1 / 2;
-      padding-left: 10px;
-    }
-
-    .menu 
-    {
-      grid-column: 2 / 3;
-      display: grid;
-      align-items: center;
-      justify-content: center;
-      padding-left: 2rem;
-    }
-
-    #logo-pic 
-    {
-      max-width: 150px;
-    } */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* .section1 
-    {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.5fr 0.25fr;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .welcome 
-    {
-      width: 100%;
-      grid-row: 1 / 2;
-      display: grid;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .welcome h1,
-    .welcome h3,
-    .welcome a 
-    {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-
-    .pic 
-    {
-      width: 100%;
-      grid-row: 2 / 3;
-      display: grid;
-      align-items: center;
-      justify-content: center;
-    } */
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* .linkbox-container 
-    {
-      flex-direction: column;
-    }
-    .gif 
-    {
-      max-width: 100%;
-    }
-    .sec4-box 
-    {
-      display: grid;
-      align-items: center;
-      justify-content: center;
-      grid-template-columns: 100%;
-      grid-template-rows: 1fr 1fr;
-    }
-    .left-side 
-    {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-      display: grid;
-    }
-    .right-side 
-    {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-      display: grid;
-    }
-
-} */
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/* 
- */

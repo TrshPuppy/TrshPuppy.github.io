@@ -1,7 +1,8 @@
 import { render } from "preact";
 import { useEffect, useState, useRef } from "preact/hooks";
 import Nav from "./fragments/nav";
-import "./assets/style.css";
+import 'normalize.css';
+import "./assets/style.css"; // import after normalize.css
 import Home from "./endpoints/home";
 import About from "./endpoints/about";
 import Portfolio from "./endpoints/portfolio";

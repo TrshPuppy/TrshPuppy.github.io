@@ -1,5 +1,6 @@
 import Section from "../fragments/section";
 
+
 export default function Home(props) {
   const handleClick = props.handleClickCB;
 

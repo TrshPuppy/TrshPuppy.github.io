@@ -2,6 +2,7 @@ import WriteUps from "./writeups";
 import { useEffect, useState } from "preact/hooks";
 import Section from "../fragments/section";
 
+
 export default function Portfolio() {
   return (
     <>
