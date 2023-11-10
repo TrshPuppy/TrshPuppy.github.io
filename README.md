@@ -1,5 +1,7 @@
 # TrshPuppy.io
 
+## Testing #freeNavi
+
 ## LIVE PREVIEW HERE: https://trshpuppy.github.io
 
 This is the new and improv(ing) TrshPuppy.io! All of the same retro-pixelart vibes you love, served now using dynamic Golang HTML manipulation!
