@@ -1,9 +1,11 @@
-import { isJsxElement } from "typescript";
+import { useEffect, useState, useRef } from "preact/hooks";
 import Section from "../fragments/section";
 import getMarkdownFiles from "./markdown/md-parser";
 
 export default function WriteUps() {
   const html = { __html: getMarkdownFiles() };
+  // const aTags
+
 
   return (
     <>

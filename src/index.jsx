@@ -30,12 +30,12 @@ function Content() {
     navArea.current = document.getElementById("nav-container");
     
     if (navArea.current) {
-      console.log("Nav Area exists")
+      // console.log("Nav Area exists")
       navArea.current.addEventListener("click", handleNavAreaClick);
     }
 
     if(linkboxArea.current){
-      console.log("linkbox exists")
+      // console.log("linkbox exists")
       linkboxArea.current.addEventListener("click", handleLinkboxClick);
     }
 
@@ -52,8 +52,8 @@ function Content() {
   }, [endPoint]);
 
   function handleNavAreaClick(e) {
-    e.preventDefault();
-    console.log("click from index.tsx" + `target = ${e.target["id"]}`);
+    // e.preventDefault();
+    // console.log("click from index.tsx" + `target = ${e.target["id"]}`);
     switch (e.target["id"]) {
       case "portfolio-btn":
         setEndpoint('Portfolio');
@@ -70,9 +70,9 @@ function Content() {
   }
 
   function handleLinkboxClick(e){
-    console.log("linkbox click")
-    e.preventDefault();
-    console.log("click from index.tsx" + `target = ${e.target["id"]}`);
+    // console.log("linkbox click")
+    // e.preventDefault();
+    // console.log("click from index.tsx" + `target = ${e.target["id"]}`);
     switch (e.target["id"]) {
       case "paper-gif":
         setEndpoint('Portfolio');

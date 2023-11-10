@@ -16,14 +16,14 @@ export default function Portfolio() {
 function PortfolioNav() {
   const [currentDir, setCurrentDir] = useState("portfolio");
   const contentContainer = document.querySelector(".contentContainer");
-  console.log(`CURRENT DIR + ${currentDir}`);
+  // console.log(`CURRENT DIR + ${currentDir}`);
 
   useEffect(() => {
     contentContainer.addEventListener("click", cd);
   }, []);
 
   function cd(e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     const targetID = e.target["id"];
     switch (targetID) {
