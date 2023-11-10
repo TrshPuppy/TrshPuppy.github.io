@@ -1,334 +1,379 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&family=Trispace&display=swap');
 
-body
-{
+body {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     width: 100vw;
-    margin:0;
-    padding:0;
-    background-color:#050429;
-    text-align:center;
+    margin: 0;
+    padding: 0;
+    background-color: #050429;
+    text-align: center;
     background-image: url(/background2.png);
     background-position-x: 60%;
-    background-position-y:0%;
+    background-position-y: 0%;
     background-size: 100%;
     background-attachment: fixed;
     /* margin: 40px;
     padding: 0; */
     z-index: 1;
 }
+
 .hidden {
-  display:none;
+    display: none;
 }
-h1{
-  font-family: 'Press Start 2P';
+
+h1 {
+    font-family: 'Press Start 2P';
 }
-h2{
-  font-family: 'Trispace';
+
+h2 {
+    font-family: 'Trispace';
 }
-p{
-  font-family: 'Inconsolata';
+
+p {
+    font-family: 'Inconsolata';
 }
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.nav-container{
-  display:flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 90vw;
-  background-color: #10474b;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  /* position: sticky;
+.nav-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    background-color: #10474b;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* position: sticky;
   top: 0;
   z-index: 1; */
 }
-nav
-{
+
+nav {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    width:60vw;
-    padding:5px;
+    width: 60vw;
+    padding: 5px;
     padding-top: 20px;
 }
+
 /* .logo{
   padding-right:50px;
   padding-left:50px;
 } */
-#home-btn
-{
+#home-btn {
     max-width: 150px;
     border-color: #050429;
     border-radius: 100%;
     box-shadow: 2px 2px #43E0C6;
-    border:2px solid #E68CC6;
+    border: 2px solid #E68CC6;
 }
-#home-btn:hover
-{
+
+#home-btn:hover {
     box-shadow: 6px 6px #43E0C6;
     transform: translatey(-5%);
 }
-menu
-{
-    display:flex;
-    flex-flow:row wrap;
+
+menu {
+    display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-evenly;
     align-content: center;
-   width:calc(30vw);
+    width: calc(30vw);
     padding: 0;
     margin: 0;
 }
-menu > a{
-  padding:5px 15px;
+
+menu>a {
+    padding: 5px 15px;
 }
-button
-{
+
+button {
     font-family: 'Trispace', monospace;
     font-size: medium;
-    color:white;
-    padding:10px;
-    margin:5px;
+    color: white;
+    padding: 10px;
+    margin: 5px;
     border: 2px solid #E68CC6;
-    cursor:pointer;
+    cursor: pointer;
     background-color: transparent;
     box-shadow: 2px 2px #43E0C6;
     border-radius: 2px;
 }
 
-button:hover
-{
+button:hover {
     box-shadow: 5px 5px #43E0C6;
     transform: translatey(-5%);
 }
 
-#content-container{
-  display:flex;
-  flex-flow:column nowrap;
-  align-items: center;
-  justify-content: center;
-  background-color:#351D6199;
-  /* color:#050429; */
+#content-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #351D6199;
+    /* color:#050429; */
 }
 
-#content-container button{
-  background-color:#050429;
+#content-container button {
+    background-color: #050429;
 }
 
 
-.port-nav-container{
-  align-self: flex-start;
-  font-family: "Inconsolata";
+.port-nav-container {
+    align-self: flex-start;
+    font-family: "Inconsolata";
 }
 
-.port-content-container{
-  width: 70vw;
-  background-color:#10474B;
-  border-radius: 10px;
+.port-content-container {
+    width: 70vw;
+    background-color: #10474B;
+    border-radius: 10px;
 }
-.port-content-container p{
-  font-size: 1.5rem;
-  border-radius: 10px;
-  padding:10px;
-  color:#43E0C6;
+
+.port-content-container p {
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding: 10px;
+    color: #43E0C6;
 }
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Home Page ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-.welcome
-{
-  display:flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  background-color:#10474B;
-  /* width:90vw; */
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-family: "Press Start 2P";
+.welcome {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #10474B;
+    /* width:90vw; */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: "Press Start 2P";
 }
- .home{
-  width: 90vw;
+
+.home {
+    width: 90vw;
 }
+
 .welcome h1 {
-  color:#EEDD99;
-}
-.welcome p{
-  font-family: 'Trispace', Courier;
-  color:#43E0C6;
+    color: #EEDD99;
 }
 
-.linkbox-container{
-  display:flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: space-around;
-  width:100%;
-  background-color:#A84887;
-  border-radius: 10px;
+.welcome p {
+    font-family: 'Trispace', Courier;
+    color: #43E0C6;
 }
 
-.linkbox button{
-  background-color: transparent;
+.linkbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #A84887;
+    border-radius: 10px;
+}
+
+.linkbox button {
+    background-color: transparent;
 }
 
 .section-linkbox-btn {
-  background-color: transparent;
+    background-color: transparent;
 }
 
-.linkbox{
-  display:flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
-  background-color:#E68CC6;
-  width:90vw;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-family: "Press Start 2P";
-  color:#10474B;
-}
-.linkbox p{
-  font-family: "Inconsolata";
-  font-size: 1.5rem;
+.linkbox {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #E68CC6;
+    width: 90vw;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family: "Press Start 2P";
+    color: #10474B;
 }
 
-.home-linkbox-img{
-  width:15vw
+.linkbox p {
+    font-family: "Inconsolata";
+    font-size: 1.5rem;
 }
 
-.star-gif{
-  width: 12vw;
+.home-linkbox-img {
+    width: 15vw
+}
+
+.star-gif {
+    width: 12vw;
 }
 
 /*                               WRITEUPS                          */
-.writeups{
-  background-color:#050429;
-  border-radius: 10px;
+.writeups {
+    background-color: #050429;
+    border-radius: 10px;
 }
 
-.writeups h1, h2{
-color:#EEDD99;
+.writeups h1,
+h2 {
+    color: #EEDD99;
 }
-.section-row{
-  display:flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
+
+.section-row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
-.section-column{
-  display:flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
+
+.section-column {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
 }
-.welcome-pic
-{
-    width:200px;
+
+.welcome-pic {
+    width: 200px;
     transform: translateY(1%);
     background-color: transparent;
 }
-.section-p{
-  width:50%;
-}
-.context-container{
-  width: 70vw;
+
+.section-p {
+    width: 50%;
 }
 
-.markdown-div{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  background-color:#050429;
-  border-radius: 10px;
-  padding:10px;
-  /* margin:5px; */
-  font-family: 'Trispace';
-  h1 {
-    font-size: 2rem;
-    align-self: center;
-    text-align: center; 
-    margin:0;
-    padding:5px;
-  };
-  h2 {
-    font-size: 2rem;
-    font-style: italic;
-    margin:0;
-    padding:5px;
-  };
-  h3{
-    font-size: 1.8rem;
-    font-style: italic;
-    margin:0;
-    padding:0;
-  };
-  h4{
-    font-size: 1.5rem;
-    font-style:italic;
-    font-family: 'Trispace', 'Courier New', Courier, monospace;
-    margin:0;
-    padding:0;
-  };
-  h5{
-    font-size: 1.2rem;
-    font-style:italic;
-    margin:0;
-    padding:0;
-  };
-  h6{
-    font-size:1rem;
-    font-style: italic;
-    margin:0;
-    padding:0;
-  };
-  p{
-    font-size: 1.2rem;
-  };
-  li{
-    font-family: "Inconsolata", monospace;
-    padding-top:5px;
-    padding-bottom: 5px;
-  };
-  pre{
-    background-color:#1f1e22;
-    width:clamp(500px,30vw, 40vw);
-    color:lime;
-    border-radius: 5px;
-    padding:10px;
-    overflow: scroll;
-    word-wrap: break-word;
-    font-family: 'Inconsolata', monospace;
-    margin:10px;
-  };
-  code{
-    color:lime;
-  }
-  blockquote{
-    background-color: #1f1e22;
-    width:30vw;
-    padding:10px;
-    border-radius: 5px;
-    align-self: center;
-    line-height: .8rem;
-  }
-
-  text-align: left;
+.context-container {
+    width: 70vw;
 }
+
+.markdown-div {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #050429;
+    border-radius: 10px;
+    padding: 1.8rem;
+    /* margin:5px; */
+    font-family: 'Trispace';
+    text-align: left;
+
+    .language-bash {
+        color: lime;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2rem;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+        padding: 5px;
+    }
+
+    ;
+
+    h2 {
+        font-size: 2rem;
+        font-style: italic;
+        margin: 0;
+        padding: 5px;
+    }
+
+    ;
+
+    h3 {
+        font-size: 1.8rem;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+    }
+
+    ;
+
+    h4 {
+        font-size: 1.5rem;
+        font-style: italic;
+        font-family: 'Trispace', 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0;
+    }
+
+    ;
+
+    h5 {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+    }
+
+    ;
+
+    h6 {
+        font-size: 1rem;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+    }
+
+    ;
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    ;
+
+    li {
+        font-family: "Inconsolata", monospace;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    ;
+
+    pre {
+        background-color: #1f1e22;
+        width: clamp(500px, 30vw, 40vw);
+        color: lime;
+        border-radius: 5px;
+        padding: 10px;
+        overflow: scroll;
+        word-wrap: break-word;
+        font-family: 'Inconsolata', monospace;
+        margin: 10px;
+    }
+
+    ;
+
+    blockquote {
+        background-color: #1f1e22;
+        width: 30vw;
+        padding: 10px;
+        border-radius: 5px;
+        align-self: center;
+        line-height: .8rem;
+    }
+
+
+}
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 2~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-.section-writeup-btn button{
-  display:flex;
-  background-color: #050429;
+.section-writeup-btn button {
+    display: flex;
+    background-color: #050429;
 
 }
 
@@ -492,8 +537,8 @@ footer a
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ MOB MAX-W:450px ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* @media only screen and (max-width: 600px) { */
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    /* h1,
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* h1,
     h3,
     p 
     {
@@ -527,10 +572,10 @@ footer a
     {
       max-width: 150px;
     } */
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ NAV BAR / MENU~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    /* .section1 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* .section1 
     {
       display: grid;
       grid-template-columns: 1fr;
@@ -564,10 +609,10 @@ footer a
       align-items: center;
       justify-content: center;
     } */
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 1~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-    /* .linkbox-container 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SECTION 4~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/* .linkbox-container 
     {
       flex-direction: column;
     }
