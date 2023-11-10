@@ -14,7 +14,7 @@ function App() {
       <div id="nav-container" className="nav-container">
         <Nav />
       </div>
-      <div id="content-container" className="contentContainer">
+      <div className="content-container">
         <Content />
       </div>
     </>

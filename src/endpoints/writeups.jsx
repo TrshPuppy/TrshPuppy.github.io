@@ -4,12 +4,10 @@ import getMarkdownFiles from "./markdown/md-parser";
 
 export default function WriteUps() {
   const html = { __html: getMarkdownFiles() };
-  // const aTags
-
 
   return (
     <>
-      <div className="markdown-div" dangerouslySetInnerHTML={html}></div>
+      <div id="markdown-div" dangerouslySetInnerHTML={html}></div>
     </>
   );
 

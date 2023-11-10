@@ -16,8 +16,7 @@ export default function Portfolio() {
 // Re renders on button click in nav bar
 function PortfolioNav() {
   const [currentDir, setCurrentDir] = useState("portfolio");
-  const contentContainer = document.querySelector(".contentContainer");
-  // console.log(`CURRENT DIR + ${currentDir}`);
+  const contentContainer = document.querySelector(".content-container");
 
   useEffect(() => {
     contentContainer.addEventListener("click", cd);
@@ -47,7 +46,7 @@ function PortfolioNav() {
 
   return (
     <>
-      <div className="port-nav-container" style="display:flex">
+      <div id="port-nav-container" className="content-stack-top" style="display:flex">
         <p>/home/trshpuppy/</p>
         <p
           id={currentDir === "portfolio" ? "" : "portfolio-path-dir"}
@@ -84,20 +83,20 @@ function PortfolioNav() {
 function Content(props) {
   if (props.currentDir == "portfolio") {
     return (
-      <div className="port-content-container">
+      <div id="port-content-container" className="content-stack-2">
         <DefaultContent />
       </div>
     );
   } else {
     if (props.currentDir == "writeups") {
       return (
-        <div className="port-content-container">
+        <div id="writeups-content-container" className="content-stack-2">
           <WriteUps />
         </div>
       );
     } else {
       return (
-        <div className="port-content-container">
+        <div id="conding-content-container" className="content-stack-2">
           <p>Coding</p>
         </div>
       );
@@ -111,37 +110,19 @@ function DefaultContent(props) {
   //return <p>default content</p>;
   return (
     <>
+    <div className="section-column" >
       <h1>Welcome to my Portfolio!</h1>
-      <h2>
-        {" "}
-        Here you'll find various writeups and projects I've been working on, all
-        related to cybersecurity and coding!
-      </h2>
-      <div className="context-container">
-        <Section
-          tag="writeups"
-          orientation="row"
-          chillins={[
-            {
-              type: "section",
-              element: (
-                <Section
-                  tag="p"
-                  orientation="column"
-                  chillins={[
-                    {
-                      type: "p",
-                      attrs: undefined,
-                      text: `If you'd like to see cybersecurity writeups and content change directory into 'Writeups'. Else, cd into 'Coding'.`,
-                      child: undefined,
-                    },
-                  ]}
-                ></Section>
-              ),
-            },
-          ]}
-        ></Section>
-      </div>
+        <div id="portfolio-stack-2-context" className="section-row">
+          <img id="portfolio-pant-gif" src="./TP-pant.gif" alt="TP Panting GIF"></img>
+          <div className="section-column">
+            <h2>
+              Here you'll find various writeups and projects I've been working on, all
+              related to cybersecurity and coding!
+            </h2>
+            <p> If you'd like to see cybersecurity writeups & content, cd into `Writeups.' Else, cd into 'Coding.'</p>
+          </div>
+        </div>
+    </div>
     </>
   );
 }

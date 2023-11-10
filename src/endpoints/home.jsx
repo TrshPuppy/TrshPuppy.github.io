@@ -6,7 +6,7 @@ export default function Home(props) {
 
   return (
     <>
-      <div className="welcome home">
+      <div className="content-stack-top" id="home-stack-top">
         <h1>Welcome to my Trash Heap!</h1>
         <Section
           tag="welcome"
@@ -31,9 +31,9 @@ export default function Home(props) {
           ]}
         ></Section>
       </div>
-      <div className="linkbox">
+      <div className="content-stack-2" id="home-stack-2">
         <Section
-          tag="linkbox"
+        tag="stack-2"
           orientation="column"
           chillins={[
             {
@@ -50,7 +50,7 @@ export default function Home(props) {
             },
           ]}
         ></Section>
-        <div className="linkbox-container">
+        <div className="linkbox-container" id="home-linkbox-container">
           <Section
             tag="linkbox-btn"
             orientation="column"
