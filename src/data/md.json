@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Academy Walkthrough",
+        "path": "../markdown-src/Academy.md",
+        "type": "writeup",
+        "img_path": "/md-images/preview-card-imgs/academy-6.png",
+        "description": "How I rooted the Academy box from TCM Security."
+    },
+    {
+        "name": "HTB Vaccine",
+        "path": "../markdown-src/HTB-vaccine.md",
+        "type": "writeup",
+        "img_path": "/md-images/preview-card-imgs/academy-6.png",
+        "description": "How I rooted Vaccine from HTB's Starting Point Tier 2.fjsdakljfdslkfjaslkfjsdalkjfdasklfjdlkfjd fkjdsklfjdsa lfjdskfja sfkdjs "
+    }
+]

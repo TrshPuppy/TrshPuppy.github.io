@@ -51,7 +51,9 @@
 --box-shadow-teal: 3px 3px 3px var(--loki-light-teal);
 --box-shadow-hover: 5px 5px 5px var(--loki-light-teal);
 --hover-transform:translatey(-5%);
---box-shadow-dark-straght-down: 0px 5px 5px var(--generic-dark-grey);
+--box-shadow-active: var(--box-shadow-dark-straight-down);
+--active-transform: translateY(0%);
+--box-shadow-dark-straight-down: 0px 5px 5px var(--generic-dark-grey);
 
 /*** Other ***/
 --rounded-edges:5px;
@@ -134,7 +136,6 @@ p {
   display:none;
 }
 
-
 /*                                   ** START APP **                                   */
 #app {
     display: flex;
@@ -159,7 +160,7 @@ p {
   width: clamp(350px, 80vw, 90vw);
   background-color: var(--loki-dark-teal);
   border-radius: var(--rounded-edges); 
-  box-shadow: var(--box-shadow-dark-straght-down);
+  box-shadow: var(--box-shadow-dark-straight-down);
   z-index: 1;
   margin:10px;
   padding:10px;
@@ -193,6 +194,11 @@ p {
   transform: var(--hover-transform);
 }
 
+#main-nav button:active{
+  box-shadow: var(--box-shadow-active);
+  transform: var(--active-transform);
+}
+
 #main-nav #logo-div #home-btn {
   max-width: 150px;
   border-radius: 100%;
@@ -206,6 +212,11 @@ p {
   transform: var(--hover-transform);
 }
 
+#main-nav #logo-div #home-btn:active{
+  box-shadow: var(--box-shadow-active);
+  transform: var(--active-transform);
+}
+
 #main-nav #main-nav-menu {
   display: flex;
   flex-flow: row wrap;
@@ -216,7 +227,6 @@ p {
   padding: 0;
   margin: 0;
 }
-
 
 /*                     * CONTENT CONTAINER *                     */
 .content-container {
@@ -230,7 +240,7 @@ p {
   margin:10px;
   padding:10px;
   padding-top:0;
-  box-shadow: var(--box-shadow-dark-straght-down);
+  box-shadow: var(--box-shadow-dark-straight-down);
 }
 
 .content-container .content-stack-top {
@@ -241,7 +251,7 @@ p {
   background-color:var(--loki-plum);
   width: var(--stack-sections-width);
   border-radius: var(--rounded-edges);
-  box-shadow: var(--box-shadow-dark-straght-down);
+  box-shadow: var(--box-shadow-dark-straight-down);
   z-index: 1;
   margin: 10px;
   padding:10px;
@@ -262,7 +272,7 @@ p {
   border-radius: var(--rounded-edges);
   margin: 10px;
   padding: 10px;
-  box-shadow: var(--box-shadow-dark-straght-down);
+  box-shadow: var(--box-shadow-dark-straight-down);
 }
 
 #home-stack-2 img {
@@ -310,6 +320,11 @@ p {
   transform: var(--hover-transform);
 }
 
+#home-linkbox-container button:active{
+  box-shadow: var(--box-shadow-active);
+  transform: var(--active-transform);
+}
+
 #home-linkbox-container button .home-linkbox-img {
   min-width: 80%;
 }
@@ -338,6 +353,11 @@ p {
 .content-container #port-nav-container button:hover {
   box-shadow: var(--box-shadow-hover);
   transform: var(--hover-transform);
+}
+
+.content-container #port-nav-container button:active{
+  box-shadow: var(--box-shadow-active);
+  transform: var(--active-transform);
 }
 
 .content-container #port-content-container {
@@ -373,6 +393,61 @@ p {
   margin: 0px;
 }
 
+#writeup-previews {
+  flex-flow: row wrap;
+  justify-content: center;
+  width: var(--stack-sections-width);
+  align-items: center;
+}
+
+#writeup-previews .preview-card {
+  justify-content: space-between;
+  width: clamp(350px, 28vw, 28vw);
+  background-color: var(--loki-dark-teal);
+  border-radius: var(--rounded-edges);
+  margin: 10px;
+  box-shadow: var(--box-shadow-dark-straight-down);
+  cursor: pointer;
+}
+
+#writeup-previews .preview-card:hover {
+  box-shadow: var(--box-shadow-hover);
+  transform: var(--hover-transform);
+} 
+
+#writeup-previews .preview-card:active{
+  box-shadow: var(--box-shadow-active);
+  transform: var(--active-transform);
+}
+
+#writeup-previews .wu-preview-img {
+  width: clamp(150px, 12vw, 12vw);
+  padding: 10px;
+  border-radius: var(--rounded-edges);
+}
+
+#writeup-previews .wu-preview-text {
+  align-items: flex-start;
+  width: clamp(300px, 10vw, 10vw);
+  font-size: .8rem;
+}
+
+.wu-preview-text h2 {
+  color: var(--loki-light-teal);
+  width: fit-content;
+  padding: 5px;
+  margin: 0;
+  text-align: left;
+}
+
+.wu-preview-text p {
+  width: fit-content;
+  padding: 5px;
+  margin: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
 #markdown-div {
   display: flex;
   flex-flow: column nowrap;
@@ -383,7 +458,7 @@ p {
   border-radius: var(--rounded-edges);
   padding: 10px;
   text-align:left;
-  box-shadow: var(--box-shadow-dark-straght-down);
+  box-shadow: var(--box-shadow-dark-straight-down);
   word-wrap: break-word;
 }
 
@@ -500,5 +575,7 @@ p {
 #markdown-div a {
   color: var(--hax-light-green);
 }
+
+
 
 /*                                   ** END APP **                                   */
