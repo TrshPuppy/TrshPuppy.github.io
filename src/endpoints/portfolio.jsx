@@ -81,7 +81,7 @@ function PortfolioNav() {
 
 // Re-renders when parent (PortfolioNAv) re-renders
 function Content(props) {
-  if (props.currentDir == "portfolio") {
+   if (props.currentDir == "portfolio") {
     return (
       <div id="port-content-container" className="content-stack-2">
         <DefaultContent />
