@@ -4,13 +4,15 @@
         "path": "/markdown-src/academy.md",
         "type": "writeup",
         "img_path": "/md-images/preview-card-imgs/academy-6.png",
-        "description": "How I rooted the Academy box from TCM Security."
+        "description": "How I rooted the Academy box from TCM Security.",
+        "id": "current-writeup"
     },
     {
         "name": "HTB Vaccine",
         "path": "/markdown-src/HTB-vaccine.md",
         "type": "writeup",
         "img_path": "/md-images/preview-card-imgs/academy-6.png",
-        "description": "How I rooted Vaccine from HTB's Starting Point Tier 2.fjsdakljfdslkfjaslkfjsdalkjfdasklfjdlkfjd fkjdsklfjdsa lfjdskfja sfkdjs "
+        "description": "How I rooted Vaccine from HTB's Starting Point Tier 2.",
+        "id": "current-writeup"
     }
 ]
