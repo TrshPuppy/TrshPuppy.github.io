@@ -1,3 +1,5 @@
+import { Link } from "@reach/router";
+
 export default function Nav(props) {
   return (
     <nav id="main-nav">
@@ -12,16 +14,16 @@ export default function Nav(props) {
         </a>
       </div>
       <menu id='main-nav-menu'>
-        <a>
+        <Link to="/portfolio">
           <button id="portfolio-btn" type="button">
             {"Portfolio"}
           </button>
-        </a>
-        <a>
+        </Link>
+        <Link to="/about">
           <button id="about-btn" type="button">
             {"About"}
           </button>
-        </a>
+          </Link>
         <a>
           <button id="contact-btn" type="button">
             {"Contact"}

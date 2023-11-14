@@ -1,8 +1,12 @@
 import { render } from "preact";
 import { useEffect, useState, useRef } from "preact/hooks";
+import { Router } from "@reach/router";
+
 import Nav from "./fragments/nav";
+
 import 'normalize.css';
 import "./assets/style.css"; // import after normalize.css
+
 import Home from "./endpoints/home";
 import About from "./endpoints/about";
 import Portfolio from "./endpoints/portfolio";
@@ -15,7 +19,11 @@ function App() {
         <Nav />
       </div>
       <div className="content-container">
-        <Content />
+        <Router>
+          <Home path="/" />
+          <Portfolio path="/portfolio" />
+          <About path="/about" />
+        </Router>
       </div>
     </>
   );
