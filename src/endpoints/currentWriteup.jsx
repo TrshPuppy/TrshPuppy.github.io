@@ -2,6 +2,46 @@ import { useEffect, useState } from 'preact/hooks';
 import mdFilesList from '../data/md.json';
 import { Converter } from "showdown";
 
+
+
+export default function CurrentWriteUp(props) {
+    return(<div>current writeup</div>)
+//   console.log(`requested writeup = ${props.writeup}`)
+//   const fileObj = props.writeup;
+//   const mdPath = fileObj.path;
+//   const link = fileObj.linkto;
+
+//   // Get of requested markdown file:
+//   const [data, setData] = useState(null);
+  
+
+//   useEffect(()=>{
+//     fetch(mdPath)
+//       .then(res => res.text())
+//       .then(mdString => {
+//       setData(mdString);
+//     })
+//   }, []);
+
+//   // let html = { __html: "" };
+//   if(data === null){
+//     return <div>loading...</div>;
+   
+//   }else {
+//     const converter = new Converter();
+//     const htmlString = converter.makeHtml(data);
+  
+//     const html = { __html: htmlString};
+
+//     return (
+//       <Router>
+//         <div path={link} id="markdown-div" dangerouslySetInnerHTML={html}></div>
+//       </Router>
+//     );
+//   }
+}
+
+
 // export default function CurrentWriteup(props) {
 //   console.log(`requested writeup = ${props.writeup}`)
 

@@ -6,7 +6,7 @@
         "img_path": "/md-images/preview-card-imgs/academy-6.png",
         "description": "How I rooted the Academy box from TCM Security.",
         "id": "current-writeup",
-        "linkto": "/portfolio/writeups/academy"
+        "to_link": "/portfolio/writeups/academy"
     },
     {
         "name": "HTB Vaccine",
@@ -15,6 +15,6 @@
         "img_path": "/md-images/preview-card-imgs/academy-6.png",
         "description": "How I rooted Vaccine from HTB's Starting Point Tier 2.",
         "id": "current-writeup",
-        "linkto": "/portfolio/writeups/HTB-vaccine"
+        "to_link": "/portfolio/writeups/HTB-vaccine"
     }
 ]

@@ -236,7 +236,7 @@ p {
   align-items: center;
   justify-content: center;
   background-color: #05042950;
-  width: clamp(350px, 80vw, 90vw);
+  width: var(--stack-outer-width);
   border-radius: var(--rounded-edges);
   margin:10px;
   padding:10px;
@@ -402,7 +402,7 @@ p {
 #writeup-previews {
   flex-flow: row wrap;
   justify-content: center;
-  width: var(--stack-sections-width);
+  width: var(--stack-outer-width);
   align-items: center;
 }
 

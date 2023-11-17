@@ -2,42 +2,38 @@ import { useEffect, useState, useRef } from "preact/hooks";
 import mdFilesList from '../data/md.json';
 // import CurrentWriteup from "./current-writeup";
 import { Converter } from "showdown";
-import { Link, Router } from "@reach/router";
+import { Link } from "@reach/router";
+import { render } from "preact";
 
 
-export default function WriteUps() {
-  return <div>Writeups</div>
-  //  // Set state related to the user's content choice:
-  // const [content, setContent] = useState('/writeups');
-  // console.log(`content = ${content}`)
+export default function WriteUps(){
+  // Build array of preview card components:
+  const previewCards = [];
+  for(let file of mdFilesList) {
+    // const previewComp = <PreviewCard fileObj={file} />
+    previewCards.push(<PreviewCard fileObj={file} />);
+  }
 
-  // // Build array of preview card components:
-  // const previewCards = [];
-  // for(let file of mdFilesList) {
-  //   console.log('file in preview card for loop = ${file}'+file.description)
-  //   previewCards.push(<PreviewCard fileObj={file} setContent={setContent} />);
-  // }
-
-
-  // if(content === 'previews') {
-
-  //   return(
-  //     <Router>
-  //       <div path='/portfolio/writeups' id="writeup-previews" className="section-row">{previewCards}</div>
-  //     </Router>
-  //   ) 
-  // } else {
-
-  //   return(
-  //     <Router>
-  //       <CurrentWriteup path={content.linkto} />
-  //     </Router>
-  //   )
-  // }
+  return (
+    <>
+      <div className="section-row" id="port-nav-container">
+      <p> /home/trshpuppy</p>
+      <Link to='/portfolio'>
+        <p>/portfolio</p>
+      </Link>
+      <p>/writeups</p>
+      <Link to="/portfolio">
+        <button>Back</button>
+      </Link>
+      </div>      
+      <div id="writeup-previews" className="section-row">
+        {previewCards}
+      </div>
+    </>
+  )
 }
 
 function PreviewCard({fileObj, setContent} ) {
-  console.log(`file description in previuew card func = ${fileObj.description}`)
   // Fix description length & title:
   if(fileObj.description.length > 40) {
     fileObj.description = fileObj.description.slice(0, 40) + "...";
@@ -48,57 +44,57 @@ function PreviewCard({fileObj, setContent} ) {
   }
 
   return (
-    <Link to={fileObj.link}>
-      <div onClick={() => setContent(fileObj)} className="preview-card section-row">
+
+      <div  className="preview-card section-row">
         <img className="wu-preview-img" src={fileObj.img_path} alt={fileObj.name} />
         <div  className="wu-preview-text section-column">
           <h2>{fileObj.name}</h2>
           <p>{fileObj.description}</p>
         </div>
       </div>
-    </Link>
+
   );
 }
 
-function CurrentWriteup(props) {
-  console.log(`requested writeup = ${props.writeup}`)
-  const fileObj = props.writeup;
-  const mdPath = fileObj.path;
-  const link = fileObj.linkto;
+// function CurrentWriteup(props) {
+//   console.log(`requested writeup = ${props.writeup}`)
+//   const fileObj = props.writeup;
+//   const mdPath = fileObj.path;
+//   const link = fileObj.linkto;
 
-  // Get of requested markdown file:
-  const [data, setData] = useState(null);
+//   // Get of requested markdown file:
+//   const [data, setData] = useState(null);
   
 
-  useEffect(()=>{
-    fetch(mdPath)
-      .then(res => res.text())
-      .then(mdString => {
-      setData(mdString);
-    })
-  }, []);
+//   useEffect(()=>{
+//     fetch(mdPath)
+//       .then(res => res.text())
+//       .then(mdString => {
+//       setData(mdString);
+//     })
+//   }, []);
 
-  // let html = { __html: "" };
-  if(data === null){
-    return <div>loading...</div>;
+//   // let html = { __html: "" };
+//   if(data === null){
+//     return <div>loading...</div>;
    
-  }else {
-    const converter = new Converter();
-    const htmlString = converter.makeHtml(data);
+//   }else {
+//     const converter = new Converter();
+//     const htmlString = converter.makeHtml(data);
   
-    const html = { __html: htmlString};
+//     const html = { __html: htmlString};
 
-    return (
-      <Router>
-        <div path={link} id="markdown-div" dangerouslySetInnerHTML={html}></div>
-      </Router>
-    );
-  }
+//     return (
+//       <Router>
+//         <div path={link} id="markdown-div" dangerouslySetInnerHTML={html}></div>
+//       </Router>
+//     );
+//   }
 
  
 
 
-}
+// }
 
 
 /*

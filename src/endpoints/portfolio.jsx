@@ -1,7 +1,5 @@
-// import WriteUps from "./writeups";
 import { useEffect, useState } from "preact/hooks";
 import { Link, Router } from "@reach/router";
-// import Coding from "./coding";
 
 
 export default function Portfolio() {

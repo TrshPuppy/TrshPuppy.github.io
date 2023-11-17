@@ -6,12 +6,14 @@ export default function Coding(){
     <>
     <div className="section-row" id="port-nav-container">
     <p> /home/trshpuppy</p>
-    <Link to='portfolio'>
+    <Link to='/portfolio'>
       <p>/portfolio</p>
     </Link>
-      <Link to="/portfolio">
-        <button>Back</button>
-      </Link>
+    <p>/coding</p>
+    <Link to="/portfolio">
+      <button>Back</button>
+    </Link>
+
     </div>      
       <div className="section-column">
         <h1>Coding</h1>
