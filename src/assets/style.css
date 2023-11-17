@@ -80,6 +80,7 @@
 --p-font-size:1.2rem;
 
 --stack-sections-width: clamp(350px, 60vw, 60vw);
+--stack-outer-width: clamp(350px, 80vw, 90vw);
 }
 
 body {
@@ -157,7 +158,7 @@ p {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: clamp(350px, 80vw, 90vw);
+  width: var(--stack-outer-width);
   background-color: var(--loki-dark-teal);
   border-radius: var(--rounded-edges); 
   box-shadow: var(--box-shadow-dark-straight-down);
@@ -335,6 +336,11 @@ p {
   align-items: center;
   justify-content: flex-start;
   background-color: var(--loki-mid-purple);
+  width:var(--stack-outer-width);
+  padding:10px;
+  margin:10px;
+  margin-top:0;
+  border-radius: var(--rounded-edges);
 }
 
 .content-container #port-nav-container button {

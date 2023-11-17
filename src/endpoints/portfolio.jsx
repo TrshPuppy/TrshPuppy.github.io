@@ -4,29 +4,36 @@ import { Link, Router } from "@reach/router";
 // import Coding from "./coding";
 
 
-const Coding = () => {
-  return(<div>Coding</div>);
-};
-const WriteUps = () => <div>WriteUps</div>;
-
-
-
 export default function Portfolio() {
   return (
     <>
-      <h1>Portfolio</h1>
+    <div className="section-row" id="port-nav-container">
+    <p> /home/trshpuppy/portfolio</p>
       <Link to="coding">
         <button>coding</button>
       </Link>
       <Link to="writeups">
         <button>WriteUps</button>
       </Link>
-      {/* <Router>
-        <Coding path="coding" />
-      </Router> */}
+    </div>      
+      <div className="section-column">
+        <h1>Welcome to my Portfolio!</h1>
+        <div id="portfolio-stack-2-context" className="section-row">
+          <img id="portfolio-pant-gif" src="./TP-pant.gif" alt="TP Panting GIF"></img>
+          <div className="section-column">
+            <h2>
+              Here you'll find various writeups and projects I've been working on, all
+              related to cybersecurity and coding!
+            </h2>
+            <p> If you'd like to see cybersecurity writeups & content, cd into `Writeups.' Else, cd into 'Coding.'</p>
+          </div>
+        </div>
+      </div>
+
     </>
   )
 }
+
 
 
 
@@ -55,7 +62,7 @@ export default function Portfolio() {
 
 //   return (
 //     <>
-//     <PortfolioNav currentContent={currentContent} setContent={setContent} />
+//    
 //     <Router> 
 //       <Coding path="coding" />
       
