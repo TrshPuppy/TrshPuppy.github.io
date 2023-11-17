@@ -10,7 +10,7 @@ export default function Portfolio() {
     <div className="section-row" id="port-nav-container">
     <p> /home/trshpuppy/portfolio</p>
       <Link to="coding">
-        <button>coding</button>
+        <button>Coding</button>
       </Link>
       <Link to="writeups">
         <button>WriteUps</button>
