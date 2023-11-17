@@ -1,12 +1,31 @@
 import WriteUps from "./writeups";
 import { useEffect, useState } from "preact/hooks";
-
-
+import { Link, Router } from "@reach/router";
+import Coding from "./coding";
 
 export default function Portfolio() {
+  const [currentContent, setContent] = useState("portfolio");
+
+  useEffect(() => {
+    switch(currentContent) {
+      case "portfolio":
+        return <DefaultContent path="/portfolio" />  // the pathing in index.jsx works but here it doesn't for some reason
+      case "writeups":
+        return   <WriteUps path="/writeups" />;
+      case "coding":
+        return <Coding path="/coding"/>;
+    }
+  }, [currentContent])
+
   return (
     <>
-      <PortfolioNav />
+    <PortfolioNav currentContent={currentContent} setContent={setContent} />
+    <Router> 
+      
+      
+    
+    </Router>
+      
     </>
   );
 }
@@ -14,204 +33,89 @@ export default function Portfolio() {
 // Holds the bar just under main nav, buttons for going back and forth
 // between portfolio endpoints
 // Re renders on button click in nav bar
-function PortfolioNav() {
-  const [currentDir, setCurrentDir] = useState("portfolio");
-  const contentContainer = document.querySelector(".content-container");
-  let currentWriteupName = "";
-  console.log(`currentDir = ${currentDir}`);
+function PortfolioNav(props) {
+  console.log("RERENDER")
+  const cC = props.currentContent;
+  const sC = props.setContent;
+  const [currentPortfol, setPortContent] = useState("portfolio");
 
-  useEffect(() => {
-    console.log("HEY I CLICKED")
-    contentContainer.addEventListener("click", cd);
-  }, []);
-
-  function cd(e) {
-    // e.preventDefault();
-
-    const targetID = e.target["id"];
-    switch (targetID) {
-      case "writeups-dir":
-        setCurrentDir("writeups");
-        break;
-      case "coding-dir":
-        setCurrentDir("coding");
-        break;
-      case "portfolio-dir":
-        setCurrentDir("portfolio");
-        break;
-      case "portfolio-path-dir":
-        setCurrentDir("portfolio");
-        break;
-      case "writeups-path-dir":
-        setCurrentDir("writeups");
-        break;
-      case "current-writeup":
-        currentWriteupName = e.target["name"]; // this should be changed probs
-        setCurrentDir("current-writeup");
-      default:
-        return;
-    }
-  }
-
-  // Build portfolio nav bar (default values first):
-  const portNavContainer = {
-    id: "port-nav-container",
-    class: "content-stack-top",
-    p: {
-      id: "",
-      class: "",
-      text: "portfolio/"
-    },
-    a: {
-      text: currentDir,
-    },
-    button1: {
-      id: "writeups-dir",
-      class: "portfolio-nav-btn",
-      text: "Writeups",
-    },
-    button2: {
-      id: "coding-dir",
-      class: "portfolio-nav-btn",
-      text: "Coding",
-    }
-  }
-
-  switch (currentDir) {
+  switch(cC) {
     case "portfolio":
-      portNavContainer.p.id = "";
-      portNavContainer.p.class = "";
-      
-      portNavContainer.a.text = "";
-      
-      portNavContainer.button1.id = "writeups-dir";
-      portNavContainer.button1.text = "Writeups";
-      
-      // portNavContainer.button2.id = "coding-dir"; // only has one setting for now
-      portNavContainer.button2.class = "portfolio-nav-btn";
-      portNavContainer.button2.text = "Coding";
-      break;
-    case "writeups":
-      portNavContainer.p.id = "portfolio-path-dir";
-      portNavContainer.p.class = "portfolio-nav-btn";
-      
-      portNavContainer.a.text = currentDir;
-      
-      portNavContainer.button1.id = "portfolio-path-dir";
-      portNavContainer.button1.text = "Back";
-
-      portNavContainer.button2.class = "hidden";
-      portNavContainer.button2.text = "";
-      break;
-    case "coding":
-      portNavContainer.p.id = "portfolio-path-dir";
-      portNavContainer.p.class = "portfolio-nav-btn";
-      
-      portNavContainer.a.text = currentDir;
-      
-      portNavContainer.button1.id = "portfolio-path-dir";
-      portNavContainer.button1.text = "Back";
-
-      portNavContainer.button2.class = "hidden";
-      portNavContainer.button2.text = "";
-      break;
-    case "current-writeup":
-      portNavContainer.p.text = "portfolio/writeups";
-      
-      portNavContainer.a.text = currentWriteupName; // this needs to be the name of the current writeup
-
-      portNavContainer.button1.id = "writeups-path-dir"
-      portNavContainer.button1.text = "Back";
-
-      portNavContainer.button2.class = "hidden";
-      portNavContainer.button2.text = "";
-      break;
-    }
-
-  return (
-    <>
-      <div id={portNavContainer.id} className={portNavContainer.class}>
-        <p>/home/trshpuppy/</p>
-        <p
-          id={portNavContainer.p.id}
-          className={portNavContainer.p.class}
-        >
-          {portNavContainer.p.text}
-        </p>
-        <a >
-          {portNavContainer.a.text}
-        </a>
-        <button
-          id={portNavContainer.button1.id}          
-          className={portNavContainer.button1.class}
-        >
-          {portNavContainer.button1.text}
-        </button>
-        <button
-          id={portNavContainer.button2.id}
-          className={portNavContainer.button2.class}
-        >
-          {portNavContainer.button2.text}
-        </button>
-      </div>
-      <Content currentDir={currentDir} setCurrentDir={setCurrentDir} />
-    </>
-  );
+      return(
+        <>
+          <p>
+            /home/trshpuppy
+          </p>
+          <Link to="writeups">
+            <button onClick={() => setPortContent("writeups")} >
+              Writeups
+            </button>
+          </Link>
+          <Link to="coding">
+            <button onClick={() => setPortContent("coding")}>
+              Coding
+            </button>
+          </Link>
+        </>
+      )
+      case "writeups":
+        return(
+          <>
+            <p>
+              /home/trshpuppy
+            </p>
+            <Link to="/">
+              <p>/portfolio</p>
+            </Link>
+            <p>
+              writeups
+            </p>
+            <Link to="/">
+              <button onClick={() => setPortContent("portfolio")}>
+                Back
+              </button>
+            </Link>
+          </>
+        );
+      case "coding":
+        return(
+          <>
+            <p>
+              /home/trshpuppy
+            </p>
+            <Link to="/">
+              <p>/portfolio</p>
+            </Link>
+            <p>
+              coding
+            </p>
+            <Link to="/">
+              <button onClick={() => setPortContent("portfolio")}>
+                Back
+              </button>
+            </Link>
+          </>
+        );
+      default:
+        return null;
+  }
 }
 
 // Re-renders when parent (PortfolioNAv) re-renders
 function Content(props) {
+  const sC = props.setContent;
+  const cC = props.currentContent;
 
-  switch (props.currentDir) {
+  switch(cC){
     case "portfolio":
-      return (
-        <div id="port-content-container" className="content-stack-2">
-          <DefaultContent />
-        </div>
-      );
-    case "writeups":
-      return (
-        <div id="writeups-content-container" className="content-stack-2">
-          <WriteUps />
-        </div>
-      );
-    case "coding":
-      return (
-        <div id="coding-content-container" className="content-stack-2">
-          <p>Coding</p>
-        </div>
-      );
-    case "current-writeup":
-      return (
-        <div id="current-writeup-content-container" className="content-stack-2">
-          <WriteUps setCurrentDir={props.setCurrentDir}/>
-        </div>
-      );
+      return(
+        <>
+          <DefaultContent />        
+        </>
+      )
+      default:
+        return null;
   }
-
-  //  if (props.currentDir == "portfolio") {
-  //   return (
-  //     <div id="port-content-container" className="content-stack-2">
-  //       <DefaultContent />
-  //     </div>
-  //   );
-  // } else {
-  //   if (props.currentDir == "writeups") {
-  //     return (
-  //       <div id="writeups-content-container" className="content-stack-2">
-  //         <WriteUps />
-  //       </div>
-  //     );
-  //   } else {
-  //     return (
-  //       <div id="conding-content-container" className="content-stack-2">
-  //         <p>Coding</p>
-  //       </div>
-  //     );
-  //   }
-  // }
-
-  return <DefaultContent />;
 }
 
 function DefaultContent(props) {
@@ -234,3 +138,5 @@ function DefaultContent(props) {
     </>
   );
 }
+
+
