@@ -6,33 +6,34 @@ import { Link, Router } from "@reach/router";
 
 
 export default function WriteUps() {
-   // Set state related to the user's content choice:
-  const [content, setContent] = useState('/writeups');
-  console.log(`content = ${content}`)
+  return <div>Writeups</div>
+  //  // Set state related to the user's content choice:
+  // const [content, setContent] = useState('/writeups');
+  // console.log(`content = ${content}`)
 
-  // Build array of preview card components:
-  const previewCards = [];
-  for(let file of mdFilesList) {
-    console.log('file in preview card for loop = ${file}'+file.description)
-    previewCards.push(<PreviewCard fileObj={file} setContent={setContent} />);
-  }
+  // // Build array of preview card components:
+  // const previewCards = [];
+  // for(let file of mdFilesList) {
+  //   console.log('file in preview card for loop = ${file}'+file.description)
+  //   previewCards.push(<PreviewCard fileObj={file} setContent={setContent} />);
+  // }
 
 
-  if(content === 'previews') {
+  // if(content === 'previews') {
 
-    return(
-      <Router>
-        <div path='/portfolio/writeups' id="writeup-previews" className="section-row">{previewCards}</div>
-      </Router>
-    ) 
-  } else {
+  //   return(
+  //     <Router>
+  //       <div path='/portfolio/writeups' id="writeup-previews" className="section-row">{previewCards}</div>
+  //     </Router>
+  //   ) 
+  // } else {
 
-    return(
-      <Router>
-        <CurrentWriteup path={content.linkto} />
-      </Router>
-    )
-  }
+  //   return(
+  //     <Router>
+  //       <CurrentWriteup path={content.linkto} />
+  //     </Router>
+  //   )
+  // }
 }
 
 function PreviewCard({fileObj, setContent} ) {

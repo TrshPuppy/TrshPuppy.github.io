@@ -11,6 +11,8 @@ import Portfolio from "./endpoints/portfolio";
 import Home from "./endpoints/home";
 import About from "./endpoints/about";
 import Contact from "./endpoints/contact";
+import Coding from "./endpoints/coding";
+import WriteUps from "./endpoints/writeups";
 
 function App() {
   return (
@@ -21,9 +23,11 @@ function App() {
       <div className="content-container">
         <Router>
           <Home path="/" />
-          <Portfolio path="/portfolio" />
-          <About path="/about" />
-          <Contact path="/contact" />
+          <Portfolio path="portfolio" />
+          <Coding path="portfolio/coding" />
+          <About path="about" />
+          <Contact path="contact" />
+          <WriteUps path="portfolio/writeups" />
         </Router>
       </div>
     </>
