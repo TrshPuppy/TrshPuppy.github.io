@@ -4,15 +4,43 @@ import mdFilesList from '../data/md.json';
 import { Converter } from "showdown";
 import { Link } from "@reach/router";
 import { render } from "preact";
+import CurrentWriteUp from "./currentWriteup";
+import { Router } from "@reach/router";
 
 
 export default function WriteUps(){
+  console.log("WWRITEUPO RE RENDER")
+  const [currentWriteup, setWriteup] = useState('none');
+
+  const handleCardClick = (path) => {
+    setWriteup(path);
+  }
+
   // Build array of preview card components:
   const previewCards = [];
   for(let file of mdFilesList) {
     // const previewComp = <PreviewCard fileObj={file} />
-    previewCards.push(<PreviewCard fileObj={file} />);
+    previewCards.push(<PreviewCard fileObj={file} handleCardClick={handleCardClick}/>);
   }
+
+  let contentComponent = (<div id="writeup-previews" className="section-row">
+  {previewCards}
+</div>)
+
+  useEffect(() => {
+    if(currentWriteup === 'none') {
+      contentComponent = (
+        <div id="writeup-previews" className="section-row">
+          {previewCards}
+        </div>
+      )
+    } else {
+      contentComponent = (<CurrentWriteUp writeupPath={currentWriteup} />)
+    }
+  }, [currentWriteup])
+
+  console.log(`current writeup = ${currentWriteup}`)
+
 
   return (
     <>
@@ -25,15 +53,14 @@ export default function WriteUps(){
       <Link to="/portfolio">
         <button>Back</button>
       </Link>
-      </div>      
-      <div id="writeup-previews" className="section-row">
-        {previewCards}
       </div>
+      <div>{contentComponent}</div>     
+        
     </>
   )
 }
 
-function PreviewCard({fileObj, setContent} ) {
+function PreviewCard({fileObj, handleCardClick} ) {
   // Fix description length & title:
   if(fileObj.description.length > 40) {
     fileObj.description = fileObj.description.slice(0, 40) + "...";
@@ -44,15 +71,15 @@ function PreviewCard({fileObj, setContent} ) {
   }
 
   return (
-
-      <div  className="preview-card section-row">
+    <Link to={fileObj.to_link}>
+      <div className="preview-card section-row" onClick={handleCardClick(fileObj.path)}>
         <img className="wu-preview-img" src={fileObj.img_path} alt={fileObj.name} />
         <div  className="wu-preview-text section-column">
           <h2>{fileObj.name}</h2>
           <p>{fileObj.description}</p>
         </div>
       </div>
-
+    </Link>
   );
 }
 
