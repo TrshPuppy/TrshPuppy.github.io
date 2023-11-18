@@ -2,10 +2,8 @@ import { useEffect, useState } from 'preact/hooks';
 import mdFilesList from '../data/md.json';
 import { Converter } from "showdown";
 
-
-
 export default function CurrentWriteUp(props) {
-    return(<div>{props.writeupPath}</div>)
+    return(<div>{props.writeupId}</div>)
 //   console.log(`requested writeup = ${props.writeup}`)
 //   const fileObj = props.writeup;
 //   const mdPath = fileObj.path;
