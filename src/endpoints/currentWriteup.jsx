@@ -5,7 +5,7 @@ import { Converter } from "showdown";
 
 
 export default function CurrentWriteUp(props) {
-    return(<div>{props.writeupPath}</div>)
+    return(<div>{props.path}</div>)
 //   console.log(`requested writeup = ${props.writeup}`)
 //   const fileObj = props.writeup;
 //   const mdPath = fileObj.path;
