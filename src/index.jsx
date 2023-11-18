@@ -28,10 +28,9 @@ function App() {
           <Coding path="portfolio/coding" />
           <About path="about" />
           <Contact path="contact" />
-          <WriteUps path="portfolio/writeups">
-            <CurrentWriteUp path="/" />  
-          </WriteUps>
-            
+          <WriteUps path="portfolio/writeups" />  
+          <CurrentWriteUp path="portfolio/writeups/academy"/>
+          <CurrentWriteUp path="portfolio/writeups/HTB-vaccine"/>
         </Router>
       </div>
     </>
