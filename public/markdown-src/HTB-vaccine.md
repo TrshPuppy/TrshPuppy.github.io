@@ -142,7 +142,7 @@ The form itself can sometimes give us _plaintext credentials_, and sometimes pat
 #### Browser
 
 <br>
-![](/public/md-images/vaccine-HTB-1.png)
+![](/md-images/vaccine-HTB-1.png)
 <br>
 When I found this I tried credentials I got from doing Oopsies and Archetype (the two boxes before Vaccine) because using credentials from Archetype worked on Oopsies. It did not work this time.
 
