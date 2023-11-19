@@ -10,8 +10,8 @@ First we have to make sure to spawn the target and connect via OpenVPN. Then, pe
 
 In this note I copy paste almost every command and out combination I use in the terminal as I go. I do this for a few reasons:
 
-- I'm still learning so it's nice to have examples to look back on of correct use of tools w/ flags etc. for reference.
-- It creates a timeline of how I went about attacking the box that I can reference and reflect on
+-   I'm still learning so it's nice to have examples to look back on of correct use of tools w/ flags etc. for reference.
+-   It creates a timeline of how I went about attacking the box that I can reference and reflect on
 
 ### `vaccine.findings.txt`
 
@@ -93,47 +93,47 @@ This is a default login page, and if you did the boxes before this one on HTB, y
 
 ```html
 <form action="" method="POST" class="form login">
-  <div class="form__field">
-    <label for="login__username"
-      ><svg class="icon">
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="#user"
-        ></use></svg
-      ><span class="hidden">Username</span></label
-    >
-    <input
-      id="login__username"
-      type="text"
-      name="username"
-      class="form__input"
-      placeholder="Username"
-      required
-    />
-  </div>
+    <div class="form__field">
+        <label for="login__username"
+            ><svg class="icon">
+                <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="#user"
+                ></use></svg
+            ><span class="hidden">Username</span></label
+        >
+        <input
+            id="login__username"
+            type="text"
+            name="username"
+            class="form__input"
+            placeholder="Username"
+            required
+        />
+    </div>
 
-  <div class="form__field">
-    <label for="login__password"
-      ><svg class="icon">
-        <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="#lock"
-        ></use></svg
-      ><span class="hidden">Password</span></label
-    >
-    <input
-      id="login__password"
-      type="password"
-      name="password"
-      class="form__input"
-      placeholder="Password"
-      required
-    />
-  </div>
+    <div class="form__field">
+        <label for="login__password"
+            ><svg class="icon">
+                <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="#lock"
+                ></use></svg
+            ><span class="hidden">Password</span></label
+        >
+        <input
+            id="login__password"
+            type="password"
+            name="password"
+            class="form__input"
+            placeholder="Password"
+            required
+        />
+    </div>
 
-  <div class="form__field">
-    <input type="submit" value="Sign In" />
-  </div>
+    <div class="form__field">
+        <input type="submit" value="Sign In" />
+    </div>
 </form>
 ```
 
@@ -141,9 +141,9 @@ The form itself can sometimes give us _plaintext credentials_, and sometimes pat
 
 #### Browser
 
-![](CTF-walkthroughs/walkthrough-pics/vaccine-HTB-1.png)
-![](/walkthrough-pics/vaccine-HTB-1.png)
-
+<br>
+![](/public/md-images/vaccine-HTB-1.png)
+<br>
 When I found this I tried credentials I got from doing Oopsies and Archetype (the two boxes before Vaccine) because using credentials from Archetype worked on Oopsies. It did not work this time.
 
 ### `Port 21` FTP
@@ -263,9 +263,9 @@ session_start();
 
 Here's what we learn from this file:
 
-- _Username:_ admin
-- _Password:_ 2cb42f8734ea607eefed3b70af13bbd3 (md5 hashed)
-- _Login endpoint:_ dashboard.php
+-   _Username:_ admin
+-   _Password:_ 2cb42f8734ea607eefed3b70af13bbd3 (md5 hashed)
+-   _Login endpoint:_ dashboard.php
 
 **NOTE:** A possible interesting divergence here from my path has to do with the `backup.zip`. The name implies that the file is _getting backed up regularly_ which implies as script somewhere is executing on an interval. If we can find the script, we can potentially swap it out and get automated execution... just spit balling :).
 
