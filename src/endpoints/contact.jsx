@@ -26,7 +26,7 @@ export default function Contact() {
                             <li>
                                 <a
                                     target="_blank"
-                                    href="https://gtihub.com/TrshPuppy"
+                                    href="https://github.com/TrshPuppy"
                                 >
                                     GitHub
                                 </a>
