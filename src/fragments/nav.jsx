@@ -8,7 +8,7 @@ export default function Nav(props) {
                     <Link to="/">
                         <img
                             id="home-btn"
-                            src="./logo2.png"
+                            src="/logo2.png"
                             alt="TrshPuppy logo"
                             style="image-rendering: pixelated"
                         ></img>
