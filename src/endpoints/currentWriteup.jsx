@@ -54,6 +54,7 @@ export default function CurrentWriteUp(props) {
         return <div>Loading...</div>;
     } else {
         const converter = new Converter();
+        converter.setOption("openLinksInNewWindow", true);
         const htmlString = converter.makeHtml(data);
         const html = { __html: htmlString };
 
