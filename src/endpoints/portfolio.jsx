@@ -1,4 +1,3 @@
-import { useEffect, useState } from "preact/hooks";
 import { Link, Router } from "@reach/router";
 
 export default function Portfolio() {

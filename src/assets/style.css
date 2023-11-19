@@ -416,6 +416,10 @@ p {
   cursor: pointer;
 }
 
+#writeup-previews a:link {
+  text-decoration: none;
+}
+
 #writeup-previews .preview-card:hover {
   box-shadow: var(--box-shadow-hover);
   transform: var(--hover-transform);
@@ -488,8 +492,6 @@ p {
   margin: clamp(10px, 50px, 50px);
   margin-top: 10px;
   margin-bottom: 10px;
-  /* margin: 0 50px 0 50px;
-  margin-left: clamp(10px, 50px, 50px); */
   padding:10px;
 }
 

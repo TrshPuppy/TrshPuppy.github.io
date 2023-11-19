@@ -23,6 +23,16 @@ export default function CurrentWriteUp(props) {
             mdFilesList.map((x) => {
                 if (x.name === "HTB Vaccine") {
                     mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
+        case "portfolio/writeups/binary-exploitation":
+            mdFilesList.map((x) => {
+                if (x.name === "Binary Exploitation Pt 1") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
                 }
             });
 

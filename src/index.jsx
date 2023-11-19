@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { render } from "preact";
 import { Router } from "@reach/router";
 
@@ -30,6 +31,7 @@ function App() {
                     <WriteUps path="portfolio/writeups" />
                     <CurrentWriteUp path="portfolio/writeups/academy" />
                     <CurrentWriteUp path="portfolio/writeups/HTB-vaccine" />
+                    <CurrentWriteUp path="portfolio/writeups/binary-exploitation" />
                 </Router>
             </div>
         </>
