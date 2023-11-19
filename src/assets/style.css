@@ -479,7 +479,7 @@ p {
 }
 
 #markdown-div code {
-  color: var(--hax-red);
+  color: var(--code-block-text);
 }
 
 #markdown-div pre {
