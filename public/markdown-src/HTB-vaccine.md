@@ -38,9 +38,9 @@ Once it's in there I use `source ~/.profile` on any terminal I open during the C
 
 ## Recon
 
-After starting the target machine and connecting our attack box to it's network via OpenVPN, we can do a preliminary scan of the target using [nmap](CLI-tools/linux/nmap.md). Personally, I don't do CTFs for time, I do them to learn. So I have no reason to run scans I don't need.
+After starting the target machine and connecting our attack box to it's network via OpenVPN, we can do a preliminary scan of the target using [nmap](https://github.com/TrshPuppy/obsidian-notes/blob/main/CLI-tools/linux/nmap.md). Personally, I don't do CTFs for time, I do them to learn. So I have no reason to run scans I don't need.
 
-That's why I like to start with a basic nmap scan to just scan for ports. For those who don't know the `-PA` flag to scan for [TCP](networking/protocols/TCP.md) ports below 1000. In this scan, nmap just sends a TCP `ACK` packet to the specified ports, as well as .
+That's why I like to start with a basic nmap scan to just scan for ports. For those who don't know the `-PA` flag to scan for [TCP](https://github.com/TrshPuppy/obsidian-notes/blob/main/networking/protocols/TCP.md) ports below 1000. In this scan, nmap just sends a TCP `ACK` packet to the specified ports, as well as .
 
 ```bash
 nmap -PA1-1000 $t
@@ -56,11 +56,11 @@ PORT   STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.90 seconds
 ```
 
-We can see that the target is running [SSH](networking/protocols/SSH.md), [FTP](networking/protocols/FTP.md), and [HTTP](networking/protocols/HTTP.md) services. I like to start by looking at HTTP.
+We can see that the target is running [SSH](https://github.com/TrshPuppy/obsidian-notes/blob/main/networking/protocols/SSH.md), [FTP](https://github.com/TrshPuppy/obsidian-notes/blob/main/networking/protocols/FTP.md), and [HTTP](https://github.com/TrshPuppy/obsidian-notes/blob/main/networking/protocols/HTTP.md) services. I like to start by looking at HTTP.
 
 ### `Port 80`/ HTTP
 
-Before visiting the website, I like to use [curL](CLI-tools/linux/curL.md) first. You can either just grab the headers using the `-I` flag:
+Before visiting the website, I like to use [curL](https://github.com/TrshPuppy/obsidian-notes/blob/main/CLI-tools/linux/curL.md) first. You can either just grab the headers using the `-I` flag:
 
 ```bash
 ┌──(hakcypuppy㉿kali)-[~/vaccine]
@@ -77,7 +77,7 @@ Content-Type: text/html; charset=UTF-8
 
 From the headers, we've already learned they're using _Apache 2.4.41_ for their server. This _is considered a finding in a pentest_ because version numbers for services can help us find CVEs and exploits against the target.
 
-Additionally, we can see we've been given a [PHP](coding/languages/PHP.md) session cookie. So we already know the target is using PHP in their web architecture. To get all of the HTML at this endpoint, we can just use curL normally. The `--version` flag is also nice to add. I'm not going to paste the entire output but here are some interesting things to notice:
+Additionally, we can see we've been given a [PHP](https://github.com/TrshPuppy/obsidian-notes/blob/main/coding/languages/PHP.md) session cookie. So we already know the target is using PHP in their web architecture. To get all of the HTML at this endpoint, we can just use curL normally. The `--version` flag is also nice to add. I'm not going to paste the entire output but here are some interesting things to notice:
 
 #### MegaCorp Login
 
@@ -148,7 +148,7 @@ When I found this I tried credentials I got from doing Oopsies and Archetype (th
 
 ### `Port 21` FTP
 
-Moving on to FTP we can use the [`ftp` command](CLI-tools/linux/ftp-command.md) to try gaining access to the service using the _anonymous login_ which is a default access user which _is limited to copying files_ from the server:
+Moving on to FTP we can use the [`ftp` command](https://github.com/TrshPuppy/obsidian-notes/blob/main/CLI-tools/linux/ftp-command.md) to try gaining access to the service using the _anonymous login_ which is a default access user which _is limited to copying files_ from the server:
 
 ```bash
 ┌──(hakcypuppy㉿kali)-[~/vaccine]
@@ -198,7 +198,7 @@ Archive:  backup.zip
 
 ### zip2john
 
-Fortunately we can do some offline cracking with [john the ripper](cybersecurity/tools/cracking/john.md). John is a cracking tool which can be used to crack various things, specifically passwords. However, he also has some other setting such as `ssh2john` and `zip2john`.
+Fortunately we can do some offline cracking with [john the ripper](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/tools/cracking/john.md). John is a cracking tool which can be used to crack various things, specifically passwords. However, he also has some other setting such as `ssh2john` and `zip2john`.
 
 We're gonna use `zip2john` to crack the passwords. From what I understand, `zip2john` creates a hash of the `.zip` file and then attempts to crack the hash, thus revealing the passwords locking it and/or securing the files zipped in it.
 
@@ -290,3 +290,9 @@ Our password for an admin account at the `dashboard.php` endpoint is 'qwerty789'
 ## Admin Dashboard
 
 Now that we have the admin password for the dashboard endpoint, let's try to use it.
+
+...More to come!
+
+> My previous notes (linked in text):
+>
+> -   You'll find them all [here](https://github.com/TrshPuppy/obsidian-notes)
