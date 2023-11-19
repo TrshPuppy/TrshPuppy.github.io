@@ -585,4 +585,32 @@ p {
   color: var(--hax-light-green);
 }
 
+/*                     * ABOUT SECTION *                     */
+#about-stack-top {
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color:var(--loki-dark-plum);
+}
+
+#about-blurb {
+  display:flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+ width: clamp(350px, 30vw, 30vw);
+}
+
+#about-pic {
+  width: clamp(150px, 20vw, 20vw);
+  border-radius: 100%;
+  margin: 10px;
+}
+
+
+#about-pic-section h2 {
+  display: unset;
+  align-self: center;
+  font-size: 1.5rem;
+  color:var(--loki-ear-pink);
+}
 /*                                   ** END APP **                                   */
