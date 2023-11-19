@@ -9,37 +9,15 @@ import { Router } from "@reach/router";
 
 
 export default function WriteUps(){
-  console.log("WWRITEUPO RE RENDER")
-  const [currentWriteup, setWriteup] = useState('none');
-
-  const handleCardClick = (path) => {
-    setWriteup(path);
-  }
-
   // Build array of preview card components:
   const previewCards = [];
   for(let file of mdFilesList) {
-    // const previewComp = <PreviewCard fileObj={file} />
-    previewCards.push(<PreviewCard fileObj={file} handleCardClick={handleCardClick}/>);
+    previewCards.push(<PreviewCard fileObj={file} />);
   }
 
   let contentComponent = (<div id="writeup-previews" className="section-row">
   {previewCards}
-</div>)
-
-  useEffect(() => {
-    if(currentWriteup === 'none') {
-      contentComponent = (
-        <div id="writeup-previews" className="section-row">
-          {previewCards}
-        </div>
-      )
-    } else {
-      contentComponent = (<CurrentWriteUp writeupPath={currentWriteup} />)
-    }
-  }, [currentWriteup])
-
-  console.log(`current writeup = ${currentWriteup}`)
+  </div>)
 
 
   return (
@@ -54,8 +32,7 @@ export default function WriteUps(){
         <button>Back</button>
       </Link>
       </div>
-      <div>{contentComponent}</div>     
-        
+      <div>{contentComponent}</div>      
     </>
   )
 }
@@ -72,7 +49,8 @@ function PreviewCard({fileObj, handleCardClick} ) {
 
   return (
     <Link to={fileObj.to_link}>
-      <div className="preview-card section-row" onClick={handleCardClick(fileObj.path)}>
+      {/* <div className="preview-card section-row" onClick={handleCardClick(fileObj.path)}> */}
+      <div className="preview-card section-row">
         <img className="wu-preview-img" src={fileObj.img_path} alt={fileObj.name} />
         <div  className="wu-preview-text section-column">
           <h2>{fileObj.name}</h2>
