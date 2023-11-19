@@ -26,7 +26,7 @@ export default function WriteUps() {
                     <button>Back</button>
                 </Link>
             </div>
-            <div>{contentComponent}</div>
+            <div id="writeups-container">{contentComponent}</div>
         </>
     );
 }
