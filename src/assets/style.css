@@ -606,11 +606,44 @@ p {
   margin: 10px;
 }
 
-
 #about-pic-section h2 {
   display: unset;
   align-self: center;
   font-size: 1.5rem;
   color:var(--loki-ear-pink);
 }
+
+/*                     * CONTACT SECTION *                     */
+
+#contact-stack-top {
+  align-items: center;
+  justify-content: space-between;
+  background-color:var(--loki-dark-teal);
+  color:var(--loki-ear-pink);
+}
+
+#contact-stack-top h1 {
+  color:var(--loki-ear-pink);
+}
+
+#contact-stack-top h2 {
+  color:var(--loki-light-yellow);
+}
+
+#contact-stack-top ul {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#contact-stack-top li {
+  font-size: 1.5rem;
+}
+
+
+
+
+
 /*                                   ** END APP **                                   */

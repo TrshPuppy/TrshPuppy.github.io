@@ -15,7 +15,7 @@ export default function Home(props) {
                         {
                             type: "p",
                             attrs: undefined,
-                            text: "We are currently under construction!",
+                            text: "We are currently under construction, but please look around!",
                             child: undefined,
                         },
                         {
