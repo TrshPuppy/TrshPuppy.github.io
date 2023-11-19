@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Academy Walkthrough",
+        "path": "/markdown-src/academy.md",
+        "type": "writeup",
+        "img_path": "/md-images/academy-6.png",
+        "description": "How I rooted the Academy box from TCM Security.",
+        "id": "current-writeup",
+        "to_link": "academy"
+    },
+    {
+        "name": "HTB Vaccine",
+        "path": "/markdown-src/HTB-vaccine.md",
+        "type": "writeup",
+        "img_path": "/md-images/vaccine-HTB-1.png",
+        "description": "How I rooted Vaccine from HTB's Starting Point Tier 2.",
+        "id": "current-writeup",
+        "to_link": "HTB-vaccine"
+    },
+    {
+        "name": "Binary Exploitation Pt 1",
+        "path": "/markdown-src/binary-exploitation.md",
+        "type": "writeup",
+        "img_path": "/md-images/buffer-overflow-8.png",
+        "description": "My notes on buffer overflows.",
+        "id": "current-writeup",
+        "to_link": "binary-exploitation"
+    }
+]

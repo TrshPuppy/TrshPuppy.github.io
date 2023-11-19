@@ -1,25 +1,59 @@
-import { useEffect, useState, useRef } from "preact/hooks";
-import Section from "../fragments/section";
-import getMarkdownFiles from "./markdown/md-parser";
+import mdFilesList from "../data/md.json";
+import { Link } from "@reach/router";
 
 export default function WriteUps() {
-  const html = { __html: getMarkdownFiles() };
+    // Build array of preview card components:
+    const previewCards = [];
+    for (let file of mdFilesList) {
+        previewCards.push(<PreviewCard fileObj={file} />);
+    }
 
-  return (
-    <>
-      <div id="markdown-div" dangerouslySetInnerHTML={html}></div>
-    </>
-  );
+    let contentComponent = (
+        <div id="writeup-previews" className="section-row">
+            {previewCards}
+        </div>
+    );
 
-
+    return (
+        <>
+            <div className="section-row" id="port-nav-container">
+                <p> /home/trshpuppy</p>
+                <Link to="/portfolio">
+                    <p>/portfolio</p>
+                </Link>
+                <p>/writeups</p>
+                <Link to="/portfolio">
+                    <button>Back</button>
+                </Link>
+            </div>
+            <div>{contentComponent}</div>
+        </>
+    );
 }
 
-/*
-   h1 HACKING WRITEUPS
-   h2 Welcome to the dark side
-  p- blurb This is a collection on all of my writeups for various Capture the Flags and other
-       hacking challenges. Some writeups come from working through Hack the Box, 
-      others are a little more *<obscure></obscure>
-  p- ENJOY!
+function PreviewCard({ fileObj, handleCardClick }) {
+    // Fix description length & title:
+    if (fileObj.description.length > 40) {
+        fileObj.description = fileObj.description.slice(0, 40) + "...";
+    }
 
-*/
+    if (fileObj.name.length > 40) {
+        fileObj.name = fileObj.name.slice(0, 40) + "...";
+    }
+
+    return (
+        <Link to={fileObj.to_link}>
+            <div className="preview-card section-row">
+                <img
+                    className="wu-preview-img"
+                    src={fileObj.img_path}
+                    alt={fileObj.name}
+                />
+                <div className="wu-preview-text section-column">
+                    <h2>{fileObj.name}</h2>
+                    <p>{fileObj.description}</p>
+                </div>
+            </div>
+        </Link>
+    );
+}
