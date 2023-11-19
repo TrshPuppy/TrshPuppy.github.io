@@ -218,11 +218,11 @@ Once it's returned the results from that level, you can run it again to enumerat
 
 ## Logging in
 
-![](./md-images/academy-1.png)
+![](/public/md-images/academy-1.png)
 
 If we go to `http://10.0.2.15/academy` we get a login page where we can login with our new credentials. Once we're in, one of the interesting tabs we have access to is the `My Profile` tab. Clicking this, we find a form where we can upload a 'student photo'.
 
-![](./md-images/academy-2.png)
+![](/public/md-images/academy-2.png)
 
 Besides the photo upload, we can also pentest this for [SQL-injection](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/TTPs/exploitation/injection/SQL-injection.md), etc.. However, the simplest place to start is to _use the form like its intended_ and investigate from there.
 
@@ -232,15 +232,15 @@ Besides the photo upload, we can also pentest this for [SQL-injection](https://g
 
 Starting w/ a plain photo, let's see what happens:
 
-![](./md-images/academy-3.png)
+![](/public/md-images/academy-3.png)
 
 We can see a green success message, as well as our new photo. If we investigate the source, we might be able to figure out where the photo is being loaded from in the HTML:
 
-![](./md-images/academy-4.png)
+![](/public/md-images/academy-4.png)
 
 The endpoint for the photo is `studentphoto/duck.jpeg`. Let's try to go to that endpoint w/ the browser:
 
-![](./md-images/academy-5.png)
+![](/public/md-images/academy-5.png)
 
 The fact that we can see our duck in the browser means _the webserver is executing the file_, so we know if we upload some code _it will be executed_.
 
@@ -428,15 +428,15 @@ Having tried this box _without watching the walkthrough first_, there are some o
 
 Once you've SSH'd into the target as Grimmie, you can access the [mysql](https://github.com/TrshPuppy/obsidian-notes/blob/main/CLI-tools/linux/mysql.md) database using the same password.
 
-![](./md-images/academy-6.png)
+![](/public/md-images/academy-6.png)
 
 Some tasty tables in here include: `db` and `user`, both of which give you access to credentials.
 
 > Resources:
 >
-> - [hash-identifier repo](https://www.kali.org/tools/hash-identifier/)
-> - [PentestMonkey: PHP Revshell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
+> -   [hash-identifier repo](https://www.kali.org/tools/hash-identifier/)
+> -   [PentestMonkey: PHP Revshell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
 
 > My previous notes (linked in text):
 >
-> - You'll find them all [here](https://github.com/TrshPuppy/obsidian-notes)
+> -   You'll find them all [here](https://github.com/TrshPuppy/obsidian-notes)

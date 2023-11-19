@@ -455,6 +455,7 @@ p {
 }
 
 #markdown-div {
+  align-self: inherit;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -581,7 +582,5 @@ p {
 #markdown-div a {
   color: var(--hax-light-green);
 }
-
-
 
 /*                                   ** END APP **                                   */
