@@ -11,9 +11,10 @@ export default function About() {
                     ></img>
                     <div id="about-blurb">
                         <h2>
-                            Those who know me know Trash Puppy is a nickname for
-                            my dog Loki. Before he was adopted, he was a little
-                            trash puppy who was abandoned to fend for himself.
+                            Those who know me, know Trash Puppy is a nickname
+                            for my dog Loki. Before he was adopted, he was a
+                            little trash puppy who was abandoned to fend for
+                            himself.
                         </h2>
                         <p>
                             Not unlike T.P., I am a young woman with a goal: to
