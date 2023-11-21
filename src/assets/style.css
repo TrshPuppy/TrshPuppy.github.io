@@ -436,6 +436,7 @@ p {
 #writeup-previews .preview-card {
   justify-content: space-between;
   width: clamp(350px, 28vw, 28vw);
+  height: 180px;
   background-color: var(--loki-dark-teal);
   border-radius: var(--rounded-edges);
   margin: 10px;
@@ -459,6 +460,7 @@ p {
 
 #writeup-previews .wu-preview-img {
   width: clamp(150px, 12vw, 12vw);
+  max-height: 150px;
   padding: 10px;
   border-radius: var(--rounded-edges);
 }

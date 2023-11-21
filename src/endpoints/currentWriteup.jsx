@@ -37,6 +37,15 @@ export default function CurrentWriteUp(props) {
             });
 
             break;
+        case "portfolio/writeups/classic-buffer-overflow":
+            mdFilesList.map((x) => {
+                if (x.name === "Binary Exploitation Pt 2") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
     }
 
     // Get of requested markdown file:

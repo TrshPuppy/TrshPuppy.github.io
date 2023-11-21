@@ -22,8 +22,17 @@
         "path": "/markdown-src/binary-exploitation.md",
         "type": "writeup",
         "img_path": "/md-images/buffer-overflow-8.png",
-        "description": "My notes on buffer overflows.",
+        "description": "Notes on understanding stack manipulation.",
         "id": "current-writeup",
         "to_link": "binary-exploitation"
+    },
+    {
+        "name": "Binary Exploitation Pt 2",
+        "path": "/markdown-src/classic-buffer-overflow.md",
+        "type": "writeup",
+        "img_path": "/md-images/Pasted image 20231121174543.png",
+        "description": "My notes on buffer overflows.",
+        "id": "current-writeup",
+        "to_link": "classic-buffer-overflow"
     }
 ]

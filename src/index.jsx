@@ -39,6 +39,7 @@ function App() {
                     <CurrentWriteUp path="portfolio/writeups/academy" />
                     <CurrentWriteUp path="portfolio/writeups/HTB-vaccine" />
                     <CurrentWriteUp path="portfolio/writeups/binary-exploitation" />
+                    <CurrentWriteUp path="portfolio/writeups/classic-buffer-overflow" />
                 </Router>
             </div>
         </>
