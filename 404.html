@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -8,4 +8,16 @@
 			location.replace('/index.html?path=' + encodeURIComponent(path));
 		</script>
 	</head>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Parse the URL path and pass it to index.html as a query parameter
+      const path = location.pathname;
+      document.write('<meta http-equiv="refresh" content="0; URL=/' + '?path=' + encodeURIComponent(path) + '">');
+    </script>
+  </head>
 </html>
