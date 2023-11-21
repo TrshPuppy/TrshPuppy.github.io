@@ -5,7 +5,7 @@ export default function About() {
                 <h1> Who is Trash Puppy? </h1>
                 <div className="section-row" id="about-pic-section">
                     <img
-                        src="./about1.jpg"
+                        src="./contact1.jpg"
                         alt="picture of TP"
                         id="about-pic"
                     ></img>
