@@ -30,16 +30,25 @@ export default function CurrentWriteUp(props) {
             break;
         case "portfolio/writeups/binary-exploitation":
             mdFilesList.map((x) => {
-                if (x.name === "Binary Exploitation Pt 1") {
+                if (x.name === "Binary Exploitation I") {
                     mdPath = x.path;
                     mdName = x.to_link;
                 }
             });
 
             break;
-        case "portfolio/writeups/classic-buffer-overflow":
+        case "portfolio/writeups/basic-buffer-overflow":
             mdFilesList.map((x) => {
-                if (x.name === "Binary Exploitation Pt 2") {
+                if (x.name === "B&E II: Basic Buffer Overflow") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
+        case "portfolio/writeups/nop-sleds":
+            mdFilesList.map((x) => {
+                if (x.name === "B&E III: NOP Sleds") {
                     mdPath = x.path;
                     mdName = x.to_link;
                 }

@@ -1,6 +1,6 @@
 This is part II of my notes while working through [TsarSec's Course](https://taggartinstitute.org/courses/an-oral-history-of-binary-exploitation-defenses) on [binary-exploitation](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/TTPs/exploitation/binary-exploitation/buffer-overflow.md). You can find part I [here](https://trshpuppy.github.io/portfolio/writeups/binary-exploitation).
 
-# B&E Pt. 2 Overflowing the Buffer
+# B&E II: Overflowing the Buffer
 
 Now that we have an idea of how the stack is manipulated during a program's runtime, we want to hijack the control flow in order to exploit the program.
 
@@ -281,7 +281,6 @@ All you have to do now is `chmod +x` your exploit script and then run it. It wil
 └─$ ./exploit.py
 [+] Starting local process './vuln_1': pid 1284173
 [*] Switching to interactive mode
-[*] Got EOF while reading in interactive
 $ whoami
 hakcypuppy
 $
@@ -289,7 +288,7 @@ $
 
 _Easy!_
 
-In the next part we'll talk about NOP Sleds for when we want our exploit to work more reliably on target machines (not our own).
+In [part 3](https://trshpuppy.github.io/portfolio/writeups/nop-sleds) we'll talk about using NOP Sleds to make our exploit more reliable on target machines (not our own).
 
 > Resources
 >

@@ -83,6 +83,7 @@
 
 --stack-sections-width: clamp(350px, 60vw, 60vw);
 --stack-outer-width: clamp(350px, 80vw, 90vw);
+--markdown-img-width: clamp(300px, 50vw, 50vw);
 }
 
 body {
@@ -460,7 +461,7 @@ p {
 
 #writeup-previews .wu-preview-img {
   width: clamp(150px, 12vw, 12vw);
-  max-height: 150px;
+  max-height: 150px !important;
   padding: 10px;
   border-radius: var(--rounded-edges);
 }
@@ -604,6 +605,7 @@ p {
   margin-top: 10px;
   margin-bottom: 10px;
   color: white;
+  width: clamp(30ch, 55vw, 55vw);
 }
 
 #markdown-div li {
@@ -614,8 +616,13 @@ p {
 }
 
 #markdown-div img {
-  align-self: center;
-  width: clamp(300px, 30vw, 30vw);
+  /* align: center; */
+  /* width: clamp(300px, 30vw, 30vw); */
+  width: var(--markdown-img-width);
+  /* max-height: 50vh; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #markdown-div a {
@@ -625,6 +632,11 @@ p {
 #markdown-div blockquote {
   width:clamp(350px, 40vw, 40vw);
 }
+
+/* #markdown-div p, ul, li {
+  width:clamp(30ch, 55vw, 55vw);
+
+} */
 
 /*                     * ABOUT SECTION *                     */
 #about-stack-top {
