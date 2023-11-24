@@ -1,9 +1,3 @@
-# TP Custom:
-# public
-package-lock.json
-.vite
-# src/endpoints/markdown/md-parser.js
-
 # Logs
 logs
 *.log
