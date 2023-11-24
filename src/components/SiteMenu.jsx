@@ -2,7 +2,7 @@ import Nav from "./Nav.jsx";
 
 const SiteMenu = () => {
     return (
-        <aside>
+        <aside className="site-menu">
             <Nav />
         </aside>
     )

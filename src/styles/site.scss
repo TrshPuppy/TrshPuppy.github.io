@@ -1,0 +1,65 @@
+@use "variables" as *;
+
+* {
+    box-sizing : border-box;
+}
+
+html {
+    font-size           : 16px;
+    background-size     : cover;
+    background-position : top center;
+    background-image    : url("../../public/img/background.webp");
+
+    @media screen and (max-width : 836px) {
+        background-image : unset;
+    }
+
+    body {
+        position      : relative;
+        margin        : 0;
+        min-height    : 100vh;
+        display       : grid;
+        justify-items : center;
+        align-items   : center;
+    }
+
+    &:before {
+        content          : "";
+        position         : absolute;
+        top              : 0;
+        left             : 0;
+        height           : 100%;
+        width            : 100%;
+        background-image : linear-gradient(
+                        to left top,
+                        rgba(#682d6f, 0.75),
+                        rgba(#733a7a, 0.75),
+                        rgba(#7e4885, 0.75),
+                        rgba(#8a5590, 0.75),
+                        rgba(#95629b, 0.75)
+        );
+        z-index          : -1;
+    }
+}
+
+#root {
+    display          : flex;
+    background-color : #1B1B1F;
+    height           : 700px;
+    width            : 1100px;
+    border-radius    : 1rem;
+
+    @media screen and (max-width : 1155px) {
+        width : 900px
+    }
+
+    @media screen and (max-width : 945px) {
+        width : 800px
+    }
+
+    @media screen and (max-width : 836px) {
+        width  : 100%;
+        height : 100%;
+        margin : 0.25rem;
+    }
+}
