@@ -18,3 +18,10 @@ Come enjoy the journey over on [Twitch](https://twitch.tv/trshpuppy)
 
 ### P.S.
 All of the pixelart assets are made by me, including the background! Please respect the hours I put into making them and I hope you enjoy!
+
+## Changelog
+### 2.0.0
+- Removed existing react project and rebuilt. Bumped major version.
+
+### 1.0.0
+- No info

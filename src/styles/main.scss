@@ -1,0 +1,12 @@
+* {
+    box-sizing : border-box;
+}
+
+html {
+    display       : grid;
+    justify-items : center;
+    align-items   : center;
+    font-size     : 16px;
+    min-height    : 100vh;
+    background-image: url("../../public/img/background.png");
+}
