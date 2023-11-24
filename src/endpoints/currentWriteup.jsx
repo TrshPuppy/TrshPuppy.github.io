@@ -88,7 +88,7 @@ export default function CurrentWriteUp(props) {
                     </Link>
                     <p>/{mdName}</p>
                     <Link to="/portfolio/writeups">
-                        <button>Back</button>
+                        <button>cd ..</button>
                     </Link>
                 </div>
                 <div className="markdown-parent-container section-column">

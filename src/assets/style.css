@@ -616,10 +616,7 @@ p {
 }
 
 #markdown-div img {
-  /* align: center; */
-  /* width: clamp(300px, 30vw, 30vw); */
   width: var(--markdown-img-width);
-  /* max-height: 50vh; */
   display: block;
   margin-left: auto;
   margin-right: auto;
