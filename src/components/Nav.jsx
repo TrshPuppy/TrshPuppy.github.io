@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Nav = () => {
     return (
         <nav>
-            <img src="../../public/img/logo-2.webp" alt="Trash Puppy Logo."/>
+            <img src="../../public/img/logo-1.webp" alt="Trash Puppy Logo."/>
             <ul>
                 <li>
                     <Link to={'/'} className="nav-link">Home</Link>
