@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CoffeeSVG from "./svg/Coffee.jsx";
 import FlaskSVG from "./svg/Flask.jsx";
 import HomeSVG from "./svg/Home.jsx";
@@ -9,29 +9,49 @@ const Nav = () => {
         <nav>
             <img src="../../public/img/logo-1.webp" alt="Trash Puppy Logo."/>
             <ul>
-                <li>
-                    <Link to={ '/' } className="nav-link">
+                <li key="nav-link-home">
+                    <NavLink
+                        to={ '/' }
+                        className={({ isActive, isPending }) => {
+                            return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
+                        }}
+                    >
                         <span>Home</span>
                         <HomeSVG/>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to={ '/projects' } className="nav-link">
+                <li key="nav-link-projects">
+                    <NavLink
+                        to={ '/projects' }
+                        className={({ isActive, isPending }) => {
+                            return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
+                        }}
+                    >
                         <span>Projects</span>
                         <FlaskSVG/>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to={ '/about' } className="nav-link">
+                <li key="nav-link-about">
+                    <NavLink
+                        to={ '/about' }
+                        className={({ isActive, isPending }) => {
+                            return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
+                        }}
+                    >
                         <span>About</span>
                         <PawSVG/>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to={ '/contact' } className="nav-link">
+                <li key="nav-link-contact">
+                    <NavLink
+                        to={ '/contact' }
+                        className={({ isActive, isPending }) => {
+                            return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
+                        }}
+                    >
                         <span>Contact</span>
                         <CoffeeSVG/>
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
         </nav>

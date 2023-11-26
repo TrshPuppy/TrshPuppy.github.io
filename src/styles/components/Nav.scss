@@ -36,23 +36,57 @@ nav {
         border-radius    : 0.5rem;
         background-color : #3b324d;
         color            : #CCC4D9;
-        border           : 1px solid $border_color;
+        border           : 3px double $border_color;
         text-decoration  : none;
         font-weight      : 600;
         font-size        : 0.85rem;
         text-align       : center;
         box-shadow       : 0 10px 1px rgba(0, 0, 0, 0.40);
-        transition       : all 40ms;
+        transition       : all 70ms, border 500ms;
 
         svg {
             height : 1.5rem;
-            fill   : #CCC4D9;
+            fill   : #a2662b;
+            transition: filer 1000ms;
+            filter: drop-shadow(0 0 1px #000);
         }
 
         &:hover,
         &:focus {
-            top        : 2px;
-            box-shadow : 0 8px 1px rgba(0, 0, 0, 0.40);
+            top        : 3px;
+            box-shadow : 0 7px 1px rgba(0, 0, 0, 0.40);
+        }
+
+        &:active {
+            top        : 8px;
+            box-shadow : 0 2px 1px rgba(0, 0, 0, 0.40);
+            color      : #e0e0e0;
+            filter : drop-shadow(0 0 2px rgba(#ffc38e, 0.95));
+
+            span {
+                color  : #ffc38e;
+            }
+
+            svg {
+                fill : #ff7e00;
+            }
+        }
+
+        &.active {
+            pointer-events : none;
+            border         : 3px double #a97544;
+            top            : 0;
+            box-shadow     : 0 10px 1px rgba(0, 0, 0, 0.40);
+            background-color : lighten(#3b324d, 3%);
+
+            span {
+                color  : #ffc38e;
+            }
+
+            svg {
+                fill   : #ff7e00;
+                filter : drop-shadow(0 0 10px #ff7e00) saturate(1.5);
+            }
         }
     }
 }
