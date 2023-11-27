@@ -16,6 +16,28 @@ nav {
         padding    : 0;
     }
 
+    .external-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+
+            svg {
+                height: 1.75rem;
+                width: 1.75rem;
+                pointer-events: none;
+            }
+        }
+    }
+
     img {
         border-top-left-radius : 1rem;
         width                  : 100%;
