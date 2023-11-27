@@ -9,6 +9,7 @@ nav {
     height                    : 100%;
     flex-shrink               : 0;
     background-image          : linear-gradient(to top, #2f1071, #5b348e, #8358ab, #aa7fca, #d2a7ea);
+    border-right: 1px solid #2F1071;
 
     ul {
         list-style : none;
@@ -58,8 +59,8 @@ nav {
         }
 
         &:active {
-            top        : 8px;
-            box-shadow : 0 2px 1px rgba(0, 0, 0, 0.40);
+            top        : 6px;
+            box-shadow : 0 4px 1px rgba(0, 0, 0, 0.40);
             color      : #e0e0e0;
             filter : drop-shadow(0 0 2px rgba(#ffc38e, 0.95));
 
