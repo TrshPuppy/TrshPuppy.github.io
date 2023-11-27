@@ -18,12 +18,30 @@
         "to_link": "HTB-vaccine"
     },
     {
-        "name": "Binary Exploitation Pt 1",
+        "name": "Binary Exploitation I",
         "path": "/markdown-src/binary-exploitation.md",
         "type": "writeup",
         "img_path": "/md-images/buffer-overflow-8.png",
-        "description": "My notes on buffer overflows.",
+        "description": "Understanding stack manipulation.",
         "id": "current-writeup",
         "to_link": "binary-exploitation"
+    },
+    {
+        "name": "B&E II: Basic Buffer Overflow",
+        "path": "/markdown-src/basic-buffer-overflow.md",
+        "type": "writeup",
+        "img_path": "/md-images/Pasted image 20231121174543.png",
+        "description": "Writing a basic buffer overflow.",
+        "id": "current-writeup",
+        "to_link": "basic-buffer-overflow"
+    },
+    {
+        "name": "B&E III: NOP Sleds",
+        "path": "/markdown-src/nop-sleds.md",
+        "type": "writeup",
+        "img_path": "/md-images/Pasted image 20231124145724.png",
+        "description": "Increasing reliability with NOP sleds.",
+        "id": "current-writeup",
+        "to_link": "nop-sleds"
     }
 ]

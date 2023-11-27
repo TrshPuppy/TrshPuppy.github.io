@@ -30,7 +30,25 @@ export default function CurrentWriteUp(props) {
             break;
         case "portfolio/writeups/binary-exploitation":
             mdFilesList.map((x) => {
-                if (x.name === "Binary Exploitation Pt 1") {
+                if (x.name === "Binary Exploitation I") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
+        case "portfolio/writeups/basic-buffer-overflow":
+            mdFilesList.map((x) => {
+                if (x.name === "B&E II: Basic Buffer Overflow") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
+        case "portfolio/writeups/nop-sleds":
+            mdFilesList.map((x) => {
+                if (x.name === "B&E III: NOP Sleds") {
                     mdPath = x.path;
                     mdName = x.to_link;
                 }
@@ -54,6 +72,7 @@ export default function CurrentWriteUp(props) {
         return <div>Loading...</div>;
     } else {
         const converter = new Converter();
+        converter.setOption("openLinksInNewWindow", true);
         const htmlString = converter.makeHtml(data);
         const html = { __html: htmlString };
 
@@ -69,7 +88,7 @@ export default function CurrentWriteUp(props) {
                     </Link>
                     <p>/{mdName}</p>
                     <Link to="/portfolio/writeups">
-                        <button>Back</button>
+                        <button>cd ..</button>
                     </Link>
                 </div>
                 <div className="markdown-parent-container section-column">

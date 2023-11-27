@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { render } from "preact";
-import { Router } from "@reach/router";
+import { Router, navigate } from "@reach/router";
 
 import Nav from "./fragments/nav";
 
@@ -14,6 +14,13 @@ import Contact from "./endpoints/contact";
 import Coding from "./endpoints/coding";
 import WriteUps from "./endpoints/writeups";
 import CurrentWriteUp from "./endpoints/currentWriteup";
+
+const params = new URLSearchParams(window.location.search);
+const path = params.get("path");
+
+if (path) {
+    navigate(path);
+}
 
 function App() {
     return (
@@ -32,6 +39,8 @@ function App() {
                     <CurrentWriteUp path="portfolio/writeups/academy" />
                     <CurrentWriteUp path="portfolio/writeups/HTB-vaccine" />
                     <CurrentWriteUp path="portfolio/writeups/binary-exploitation" />
+                    <CurrentWriteUp path="portfolio/writeups/basic-buffer-overflow" />
+                    <CurrentWriteUp path="portfolio/writeups/nop-sleds" />
                 </Router>
             </div>
         </>

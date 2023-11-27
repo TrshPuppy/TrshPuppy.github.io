@@ -23,10 +23,10 @@ export default function WriteUps() {
                 </Link>
                 <p>/writeups</p>
                 <Link to="/portfolio">
-                    <button>Back</button>
+                    <button>cd ..</button>
                 </Link>
             </div>
-            <div>{contentComponent}</div>
+            <div id="writeups-container">{contentComponent}</div>
         </>
     );
 }

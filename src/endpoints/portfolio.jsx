@@ -5,22 +5,22 @@ export default function Portfolio() {
         <>
             <div className="section-row" id="port-nav-container">
                 <p> /home/trshpuppy/portfolio</p>
-                <Link to="coding">
-                    <button>Coding</button>
-                </Link>
                 <Link to="writeups">
                     <button>WriteUps</button>
                 </Link>
+                <Link to="coding">
+                    <button>Coding</button>
+                </Link>
             </div>
-            <div className="section-column">
+            <div className="section-column" id="port-content-container">
                 <h1>Welcome to my Portfolio!</h1>
-                <div id="portfolio-stack-2-context" className="section-row">
+                <div id="portfolio-stack-2-context">
                     <img
                         id="portfolio-pant-gif"
                         src="./TP-pant.gif"
                         alt="TP Panting GIF"
                     ></img>
-                    <div className="section-column">
+                    <div className="section-column" id="portfolio-blurbs">
                         <h2>
                             Here you'll find various writeups and projects I've
                             been working on, all related to cybersecurity and
