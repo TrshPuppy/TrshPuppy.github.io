@@ -1,13 +1,40 @@
+import { useReducer } from "react"
 import { NavLink } from "react-router-dom";
-import CoffeeSVG from "./svg/Coffee.jsx";
-import FlaskSVG from "./svg/Flask.jsx";
-import HomeSVG from "./svg/Home.jsx";
-import PawSVG from "./svg/Paw.jsx";
+import initialState from "../initialState";
+import reducer from "../reducer";
+//Nav Item SVGs
+import CoffeeSVG from "./svg/Coffee";
+import FlaskSVG from "./svg/Flask";
+import HomeSVG from "./svg/Home";
+import PawSVG from "./svg/Paw";
+//Link SVGs
+import HackTheBoxSVG from "./svg/HackTheBox";
+import TryHackMeSVG from "./svg/TryHackMe";
+import CodeWarsSVG from "./svg/CodeWars";
+import TwitterSVG from "./svg/Twitter";
+import YouTubeSVG from "./svg/YouTube";
+import GitHubSVG from "./svg/GitHub";
+import TwitchSVG from "./svg/Twitch";
 
 const Nav = () => {
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const updateHoveredLinkName = (e) => {
+        const dataName = e.target.getAttribute('data-name');
+    
+        if (dataName) {
+          dispatch({
+            type: 'UPDATE_HOVERED_LINK_NAME',
+            payload: dataName,
+          });
+        }
+      };
+
+    const resetLinkName = () => dispatch({ type: 'UPDATE_HOVERED_LINK_NAME', payload: '' });
+
     return (
         <nav>
-            <img src="../../public/img/logo-1.webp" alt="Trash Puppy Logo."/>
+            <img src="/img/logo-1.webp" alt="Trash Puppy Logo."/>
             <ul>
                 <li key="nav-link-home">
                     <NavLink
@@ -54,6 +81,77 @@ const Nav = () => {
                     </NavLink>
                 </li>
             </ul>
+            <ul 
+                className="external-links"
+                onMouseLeave={() => resetLinkName()}
+            >
+                <li key="link-github">
+                    <a 
+                        className="link github" 
+                        data-name="GitHub"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <GitHubSVG />
+                    </a>
+                </li>
+                <li key="link-twitch">
+                    <a 
+                        className="link twitch" 
+                        data-name="Twitch"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <TwitchSVG />
+                    </a>
+                </li>
+                <li key="link-youtube">
+                    <a 
+                        className="link youtube" 
+                        data-name="YouTube"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <YouTubeSVG />
+                    </a>
+                </li>
+                <li key="link-twitter">
+                    <a 
+                        className="link twitter" 
+                        data-name="Twitter"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <TwitterSVG />
+                    </a>
+                </li>
+                <li key="link-codewars">
+                    <a 
+                        className="link codewars" 
+                        data-name="CodeWars"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <CodeWarsSVG />
+                    </a>
+                </li>
+                <li key="link-tryhackme">
+                    <a 
+                        className="link tryhackme" 
+                        data-name="TryHackMe"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <TryHackMeSVG />
+                    </a>
+                </li>
+                <li key="link-hackthebox">
+                    <a 
+                        className="link hackthebox" 
+                        data-name="HackTheBox"
+                        onMouseEnter={e => updateHoveredLinkName(e)}
+                    >
+                        <HackTheBoxSVG />
+                    </a>
+                </li>
+            </ul>
+            <div role="region" id="linkInfo" aria-live="polite">
+                <samp id="hoveredLinkName">{state.hoveredLinkName}</samp>
+            </div>
         </nav>
     );
 }
