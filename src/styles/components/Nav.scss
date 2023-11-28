@@ -22,7 +22,7 @@ nav {
         grid-gap: 0.5rem;
         padding: 0.5rem;
 
-        a {
+        a.link {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -34,6 +34,33 @@ nav {
                 height: 1.75rem;
                 width: 1.75rem;
                 pointer-events: none;
+            }
+
+            &.hackthebox svg {fill: #9FEF02;}
+            &.tryhackme svg {fill: #ffeb81;}
+            &.codewars svg {fill: #F05656;}
+            &.youtube svg {fill: #F50003;}
+            &.github svg {fill: #E6EDF3;}
+            &.twitch {
+                position: relative;
+
+                svg {
+                    fill: #A970FF;
+                    z-index: 1;
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    background-color: #fff;
+                    top: 4px;
+                    left: 4px;
+                    width: 19px;
+                    height: 18px;
+                    border-bottom-right-radius: 10px;
+
+                }
             }
         }
     }

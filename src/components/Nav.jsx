@@ -90,6 +90,9 @@ const Nav = () => {
                         className="link github" 
                         data-name="GitHub"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://github.com/TrshPuppy"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <GitHubSVG />
                     </a>
@@ -99,6 +102,9 @@ const Nav = () => {
                         className="link twitch" 
                         data-name="Twitch"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://www.twitch.tv/trshpuppy"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <TwitchSVG />
                     </a>
@@ -108,6 +114,9 @@ const Nav = () => {
                         className="link youtube" 
                         data-name="YouTube"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://youtube.com/@TrshPuppy"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <YouTubeSVG />
                     </a>
@@ -117,6 +126,9 @@ const Nav = () => {
                         className="link twitter" 
                         data-name="Twitter"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://twitter.com/trshpuppy"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <TwitterSVG />
                     </a>
@@ -126,6 +138,9 @@ const Nav = () => {
                         className="link codewars" 
                         data-name="CodeWars"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://www.codewars.com/users/TrshPuppy"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <CodeWarsSVG />
                     </a>
@@ -135,6 +150,9 @@ const Nav = () => {
                         className="link tryhackme" 
                         data-name="TryHackMe"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://tryhackme.com/p/TrshPuppy"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <TryHackMeSVG />
                     </a>
@@ -144,6 +162,9 @@ const Nav = () => {
                         className="link hackthebox" 
                         data-name="HackTheBox"
                         onMouseEnter={e => updateHoveredLinkName(e)}
+                        href="https://app.hackthebox.com/profile/1343592"
+                        target="_blank"
+                        rel="noreferrer"
                     >
                         <HackTheBoxSVG />
                     </a>
