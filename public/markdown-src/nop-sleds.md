@@ -26,7 +26,7 @@ This time, we're still overwriting the saved RIP, but the address we place in th
 
 ### What is a NOP?
 
-'NOP' stands for 'non operational' of 'no operation' and refers to computer instructions in machine language which do nothing. The point of a NOP in assembly is to _not change the state of the program_ (although they often take a specific number of clock cycles to execute).
+'NOP' stands for 'non operational' or 'no operation' and refers to computer instructions in machine language which do nothing. The point of a NOP in assembly is to _not change the state of the program_ (although they often take a specific number of clock cycles to execute).
 
 In our architecture, we'll be using the literal `nop operation` which is `b'\x90'`.
 
