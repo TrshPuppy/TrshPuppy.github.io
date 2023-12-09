@@ -1,6 +1,7 @@
 @use "../variables" as *;
 
 nav {
+    position                  : relative;
     display                   : grid;
     justify-items             : center;
     align-content             : flex-start;
@@ -8,45 +9,64 @@ nav {
     border-bottom-left-radius : 1rem;
     height                    : 100%;
     flex-shrink               : 0;
-    background-image          : linear-gradient(to top, #2f1071, #5b348e, #8358ab, #aa7fca, #d2a7ea);
-    border-right: 1px solid #2F1071;
+    background-color: #010409;
+    //background-image          : linear-gradient(to top, #2f1071, #5b348e, #8358ab, #aa7fca, #d2a7ea);
 
     ul {
         list-style : none;
-        margin     : 1rem 0 0 0;
+        margin     : 1px 0 0 0;
         padding    : 0;
     }
 
+    .socials {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .socials-heading {
+        font-size: 1.25rem;
+        color: #CCC4D9;
+        text-align: center;
+        width: 100%;
+    }
+
     .external-links {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
         padding: 0.5rem;
+        justify-content: center;
+        gap: 0.25rem;
 
         a.link {
             display: flex;
+            position: relative;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: 0.75rem;
+            background-color: #2b233c;
+            border-radius: 5rem;
+            border: 2px solid #9883c3;
+            padding: 0.5rem;
+            margin-bottom: 0.25rem;
+            top: 0;
+            transition: 50ms all;
             cursor: pointer;
+            
 
             svg {
-                height: 1.75rem;
-                width: 1.75rem;
+                height: 1.25rem;
+                width: 1.25rem;
                 pointer-events: none;
+                transition: 120ms all;
+                fill: #D0B7ED;
+                filter: drop-shadow(0 1px 1px #333333);
             }
 
-            &.hackthebox svg {fill: #9FEF02;}
-            &.tryhackme svg {fill: #ffeb81;}
-            &.codewars svg {fill: #F05656;}
-            &.youtube svg {fill: #F50003;}
-            &.github svg {fill: #E6EDF3;}
             &.twitch {
                 position: relative;
 
                 svg {
-                    fill: #A970FF;
                     z-index: 1;
                 }
 
@@ -54,13 +74,45 @@ nav {
                     content: '';
                     display: block;
                     position: absolute;
-                    background-color: #fff;
-                    top: 4px;
-                    left: 4px;
-                    width: 19px;
+                    background-color: transparent;
+                    top: 8px;
+                    left: 10px;
+                    width: 14px;
                     height: 18px;
                     border-bottom-right-radius: 10px;
+                    transition: 120ms all;
+                }
+            }
 
+            &:active {
+                top: 5px;
+                box-shadow       : 0 5px 1px rgba(0, 0, 0, 0.40);
+                border: 2px solid ffc38e;
+                
+                svg {
+                    fill: #ffc38e !important;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                border: 2px solid #ffc38e;
+                filter : drop-shadow(0 0 4px rgba(#ffc38e, 0.95));
+
+                &.hackthebox svg {fill: #d3ee98;}
+                &.tryhackme svg {fill: #ffeb81;}
+                &.codewars svg {fill: #F05656;}
+                &.youtube svg {fill: #F50003;}
+                &.twitter svg {fill: #2C96E8;}
+                &.github svg {fill: #E6EDF3;}
+                &.twitch {
+                    svg {
+                        fill: #A960FF;
+                    }
+
+                    &:before {
+                        background-color: #fff;
+                    }
                 }
             }
         }
@@ -81,61 +133,36 @@ nav {
         padding          : 0 0.75rem;
         top              : 0;
         height           : 2.5rem;
-        width            : 8rem;
-        margin           : 1px 0.5rem 1rem 0.5rem;
-        border-radius    : 0.5rem;
+        width            : 9rem;
         background-color : #3b324d;
         color            : #CCC4D9;
-        border           : 3px double $border_color;
+        border-bottom     : 1px solid $border_color;
         text-decoration  : none;
         font-weight      : 600;
         font-size        : 0.85rem;
         text-align       : center;
-        box-shadow       : 0 10px 1px rgba(0, 0, 0, 0.40);
-        transition       : all 70ms, border 500ms;
+        border-left: 2px solid transparent;
+        transition: all 40ms, filter 200ms;
 
         svg {
             height : 1.5rem;
-            fill   : #a2662b;
-            transition: filer 1000ms;
+            fill   : #9d95aa;
             filter: drop-shadow(0 0 1px #000);
+            transition: all 200ms;
         }
 
         &:hover,
         &:focus {
-            top        : 3px;
-            box-shadow : 0 7px 1px rgba(0, 0, 0, 0.40);
-        }
-
-        &:active {
-            top        : 6px;
-            box-shadow : 0 4px 1px rgba(0, 0, 0, 0.40);
-            color      : #e0e0e0;
-            filter : drop-shadow(0 0 2px rgba(#ffc38e, 0.95));
-
-            span {
-                color  : #ffc38e;
-            }
-
-            svg {
-                fill : #ff7e00;
-            }
+            color: #FCD5B0;            
         }
 
         &.active {
-            pointer-events : none;
-            border         : 3px double #a97544;
-            top            : 0;
-            box-shadow     : 0 10px 1px rgba(0, 0, 0, 0.40);
-            background-color : lighten(#3b324d, 3%);
-
-            span {
-                color  : #ffc38e;
-            }
+            //border-left: 2px solid #ffc38e;
+            color: #ffc38e;
 
             svg {
-                fill   : #ff7e00;
-                filter : drop-shadow(0 0 10px #ff7e00) saturate(1.5);
+                fill: #ffc38e;
+                filter : drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
             }
         }
     }

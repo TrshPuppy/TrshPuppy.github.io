@@ -81,97 +81,99 @@ const Nav = () => {
                     </NavLink>
                 </li>
             </ul>
-            <ul 
-                className="external-links"
-                onMouseLeave={() => resetLinkName()}
-            >
-                <li key="link-github">
-                    <a 
-                        className="link github" 
-                        data-name="GitHub"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://github.com/TrshPuppy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <GitHubSVG />
-                    </a>
-                </li>
-                <li key="link-twitch">
-                    <a 
-                        className="link twitch" 
-                        data-name="Twitch"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://www.twitch.tv/trshpuppy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <TwitchSVG />
-                    </a>
-                </li>
-                <li key="link-youtube">
-                    <a 
-                        className="link youtube" 
-                        data-name="YouTube"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://youtube.com/@TrshPuppy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <YouTubeSVG />
-                    </a>
-                </li>
-                <li key="link-twitter">
-                    <a 
-                        className="link twitter" 
-                        data-name="Twitter"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://twitter.com/trshpuppy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <TwitterSVG />
-                    </a>
-                </li>
-                <li key="link-codewars">
-                    <a 
-                        className="link codewars" 
-                        data-name="CodeWars"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://www.codewars.com/users/TrshPuppy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <CodeWarsSVG />
-                    </a>
-                </li>
-                <li key="link-tryhackme">
-                    <a 
-                        className="link tryhackme" 
-                        data-name="TryHackMe"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://tryhackme.com/p/TrshPuppy"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <TryHackMeSVG />
-                    </a>
-                </li>
-                <li key="link-hackthebox">
-                    <a 
-                        className="link hackthebox" 
-                        data-name="HackTheBox"
-                        onMouseEnter={e => updateHoveredLinkName(e)}
-                        href="https://app.hackthebox.com/profile/1343592"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <HackTheBoxSVG />
-                    </a>
-                </li>
-            </ul>
-            <div role="region" id="linkInfo" aria-live="polite">
-                <samp id="hoveredLinkName">{state.hoveredLinkName}</samp>
+            <div className="socials">
+                <div role="region" id="linkInfo" aria-live="polite">
+                    <samp id="hoveredLinkName">{state.hoveredLinkName}</samp>
+                </div>
+                <ul 
+                    className="external-links"
+                    onMouseLeave={() => resetLinkName()}
+                >
+                    <li key="link-github">
+                        <a 
+                            className="link github" 
+                            data-name="GitHub"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://github.com/TrshPuppy"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <GitHubSVG />
+                        </a>
+                    </li>
+                    <li key="link-twitch">
+                        <a 
+                            className="link twitch" 
+                            data-name="Twitch"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://www.twitch.tv/trshpuppy"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <TwitchSVG />
+                        </a>
+                    </li>
+                    <li key="link-youtube">
+                        <a 
+                            className="link youtube" 
+                            data-name="YouTube"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://youtube.com/@TrshPuppy"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <YouTubeSVG />
+                        </a>
+                    </li>
+                    <li key="link-twitter">
+                        <a 
+                            className="link twitter" 
+                            data-name="Twitter"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://twitter.com/trshpuppy"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <TwitterSVG />
+                        </a>
+                    </li>
+                    <li key="link-codewars">
+                        <a 
+                            className="link codewars" 
+                            data-name="CodeWars"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://www.codewars.com/users/TrshPuppy"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <CodeWarsSVG />
+                        </a>
+                    </li>
+                    <li key="link-tryhackme">
+                        <a 
+                            className="link tryhackme" 
+                            data-name="TryHackMe"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://tryhackme.com/p/TrshPuppy"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <TryHackMeSVG />
+                        </a>
+                    </li>
+                    <li key="link-hackthebox">
+                        <a 
+                            className="link hackthebox" 
+                            data-name="HackTheBox"
+                            onMouseEnter={e => updateHoveredLinkName(e)}
+                            href="https://app.hackthebox.com/profile/1343592"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <HackTheBoxSVG />
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     );
