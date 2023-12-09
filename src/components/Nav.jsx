@@ -20,7 +20,7 @@ const Nav = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const updateHoveredLinkName = (e) => {
-        const dataName = e.target.getAttribute('data-name');
+        const dataName = `${e.target.getAttribute('data-name')} ↗`;
     
         if (dataName) {
           dispatch({
@@ -83,7 +83,10 @@ const Nav = () => {
             </ul>
             <div className="socials">
                 <div role="region" id="linkInfo" aria-live="polite">
-                    <samp id="hoveredLinkName">{state.hoveredLinkName}</samp>
+                    <samp 
+                        id="hoveredLinkName"
+                        className={state.hoveredLinkName ? "active" : ""}
+                    >{state.hoveredLinkName}</samp>
                 </div>
                 <ul 
                     className="external-links"
