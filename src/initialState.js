@@ -1,6 +1,6 @@
 const initialState = {
     hoveredLinkName: '',
-    sampColor: ''
+    hoveredLinkColor: ''
 };
 
 export default initialState;

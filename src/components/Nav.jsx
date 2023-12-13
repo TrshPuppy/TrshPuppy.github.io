@@ -19,7 +19,17 @@ import TwitchSVG from "./svg/Twitch";
 const Nav = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    const updateHoveredLinkName = (e) => {
+    const linkColors = {
+        hackthebox: '#d3ee98',
+        tryhackme: '#ffeb81',
+        codewars: '#F05656',
+        youtube: '#F50003',
+        twitter: '#2C96E8',
+        github: '#E6EDF3',
+        twitch: '#A960FF'
+    };
+
+    const updateHoveredLinkName = e => {
         const dataName = `${e.target.getAttribute('data-name')} ↗`;
         const dataColor = e.target.getAttribute('data-color');
 
@@ -38,7 +48,10 @@ const Nav = () => {
         }
       };
 
-    const resetLinkName = () => dispatch({ type: 'UPDATE_HOVERED_LINK_NAME', payload: '' });
+    const resetLink = () => {
+        dispatch({ type: 'UPDATE_HOVERED_LINK_NAME', payload: '' });
+        dispatch({ type: 'UPDATE_HOVERED_LINK_COLOR', payload: '' });
+    }
 
     return (
         <nav>
@@ -94,16 +107,21 @@ const Nav = () => {
                     <samp 
                         id="hoveredLinkName"
                         className={state.hoveredLinkName ? "active" : ""}
+                        style={{
+                            color: state.hoveredLinkColor,
+                            filter: `drop-shadow(0 0 4px ${state.hoveredLinkColor})`
+                        }}
                     >{state.hoveredLinkName}</samp>
                 </div>
                 <ul 
                     className="external-links"
-                    onMouseLeave={() => resetLinkName()}
+                    onMouseLeave={() => resetLink()}
                 >
                     <li key="link-github">
                         <a 
                             className="link github" 
                             data-name="GitHub"
+                            data-color={linkColors.github}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://github.com/TrshPuppy"
                             target="_blank"
@@ -116,6 +134,7 @@ const Nav = () => {
                         <a 
                             className="link twitch" 
                             data-name="Twitch"
+                            data-color={linkColors.twitch}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://www.twitch.tv/trshpuppy"
                             target="_blank"
@@ -128,6 +147,7 @@ const Nav = () => {
                         <a 
                             className="link youtube" 
                             data-name="YouTube"
+                            data-color={linkColors.youtube}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://youtube.com/@TrshPuppy"
                             target="_blank"
@@ -140,6 +160,7 @@ const Nav = () => {
                         <a 
                             className="link twitter" 
                             data-name="Twitter"
+                            data-color={linkColors.twitter}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://twitter.com/trshpuppy"
                             target="_blank"
@@ -152,6 +173,7 @@ const Nav = () => {
                         <a 
                             className="link codewars" 
                             data-name="CodeWars"
+                            data-color={linkColors.codewars}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://www.codewars.com/users/TrshPuppy"
                             target="_blank"
@@ -164,6 +186,7 @@ const Nav = () => {
                         <a 
                             className="link tryhackme" 
                             data-name="TryHackMe"
+                            data-color={linkColors.tryhackme}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://tryhackme.com/p/TrshPuppy"
                             target="_blank"
@@ -176,6 +199,7 @@ const Nav = () => {
                         <a 
                             className="link hackthebox" 
                             data-name="HackTheBox"
+                            data-color={linkColors.hackthebox}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://app.hackthebox.com/profile/1343592"
                             target="_blank"

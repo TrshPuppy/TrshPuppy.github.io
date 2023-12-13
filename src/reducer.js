@@ -1,18 +1,4 @@
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'UPDATE_HOVERED_LINK_NAME':
-            return {
-                ...state,
-                hoveredLinkName: action.payload,
-            };
-        case 'UPDATE_HOVERED_LINK_COLOR':
-            return {
-                ...state,
-                hoveredLinkColor: action.payload
-            }
-        default:
-            return state;
-    }
-};
-
-export default reducer;
+export default (state, action) => ({
+    'UPDATE_HOVERED_LINK_NAME': () => ({ ...state, hoveredLinkName: action.payload }),
+    'UPDATE_HOVERED_LINK_COLOR': () => ({ ...state, hoveredLinkColor: action.payload })
+}[action.type]?.() || state);
