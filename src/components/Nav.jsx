@@ -29,9 +29,20 @@ const Nav = () => {
         twitch: '#A960FF'
     };
 
+    const textColors = {
+        hackthebox: '#2A3909',
+        tryhackme: '#2E2700',
+        codewars: '#FFFFFF',
+        youtube: '#FFFFFF',
+        twitter: '#FFFFFF',
+        github: '#000000',
+        twitch: '#FFFFFF'
+    };
+
     const updateHoveredLinkName = e => {
         const dataName = `${e.target.getAttribute('data-name')} ↗`;
         const dataColor = e.target.getAttribute('data-color');
+        const textColor = e.target.getAttribute('data-text-color');
 
         if (dataName) {
           dispatch({
@@ -46,6 +57,13 @@ const Nav = () => {
                 payload: dataColor,
             });
         }
+
+        if (textColor) {
+            dispatch({
+                type: 'UPDATE_HOVERED_TEXT_COLOR',
+                payload: textColor
+            })
+        }
       };
 
     const resetLink = () => {
@@ -57,7 +75,7 @@ const Nav = () => {
         <nav>
             <img src="/img/logo-1.webp" alt="Trash Puppy Logo."/>
             <ul>
-                <li key="nav-link-home">
+                <li key="nav-link-home" className="nav-link-home">
                     <NavLink
                         to={ '/' }
                         className={({ isActive, isPending }) => {
@@ -68,7 +86,7 @@ const Nav = () => {
                         <HomeSVG/>
                     </NavLink>
                 </li>
-                <li key="nav-link-projects">
+                <li key="nav-link-projects" className="nav-link-projects">
                     <NavLink
                         to={ '/projects' }
                         className={({ isActive, isPending }) => {
@@ -79,7 +97,7 @@ const Nav = () => {
                         <FlaskSVG/>
                     </NavLink>
                 </li>
-                <li key="nav-link-about">
+                <li key="nav-link-about" className="nav-link-about">
                     <NavLink
                         to={ '/about' }
                         className={({ isActive, isPending }) => {
@@ -90,7 +108,7 @@ const Nav = () => {
                         <PawSVG/>
                     </NavLink>
                 </li>
-                <li key="nav-link-contact">
+                <li key="nav-link-contact" className="nav-link-contact">
                     <NavLink
                         to={ '/contact' }
                         className={({ isActive, isPending }) => {
@@ -108,8 +126,9 @@ const Nav = () => {
                         id="hoveredLinkName"
                         className={state.hoveredLinkName ? "active" : ""}
                         style={{
-                            color: state.hoveredLinkColor,
-                            filter: `drop-shadow(0 0 4px ${state.hoveredLinkColor})`
+                            backgroundColor: state.hoveredLinkColor,
+                            filter: `drop-shadow(0 0 2px ${state.hoveredLinkColor})`,
+                            color: state.hoveredTextColor
                         }}
                     >{state.hoveredLinkName}</samp>
                 </div>
@@ -122,6 +141,7 @@ const Nav = () => {
                             className="link github" 
                             data-name="GitHub"
                             data-color={linkColors.github}
+                            data-text-color={textColors.github}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://github.com/TrshPuppy"
                             target="_blank"
@@ -135,6 +155,7 @@ const Nav = () => {
                             className="link twitch" 
                             data-name="Twitch"
                             data-color={linkColors.twitch}
+                            data-text-color={textColors.twitch}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://www.twitch.tv/trshpuppy"
                             target="_blank"
@@ -148,6 +169,7 @@ const Nav = () => {
                             className="link youtube" 
                             data-name="YouTube"
                             data-color={linkColors.youtube}
+                            data-text-color={textColors.youtube}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://youtube.com/@TrshPuppy"
                             target="_blank"
@@ -160,6 +182,7 @@ const Nav = () => {
                         <a 
                             className="link twitter" 
                             data-name="Twitter"
+                            data-text-color={textColors.twitter}
                             data-color={linkColors.twitter}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://twitter.com/trshpuppy"
@@ -174,6 +197,7 @@ const Nav = () => {
                             className="link codewars" 
                             data-name="CodeWars"
                             data-color={linkColors.codewars}
+                            data-text-color={textColors.codewars}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://www.codewars.com/users/TrshPuppy"
                             target="_blank"
@@ -187,6 +211,7 @@ const Nav = () => {
                             className="link tryhackme" 
                             data-name="TryHackMe"
                             data-color={linkColors.tryhackme}
+                            data-text-color={textColors.tryhackme}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://tryhackme.com/p/TrshPuppy"
                             target="_blank"
@@ -200,6 +225,7 @@ const Nav = () => {
                             className="link hackthebox" 
                             data-name="HackTheBox"
                             data-color={linkColors.hackthebox}
+                            data-text-color={textColors.hackthebox}
                             onMouseEnter={e => updateHoveredLinkName(e)}
                             href="https://app.hackthebox.com/profile/1343592"
                             target="_blank"

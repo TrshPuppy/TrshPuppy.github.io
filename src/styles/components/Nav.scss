@@ -25,22 +25,27 @@ nav {
     }
 
     #linkInfo {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.5);
 
         samp {
+            position: absolute;
             display: block;
-            color: #ffc38e;
             filter : drop-shadow(0 0 4px rgba(#ffc38e, 0.95));
             transition: all 100ms;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.7rem;
+            padding: 0.2rem 1rem;
+            border-radius: 1rem 0 1rem 0;
+            top: 1.5rem;
+            opacity: 0;
 
             &.active {
-                padding: 0.5rem;
-                border: 1px solid #000;
-                border-left: none;
-                border-right: none;
+                top: -1.75rem;
+                opacity: 1;
             }
         }
     }
@@ -190,6 +195,30 @@ nav {
             svg {
                 fill: #ffc38e;
                 filter : drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
+            }
+        }
+    }
+
+    $nav-links: (
+        home: #ffffff,
+        projects: #c1ffbe,
+        about: #fffdcb,
+        contact: #ffdcf1
+      );
+      
+    @each $key, $color in $nav-links {
+        li.nav-link-#{$key} .nav-link {
+            &:hover {
+                border-left: 3px solid $color;
+            }
+        
+            &.active {
+                color: $color;
+
+                svg {
+                    fill: $color;
+                    filter: drop-shadow(0 0 8px rgba($color, 0.75));
+                }
             }
         }
     }
