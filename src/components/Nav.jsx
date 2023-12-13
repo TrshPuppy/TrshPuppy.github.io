@@ -21,12 +21,20 @@ const Nav = () => {
 
     const updateHoveredLinkName = (e) => {
         const dataName = `${e.target.getAttribute('data-name')} ↗`;
-    
+        const dataColor = e.target.getAttribute('data-color');
+
         if (dataName) {
           dispatch({
             type: 'UPDATE_HOVERED_LINK_NAME',
             payload: dataName,
           });
+        }
+
+        if (dataColor) {
+            dispatch({
+                type: 'UPDATE_HOVERED_LINK_COLOR',
+                payload: dataColor,
+            });
         }
       };
 
