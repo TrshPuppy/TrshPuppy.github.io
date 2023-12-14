@@ -338,6 +338,8 @@ p {
   flex-flow: row wrap;
   align-items: center;
   justify-content: flex-start;
+  position:sticky;
+  top:0px;
   background-color: var(--loki-mid-purple);
   width:var(--stack-outer-width);
   padding:10px;
