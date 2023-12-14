@@ -1,4 +1,4 @@
-This is part III of my notes while working through [TsarSec's Course](https://taggartinstitute.org/courses/an-oral-history-of-binary-exploitation-defenses) on [binary-exploitation](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/TTPs/exploitation/binary-exploitation/buffer-overflow.md). You can find part II [here](https://trshpuppy.github.io/portfolio/writeups/binary-exploitation).
+This is part III of my notes while working through [TsarSec's Course](https://taggartinstitute.org/courses/an-oral-history-of-binary-exploitation-defenses) on [binary-exploitation](https://github.com/TrshPuppy/obsidian-notes/blob/main/cybersecurity/TTPs/exploitation/binary-exploitation/buffer-overflow.md). You can find part II [here](https://trshpuppy.github.io/portfolio/writeups/basic-buffer-overflow).
 
 # B&E III: NOP Sleds
 
@@ -16,7 +16,7 @@ So, since we can't control for the exact address where our malicious code will e
 
 ## NOP Sleds
 
-In our basic overflow ([part 2](https://trshpuppy.github.io/portfolio/writeups/classic-buffer-overflow) of this series), we overwrote the saved RIP with the exact address of our shellcode (which was placed at the beginning of our injection payload).
+In our basic overflow ([part 2](https://trshpuppy.github.io/portfolio/writeups/basic-buffer-overflow) of this series), we overwrote the saved RIP with the exact address of our shellcode (which was placed at the beginning of our injection payload).
 <br>
 <br>
 ![](/md-images/Pasted%20image%2020231121173335.png)
@@ -39,6 +39,10 @@ This will essentially widen the window of addresses which will capture the CPU f
 Using this technique, our payload on the stack will look something like this:
 <br>
 <br>
+As a string:
+![](/md-images/Pasted%20image%2020231214121607.png)
+<br>
+On the stack:
 ![](/md-images/Pasted%20image%2020231124142229.png)
 <br>
 <br>
