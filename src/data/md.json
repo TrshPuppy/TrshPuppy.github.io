@@ -43,5 +43,14 @@
         "description": "Increasing reliability with NOP sleds.",
         "id": "current-writeup",
         "to_link": "nop-sleds"
+    },
+    {
+        "name": "B&E IV: ROP Gadgets",
+        "path": "/markdown-src/rop-gadgets.md",
+        "type": "writeup",
+        "img_path": "/md-images/rop-preview.png",
+        "description": "Using the program's instructions against it!",
+        "id": "current-writeup",
+        "to_link": "rop-gadgets"
     }
 ]

@@ -41,6 +41,7 @@ function App() {
                     <CurrentWriteUp path="portfolio/writeups/binary-exploitation" />
                     <CurrentWriteUp path="portfolio/writeups/basic-buffer-overflow" />
                     <CurrentWriteUp path="portfolio/writeups/nop-sleds" />
+                    <CurrentWriteUp path="portfolio/writeups/rop-gadgets" />
                 </Router>
             </div>
         </>
