@@ -40,7 +40,7 @@ const Nav = () => {
     };
 
     const updateHoveredLinkName = e => {
-        const dataName = `${e.target.getAttribute('data-name')} ↗`;
+        const dataName = e.target.getAttribute('data-name');
         const dataColor = e.target.getAttribute('data-color');
         const textColor = e.target.getAttribute('data-text-color');
 

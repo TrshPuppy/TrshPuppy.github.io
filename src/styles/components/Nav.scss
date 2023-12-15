@@ -5,11 +5,12 @@ nav {
     display                   : grid;
     justify-items             : center;
     align-content             : flex-start;
-    border-top-left-radius    : 1rem;
-    border-bottom-left-radius : 1rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    // border-top-left-radius    : 1rem;
+    // border-bottom-left-radius : 1rem;
     height                    : 100%;
-    flex-shrink               : 0;
-    background-color: #010409;
+    border: 1px solid #726883;
     background-image          : linear-gradient(to top, #231445, #4e2e77, #8358ab, #aa7fca, #d2a7ea);
 
     ul {
@@ -58,10 +59,7 @@ nav {
     }
 
     .external-links {
-        display: flex;
-        flex-wrap: wrap;
         padding: 0.5rem;
-        gap: 0.25rem;
 
         a.link {
             display: flex;
@@ -110,7 +108,7 @@ nav {
                     position: absolute;
                     background-color: transparent;
                     top: 8px;
-                    left: 10px;
+                    left: 2.35rem;
                     width: 14px;
                     height: 18px;
                     border-bottom-right-radius: 10px;
@@ -152,21 +150,50 @@ nav {
     }
 
     img {
-        border-top-left-radius : 1rem;
-        width                  : 100%;
-        height                 : 6.5rem;
+        position:relative;
+        width                  : 3.5rem;
+        height                 : 5rem;
         object-fit             : cover;
+        transition: all 200ms;
+    }
+
+    /**
+    menu play
+    */
+    & {
+        margin-right: 3.5rem;
+        transition: all 200ms;
+    }
+
+    &:hover {
+        margin-right: 0;
+
+        img {
+            width: 7rem;
+            height: 5rem;
+        }
+
+        .nav-link {
+            flex-direction: row;
+            justify-content  : space-between;
+            width: 7rem;
+            
+            span {
+                font-size: 0.75rem;
+                display: block;
+            }
+        }
     }
 
     .nav-link {
         display          : flex;
         position         : relative;
-        justify-content  : space-between;
+        justify-content  : center;
         align-items      : center;
-        padding          : 0 0.75rem;
+        padding          : 0 0.6rem;
         top              : 0;
         height           : 2.5rem;
-        width            : 9rem;
+        width            : 3.5rem;
         background-color : #3b324d;
         color            : #CCC4D9;
         border-bottom     : 1px solid $border_color;
@@ -175,7 +202,12 @@ nav {
         font-size        : 0.85rem;
         text-align       : center;
         border-left: 3px solid transparent;
-        transition: all 40ms, filter 200ms;
+        transition: all 40ms, width 200ms, font-size 200ms;
+
+        span {
+            font-size: 0;
+            display: none;
+        }
 
         svg {
             height : 1.5rem;

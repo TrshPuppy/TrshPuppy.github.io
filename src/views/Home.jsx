@@ -101,6 +101,80 @@ const Home = () => {
                 Some type of awesome danger content will go here.
             </div>
 
+            <dl>
+                <dt>This is a dl list. This is the dt</dt>
+                <dd>This defines the thing above.</dd>
+                <dt>Here&apos;s a thing</dt>
+                <dd>This defines the thing above, too.</dd>
+            </dl>
+
+            <figure>
+                <img src="img/tp-happy.webp" alt="Beautiful Puppy"/>
+                <figcaption>This is a breathtaking landscape with mountains and a serene lake. Just kidding its a figure with an img and figcaption</figcaption>
+            </figure>
+
+            &lt;hr&gt; below
+            <hr/>
+
+            <ol>
+                <li>Ordered</li>
+                <li>List</li>
+                <li>Of things</li>
+                <li>Like puppies</li>
+                <li>Or pastries</li>
+                <li>Ok freenavi</li>
+            </ol>
+
+            <ul>
+                <li>This list has no order</li>
+                <li>it is utter chaos</li>
+                <li>dafuqisgoingon</li>
+                <li>freeloki</li>
+            </ul>
+
+            <a href="google.com">Take me to google!</a>
+
+            <p>This is a paragraph with a <abbr>ABBR</abbr> tag. It means...something.</p>
+
+            <blockquote>
+                The cite tag is below. It should be used as a cite, you know, with a dashy thing
+                <cite>arthvadrr circa 2023</cite>
+            </blockquote>
+
+            <p>This is for the &lt;mark&gt;. It is used to <mark>represent really relevant text</mark></p>
+
+            <h2>
+                <sup>somecat</sup>
+                <div>This is a title with a sup and sub</div>
+                <sub>2023</sub>
+            </h2>
+
+            <p>It is important to use the &lt;time&gt; tag to let browsers index time periods easier such as <time dateTime="1955-11-05">November 5<sup>th</sup>, 1955</time></p>
+
+            <p><u>This is a &lt;u&gt; tag.</u> Surprise, it doesn&apos;t mean underline! (unarticulated)</p>
+
+            <p>There is an html to represent <var>variables</var>. (it&apos;s &lt;var&gt;)</p>
+
+            <figure>
+                <figcaption>Listen to the T-Rex:</figcaption>
+                <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+                    <a href="/media/cc0-audio/t-rex-roar.mp3"> Download audio </a>
+                </audio>
+            </figure>
+
+            <video controls>
+                <source src="https://youtu.be/VKlzr3LzcV8?feature=shared" type="video/mp4" />
+            </video>
+
+
+            <iframe 
+                width="560" 
+                height="315" 
+                frameBorder="0" 
+                src="https://www.youtube.com/embed/VKlzr3LzcV8?si=CK0zrsE1kF4qEsnl" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen
+            />
 
         </article>
     )
