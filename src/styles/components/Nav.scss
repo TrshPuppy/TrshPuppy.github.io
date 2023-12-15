@@ -5,11 +5,10 @@ nav {
     display                   : grid;
     justify-items             : center;
     align-content             : flex-start;
-    border-radius: 2rem;
+    border-radius: 0.75rem;
     overflow: hidden;
     // border-top-left-radius    : 1rem;
     // border-bottom-left-radius : 1rem;
-    height                    : 100%;
     border: 1px solid #726883;
     background-image          : linear-gradient(to top, #231445, #4e2e77, #8358ab, #aa7fca, #d2a7ea);
 
@@ -22,7 +21,7 @@ nav {
     .socials {
         position: absolute;
         bottom: 0;
-        width: 100%;
+        transition: all 200ms;
     }
 
     #linkInfo {
@@ -43,6 +42,7 @@ nav {
             border-radius: 1rem 0 1rem 0;
             top: 1.5rem;
             opacity: 0;
+            border: 1px solid #26083e;
 
             &.active {
                 top: -1.75rem;
@@ -108,7 +108,7 @@ nav {
                     position: absolute;
                     background-color: transparent;
                     top: 8px;
-                    left: 2.35rem;
+                    left: 0.75rem;
                     width: 14px;
                     height: 18px;
                     border-bottom-right-radius: 10px;
@@ -152,7 +152,7 @@ nav {
     img {
         position:relative;
         width                  : 3.5rem;
-        height                 : 5rem;
+        height                 : 4.5rem;
         object-fit             : cover;
         transition: all 200ms;
     }
@@ -161,12 +161,16 @@ nav {
     menu play
     */
     & {
-        margin-right: 3.5rem;
+        margin: 1rem 2.25rem;
+        height: calc(100% - 2rem);
         transition: all 200ms;
+        border-radius: 2rem;
     }
 
     &:hover {
-        margin-right: 0;
+        margin: 0.5rem 0.5rem;
+        height: calc(100% - 1rem);
+        border-radius: 1.25rem;
 
         img {
             width: 7rem;
@@ -182,6 +186,10 @@ nav {
                 font-size: 0.75rem;
                 display: block;
             }
+        }
+
+        .socials {
+            padding-bottom: 0.5rem;
         }
     }
 
@@ -216,8 +224,10 @@ nav {
             transition: all 200ms;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             border-left: 3px solid #ffc38e;
+            outline: none;
         }
 
         &.active {
@@ -240,7 +250,8 @@ nav {
       
     @each $key, $color in $nav-links {
         li.nav-link-#{$key} .nav-link {
-            &:hover {
+            &:hover,
+            &:focus {
                 border-left: 3px solid $color;
             }
         
