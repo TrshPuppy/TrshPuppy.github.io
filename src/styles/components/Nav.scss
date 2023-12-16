@@ -5,11 +5,12 @@ nav {
     display                   : grid;
     justify-items             : center;
     align-content             : flex-start;
-    border-radius: 0.75rem;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
     overflow: hidden;
-    // border-top-left-radius    : 1rem;
-    // border-bottom-left-radius : 1rem;
-    border: 1px solid #726883;
+    height: 100%;
+    border-right: 1px solid #413c4a;
+    margin-right: 2rem;
     background-image          : linear-gradient(to top, #231445, #4e2e77, #8358ab, #aa7fca, #d2a7ea);
 
     ul {
@@ -59,7 +60,10 @@ nav {
     }
 
     .external-links {
-        padding: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1.5rem 0.25rem;
+        gap: 0.25rem;
 
         a.link {
             display: flex;
@@ -68,17 +72,15 @@ nav {
             justify-content: center;
             align-items: center;
             background-color: #2b233c;
-            border-radius: 5rem;
+            border-radius: 50%;
             border: 2px solid #9883c3;
-            padding: 0.5rem;
-            margin-bottom: 0.25rem;
-            top: 0;
+            padding: 0.54rem;
             transition: 50ms all;
             cursor: pointer;
 
             svg {
-                height: 1.25rem;
-                width: 1.25rem;
+                height: 1rem;
+                width: 1rem;
                 pointer-events: none;
                 transition: 120ms all;
                 fill: #D0B7ED;
@@ -86,7 +88,7 @@ nav {
             }
 
             &:active {
-                top: 5px;
+                top: 3px;
                 box-shadow: 0 5px 1px rgba(0, 0, 0, 0.40);
                 border: 2px solid #ffc38e;
 
@@ -151,82 +153,42 @@ nav {
 
     img {
         position:relative;
-        width                  : 3.5rem;
-        height                 : 4.5rem;
+        width                  : 100%;
+        height                 : 6.5rem;
         object-fit             : cover;
         transition: all 200ms;
     }
 
-    /**
-    menu play
-    */
-    & {
-        margin: 1rem 2.25rem;
-        height: calc(100% - 2rem);
-        transition: all 200ms;
-        border-radius: 2rem;
-    }
-
-    &:hover {
-        margin: 0.5rem 0.5rem;
-        height: calc(100% - 1rem);
-        border-radius: 1.25rem;
-
-        img {
-            width: 7rem;
-            height: 5rem;
-        }
-
-        .nav-link {
-            flex-direction: row;
-            justify-content  : space-between;
-            width: 7rem;
-            
-            span {
-                font-size: 0.75rem;
-                display: block;
-            }
-        }
-
-        .socials {
-            padding-bottom: 0.5rem;
-        }
-    }
-
     .nav-link {
         display          : flex;
-        position         : relative;
-        justify-content  : center;
+        justify-content  : space-between;
         align-items      : center;
-        padding          : 0 0.6rem;
-        top              : 0;
-        height           : 2.5rem;
-        width            : 3.5rem;
+        width            : 8rem;
         background-color : #3b324d;
-        color            : #CCC4D9;
-        border-bottom     : 1px solid $border_color;
         text-decoration  : none;
         font-weight      : 600;
-        font-size        : 0.85rem;
-        text-align       : center;
-        border-left: 3px solid transparent;
+        font-size        : 0.75rem;
+        color            : #CCC4D9;
+        border-bottom     : 1px solid $border_color;
         transition: all 40ms, width 200ms, font-size 200ms;
 
         span {
-            font-size: 0;
-            display: none;
+            margin-left: 0.5rem;
         }
 
         svg {
-            height : 1.5rem;
+            height : 100%;
+            width: 2.25rem;
+            margin: 1px;
+            padding: 0.4rem;
             fill   : #9d95aa;
-            filter: drop-shadow(0 0 1px #000);
             transition: all 200ms;
+            box-shadow: 0 0 1px  #000;
+            border-radius: 0;
         }
 
         &:hover,
         &:focus {
-            border-left: 3px solid #ffc38e;
             outline: none;
         }
 
@@ -237,6 +199,7 @@ nav {
             svg {
                 fill: #ffc38e;
                 filter : drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
+                box-shadow: inset 0 0 3px  #000;
             }
         }
     }
@@ -250,10 +213,10 @@ nav {
       
     @each $key, $color in $nav-links {
         li.nav-link-#{$key} .nav-link {
-            &:hover,
-            &:focus {
-                border-left: 3px solid $color;
-            }
+            // &:hover,
+            // &:focus {
+            //     border-left: 3px solid $color;
+            // }
         
             &.active {
                 color: $color;
@@ -261,6 +224,7 @@ nav {
                 svg {
                     fill: $color;
                     filter: drop-shadow(0 0 8px rgba($color, 0.75));
+                    background-color: desaturate(darken($color, 55%), 95%);
                 }
             }
         }

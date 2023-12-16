@@ -19,6 +19,12 @@ import TwitchSVG from "./svg/Twitch";
 const Nav = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const playClickSound = () => {
+        const audio = new Audio('/audio/click.mp3');
+        audio.volume = 0.3;
+        audio.play();
+    };  
+
     const linkColors = {
         hackthebox: '#d3ee98',
         tryhackme: '#ffeb81',
@@ -81,6 +87,7 @@ const Nav = () => {
                         className={({ isActive, isPending }) => {
                             return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
                         }}
+                        onClick={() => playClickSound()}
                     >
                         <span>Home</span>
                         <HomeSVG/>
@@ -92,6 +99,7 @@ const Nav = () => {
                         className={({ isActive, isPending }) => {
                             return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
                         }}
+                        onClick={() => playClickSound()}
                     >
                         <span>Projects</span>
                         <FlaskSVG/>
@@ -103,6 +111,7 @@ const Nav = () => {
                         className={({ isActive, isPending }) => {
                             return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
                         }}
+                        onClick={() => playClickSound()}
                     >
                         <span>About</span>
                         <PawSVG/>
@@ -114,6 +123,7 @@ const Nav = () => {
                         className={({ isActive, isPending }) => {
                             return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
                         }}
+                        onClick={() => playClickSound()}
                     >
                         <span>Contact</span>
                         <CoffeeSVG/>
