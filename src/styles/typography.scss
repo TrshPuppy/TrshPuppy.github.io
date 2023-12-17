@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Retron2000', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 article {
@@ -18,29 +18,87 @@ article {
         color: #e3c3f7;
         text-shadow: 2px 2px 3px #c5a2db;
         font-weight: 100;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         padding: 1.5rem 0 1rem;
-        margin: 1rem 0 0 2rem;
+        margin: 1rem 0 0;
         filter: drop-shadow(0 0 30px #e3c3f7);
         animation: flicker 1s;
         opacity: 1;
         transition: 0;
+
+        @keyframes flicker {
+            0%, 24% {
+                opacity: 0.5;
+                filter: none;
+            }
+
+            25%, 30%, 35%, 100% {
+                opacity: 1;
+                filter: drop-shadow(0 0 30px #e3c3f7);
+            }
+            
+            26%, 29%, 31%, 34% {
+                opacity: 0.5;
+                filter: none;
+            }
+        }
     }
 
-    @keyframes flicker {
-        0%, 24% {
-            opacity: 0.5;
-            filter: none;
-        }
+    h2 {
+        margin: 0.75rem 0;
+        font-size: 2rem;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px #fff;
+    }
 
-        25%, 30%, 35%, 100% {
-          opacity: 1;
-          filter: drop-shadow(0 0 30px #e3c3f7);
+    h3 {
+        margin: 0.5rem 0;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    h4, h5, h6 {
+        margin: 0.25rem 0;
+        font-size: 1.2rem;
+    }
+
+    h5, h6 {
+        font-size: 1rem;
+    }
+
+    p {
+        padding: 1rem 0;
+    }
+
+    pre {
+        display: block;
+        background-color: #09080C;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #333;
+    }
+
+    code {
+        font-family: "JetBrainsMono", monospace;
+        background-color: #09080C;
+        font-weight: 100;
+    }
+
+    pre code {
+        margin: 0;
+        position: relative;
+        display: block;
+        padding: 0.5rem;
+        padding-top: 1rem;
+
+        &:before {
+            content: 'Code';
+            position: absolute;
+            top: -0.5rem;
+            left: -0.5rem;
+            font-size: 0.8rem;
+            line-height: 0.8rem;
+            background-color: red;
         }
-      
-        26%, 29%, 31%, 34% {
-          opacity: 0.5;
-          filter: none;
-        }
-      }
+    }
 }
