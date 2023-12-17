@@ -7,10 +7,19 @@ body * {
 
 html {
     font-size: 18px;
-    background-size     : 110%;
-    background-position : top center;
+    background-size     : 100%;
     background-image    : url("/img/background.webp");
-    background-position: 50% 50%;
+    animation: backgroundBounce 60s ease-in-out infinite;
+
+    @keyframes backgroundBounce {
+        0%, 100% {
+            background-size: 120%;
+        }
+
+        50% {
+            background-size: 300%;
+        }
+    }
 
     @media screen and (max-width : 836px) {
         background-image : unset;
