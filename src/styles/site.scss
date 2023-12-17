@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-* {
+body * {
     box-sizing : border-box;
     font-family: "Montserrat", sans-serif;
 }
@@ -42,14 +42,14 @@ html {
 
 #root {
     display          : flex;
-    background-color : rgba(darken(#1a1526, 5%), 0.5);
+    background-color : rgba(darken(#1d1a26, 0%), 1);
     height           : 90vh;
     width            : 90vw;
     max-width: 1400px;
     max-height: 900px;
-    border-radius    : 1.5rem;
-    border: 1px solid #413c4a;
-    //box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.43);
+    border-radius    : 1rem;
+    border: 4px double rgba(#e3c3f7, 0.25);
+    box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.43);
 
     @media screen and (max-width : 1155px) {
         width : 900px

@@ -1,7 +1,7 @@
 const Home = () => {
     return (
         <article id="home-view" className="home">
-            <h1>H1 The Undead Aslyum</h1>
+            <h1>Home</h1>
             <h2>H2 There are Two Bells of Awakening</h2>
             <h3>H3 Forests, Butterflys, Knights, and Golums</h3>
             <h4>H4 Painted World and the Legendary Duo</h4>

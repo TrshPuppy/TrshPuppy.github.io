@@ -5,12 +5,11 @@ nav {
     display                   : grid;
     justify-items             : center;
     align-content             : flex-start;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     overflow: hidden;
     height: 100%;
     border-right: 1px solid #413c4a;
-    margin-right: 2rem;
     background-image          : linear-gradient(to top, #231445, #4e2e77, #8358ab, #aa7fca, #d2a7ea);
 
     ul {
@@ -183,7 +182,6 @@ nav {
             padding: 0.4rem;
             fill   : #9d95aa;
             transition: all 200ms;
-            box-shadow: 0 0 1px  #000;
             border-radius: 0;
         }
 
@@ -199,7 +197,6 @@ nav {
             svg {
                 fill: #ffc38e;
                 filter : drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
-                box-shadow: inset 0 0 3px  #000;
             }
         }
     }
@@ -224,7 +221,6 @@ nav {
                 svg {
                     fill: $color;
                     filter: drop-shadow(0 0 8px rgba($color, 0.75));
-                    background-color: desaturate(darken($color, 55%), 95%);
                 }
             }
         }

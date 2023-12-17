@@ -4,8 +4,6 @@ main {
     border-bottom-right-radius: 1rem;
     color: #fff;
     overflow-y: auto;
-
-    h1 {
-        font-size: 3rem;
-    }
+    border-left: 4px double rgba(#e3c3f7, 0.25);
+    padding: 0 2rem;
 }
