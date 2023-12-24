@@ -7,21 +7,25 @@ body * {
 
 html {
     font-size: 18px;
-    background-size     : 100%;
+    background-size     : 150%;
     background-image    : url("/img/background.webp");
-    animation: backgroundBounce 60s ease-in-out infinite;
+    //animation: backgroundBounce 60s ease-in-out infinite;
 
     @keyframes backgroundBounce {
         0%, 100% {
-            background-size: 120%;
+            background-size: 150%;
         }
 
         50% {
-            background-size: 300%;
+            background-size: 220%;
         }
     }
 
-    @media screen and (max-width : 836px) {
+    @media (max-width: 1400px), (max-height: 900px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width : 900px) {
         background-image : unset;
     }
 
@@ -62,16 +66,22 @@ html {
     box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.43);
 
     @media screen and (max-width : 1155px) {
-        width : 900px
+        width : 900px;
     }
 
     @media screen and (max-width : 945px) {
-        width : 800px
+        width : 800px;
     }
 
-    @media screen and (max-width : 836px) {
-        width  : 100%;
-        height : 100%;
-        margin : 0.25rem;
+    @media screen and (max-width : 900px) {
+        flex-direction: column-reverse;
+        width: 100vw;
+        height : 100vh;
+        border: none;
+
+        main {
+            border: none;
+            height: 100%;
+        }
     }
 }

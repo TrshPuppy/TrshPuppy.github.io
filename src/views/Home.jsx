@@ -26,6 +26,7 @@ const Home = () => {
             </address>
 
             <table>
+                <caption>Some Table</caption>
                 <thead>
                     <tr>
                         <th>Name</th>

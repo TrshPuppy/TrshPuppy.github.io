@@ -20,8 +20,8 @@ const Wrapper = ({ View }) => {
   }, []);
 
   const calculateBackgroundPosition = () => {
-    const offsetX = (mouseX / window.innerWidth) * 3;
-    const offsetY = (mouseY / window.innerHeight) * 3;
+    const offsetX = (mouseX / window.innerWidth) * 4;
+    const offsetY = (mouseY / window.innerHeight) * 4;
     return `${offsetX}% ${offsetY}%`;
   };
 
