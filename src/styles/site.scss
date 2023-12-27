@@ -1,28 +1,28 @@
 @use "variables" as *;
 
 body * {
-    box-sizing : border-box;
-    font-family: "Montserrat", sans-serif;
+    box-sizing  : border-box;
+    font-family : "Montserrat", sans-serif;
 }
 
 html {
-    font-size: 18px;
-    background-size     : 150%;
-    background-image    : url("/img/background.webp");
+    font-size        : 18px;
+    background-size  : 150%;
+    background-image : url("/img/background.webp");
     //animation: backgroundBounce 60s ease-in-out infinite;
 
     @keyframes backgroundBounce {
         0%, 100% {
-            background-size: 150%;
+            background-size : 150%;
         }
 
         50% {
-            background-size: 220%;
+            background-size : 220%;
         }
     }
 
-    @media (max-width: 1400px), (max-height: 900px) {
-        font-size: 14px;
+    @media (max-width : 1400px), (max-height : 900px) {
+        font-size : 14px;
     }
 
     @media screen and (max-width : 900px) {
@@ -59,10 +59,10 @@ html {
     background-color : rgba(darken(#1d1a26, 0%), 1);
     height           : 90vh;
     width            : 90vw;
-    max-width: 1400px;
-    max-height: 900px;
+    max-width        : 1400px;
+    max-height       : 900px;
     border-radius    : 1rem;
-    border: 4px double rgba(#e3c3f7, 0.25);
+    border           : 4px double rgba(#e3c3f7, 0.25);
     box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.43);
 
     @media screen and (max-width : 1155px) {
@@ -74,14 +74,14 @@ html {
     }
 
     @media screen and (max-width : 900px) {
-        flex-direction: column-reverse;
-        width: 100vw;
-        height : 100vh;
-        border: none;
+        flex-direction : column-reverse;
+        width          : 100vw;
+        height         : 100vh;
+        border         : none;
 
         main {
-            border: none;
-            height: 100%;
+            border : none;
+            height : 100%;
         }
     }
 }

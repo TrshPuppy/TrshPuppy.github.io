@@ -80,6 +80,7 @@ const Home = () => {
             <blockquote>
                 <p>Arth says hi and also that this is a &lt;blockquote&gt;</p>
                 <p>He also says this is is a &lt;p&gt; in a &lt;blockquote&gt;, you know because it happens and all.</p>
+                <cite>Arthvadrr - circa 2023</cite>
             </blockquote>
 
             <div className="alert alert-info">
