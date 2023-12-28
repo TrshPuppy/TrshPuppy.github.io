@@ -105,6 +105,18 @@ const Nav = () => {
                         <FlaskSVG/>
                     </NavLink>
                 </li>
+                <li key="nav-link-blog" className="nav-link-blog">
+                    <NavLink
+                        to={ '/blog' }
+                        className={({ isActive, isPending }) => {
+                            return isActive ? "nav-link active" : isPending ? "nav-link pending" : "nav-link";
+                        }}
+                        onClick={() => playClickSound()}
+                    >
+                        <span>Blog</span>
+                        <CoffeeSVG/>
+                    </NavLink>
+                </li>
                 <li key="nav-link-about" className="nav-link-about">
                     <NavLink
                         to={ '/about' }
