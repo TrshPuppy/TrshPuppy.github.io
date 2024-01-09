@@ -1,11 +1,20 @@
 /**
 * Colors
 */
-$background: #362346;
+$background: #1e1623;
+$foreground: #89669f;
+$active: #c3b1ce;
 
 /**
 * Header
 */
+$nav-links: (
+   home: #ffb1fa,
+   projects: #c8ffc5,
+   blog: #ffffff,
+   about: #adc0fe,
+   contact: #ff7b00,
+);
 
 /**
 * Utility
