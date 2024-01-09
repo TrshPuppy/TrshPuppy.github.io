@@ -1,87 +1,31 @@
-@use "variables" as *;
-
-body * {
-    box-sizing  : border-box;
-    font-family : "Montserrat", sans-serif;
-}
+@use 'variables' as *;
 
 html {
-    font-size        : 18px;
-    background-size  : 150%;
-    background-image : url("/img/background.webp");
-    //animation: backgroundBounce 60s ease-in-out infinite;
+   font-size: 18px;
 
-    @keyframes backgroundBounce {
-        0%, 100% {
-            background-size : 150%;
-        }
+   @media (max-width: 1400px), (max-height: 900px) {
+      font-size: 14px;
+   }
 
-        50% {
-            background-size : 220%;
-        }
-    }
+   @media screen and (max-width: 900px) {
+      background-image: unset;
+   }
 
-    @media (max-width : 1400px), (max-height : 900px) {
-        font-size : 14px;
-    }
+   body {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      background-color: $background;
 
-    @media screen and (max-width : 900px) {
-        background-image : unset;
-    }
+      & * {
+         box-sizing: border-box;
+         font-family: 'Montserrat', sans-serif;
+      }
 
-    body {
-        position      : relative;
-        margin        : 0;
-        min-height    : 100vh;
-        display       : grid;
-        justify-items : center;
-        align-items   : center;
-    }
-
-    &:before {
-        content          : "";
-        position         : absolute;
-        top              : 0;
-        left             : 0;
-        height           : 100%;
-        width            : 100%;
-        backdrop-filter  : blur(3px) saturate(0.5);
-        background-image : linear-gradient(
-                        rgba(#1a1a1a, 0.8),
-                        rgba(#000000, 0.9)
-        );
-        z-index          : -1;
-    }
-}
-
-#root {
-    display          : flex;
-    background-color : rgba(darken(#1d1a26, 0%), 1);
-    height           : 90vh;
-    width            : 90vw;
-    max-width        : 1400px;
-    max-height       : 900px;
-    border-radius    : 1rem;
-    border           : 4px double rgba(#e3c3f7, 0.25);
-    box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.43);
-
-    @media screen and (max-width : 1155px) {
-        width : 900px;
-    }
-
-    @media screen and (max-width : 945px) {
-        width : 800px;
-    }
-
-    @media screen and (max-width : 900px) {
-        flex-direction : column-reverse;
-        width          : 100vw;
-        height         : 100vh;
-        border         : none;
-
-        main {
-            border : none;
-            height : 100%;
-        }
-    }
+      #root {
+         max-width: 1400px;
+      }
+   }
 }

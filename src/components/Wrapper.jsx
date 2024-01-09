@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import SiteMenu from "./SiteMenu.jsx";
+import SiteHeader from './SiteHeader.jsx';
+import SiteFooter from './SiteFooter.jsx';
 
 const Wrapper = ({ View }) => {
     const mouseRef = useRef();
@@ -28,10 +29,11 @@ const Wrapper = ({ View }) => {
   return (
     <>
       <style>{`html {background-position: ${calculateBackgroundPosition()}}`}</style>
-      <SiteMenu />
+      <SiteHeader />
       <main ref={mouseRef}>
         <View />
       </main>
+      <SiteFooter />
     </>
   );
 };

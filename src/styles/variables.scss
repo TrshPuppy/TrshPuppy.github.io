@@ -1,16 +1,15 @@
-$purple: #5A1D61;
-$green: #0F474B;
-$light_green: #DDF6F8;
-$light_purple: #dab5dc;
-$border_color: #5b4f73;
-$active: #91f7d5;
+/**
+* Colors
+*/
+$background: #362346;
 
+/**
+* Header
+*/
 
-$info: #9DB8D7;
-$info_text: #1E2A39;
-$success: #9DD7B1;
-$success_text: #223A2A;
-$warning: #D7BB9D;
-$warning_text: #412F1B;
-$danger: #D79D9D;
-$danger_text: #301C1C;
+/**
+* Utility
+*/
+$img_box_shadow:
+   0 19px 38px rgba(0, 0, 0, 0.3),
+   0 15px 12px rgba(0, 0, 0, 0.22);

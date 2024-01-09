@@ -1,6 +1,4 @@
+@use "fonts";
 @use "site";
 @use "main";
-@use "fonts";
-@use "utility";
-@use "./components/SiteMenu";
-@use "./components/Nav";
+@use "partials/site-header";
