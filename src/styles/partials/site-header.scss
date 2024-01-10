@@ -6,7 +6,7 @@
       list-style: none;
       margin: 0;
       padding: 1rem 0;
-      width: 1500px;
+      width: 1200px;
 
       li {
          .nav-link {
@@ -20,8 +20,8 @@
 
             svg {
                stroke: $foreground;
-               height: 2rem;
-               width: 3rem;
+               height: 1.75rem;
+               width: 2rem;
                transition: all 100ms;
             }
 
@@ -40,7 +40,6 @@
 
                span {
                   color: $active;
-                  transform: scale(1.1);
                }
             }
 

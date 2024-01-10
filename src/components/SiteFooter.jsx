@@ -1,14 +1,11 @@
-import Socials from "./Socials.jsx";
+import Socials from './Socials.jsx';
 
-const SiteFooter = () => 
-
-
-{
-    return (
-        <footer className="site-header">
-            <Socials />
-        </footer>
-    )
-}
+const SiteFooter = () => {
+   return (
+      <footer className="site-footer">
+         <Socials />
+      </footer>
+   );
+};
 
 export default SiteFooter;

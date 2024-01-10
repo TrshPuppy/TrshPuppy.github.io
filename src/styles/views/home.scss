@@ -1,0 +1,18 @@
+@use '../variables' as *;
+
+.home {
+   .masthead {
+      h1 {
+         color: $active;
+         font-size: 2rem;
+         font-family: 'TechnoOverload';
+
+         .title-top {
+         }
+
+         .title-mid {
+            font-size: 4rem;
+         }
+      }
+   }
+}

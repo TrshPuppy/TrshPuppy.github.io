@@ -3,14 +3,6 @@
 html {
    font-size: 18px;
 
-   @media (max-width: 1400px), (max-height: 900px) {
-      font-size: 14px;
-   }
-
-   @media screen and (max-width: 900px) {
-      background-image: unset;
-   }
-
    body {
       display: flex;
       justify-content: center;
@@ -25,7 +17,7 @@ html {
       }
 
       #root {
-         max-width: 1400px;
+         max-width: 1200px;
       }
    }
 }
