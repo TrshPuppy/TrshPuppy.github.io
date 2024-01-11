@@ -10,10 +10,10 @@ html {
       min-height: 100vh;
       margin: 0;
       background-color: $background;
+      font-family: 'Montserrat', sans-serif;
 
       & * {
          box-sizing: border-box;
-         font-family: 'Montserrat', sans-serif;
       }
 
       #root {

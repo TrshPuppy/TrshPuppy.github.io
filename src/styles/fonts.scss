@@ -1,36 +1,31 @@
 @font-face {
    font-family: 'Montserrat';
-   src: url('../../public/fonts/Montserrat.ttf') format('truetype');
+   src: url('/fonts/Montserrat.ttf') format('truetype');
 }
 
 @font-face {
    font-family: 'Montserrat';
-   src: url('../../fonts/Montserrat-Italic.ttf') format('truetype');
+   src: url('/fonts/Montserrat-Italic.ttf') format('truetype');
    font-style: italic;
 }
 
 @font-face {
    font-family: 'JetBrainsMono';
-   src: url('../../fonts/JetBrainsMono.ttf') format('truetype');
+   src: url('/fonts/JetBrainsMono.ttf') format('truetype');
 }
 
 @font-face {
    font-family: 'JetBrainsMono';
-   src: url('../../fonts/JetBrainsMono-Italic.ttf') format('truetype');
+   src: url('/fonts/JetBrainsMono-Italic.ttf') format('truetype');
    font-style: italic;
 }
 
 @font-face {
    font-family: 'Retron2000';
-   src: url('../../public/fonts/Retron2000.ttf') format('truetype');
-}
-
-@font-face {
-   font-family: 'TechnoOverload';
-   src: url('../../../fonts/TechnoOverload.ttf') format('truetype');
+   src: url('/fonts/Retron2000.ttf') format('truetype');
 }
 
 @font-face {
    font-family: 'Neon';
-   src: url('../../fonts/Neon.ttf') format('truetype');
+   src: url('/fonts/Neon.ttf') format('truetype');
 }

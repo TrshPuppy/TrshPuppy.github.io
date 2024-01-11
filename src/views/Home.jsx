@@ -1,6 +1,14 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Pong from '../components/Pong';
 
 const Home = () => {
+   const [gameStarted, setGameStarted] = useState(false);
+
+   const startGame = () => {
+      setGameStarted(true);
+   };
+
    return (
       <article id="home-view" className="home">
          <div className="masthead">
@@ -16,6 +24,7 @@ const Home = () => {
             <NavLink to={'/blog'}>My Content</NavLink>
             <NavLink to={'/contact'}>Want to Chat?</NavLink>
          </div>
+         <Pong />
       </article>
    );
 };

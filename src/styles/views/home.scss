@@ -5,13 +5,16 @@
       h1 {
          color: $active;
          font-size: 2rem;
-         font-family: 'TechnoOverload';
+         font-family: 'Retron2000', sans-serif;
+         font-weight: 900;
 
          .title-top {
+            font-size: 1.5rem;
+            font-weight: 100;
          }
 
          .title-mid {
-            font-size: 4rem;
+            font-size: 3rem;
          }
       }
    }
