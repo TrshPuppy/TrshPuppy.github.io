@@ -19,13 +19,13 @@ const Pong = () => {
 
    const [leftPaddle, setLeftPaddle] = useState({
       y: 270,
-      height: 160,
+      height: 140,
       color: '#ffffff',
    });
 
    const [rightPaddle, setRightPaddle] = useState({
       y: 270,
-      height: 160,
+      height: 140,
       speed: 0.06,
       maxSpeed: 4,
       color: '#ffffff',
