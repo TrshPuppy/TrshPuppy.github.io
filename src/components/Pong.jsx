@@ -1,21 +1,63 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const getWidthPercentage = (speed) => {
+   const minSpeed = 3;
+   const maxSpeed = 15;
+
+   return ((speed - minSpeed) / (maxSpeed - minSpeed)) * 100;
+};
+
+const getAudio = (path, volume, loop) => {
+   const audio = new Audio(path);
+   audio.volume = volume;
+
+   if (loop) {
+      audio.loop = true;
+   }
+
+   return audio;
+};
+
+const sfx = {
+   paddle1: getAudio('/audio/pong/paddle1.mp3', 0.6),
+   paddle2: getAudio('/audio/pong/paddle2.mp3', 0.6),
+   bounce: getAudio('/audio/pong/bounce.mp3', 1),
+   music: getAudio('/audio/pong/levelmusic1.mp3', 0.6, true),
+   start: getAudio('/audio/pong/gamestart.mp3', 1),
+   lost: getAudio('/audio/pong/lost.mp3', 1),
+   win: getAudio('/audio/pong/win.mp3', 1),
+   gameOver: getAudio('/audio/pong/gameover.mp3', 1),
+};
+
+const getRandomColor = () => {
+   const letters = '0123456789ABCDEF';
+   let color = '#';
+   for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+   }
+   return color;
+};
+
+const handleMouseMove = (event, canvas, leftPaddle) => {
+   const mouseY = event.clientY - canvas.current.getBoundingClientRect().top;
+   leftPaddle.y = Math.max(0, Math.min(canvas.current.height - leftPaddle.height, mouseY - leftPaddle.height / 2));
+};
+
 const Pong = () => {
    const canvas = useRef();
    const paddleWidth = 20;
-
-   let [isPlaying, setIsPlaying] = useState(false); // We have to mutate before batch
    const [ctx, setCTX] = useState();
    const [buttonText, setButtonText] = useState('Play');
-   const [ballSpeed, setBallSpeed] = useState(3);
    const [level, setLevel] = useState(1);
    const [lives, setLives] = useState(3);
+   let [isPlaying, setIsPlaying] = useState(false); // Let is used becuase we have to force a mutation immediately
+
    const [ball, setBall] = useState({
       x: 50,
-      y: 50,
-      speed: ballSpeed,
+      y: Math.floor(Math.random() * (150 - 40 + 1)) + 40,
+      speed: 3,
       directionX: 1,
-      directionY: 0.75,
+      directionY: 0.5,
       color: '#000000',
    });
 
@@ -32,20 +74,6 @@ const Pong = () => {
       maxSpeed: 4,
       color: '#ffffff',
    });
-
-   const getRandomColor = () => {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-         color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-   };
-
-   const handleMouseMove = (event) => {
-      const mouseY = event.clientY - canvas.current.getBoundingClientRect().top;
-      leftPaddle.y = Math.max(0, Math.min(canvas.current.height - leftPaddle.height, mouseY - leftPaddle.height / 2));
-   };
 
    useEffect(() => {
       if (!canvas.current) return;
@@ -68,17 +96,25 @@ const Pong = () => {
          // Check if user scored
          if (ball.x - 10 > canvas.current.width) {
             setIsPlaying(false);
+
+            /**
+             * Play win sfx
+             */
+            sfx.win.currentTime = 0;
+            sfx.win.play();
+
+            /**
+             * Reset state
+             */
             setLevel((prevLevel) => prevLevel + 1);
             setButtonText(`Start Level ${level + 1}`);
-            ball.speed = ball.speed + 3;
-
             setBall((prevBall) => ({
                ...prevBall,
                x: 50,
-               y: 50,
-               speed: ballSpeed,
+               y: Math.floor(Math.random() * (150 - 40 + 1)) + 40,
+               speed: 3 + level * 0.5,
                directionX: 1,
-               directionY: 1,
+               directionY: 0.5,
                color: '#000000',
             }));
 
@@ -87,51 +123,79 @@ const Pong = () => {
                height: prevPaddle.height + 5,
             }));
 
-            setRightPaddle((prevPaddle) => ({
-               ...prevPaddle,
-               maxSpeed: prevPaddle.maxSpeed + 0.5,
-               speed: prevPaddle.speed + 0.035,
-            }));
+            if (level < 7) {
+               setRightPaddle((prevPaddle) => ({
+                  ...prevPaddle,
+                  maxSpeed: prevPaddle.maxSpeed + 0.5,
+                  speed: prevPaddle.speed + 0.035,
+               }));
+            } else {
+               setRightPaddle((prevPaddle) => ({
+                  ...prevPaddle,
+                  maxSpeed: prevPaddle.maxSpeed + 5,
+                  speed: prevPaddle.speed + 1,
+               }));
+            }
 
             return;
          }
 
-         // Check if player loses
+         /**
+          * Check if player loses
+          */
          if (ball.x + 10 < 0) {
             setIsPlaying(false);
-            setBallSpeed(3);
             setLives((prevLives) => prevLives - 1);
             setBall({
                x: 50,
-               y: 50,
-               speed: ballSpeed,
+               y: Math.floor(Math.random() * (150 - 40 + 1)) + 40,
+               speed: 3,
                directionX: 1,
-               directionY: 1,
+               directionY: 0.5,
                color: '#000000',
             });
 
             if (lives > 0) {
                setButtonText(() => 'You lost a life. Continue?');
-               return;
+
+               /**
+                * Handle sfx
+                */
+               sfx.lost.currentTime = 0;
+               sfx.lost.play();
+            } else {
+               setButtonText(() => 'Game over. Try again?');
+               setLevel(1);
+               setLives((_) => 3);
+
+               setRightPaddle((prevPaddle) => ({
+                  ...prevPaddle,
+                  speed: 0.06,
+                  maxSpeed: 4,
+               }));
+
+               /**
+                * Handle sfx
+                */
+               sfx.music.pause();
+               sfx.music.currentTime = 0;
+               sfx.gameOver.pause();
+               sfx.gameOver.currentTime = 0;
+               sfx.gameOver.play();
             }
-
-            setButtonText(() => 'Game over. Try again? (Keeps paddle growth!)');
-            setLevel(1);
-            setLives((_) => 3);
-
-            setRightPaddle((prevPaddle) => ({
-               ...prevPaddle,
-               speed: 0.06,
-               maxSpeed: 4,
-            }));
 
             return;
          }
 
-         // Move ball
+         /**
+          * Move ball
+          */
          ball.x += ball.speed * ball.directionX;
          ball.y += ball.speed * ball.directionY;
 
+         /**
+          * Draw Paddles
+          */
          const drawPaddles = (leftPaddleColor, rightPaddleColor) => {
             ctx.clearRect(0, 0, canvas.current.width, canvas.current.height);
             ctx.fillStyle = leftPaddleColor;
@@ -140,7 +204,6 @@ const Pong = () => {
             ctx.fillRect(canvas.current.width - paddleWidth, rightPaddle.y, paddleWidth, rightPaddle.height);
          };
 
-         // Draw paddles
          if (ball.x > 0 && ball.x < 50) {
             drawPaddles('#FF35BC', rightPaddle.color);
          } else if (ball.x > canvas.current.width - 50) {
@@ -149,40 +212,47 @@ const Pong = () => {
             drawPaddles(leftPaddle.color, rightPaddle.color);
          }
 
-         // Check collision with paddles
-         // prettier-ignore
-         if (
-            ball.x < paddleWidth && 
-            ball.y > leftPaddle.y && 
-            ball.y < leftPaddle.y + leftPaddle.height) {
+         /**
+          * Check collision with paddles
+          */
+         const randomPaddleSoundNumber = Math.floor(Math.random() * 2) + 1;
+         const currentAudioRef = sfx[`paddle${randomPaddleSoundNumber}`];
+
+         if (ball.x < paddleWidth && ball.y > leftPaddle.y && ball.y < leftPaddle.y + leftPaddle.height) {
             ball.directionX = 1;
             ball.speed = ball.speed + 0.5;
+            currentAudioRef.pause();
+            currentAudioRef.currentTime = 0;
+            currentAudioRef.play();
          } else if (
             ball.x > canvas.current.width - paddleWidth &&
             ball.y > rightPaddle.y &&
             ball.y < rightPaddle.y + rightPaddle.height
          ) {
             ball.speed = ball.speed + 0.5;
-            // Add some randomness to the bounces
-            if (ball.directionY > 0) {
-               ball.directionY = 0.5 + Math.random() * 0.2;
-            } else {
-               ball.directionY = -(0.5 + Math.random() * 0.2);
-            }
-
             ball.directionX = -1;
+            currentAudioRef.pause();
+            currentAudioRef.currentTime = 0;
+            currentAudioRef.play();
          }
 
-         // Check collision with walls
+         /**
+          * Check collision with walls
+          */
          // prettier-ignore
          if (
-            ball.y + ball.speed >= canvas.current.height || 
-            ball.y - ball.speed <= 0
+            ball.y + 10 > canvas.current.height || 
+            ball.y - 10 < 0
          ) {
             ball.directionY = -ball.directionY;
+            sfx.bounce.pause();
+            sfx.bounce.currentTime = 0;
+            sfx.bounce.play();
          }
 
-         // Update right paddle position to follow the ball
+         /**
+          * Update right paddle position to follow the ball
+          */
          if (ball.x > canvas.current.width / 2 && ball.directionX > 0) {
             const deltaY = ball.y - (rightPaddle.y + rightPaddle.height / 2);
             const desiredY = rightPaddle.y + deltaY * rightPaddle.speed;
@@ -205,12 +275,14 @@ const Pong = () => {
                   : desiredY;
          }
 
-         // Draw ball
+         /**
+          * Draw the ball
+          */
          ctx.fillStyle = ball.color;
          ctx.beginPath();
          ctx.arc(ball.x, ball.y, 10, 0, 2 * Math.PI);
          ctx.fill();
-         ctx.lineWidth = 3;
+         ctx.lineWidth = 6;
          ctx.strokeStyle = '#FF35BC';
          ctx.stroke();
 
@@ -225,20 +297,47 @@ const Pong = () => {
    }, [isPlaying]);
 
    const updateIsPlaying = () => {
-      setIsPlaying((prevIsPlaying) => !prevIsPlaying);
+      if (sfx.music.paused) {
+         sfx.music.play();
+      }
+
+      sfx.start.pause();
+      sfx.start.currentTime = 0;
+      sfx.start.play();
+
+      setIsPlaying(true);
    };
 
-   const getWidthPercentage = (speed) => {
-      const minSpeed = 3;
-      const maxSpeed = 15;
+   /**
+    * Video playback rate
+    */
 
-      return ((speed - minSpeed) / (maxSpeed - minSpeed)) * 100;
-   };
+   const videoRef = useRef(null);
+   const [videoSpeed, setVideoSpeed] = useState(0.5);
 
    return (
       <div className="pong">
-         <canvas ref={canvas} width={800} height={500} onMouseMove={handleMouseMove}></canvas>
+         <canvas
+            ref={canvas}
+            width={800}
+            height={500}
+            onMouseMove={(e) => handleMouseMove(e, canvas, leftPaddle)}
+         ></canvas>
          <div className="net"></div>
+         <div className="background">
+            <video
+               ref={videoRef}
+               autoPlay
+               loop
+               muted
+               playsInline
+               controls={false}
+               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            >
+               <source src="/video/tunnel.mp4" type="video/mp4" />
+               Your browser does not support the video tag.
+            </video>
+         </div>
          <div className="overlay">
             <div className="lives">
                Lives:&nbsp;
