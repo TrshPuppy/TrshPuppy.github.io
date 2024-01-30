@@ -36,6 +36,7 @@ function App() {
                     <About path="about" />
                     <Contact path="contact" />
                     <WriteUps path="portfolio/writeups" />
+                    <CurrentWriteUp path="portfolio/writeups/python-asyncio" />
                     <CurrentWriteUp path="portfolio/writeups/academy" />
                     <CurrentWriteUp path="portfolio/writeups/HTB-vaccine" />
                     <CurrentWriteUp path="portfolio/writeups/binary-exploitation" />
