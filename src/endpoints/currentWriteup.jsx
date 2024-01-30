@@ -55,6 +55,24 @@ export default function CurrentWriteUp(props) {
             });
 
             break;
+        case "portfolio/writeups/rop-gadgets":
+            mdFilesList.map((x) => {
+                if (x.name === "B&E IV: ROP Gadgets") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
+        case "portfolio/writeups/python-asyncio":
+            mdFilesList.map((x) => {
+                if (x.name === "Python Concurrency with Asyncio") {
+                    mdPath = x.path;
+                    mdName = x.to_link;
+                }
+            });
+
+            break;
     }
 
     // Get of requested markdown file:

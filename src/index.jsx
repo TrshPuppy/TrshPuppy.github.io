@@ -36,11 +36,13 @@ function App() {
                     <About path="about" />
                     <Contact path="contact" />
                     <WriteUps path="portfolio/writeups" />
+                    <CurrentWriteUp path="portfolio/writeups/python-asyncio" />
                     <CurrentWriteUp path="portfolio/writeups/academy" />
                     <CurrentWriteUp path="portfolio/writeups/HTB-vaccine" />
                     <CurrentWriteUp path="portfolio/writeups/binary-exploitation" />
                     <CurrentWriteUp path="portfolio/writeups/basic-buffer-overflow" />
                     <CurrentWriteUp path="portfolio/writeups/nop-sleds" />
+                    <CurrentWriteUp path="portfolio/writeups/rop-gadgets" />
                 </Router>
             </div>
         </>
