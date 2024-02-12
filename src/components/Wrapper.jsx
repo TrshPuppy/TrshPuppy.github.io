@@ -7,18 +7,18 @@ const Wrapper = ({ View }) => {
    const [mouseX, setMouseX] = useState(0);
    const [mouseY, setMouseY] = useState(0);
 
-   useEffect(() => {
-      const handleMouseMove = (event) => {
-         setMouseX(event.clientX);
-         setMouseY(event.clientY);
-      };
+   // useEffect(() => {
+   //    const handleMouseMove = (event) => {
+   //       setMouseX(event.clientX);
+   //       setMouseY(event.clientY);
+   //    };
 
-      document.addEventListener('mousemove', handleMouseMove);
+   //    document.addEventListener('mousemove', handleMouseMove);
 
-      return () => {
-         document.removeEventListener('mousemove', handleMouseMove);
-      };
-   }, []);
+   //    return () => {
+   //       document.removeEventListener('mousemove', handleMouseMove);
+   //    };
+   // }, []);
 
    const calculateBackgroundPosition = () => {
       const offsetX = (mouseX / window.innerWidth).toFixed(2) * 6;
@@ -27,14 +27,14 @@ const Wrapper = ({ View }) => {
    };
 
    return (
-      <>
+      <div className="wrapper">
          <style>{`html {background-position: ${calculateBackgroundPosition()}}`}</style>
          <SiteHeader />
          <main ref={mouseRef}>
             <View />
          </main>
          {/* <SiteFooter /> */}
-      </>
+      </div>
    );
 };
 

@@ -10,7 +10,18 @@ html {
       min-height: 100vh;
       margin: 0;
       background-color: $background;
+      background-image: url('/img/retro-grid.webp');
+      background-size: auto 100%;
       font-family: 'Montserrat', sans-serif;
+
+      &:before {
+         position: absolute;
+         content: '';
+         height: 100%;
+         width: 100%;
+         background-image: linear-gradient($background 75%, transparent);
+         z-index: -10;
+      }
 
       & * {
          box-sizing: border-box;

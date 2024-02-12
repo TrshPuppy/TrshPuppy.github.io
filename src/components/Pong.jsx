@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const getWidthPercentage = (speed) => {
    const minSpeed = 3;
-   const maxSpeed = 15;
+   const maxSpeed = 40;
 
    return ((speed - minSpeed) / (maxSpeed - minSpeed)) * 100;
 };
@@ -55,10 +55,10 @@ const Pong = () => {
    const [ball, setBall] = useState({
       x: 50,
       y: Math.floor(Math.random() * (150 - 40 + 1)) + 40,
-      speed: 3,
+      speed: 9,
       directionX: 1,
       directionY: 0.5,
-      color: '#000000',
+      color: '#FF35BC',
    });
 
    const [leftPaddle, setLeftPaddle] = useState({
@@ -70,8 +70,8 @@ const Pong = () => {
    const [rightPaddle, setRightPaddle] = useState({
       y: 270,
       height: 100,
-      speed: 0.06,
-      maxSpeed: 4,
+      speed: 0.3,
+      maxSpeed: 10,
       color: '#ffffff',
    });
 
@@ -112,10 +112,10 @@ const Pong = () => {
                ...prevBall,
                x: 50,
                y: Math.floor(Math.random() * (150 - 40 + 1)) + 40,
-               speed: 3 + level * 0.5,
+               speed: 9 + level * 1.5,
                directionX: 1,
                directionY: 0.5,
-               color: '#000000',
+               color: '#ffffff',
             }));
 
             setLeftPaddle((prevPaddle) => ({
@@ -149,10 +149,10 @@ const Pong = () => {
             setBall({
                x: 50,
                y: Math.floor(Math.random() * (150 - 40 + 1)) + 40,
-               speed: 3,
+               speed: 9 + level * 1.5,
                directionX: 1,
                directionY: 0.5,
-               color: '#000000',
+               color: '#ffffff',
             });
 
             if (lives > 0) {
@@ -220,7 +220,7 @@ const Pong = () => {
 
          if (ball.x < paddleWidth && ball.y > leftPaddle.y && ball.y < leftPaddle.y + leftPaddle.height) {
             ball.directionX = 1;
-            ball.speed = ball.speed + 0.5;
+            ball.speed = ball.speed + 1;
             currentAudioRef.pause();
             currentAudioRef.currentTime = 0;
             currentAudioRef.play();
@@ -229,7 +229,7 @@ const Pong = () => {
             ball.y > rightPaddle.y &&
             ball.y < rightPaddle.y + rightPaddle.height
          ) {
-            ball.speed = ball.speed + 0.5;
+            ball.speed = ball.speed + 1;
             ball.directionX = -1;
             currentAudioRef.pause();
             currentAudioRef.currentTime = 0;
@@ -278,12 +278,8 @@ const Pong = () => {
          /**
           * Draw the ball
           */
-         ctx.fillStyle = ball.color;
-         ctx.beginPath();
-         ctx.arc(ball.x, ball.y, 10, 0, 2 * Math.PI);
-         ctx.fill();
-         ctx.lineWidth = 6;
-         ctx.strokeStyle = '#FF35BC';
+         ctx.fillStyle = '#FF35BC';
+         ctx.fillRect(ball.x, ball.y, 20, 20);
          ctx.stroke();
 
          animationID = requestAnimationFrame(gameLoop);
@@ -324,20 +320,7 @@ const Pong = () => {
             onMouseMove={(e) => handleMouseMove(e, canvas, leftPaddle)}
          ></canvas>
          <div className="net"></div>
-         <div className="background">
-            <video
-               ref={videoRef}
-               autoPlay
-               loop
-               muted
-               playsInline
-               controls={false}
-               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            >
-               <source src="/video/tunnel.mp4" type="video/mp4" />
-               Your browser does not support the video tag.
-            </video>
-         </div>
+         <div className="background"></div>
          <div className="overlay">
             <div className="lives">
                Lives:&nbsp;

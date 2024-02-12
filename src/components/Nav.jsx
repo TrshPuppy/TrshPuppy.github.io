@@ -15,7 +15,8 @@ const Nav = () => {
    const playClickSound = () => {
       const audio = new Audio('/audio/click.mp3');
       audio.volume = 0.3;
-      audio.play();
+
+      if (audio) audio.play();
    };
 
    return (
