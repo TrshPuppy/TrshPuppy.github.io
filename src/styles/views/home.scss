@@ -43,23 +43,52 @@
          }
       }
 
+      .computer {
+         position: relative;
+
+         .computer-graphic,
+         .dumpster-graphic {
+            background-image: url('/img/computer.webp');
+            height: 10rem;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 3px #000) sepia(100%) hue-rotate(240deg) brightness(1.2);
+         }
+
+         .dumpster-graphic {
+            position: absolute;
+            background-image: url('/animated/dumpster.gif');
+            height: 5.5rem;
+            width: 5.5rem;
+            right: 17rem;
+            top: 4.15rem;
+            opacity: 0.5;
+            filter: sepia(100%) hue-rotate(240deg);
+         }
+      }
+
       .flashy-deck {
          display: flex;
          flex-wrap: wrap;
          position: absolute;
-         left: 0;
-         max-width: 50vw;
-         top: 10rem;
          padding: 0;
          z-index: 0;
+         left: 50px;
+         top: 4px;
+         width: 172px;
+         height: 120px;
+         background-color: #000;
+         border-radius: 0.3rem;
 
          .flashy {
             position: relative;
             display: grid;
-            height: 15px;
-            width: 15px;
+            height: 10px;
+            width: 10px;
             opacity: 0.05;
             border: 1px solid $background;
+            border-radius: 3px;
             background-color: $active;
 
             &::before {
