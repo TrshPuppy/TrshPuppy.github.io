@@ -1,145 +1,100 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 .home {
-   text-align: justified;
+    .terminal {
+        position         : relative;
+        display          : flex;
+        justify-content  : center;
+        align-items      : center;
+        margin-top       : 4rem;
+        background-color : rgba(#777, 0.1);
+        border           : 0.25rem solid #2B232F;
+        border-top       : 1.75rem solid #2B232F;
+        border-radius: 8px;
 
-   .masthead {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        .entry-title {
+            position      : relative;
+            display       : grid;
+            align-content : center;
+            font-size     : 3rem;
+            line-height   : 3.5rem;
+            font-weight   : 900;
+            font-family   : "Orbitron", serif;
+            margin: 0 4rem 0 1rem;
+        }
 
-      .entry-title {
-         display: grid;
-         align-content: center;
-         font-size: 4rem;
-         line-height: 4.5rem;
-         font-weight: 900;
-         font-family: 'Orbitron';
-         margin: 2rem 0;
-      }
+        .hero {
+            height              : 600px;
+            width               : 100%;
+            //noinspection CssUnknownTarget This is in the Public Dir
+            background-image    : url("/img/logo-1.webp");
+            background-size     : cover;
+            background-position : center;
+            background-repeat   : no-repeat;
+        }
 
-      .hero {
-         position: relative;
-         height: 700px;
-         width: 700px;
-         background-image: url('/img/logo-2.webp');
-         background-size: contain;
-         background-position: right;
-         background-repeat: no-repeat;
-      }
+        .short-links {
+            a {
+                display         : flex;
+                justify-content : space-between;
+                color           : #fff;
+                text-decoration : none;
+                font-size       : 1rem;
+                font-family     : "Montserrat", serif;
+                font-weight     : 600;
+                border-bottom   : 1px solid $foreground;
+                padding         : 0 1.5rem;
+                margin-bottom   : 1rem;
+                line-height     : 5rem;
 
-      .short-links {
-         a {
-            color: #fff;
-            text-decoration: none;
-
-            font-size: 1rem;
-            font-family: 'Montserrat';
-            font-weight: 600;
-            background-color: $foreground;
-            padding: 0.5rem 2rem;
-            margin-right: 1rem;
-            border-radius: 0.5rem;
-         }
-      }
-
-      .computer {
-         position: relative;
-
-         .computer-graphic,
-         .dumpster-graphic {
-            background-image: url('/img/computer.webp');
-            height: 10rem;
-            width: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            filter: drop-shadow(0 0 3px #000) sepia(100%) hue-rotate(240deg) brightness(1.2);
-         }
-
-         .dumpster-graphic {
-            position: absolute;
-            background-image: url('/animated/dumpster.gif');
-            height: 5.5rem;
-            width: 5.5rem;
-            right: 17rem;
-            top: 4.15rem;
-            opacity: 0.5;
-            filter: sepia(100%) hue-rotate(240deg);
-         }
-      }
-
-      .flashy-deck {
-         display: flex;
-         flex-wrap: wrap;
-         position: absolute;
-         padding: 0;
-         z-index: 0;
-         left: 50px;
-         top: 4px;
-         width: 172px;
-         height: 120px;
-         background-color: #000;
-         border-radius: 0.3rem;
-
-         .flashy {
-            position: relative;
-            display: grid;
-            height: 10px;
-            width: 10px;
-            opacity: 0.05;
-            border: 1px solid $background;
-            border-radius: 3px;
-            background-color: $active;
-
-            &::before {
-               content: '';
-               opacity: 0;
-               display: block;
-               height: 900%;
-               width: 900%;
-               align-self: center;
-               justify-self: center;
-               border-radius: 50%;
-               background: radial-gradient(circle, currentColor 0%, currentColor 1%, hsla(0, 0%, 0%, 0) 58%);
-               pointer-events: none;
-               z-index: 10;
+                img {
+                    padding : 0.5rem;
+                    height  : 5rem;
+                    filter  : sepia(100%) hue-rotate(240deg);
+                }
             }
+        }
 
-            &:hover,
-            &.active {
-               opacity: 0.5;
-               background-color: currentColor;
-               border: 1px solid currentColor;
-               filter: drop-shadow(0 0 8px currentColor);
+        .traffic-lights {
+            display  : flex;
+            position : absolute;
+            top      : -1.25rem;
+            left     : 0;
 
-               &::before {
-                  opacity: 0.1;
-               }
+            .traffic-light {
+                position                  : relative;
+                display                   : grid;
+                animation-name            : sparkle;
+                animation-iteration-count : infinite;
+                height                    : 10px;
+                width                     : 10px;
+                background-color          : currentColor;
+                margin-right              : 0.4rem;
+                border-radius             : 50%;
+                filter                    : drop-shadow(0 0 8px currentColor);
+
+                &::before {
+                    content        : "";
+                    opacity        : 0.04;
+                    display        : block;
+                    height         : 900%;
+                    width          : 900%;
+                    align-self     : center;
+                    justify-self   : center;
+                    border-radius  : 50%;
+                    background     : radial-gradient(circle, currentColor 0%, currentColor 1%, hsla(0, 0%, 0%, 0) 58%);
+                    pointer-events : none;
+                    z-index        : 10;
+                }
+
+                &:hover {
+                    &:before {
+                        opacity: 0.1;
+                        height         : 1800%;
+                        width          : 1800%;
+                    }
+                }
             }
-
-            &.active {
-               opacity: 1;
-               animation-name: fade;
-               animation-iteration-count: infinite;
-
-               &::before {
-                  height: 3200%;
-                  width: 3200%;
-               }
-
-               @keyframes fade {
-                  0% {
-                     opacity: 1;
-                  }
-                  50% {
-                     opacity: 0.5;
-                  }
-                  100% {
-                     opacity: 1;
-                  }
-               }
-            }
-         }
-      }
-   }
+        }
+    }
 }

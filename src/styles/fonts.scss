@@ -1,20 +1,24 @@
 @font-face {
-   font-family: 'Montserrat';
-   src: url('/fonts/Montserrat.ttf') format('truetype');
+    font-family : "Montserrat";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/Montserrat.ttf") format("truetype");
 }
 
 @font-face {
-   font-family: 'Montserrat';
-   src: url('/fonts/Montserrat-Italic.ttf') format('truetype');
-   font-style: italic;
+    font-family : "Montserrat";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/Montserrat-Italic.ttf") format("truetype");
+    font-style  : italic;
 }
 
 @font-face {
-   font-family: 'Retron2000';
-   src: url('/fonts/Retron2000.ttf') format('truetype');
+    font-family : "Retron2000";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/Retron2000.ttf") format("truetype");
 }
 
 @font-face {
-   font-family: 'Orbitron';
-   src: url('/fonts/Orbitron.ttf') format('truetype');
+    font-family : "Orbitron";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/Orbitron.ttf") format("truetype");
 }

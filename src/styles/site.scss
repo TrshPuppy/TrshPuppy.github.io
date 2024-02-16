@@ -12,10 +12,11 @@ html {
       background-color: $background;
       background-image: url('/img/retro-grid.webp');
       background-size: auto 100%;
+      background-attachment: fixed;
       font-family: 'Montserrat', sans-serif;
 
       &:before {
-         position: absolute;
+         position: fixed;
          content: '';
          height: 100%;
          width: 100%;
