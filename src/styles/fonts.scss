@@ -22,3 +22,38 @@
     //noinspection CssUnknownTarget
     src         : url("/fonts/Orbitron.ttf") format("truetype");
 }
+
+@font-face {
+    font-family : "CamingoCode";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/CamingoCode-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family : "CamingoCode";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/CamingoCode-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family : "CamingoCode";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/CamingoCode-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family : "CamingoCode";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/CamingoCode-Italic.ttf") format("truetype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family : "PressStart2P";
+    //noinspection CssUnknownTarget
+    src         : url("/fonts/PressStart2P-Regular.ttf") format("truetype");
+}

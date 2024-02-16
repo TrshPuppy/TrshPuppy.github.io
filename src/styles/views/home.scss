@@ -5,22 +5,44 @@
         position         : relative;
         display          : flex;
         justify-content  : center;
-        align-items      : center;
+        align-items      : flex-start;
         margin-top       : 4rem;
-        background-color : rgba(#777, 0.1);
-        border           : 0.25rem solid #2B232F;
-        border-top       : 1.75rem solid #2B232F;
+        background-color : #231b26;
+        border           : 0.25rem solid #2f2734;
+        border-top       : 1.75rem solid #2f2734;
         border-radius: 8px;
 
-        .entry-title {
+        h1 {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 0.6rem;
+            top: -0.8rem;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            font-family: 'Orbitron', monospace;
+            color: #BFB3C6;
+        }
+
+        .entry-content {
+            width: 100%;
+            height: 100%;
             position      : relative;
             display       : grid;
             align-content : center;
-            font-size     : 3rem;
-            line-height   : 3.5rem;
-            font-weight   : 900;
-            font-family   : "Orbitron", serif;
+            line-height   : 2.5rem;
+            font-family   : "CamingoCode", monospace;
             margin: 0 4rem 0 1rem;
+
+            .terminal-text {
+                line-height: 0.6rem;
+                font-size: 0.6rem;
+                background: linear-gradient(to bottom right, #cfadee, #ef87d7, #ff0393);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
         }
 
         .hero {
@@ -58,19 +80,19 @@
         .traffic-lights {
             display  : flex;
             position : absolute;
-            top      : -1.25rem;
-            left     : 0;
+            top      : -21px;
+            left     : 0.5rem;
 
             .traffic-light {
                 position                  : relative;
                 display                   : grid;
+                opacity: 0.25;
                 animation-name            : sparkle;
                 animation-iteration-count : infinite;
                 height                    : 10px;
                 width                     : 10px;
                 background-color          : currentColor;
                 margin-right              : 0.4rem;
-                border-radius             : 50%;
                 filter                    : drop-shadow(0 0 8px currentColor);
 
                 &::before {
@@ -88,6 +110,8 @@
                 }
 
                 &:hover {
+                    opacity: 1;
+
                     &:before {
                         opacity: 0.1;
                         height         : 1800%;
