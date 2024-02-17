@@ -15,6 +15,18 @@ html {
       background-attachment: fixed;
       font-family: 'Montserrat', sans-serif;
 
+      .widgets {
+         position: absolute;
+         left: 0;
+         height: 80vh;
+         margin-left: 1rem;
+         width: 20rem;
+         display: grid;
+         justify-content: flex-start;
+         grid-template-columns: auto auto;
+         gap: 1rem;
+      }
+
       &:before {
          position: fixed;
          content: '';

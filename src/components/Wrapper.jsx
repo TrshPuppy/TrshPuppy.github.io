@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import SiteHeader from './SiteHeader.jsx';
-import SiteFooter from './SiteFooter.jsx';
 
 const Wrapper = ({ View }) => {
    const mouseRef = useRef();
@@ -33,7 +32,6 @@ const Wrapper = ({ View }) => {
          <main ref={mouseRef}>
             <View />
          </main>
-         {/* <SiteFooter /> */}
       </div>
    );
 };

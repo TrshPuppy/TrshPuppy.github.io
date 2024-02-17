@@ -1,116 +1,139 @@
-@use '../variables' as *;
+@use "../variables" as *;
+
 .site-header {
-   nav {
-      display: flex;
+    nav {
+        position         : relative;
+        display          : flex;
+        border-bottom    : 1px solid #333;
 
-      ul {
-         display: flex;
-         list-style: none;
-         margin: 0;
-         padding: 1rem 0;
-         width: 1200px;
+        &:before,
+        &:after {
+            content          : "";
+            position         : absolute;
+            left             : -5rem;
+            height           : 100%;
+            width            : 5rem;
+            z-index          : -1;
+            border: 1px solid #333;
+            border-right: none;
+            border-top: none;
+            border-bottom-left-radius: 5rem;
+        }
 
-         li {
-            .nav-link {
-               display: flex;
-               align-items: center;
-               flex-direction: column-reverse;
-               text-decoration: none;
-               margin-left: -1.5rem;
-               padding: 0.5rem 1.5rem;
-               transition: all 200ms;
+        &:after {
+            left: unset;
+            right: -5rem;
+            transform: rotateY(180deg);
+        }
 
-               svg {
-                  stroke: $foreground;
-                  height: 1.75rem;
-                  width: 2rem;
-                  transition: all 100ms;
-               }
+        ul {
+            display    : flex;
+            list-style : none;
+            margin     : 0;
+            padding    : 1rem 0;
+            width      : 1200px;
 
-               span {
-                  margin-top: 0.4rem;
-                  font-size: 0.75rem;
-                  font-weight: 700;
-                  color: $background;
-                  transition: transform 100ms;
-               }
+            li {
+                .nav-link {
+                    display         : flex;
+                    align-items     : center;
+                    flex-direction  : column-reverse;
+                    text-decoration : none;
+                    margin-left     : -1.5rem;
+                    padding         : 0.85rem 1.5rem 0;
+                    transition      : all 200ms;
 
-               &:hover {
-                  svg {
-                     stroke: $active;
-                  }
+                    svg {
+                        stroke     : $foreground;
+                        height     : 1.75rem;
+                        width      : 2rem;
+                        transition : all 100ms;
+                    }
 
-                  span {
-                     color: $active;
-                  }
-               }
+                    span {
+                        margin-top  : 0.4rem;
+                        font-size   : 0.75rem;
+                        font-weight : 700;
+                        color       : transparent;
+                        transition  : transform 100ms;
+                    }
 
-               &:focus {
-                  span {
-                     fill: $active;
-                  }
-               }
+                    &:hover {
+                        svg {
+                            stroke : $active;
+                        }
 
-               &.active {
-                  color: #ffc38e;
+                        span {
+                            color : $active;
+                        }
+                    }
 
-                  span {
-                     transition: color 0.5s;
-                  }
+                    &:focus {
+                        span {
+                            fill : $active;
+                        }
+                    }
 
-                  svg {
-                     fill: $active;
-                     stroke: $active;
-                     filter: drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
-                     animation: wiggle 0.5s ease-out;
-                  }
-               }
+                    &.active {
+                        color : #ffc38e;
 
-               @keyframes wiggle {
-                  0% {
-                     transform: scaleX(1) scaleY(1) translateY(0);
-                     filter: drop-shadow(0 0 8px rgba(#ffc38e, 0));
-                     fill: transparent;
-                     stroke: $foreground;
-                  }
-                  25% {
-                     transform: scaleX(1.6) scaleY(0.6) translateY(15px);
-                     filter: drop-shadow(0 0 8px rgba(#ffc38e, 0));
-                     stroke: $foreground;
-                     fill: transparent;
-                  }
-                  50% {
-                     transform: scaleX(0.4) scaleY(1.2) translateY(-10px);
-                  }
-                  75% {
-                     transform: scaleX(1) scaleY(1) translateY(0);
-                  }
-                  85% {
-                     transform: scaleX(1) scaleY(1) translateY(0);
-                  }
-                  100% {
-                     transform: scaleX(1) scaleY(1);
-                  }
-               }
+                        span {
+                            transition : color 0.5s;
+                        }
+
+                        svg {
+                            fill      : $active;
+                            stroke    : $active;
+                            filter    : drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
+                            animation : wiggle 0.5s ease-out;
+                        }
+                    }
+
+                    @keyframes wiggle {
+                        0% {
+                            transform : scaleX(1) scaleY(1) translateY(0);
+                            filter    : drop-shadow(0 0 8px rgba(#ffc38e, 0));
+                            fill      : transparent;
+                            stroke    : $foreground;
+                        }
+                        25% {
+                            transform : scaleX(1.6) scaleY(0.6) translateY(15px);
+                            filter    : drop-shadow(0 0 8px rgba(#ffc38e, 0));
+                            stroke    : $foreground;
+                            fill      : transparent;
+                        }
+                        50% {
+                            transform : scaleX(0.4) scaleY(1.2) translateY(-10px);
+                        }
+                        75% {
+                            transform : scaleX(1) scaleY(1) translateY(0);
+                        }
+                        85% {
+                            transform : scaleX(1) scaleY(1) translateY(0);
+                        }
+                        100% {
+                            transform : scaleX(1) scaleY(1);
+                        }
+                    }
+                }
+
+                @each $key, $color in $nav-links {
+                    &.nav-link-#{$key} .nav-link {
+                        &.active {
+                            span {
+                                color  : $color;
+                                filter : drop-shadow(0 0 12px rgba($color, 1));
+                            }
+
+                            svg {
+                                fill   : $color;
+                                stroke : $color;
+                                filter : drop-shadow(0 0 16px rgba($color, 1));
+                            }
+                        }
+                    }
+                }
             }
-
-            @each $key, $color in $nav-links {
-               &.nav-link-#{$key} .nav-link {
-                  &.active {
-                     span {
-                        color: $color;
-                        filter: drop-shadow(0 0 12px rgba($color, 1));
-                     }
-
-                     svg {
-                        fill: $color;
-                        stroke: $color;
-                        filter: drop-shadow(0 0 16px rgba($color, 1));
-                     }
-                  }
-               }
-            }
-         }
-      }
-   }
+        }
+    }
 }

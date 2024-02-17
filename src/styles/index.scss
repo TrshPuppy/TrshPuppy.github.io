@@ -1,6 +1,6 @@
 @use 'fonts';
 @use 'site';
 @use 'main';
-@use 'partials/site-header';
-@use 'partials/pong';
 @use 'views/home';
+@use 'partials/pong';
+@use 'partials/site-header';
