@@ -34,7 +34,7 @@ const Home = () => {
                )) }
             </div>
             <div className="entry-content">
-               <span>Last login: {getCurrentDate()}</span>
+               <span>Last login: { getCurrentDate() } on TrashHeap001</span>
                <pre aria-hidden="true" className="terminal-text">
                   {
                      `
@@ -47,6 +47,11 @@ const Home = () => {
                      `
                   }
                </pre>
+               <div>Welcome to the Trash Heap!</div>
+               <div className="terminal-input">
+                  <div><span aria-hidden="true" className="terminal-prefix">❯  ~ </span>cd pages/</div>
+                  <div><span aria-hidden="true" className="terminal-prefix">❯  Pages</span> ls</div>
+               </div>
                <div className="short-links">
                   <NavLink to={ '/blog' }>
                      <div>My Content</div>

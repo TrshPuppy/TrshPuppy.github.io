@@ -8,6 +8,7 @@ import FlaskSVG from './svg/Flask';
 import BlogSVG from './svg/Blog';
 import HomeSVG from './svg/Home';
 import PawSVG from './svg/Paw';
+import DigitalClock from './DigitalClock.jsx';
 
 const Nav = () => {
    const [state, dispatch] = useReducer(reducer, initialState);
@@ -83,6 +84,7 @@ const Nav = () => {
                </NavLink>
             </li>
          </ul>
+         <DigitalClock />
       </nav>
    );
 };

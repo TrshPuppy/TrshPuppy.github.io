@@ -2,28 +2,36 @@
 
 .site-header {
     nav {
-        position         : relative;
-        display          : flex;
-        border-bottom    : 1px solid #333;
+        position      : relative;
+        display       : flex;
+        justify-content: space-between;
+        align-items   : center;
+        width         : 1200px;
+        border-bottom : 1px solid #333;
+
+        .digital-clock {
+            color       : $active;
+            font-family : "CamingoCode", monospace;
+        }
 
         &:before,
         &:after {
-            content          : "";
-            position         : absolute;
-            left             : -5rem;
-            height           : 100%;
-            width            : 5rem;
-            z-index          : -1;
-            border: 1px solid #333;
-            border-right: none;
-            border-top: none;
-            border-bottom-left-radius: 5rem;
+            content                   : "";
+            position                  : absolute;
+            left                      : -5rem;
+            height                    : 100%;
+            width                     : 5rem;
+            z-index                   : -1;
+            border                    : 1px solid #333;
+            border-right              : none;
+            border-top                : none;
+            border-bottom-left-radius : 5rem;
         }
 
         &:after {
-            left: unset;
-            right: -5rem;
-            transform: rotateY(180deg);
+            left      : unset;
+            right     : -5rem;
+            transform : rotateY(180deg);
         }
 
         ul {
@@ -31,7 +39,6 @@
             list-style : none;
             margin     : 0;
             padding    : 1rem 0;
-            width      : 1200px;
 
             li {
                 .nav-link {
