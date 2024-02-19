@@ -3,7 +3,7 @@
 .home {
     .terminal {
         position         : relative;
-        display          : flex;
+        width            : 100%;
         justify-content  : center;
         align-items      : flex-start;
         margin-top       : 4rem;
@@ -11,9 +11,44 @@
         border           : 0.25rem solid #2f2734;
         border-top       : 1.75rem solid #2f2734;
         border-radius    : 8px;
+        font-family      : "CamingoCode", monospace;
+
+        .content {
+            display               : grid;
+            grid-template-columns : 1fr 1fr;
+
+            @media screen and (max-width : 800px) {
+                grid-template-columns : 1fr;
+            }
+        }
+
+        .terminal-entry {
+            position        : relative;
+            text-align      : center;
+            margin          : 2rem 0;
+            font-size       : 1.5rem;
+            line-height     : 1.5rem;
+            font-family     : Orbitron, monospace;
+            background      : linear-gradient(to bottom right, #cfadee, #ef87d7, #ff0393);
+            background-clip : text;
+            color           : transparent;
+            font-weight     : 900;
+            width           : 100%;
+        }
+
+        .sparkles {
+            position          : absolute;
+            top               : -1.5rem;
+            left              : 0;
+            height            : 4rem;
+            width             : 4rem;
+            background-image  : url("/animated/star.webp");
+            background-size   : contain;
+            background-repeat : no-repeat;
+        }
 
         .terminal-input {
-            margin      : 0;
+            margin      : 2rem 0;
             padding     : 0;
             line-height : 1.4rem;
 
@@ -23,7 +58,7 @@
             }
         }
 
-        h1 {
+        .window-title {
             position    : absolute;
             width       : 100%;
             text-align  : center;
@@ -36,23 +71,13 @@
             color       : #BFB3C6;
         }
 
-        .entry-content {
-            width         : 100%;
-            height        : 100%;
-            position      : relative;
-            display       : grid;
-            align-content : center;
-            line-height   : 2.5rem;
-            font-family   : "CamingoCode", monospace;
-
-            .terminal-text {
-                line-height             : 0.75rem;
-                font-size               : 0.75rem;
-                background              : linear-gradient(to bottom right, #cfadee, #ef87d7, #ff0393);
-                background-clip         : text;
-                -webkit-background-clip : text;
-                color                   : transparent;
-            }
+        .terminal-text {
+            line-height             : 0.75rem;
+            font-size               : 0.75rem;
+            background              : linear-gradient(to bottom right, #cfadee, #ef87d7, #ff0393);
+            background-clip         : text;
+            -webkit-background-clip : text;
+            color                   : transparent;
         }
 
         .hero {
@@ -66,26 +91,54 @@
         }
 
         .short-links {
+            margin : 1rem;
+
             a {
-                display          : flex;
-                justify-content  : space-between;
-                font-family      : "Montserrat", serif;
-                text-decoration  : none;
-                font-size        : 1rem;
-                line-height      : 2rem;
-                font-weight      : 600;
-                color            : #fff;
-                margin-right     : 1px;
-                margin-top       : 1rem;
-                padding: 0.5rem;
-                border-top           : 1px solid $foreground;
-                border-bottom           : 1px solid $foreground;
-                background-color : rgba(255, 255, 255, 0.05);
+                display         : flex;
+                font-family     : "CamingoCode", monospace;
+                text-decoration : none;
+                font-size       : 1rem;
+                line-height     : 2rem;
+                margin          : 1rem 1.5rem 0 0.5rem;
+                padding         : 0.5rem;
+                border-bottom   : 1px solid #333;
+                color           : $active;
+                text-shadow     : 0 0 1px #fff;
+                cursor          : pointer;
+                font-weight     : 0;
 
                 img {
-                    height       : 2rem;
-                    width        : 2rem;
-                    filter       : sepia(100%) hue-rotate(240deg);
+                    display : none;
+                    height  : 2rem;
+                    width   : 2rem;
+                    margin  : 0 0.5rem;
+                    filter  : sepia(100%) hue-rotate(260deg);
+                }
+
+                &:before {
+                    content        : "[]";
+                    height         : 1rem;
+                    width          : 1rem;
+                    left           : 0;
+                    letter-spacing : 1rem;
+                    margin-right   : 2rem;
+                }
+
+                &:hover,
+                &:focus {
+                    color: #fff;
+
+                    img {
+                        display : block;
+                    }
+
+                    &:after {
+                        content  : "x";
+                        position : absolute;
+                        display  : block;
+                        left     : 2.8rem;
+                        color    : #e600ff;
+                    }
                 }
             }
         }

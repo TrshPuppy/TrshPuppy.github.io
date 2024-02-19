@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Terminal from '../components/Terminal.jsx';
+import Socials from '../components/Socials.jsx';
 
 const Home = () => {
    function getCurrentDate() {
@@ -11,46 +13,16 @@ const Home = () => {
       const minutes = String(currentDate.getMinutes()).padStart(2, '0');
       const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
-      return `${dayOfWeek} ${month} ${dayOfMonth} ${hours}:${minutes}:${seconds}`;
+      return `${ dayOfWeek } ${ month } ${ dayOfMonth } ${ hours }:${ minutes }:${ seconds }`;
    }
-
-   const trafficLights = [
-      '#FF5E57',
-      '#FEBB2E',
-      '#28C740'
-   ];
 
    return (
       <article id="home-view" className="home">
-         <div className="terminal">
-            <h1>TrshPuppy.github.io</h1>
-            <div className="traffic-lights" aria-hidden="true">
-               { trafficLights.map((colorIndex, i) => (
-                  <div
-                     key={ `flashy-${ i }` }
-                     className="traffic-light"
-                     style={ { color: `${ trafficLights[i] }` } }
-                  ></div>
-               )) }
-            </div>
-            <div className="entry-content">
-               <span>Last login: { getCurrentDate() } on TrashHeap001</span>
-               <pre aria-hidden="true" className="terminal-text">
-                  {
-                     `
-  _____         _     ____                          
- |_   _| __ ___| |__ |  _ \\ _   _ _ __  _ __  _   _ 
-   | || '__/ __| '_ \\| |_) | | | | '_ \\| '_ \\| | | |
-   | || |  \\__ \\ | | |  __/| |_| | |_) | |_) | |_| |
-   |_||_|  |___/_| |_|_|    \\__,_| .__/| .__/ \\__, |
-                                 |_|   |_|    |___/ 
-                     `
-                  }
-               </pre>
-               <div>Welcome to the Trash Heap!</div>
-               <div className="terminal-input">
-                  <div><span aria-hidden="true" className="terminal-prefix">❯  ~ </span>cd pages/</div>
-                  <div><span aria-hidden="true" className="terminal-prefix">❯  Pages</span> ls</div>
+         <Terminal windowTitle="TrshPuppy.github.io">
+            <section>
+               <div className="terminal-entry">
+                  <div className="sparkles"></div>
+                  Welcome to the Trash Heap!
                </div>
                <div className="short-links">
                   <NavLink to={ '/blog' }>
@@ -66,11 +38,13 @@ const Home = () => {
                      <img className="short-link-img" src="/animated/dumpster.gif" alt="" />
                   </NavLink>
                </div>
-            </div>
+               <Socials />
+            </section>
             <div className="hero"></div>
-         </div>
+         </Terminal>
       </article>
-   );
+   )
+      ;
 };
 
 export default Home;

@@ -87,6 +87,7 @@ const Socials = () => {
                 <a 
                     className="link github" 
                     data-name="GitHub"
+                    style={{color: linkColors.github}}
                     data-color={linkColors.github}
                     data-text-color={textColors.github}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -95,12 +96,14 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <GitHubSVG />
+                    <div>Github</div>
                 </a>
             </li>
             <li key="link-twitch">
                 <a 
                     className="link twitch" 
                     data-name="Twitch"
+                    style={{color: linkColors.twitch}}
                     data-color={linkColors.twitch}
                     data-text-color={textColors.twitch}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -109,12 +112,14 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <TwitchSVG />
+                    <div>Twitch</div>
                 </a>
             </li>
             <li key="link-youtube">
                 <a 
                     className="link youtube" 
                     data-name="YouTube"
+                    style={{color: linkColors.youtube}}
                     data-color={linkColors.youtube}
                     data-text-color={textColors.youtube}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -123,12 +128,14 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <YouTubeSVG />
+                    <div>Youtube</div>
                 </a>
             </li>
             <li key="link-twitter">
                 <a 
                     className="link twitter" 
                     data-name="Twitter"
+                    style={{color: linkColors.twitter}}
                     data-text-color={textColors.twitter}
                     data-color={linkColors.twitter}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -137,12 +144,14 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <TwitterSVG />
+                    <div>Twitter</div>
                 </a>
             </li>
             <li key="link-codewars">
                 <a 
                     className="link codewars" 
                     data-name="CodeWars"
+                    style={{color: linkColors.codewars}}
                     data-color={linkColors.codewars}
                     data-text-color={textColors.codewars}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -151,12 +160,14 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <CodeWarsSVG />
+                    <div>CodeWars</div>
                 </a>
             </li>
             <li key="link-tryhackme">
                 <a 
                     className="link tryhackme" 
                     data-name="TryHackMe"
+                    style={{color: linkColors.tryhackme}}
                     data-color={linkColors.tryhackme}
                     data-text-color={textColors.tryhackme}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -165,12 +176,14 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <TryHackMeSVG />
+                    <div>TryHackMe</div>
                 </a>
             </li>
             <li key="link-hackthebox">
                 <a 
                     className="link hackthebox" 
                     data-name="HackTheBox"
+                    style={{color: linkColors.hackthebox}}
                     data-color={linkColors.hackthebox}
                     data-text-color={textColors.hackthebox}
                     onMouseEnter={e => updateHoveredLinkName(e)}
@@ -179,6 +192,7 @@ const Socials = () => {
                     rel="noreferrer"
                 >
                     <HackTheBoxSVG />
+                    <div>HackTheBox</div>
                 </a>
             </li>
         </ul>
