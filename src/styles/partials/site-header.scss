@@ -2,12 +2,59 @@
 
 .site-header {
     nav {
-        position      : relative;
-        display       : flex;
-        justify-content: space-between;
-        align-items   : center;
-        width         : 1200px;
-        border-bottom : 1px solid #333;
+        position        : relative;
+        display         : flex;
+        justify-content : space-between;
+        align-items     : center;
+        border-bottom   : 1px solid #333;
+
+        @media screen and (max-width: 1400px) {
+            width: calc(1040px - 10rem);
+            margin-left: 5rem;
+        }
+
+        @media screen and (max-width: 1240px) {
+            width: calc(900px - 10rem);
+        }
+
+        @media screen and (max-width : 950px) {
+            width       : calc(100% - 10rem);
+            margin-left : 5rem;
+
+
+            .digital-clock {
+                display : none;
+            }
+
+            ul, li {
+                width : 100%;
+            }
+
+            ul, ul li a.nav-link {
+                padding: 0;
+                margin-left     : 0;
+
+                span {
+                    margin: 0;
+                }
+            }
+        }
+        
+        @media screen and (max-width: 668px) {
+            position: fixed;
+            bottom: 0;
+            height: 5rem;
+            width: 100%;
+            margin-left: 0;
+            z-index: 1000;
+            background-color: #000;
+            border-top: 2px solid #333;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
 
         .digital-clock {
             color       : $active;

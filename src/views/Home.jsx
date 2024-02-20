@@ -22,7 +22,10 @@ const Home = () => {
             <section>
                <div className="terminal-entry">
                   <div className="sparkles"></div>
-                  Welcome to the Trash Heap!
+                  <div>
+                     <h2>Welcome to the Trash Heap!</h2>
+                     <small>Here is some trash to sift through. You may find some treasures!</small>
+                  </div>
                </div>
                <div className="short-links">
                   <NavLink to={ '/blog' }>

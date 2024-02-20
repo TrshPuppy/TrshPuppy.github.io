@@ -6,7 +6,7 @@
         width            : 100%;
         justify-content  : center;
         align-items      : flex-start;
-        margin-top       : 4rem;
+        margin           : 4rem 0;
         background-color : #1c131c;
         border           : 0.25rem solid #2f2734;
         border-top       : 1.75rem solid #2f2734;
@@ -17,34 +17,64 @@
             display               : grid;
             grid-template-columns : 1fr 1fr;
 
-            @media screen and (max-width : 800px) {
+            @media screen and (max-width : 1400px) {
                 grid-template-columns : 1fr;
+                flex-direction: column-reverse;
+
+                .hero {
+                    border-radius: 50%;
+                    height: 300px;
+                    width: 300px;
+                    margin: 1rem 2rem 0;
+                    order: -1;
+                }
             }
         }
 
+        @media screen and (max-width: 668px) {
+            margin: 0;
+        }
+
         .terminal-entry {
+            display         : flex;
             position        : relative;
-            text-align      : center;
-            margin          : 2rem 0;
-            font-size       : 1.5rem;
-            line-height     : 1.5rem;
+            padding         : 1rem 2rem;
             font-family     : Orbitron, monospace;
             background      : linear-gradient(to bottom right, #cfadee, #ef87d7, #ff0393);
             background-clip : text;
             color           : transparent;
             font-weight     : 900;
             width           : 100%;
+            z-index         : 5;
+
+            h2 {
+                font-size     : 1.5rem;
+                line-height   : 1.75rem;
+                margin-bottom : 0.5rem;
+            }
+
+            small {
+                color       : #fff;
+                font-family : CamingoCode, monospace;
+                font-weight : 300;
+                font-size   : 1rem;
+                line-height : 1rem;
+            }
         }
 
         .sparkles {
             position          : absolute;
-            top               : -1.5rem;
-            left              : 0;
+            top               : 0;
+            left              : 10px;
+            opacity           : 0.5;
             height            : 4rem;
             width             : 4rem;
+            transform         : rotateY(180deg);
+            //noinspection CssUnknownTarget This is in the Public Dir
             background-image  : url("/animated/star.webp");
             background-size   : contain;
             background-repeat : no-repeat;
+            z-index           : -1;
         }
 
         .terminal-input {
@@ -126,7 +156,7 @@
 
                 &:hover,
                 &:focus {
-                    color: #fff;
+                    color : #fff;
 
                     img {
                         display : block;

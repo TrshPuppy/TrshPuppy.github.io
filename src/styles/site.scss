@@ -15,16 +15,8 @@ html {
       background-attachment: fixed;
       font-family: 'Montserrat', sans-serif;
 
-      .widgets {
-         position: absolute;
-         left: 0;
-         height: 80vh;
-         margin-left: 1rem;
-         width: 20rem;
-         display: grid;
-         justify-content: flex-start;
-         grid-template-columns: auto auto;
-         gap: 1rem;
+      @media screen and (max-width: 668px) {
+         margin-bottom: 5rem;
       }
 
       &:before {
@@ -42,6 +34,18 @@ html {
 
       #root {
          max-width: 1200px;
+
+         @media screen and (max-width: 1240px) {
+            max-width: 900px;
+         }
+
+         @media screen and (max-width: 950px) {
+            margin: 0 0.5rem;
+         }
+
+         @media screen and (max-width: 668px) {
+            margin: 0;
+         }
       }
    }
 }
