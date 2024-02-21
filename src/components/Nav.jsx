@@ -1,7 +1,5 @@
-import { useReducer } from 'react';
 import { NavLink } from 'react-router-dom';
-import initialState from '../initialState';
-import reducer from '../reducer';
+
 //Nav Item SVGs
 import CoffeeSVG from './svg/Coffee';
 import FlaskSVG from './svg/Flask';
@@ -11,13 +9,12 @@ import PawSVG from './svg/Paw';
 import DigitalClock from './DigitalClock.jsx';
 
 const Nav = () => {
-   const [state, dispatch] = useReducer(reducer, initialState);
 
    const playClickSound = () => {
       const audio = new Audio('/audio/click.mp3');
       audio.volume = 0.3;
 
-      if (audio) audio.play();
+      if (audio) audio.play().finally();
    };
 
    return (

@@ -1,30 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
+import reducer from '../reducer.js';
+import initialState from '../initialState.js';
 
 const Projects = () => {
-   const [projects, setProjects] = useState(null);
-   const [page, setPage] = useState(1);
+   const [state, dispatch] = useReducer(reducer, initialState);
 
    const getProjects = async () => {
-      try {
-         const response = await fetch('https://api.github.com/users/trshpuppy/repos?visibility=public&sort=updated&direction=desc&per_page=10');
-         if (!response.ok) {
-            new Error('Failed to fetch projects');
+      if (!state.projects) {
+         console.log('fetched');
+         try {
+            const response = await fetch('https://api.github.com/users/trshpuppy/repos?visibility=public&sort=updated&direction=desc');
+            const fetchedProjects = await response.json();
+            console.log(fetchedProjects)
+            dispatch({ type: 'FETCH_PROJECTS', payload: fetchedProjects });
+         } catch (error) {
+            console.error('Error fetching projects:', error);
          }
-         const fetchedProjects = await response.json();
-         setProjects(fetchedProjects);
-      } catch (error) {
-         console.error('Error fetching projects:', error);
       }
    };
 
+   useEffect(() => {
+      getProjects();
+   }, []);
 
    const mapProjects = () => {
-      if (projects !== null) {
-         console.log(projects)
+      if (state.projects !== undefined) {
          return (
             <div className="projects">
                {
-                  projects.map((project, i) => {
+                  state.projects.map((project, i) => {
                      return (
                         <div key={ `project-${ i }` }>
                            <h2>{ project.full_name }</h2>
@@ -36,12 +40,6 @@ const Projects = () => {
          );
       }
    };
-
-   useEffect(() => {
-      getProjects().finally();
-
-      return setProjects(null);
-   }, []);
 
    return (
       <article id="projects-view" className="view">
