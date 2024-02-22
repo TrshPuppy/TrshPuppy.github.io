@@ -1,41 +1,47 @@
-import { useEffect, useReducer } from 'react';
-import reducer from '../reducer.js';
-import initialState from '../initialState.js';
-
-const Projects = () => {
-   const [state, dispatch] = useReducer(reducer, initialState);
-
-   const getProjects = async () => {
-      if (!state.projects) {
-         console.log('fetched');
-         try {
-            const response = await fetch('https://api.github.com/users/trshpuppy/repos?visibility=public&sort=updated&direction=desc');
-            const fetchedProjects = await response.json();
-            console.log(fetchedProjects)
-            dispatch({ type: 'FETCH_PROJECTS', payload: fetchedProjects });
-         } catch (error) {
-            console.error('Error fetching projects:', error);
-         }
-      }
-   };
-
-   useEffect(() => {
-      getProjects();
-   }, []);
+const Projects = ({ projects }) => {
+   const {
+      name,
+      topics,
+      updated_at,
+      watchers_count,
+      language,
+      archive_url,
+      clone_url,
+      description,
+      open_issues,
+      watchers
+   } = projects;
 
    const mapProjects = () => {
-      if (state.projects !== undefined) {
+      if (projects !== undefined) {
          return (
-            <div className="projects">
-               {
-                  state.projects.map((project, i) => {
-                     return (
-                        <div key={ `project-${ i }` }>
-                           <h2>{ project.full_name }</h2>
-                        </div>
-                     );
-                  })
-               }
+            <div className="projects-container">
+               <aside>
+                  <nav></nav>
+               </aside>
+
+               <div className="projects">
+                  {
+                     projects.map((project, i) => {
+                        return (
+                           <div key={ `project-${ i }` }>
+                              <h2>{ name }</h2>
+                              <div className="project-meta">
+                                 <div className="last-updated"><span>Last updated on: </span>{ updated_at }</div>
+                                 <div className="watchers-count"><span>Watchers count: </span>{ watchers_count }</div>
+                                 <div className="language"><span>Language: </span>{ language }</div>
+                                 <a className="archive-url" aria-label={`View the ${name} project on github`}>View it on GitHub</a>
+                                 <a className="open-issues" aria-label={`View the issues on github`}>{open_issues} open issues</a>
+                              </div>
+                              <p className="description">{ description }</p>
+                              <ul className="topics">
+                                 { topics.map((topic, i) => <li key={ `topic-${ i }` }>{ topic }</li>) }
+                              </ul>
+                           </div>
+                        );
+                     })
+                  }
+               </div>
             </div>
          );
       }
@@ -43,7 +49,7 @@ const Projects = () => {
 
    return (
       <article id="projects-view" className="view">
-         {mapProjects()}
+         { mapProjects() }
       </article>
    );
 };
