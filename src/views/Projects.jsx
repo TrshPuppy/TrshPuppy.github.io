@@ -1,16 +1,4 @@
 const Projects = ({ projects }) => {
-   const {
-      name,
-      topics,
-      updated_at,
-      watchers_count,
-      language,
-      archive_url,
-      clone_url,
-      description,
-      open_issues,
-      watchers
-   } = projects;
 
    const mapProjects = () => {
       if (projects !== undefined) {
@@ -23,6 +11,18 @@ const Projects = ({ projects }) => {
                <div className="projects">
                   {
                      projects.map((project, i) => {
+                           const {
+                              name,
+                              topics,
+                              updated_at,
+                              watchers_count,
+                              language,
+                              archive_url,
+                              clone_url,
+                              description,
+                              open_issues,
+                              watchers
+                           } = project;
                         return (
                            <div key={ `project-${ i }` }>
                               <h2>{ name }</h2>
