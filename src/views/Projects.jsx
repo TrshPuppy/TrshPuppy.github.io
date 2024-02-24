@@ -1,8 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Projects = ({ projects }) => {
+   const [filteredProjects, setFilteredProjects] = useState(projects);
+   const [projectFilter, setProjectFilter] = useState('');
+
    let topicSet = new Set();
    let languageSet = new Set();
+
+   const handleFilterOnClick = topic => {
+      if (projectFilter === topic) {
+         setFilteredProjects(projects);
+         setProjectFilter('');
+         return;
+      }
+      setProjectFilter(topic);
+
+      const newFilteredProjects = projects.filter(project => project.topics.includes(topic) || project.language === topic);
+      setFilteredProjects(newFilteredProjects);
+   }
 
    if (projects) {
       let allTopics = [];
@@ -24,11 +39,8 @@ const Projects = ({ projects }) => {
       languageSet = new Set(allLanguages);
    }
 
-   console.log(topicSet.size);
-   console.log(languageSet.size);
-
    const mapProjects = () => {
-      if (projects !== undefined) {
+      if (filteredProjects !== undefined) {
          return (
             <div className="projects-container">
                <aside className="filters">
@@ -37,7 +49,7 @@ const Projects = ({ projects }) => {
                         <ul className="language-list">
                            {[...languageSet].map((topic, i) => {
                               return (
-                                 <button key={`topic-${i}`}>{topic}</button>
+                                 <button key={`topic-${i}`} onClick={() => handleFilterOnClick(topic)}>{topic}</button>
                               )
                            })}
                         </ul>
@@ -46,7 +58,7 @@ const Projects = ({ projects }) => {
                         <ul className="language-list">
                            {[...topicSet].map((topic, i) => {
                               return (
-                                 <button key={`topic-${i}`}>{topic}</button>
+                                 <button key={`topic-${i}`} onClick={() => handleFilterOnClick(topic)}>{topic}</button>
                               )
                            })}
                         </ul>
@@ -56,7 +68,7 @@ const Projects = ({ projects }) => {
 
                <div className="projects">
                   {
-                     projects.map((project, i) => {
+                     filteredProjects.map((project, i) => {
                         const {
                            name,
                            topics,
