@@ -1,51 +1,67 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 html {
-   font-size: 18px;
+    font-size : 18px;
 
-   body {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      min-height: 100vh;
-      margin: 0;
-      background-color: $background;
-      background-image: url('/img/retro-grid.webp');
-      background-size: auto 100%;
-      background-attachment: fixed;
-      font-family: 'Montserrat', sans-serif;
+    body {
+        display               : flex;
+        justify-content       : center;
+        position              : relative;
+        min-height            : 100vh;
+        margin                : 0;
+        background-color      : $background;
+        background-image      : url("/img/retro-grid.webp");
+        background-size       : auto 100%;
+        background-attachment : fixed;
+        font-family           : "Montserrat", sans-serif;
 
-      @media screen and (max-width: 668px) {
-         margin-bottom: 5rem;
+        @media screen and (max-width : 668px) {
+            margin-bottom : 5rem;
+        }
+
+        &:before {
+            position         : fixed;
+            content          : "";
+            height           : 100%;
+            width            : 100%;
+            background-image : linear-gradient($background 75%, transparent);
+            z-index          : -10;
+        }
+
+        & * {
+            box-sizing : border-box;
+        }
+
+        #root {
+            max-width : 1200px;
+
+            @media screen and (max-width : 1240px) {
+                max-width : 900px;
+            }
+
+            @media screen and (max-width : 950px) {
+                margin : 0 0.5rem;
+            }
+
+            @media screen and (max-width : 668px) {
+                margin : 0;
+            }
+        }
+    }
+}
+
+.wrapper main .view {
+   position: relative;
+   animation: entry 200ms ease-in-out;
+
+   @keyframes entry {
+      0% {
+          transform: rotateX(90deg);
+          opacity: 0;
       }
-
-      &:before {
-         position: fixed;
-         content: '';
-         height: 100%;
-         width: 100%;
-         background-image: linear-gradient($background 75%, transparent);
-         z-index: -10;
-      }
-
-      & * {
-         box-sizing: border-box;
-      }
-
-      #root {
-         max-width: 1200px;
-
-         @media screen and (max-width: 1240px) {
-            max-width: 900px;
-         }
-
-         @media screen and (max-width: 950px) {
-            margin: 0 0.5rem;
-         }
-
-         @media screen and (max-width: 668px) {
-            margin: 0;
-         }
+      100% {
+          transform: rotateX(0);
+          opacity: 1;
       }
    }
 }

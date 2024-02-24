@@ -37,7 +37,7 @@ const Projects = ({ projects }) => {
                         <ul className="language-list">
                            {[...languageSet].map((topic, i) => {
                               return (
-                                 <div key={`topic-${i}`}>{topic}</div>
+                                 <button key={`topic-${i}`}>{topic}</button>
                               )
                            })}
                         </ul>
@@ -46,7 +46,7 @@ const Projects = ({ projects }) => {
                         <ul className="language-list">
                            {[...topicSet].map((topic, i) => {
                               return (
-                                 <div key={`topic-${i}`}>{topic}</div>
+                                 <button key={`topic-${i}`}>{topic}</button>
                               )
                            })}
                         </ul>
@@ -96,7 +96,7 @@ const Projects = ({ projects }) => {
    };
 
    return (
-      <article id="projects-view" className="view">
+      <article id="projects-view" className="projects view">
          { mapProjects() }
       </article>
    );

@@ -1,7 +1,6 @@
 const Contact = () => {
     return (
-        <article id="contact-view" className="view">
-            
+        <article id="contact-view" className="contact view">
             <p>
                 Contact stuffs
             </p>

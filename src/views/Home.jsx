@@ -17,7 +17,7 @@ const Home = () => {
    }
 
    return (
-      <article id="home-view" className="home">
+      <article id="home-view" className="home view">
          <Terminal windowTitle="TrshPuppy.github.io">
             <section>
                <div className="terminal-entry">
