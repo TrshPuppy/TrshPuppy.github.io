@@ -1,7 +1,8 @@
 const initialState = {
     hoveredLinkName: '',
     hoveredLinkColor: '',
-    hoveredTextColor: ''
+    hoveredTextColor: '',
+    projects: []
 };
 
 export default initialState;
