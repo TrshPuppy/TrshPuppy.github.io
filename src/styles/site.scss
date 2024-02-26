@@ -33,6 +33,7 @@ html {
         }
 
         #root {
+            width     : 100vw;
             max-width : 1200px;
 
             @media screen and (max-width : 1240px) {
@@ -51,17 +52,17 @@ html {
 }
 
 .wrapper main .view {
-   position: relative;
-   animation: entry 200ms ease-in-out;
+    position  : relative;
+    animation : entry 200ms ease-in-out;
 
-   @keyframes entry {
-      0% {
-          transform: rotateX(90deg);
-          opacity: 0;
-      }
-      100% {
-          transform: rotateX(0);
-          opacity: 1;
-      }
-   }
+    @keyframes entry {
+        0% {
+            transform : rotateX(90deg);
+            opacity   : 0;
+        }
+        100% {
+            transform : rotateX(0);
+            opacity   : 1;
+        }
+    }
 }

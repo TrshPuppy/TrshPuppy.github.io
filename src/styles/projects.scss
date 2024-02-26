@@ -1,0 +1,190 @@
+@use "./variables" as *;
+
+$pink        : #CE174E;
+$pink_medium : #6C243A;
+
+$lang_colors : (
+        Shell: #ff1be1,
+        JavaScript: #ff4141,
+        Python: #84ff00,
+        Go: #00e5ff,
+        Vim: #e7e7e7,
+        TypeScript: #377dff,
+        HTML: #ff934d,
+        PHP: #ff24ff,
+        Rust: #ff7300,
+        Elixir: #ce2dff,
+        SASS: blue,
+        SCSS: blue,
+        CSS: blue,
+        c: #000,
+        cpp: #000,
+        csharp: #000,
+        java: #000,
+        fortran: gold,
+        cobol: gold,
+        asm: gold,
+        lisp: gold,
+        sql: gold,
+);
+
+// Loop through the map to generate styles
+@each $class, $color in $lang_colors {
+    aside.filters .language-list button.#{$class} {
+        &.active {
+            background-image : linear-gradient(to bottom left, transparent 10%, rgba($color, 0.1));
+
+            &:after {
+                background-color : $color;
+                filter           : drop-shadow(0 0 4px $color);
+            }
+
+            &:before {
+                opacity : 0.25;
+            }
+        }
+
+        &:after {
+            background-color : rgba($color, 0.1);
+        }
+
+        &:before {
+            color   : $color;
+        }
+    }
+}
+
+.projects.view {
+    margin-top : 4rem;
+
+    .projects-hero {
+        display             : grid;
+        position            : relative;
+        align-items         : flex-end;
+        background-image    : url("./img/projects-hero.webp");
+        height              : 180px;
+        width               : 100%;
+        background-size     : cover;
+        background-repeat   : no-repeat;
+        background-position : center;
+        z-index             : 1;
+
+        h1 {
+            padding : 1rem;
+            margin  : 0;
+            color   : map-get($nav-links, projects);
+            filter  : drop-shadow(0 0 8px map-get($nav-links, projects));
+        }
+
+        &:after {
+            content          : "";
+            position         : absolute;
+            display          : block;
+            height           : 100%;
+            width            : 100%;
+            background-image : linear-gradient(to bottom, transparent, #000);
+            z-index          : -1;
+        }
+    }
+
+    .projects-container {
+        position       : relative;
+        width          : 100%;
+        display        : flex;
+        flex-direction : row;
+    }
+
+    .filters {
+        position         : sticky;
+        box-sizing       : content-box;
+        top              : 1rem;
+        margin-right     : 2rem;
+        height           : 100%;
+        width            : 350px;
+        background-color : $background_alt;
+        border           : 1px solid $border_color;
+        border-radius    : 1rem;
+        overflow         : hidden;
+
+        h2 {
+            margin    : 0;
+            padding   : 0;
+            font-size : 1rem;
+            display   : none;
+        }
+
+        nav ul {
+            padding    : 0;
+            list-style : none;
+        }
+
+        .language-list {
+            margin : 0;
+
+            li, button {
+                width : 100%;
+            }
+
+            button {
+                position         : relative;
+                display          : flex;
+                justify-content  : space-between;
+                padding          : 0.75rem 1rem;
+                background-color : transparent;
+                border           : 0;
+                font-weight      : 700;
+                border-bottom    : 1px solid $border_color;
+                cursor           : pointer;
+                text-align       : left;
+                transition       : all 200ms;
+                color            : #fff;
+
+                &:after {
+                    content          : "";
+                    display          : block;
+                    background-image : url("./img/button-lattice.png");
+                    height           : 0.75rem;
+                    width            : 0.75rem;
+                    border-radius    : 50%;
+                    background-size  : cover;
+                    transition       : all 200ms;
+                }
+
+                &:before {
+                    content         : "";
+                    position        : absolute;
+                    right           : 1rem;
+                    display         : block;
+                    height          : 6rem;
+                    width           : 6rem;
+                    background      : radial-gradient(circle, currentColor 0%, hsla(0, 0%, 0%, 0) 60%);
+                    transform       : translate(2.5rem, -2.5rem);
+                    border-radius   : 50%;
+                    background-size : cover;
+                    transition      : all 200ms;
+                    opacity         : 0;
+                    z-index         : -1;
+                }
+
+                &.active {
+                    &:after {
+                        opacity : 1;
+                    }
+
+                    &:before {
+                        opacity : 0.25;
+                    }
+                }
+            }
+        }
+
+        .topic-list {
+            display   : flex;
+            flex-wrap : wrap;
+        }
+    }
+
+    .projects-list {
+        width : 100%;
+    }
+}
