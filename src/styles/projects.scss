@@ -6,7 +6,7 @@ $pink_medium : #6C243A;
 $lang_colors : (
         Shell: #ff1be1,
         JavaScript: #ff4141,
-        Python: #84ff00,
+        Python: #aaff00,
         Go: #00e5ff,
         Vim: #e7e7e7,
         TypeScript: #377dff,
@@ -14,24 +14,42 @@ $lang_colors : (
         PHP: #ff24ff,
         Rust: #ff7300,
         Elixir: #ce2dff,
-        SASS: blue,
-        SCSS: blue,
-        CSS: blue,
-        c: #000,
-        cpp: #000,
-        csharp: #000,
-        java: #000,
-        fortran: gold,
-        cobol: gold,
-        asm: gold,
-        lisp: gold,
-        sql: gold,
+        SASS: #ffb6f2,
+        SCSS: #ff77b1,
+        CSS: #3535ff,
+        C: #5f00ff,
+        Cpp: #416dff,
+        Csharp: #0396ff,
+        Java: #ff2100,
+        Fortran: #ffeb60,
+        Cobol: #a2e8ff,
+        Assembly: #ff8585,
+        Lisp: #ffb074,
+        SQL: #6bfff4,
+        Swift: #ff5e40,
+        Nix: #c5ffb5,
+        PowerShell: #0033ff,
+        Emacs: #f1f2ff,
+        Ruby: #ff0080,
+        Perl: #ffffff,
 );
 
 // Loop through the map to generate styles
 @each $class, $color in $lang_colors {
     aside.filters .language-list button.#{$class} {
+        &:hover,
+        &:focus {
+            background-image : radial-gradient(transparent 0%, rgba($color, 0.15));
+            animation        : background-pan 15s infinite linear;
+        }
+
+        //
+        //&:focus {
+        //    outline: 1px solid $color;
+        //}
+
         &.active {
+            animation        : none;
             background-image : linear-gradient(to bottom left, transparent 10%, rgba($color, 0.1));
 
             &:after {
@@ -49,8 +67,30 @@ $lang_colors : (
         }
 
         &:before {
-            color   : $color;
+            color : $color;
         }
+    }
+
+    .projects-container .projects-list .project.#{$class} {
+        div.title {
+            background-image : linear-gradient(to right, transparent 10%, rgba($color, 0.02) 40%, rgba($color, 0.04), rgba($color, 0.06), rgba($color, 0.08));
+
+            div {
+                color  : lighten($color, 25%);
+                filter : drop-shadow(0 0 8px $color);
+            }
+        }
+    }
+}
+
+@keyframes background-pan {
+    0% {
+        background-position-x : 0px;
+        background-position-y : 0px;
+    }
+    100% {
+        background-position-x : 1000px;
+        background-position-y : 200px;
     }
 }
 
@@ -70,10 +110,11 @@ $lang_colors : (
         z-index             : 1;
 
         h1 {
-            padding : 1rem;
-            margin  : 0;
-            color   : map-get($nav-links, projects);
-            filter  : drop-shadow(0 0 8px map-get($nav-links, projects));
+            padding     : 1rem;
+            margin      : 0;
+            color       : map-get($nav-links, projects);
+            filter      : drop-shadow(0 0 8px map-get($nav-links, projects));
+            font-family : CamingoCode, monospace;
         }
 
         &:after {
@@ -102,9 +143,10 @@ $lang_colors : (
         height           : 100%;
         width            : 350px;
         background-color : $background_alt;
-        border           : 1px solid $border_color;
+        border           : 2px solid #333;
         border-radius    : 1rem;
         overflow         : hidden;
+        box-shadow       : 0 0 5px rgba(#000, 0.5);
 
         h2 {
             margin    : 0;
@@ -119,7 +161,7 @@ $lang_colors : (
         }
 
         .language-list {
-            margin : 0;
+            margin : 1px 0 0;
 
             li, button {
                 width : 100%;
@@ -138,6 +180,7 @@ $lang_colors : (
                 text-align       : left;
                 transition       : all 200ms;
                 color            : #fff;
+                outline          : 1px solid transparent;
 
                 &:after {
                     content          : "";
@@ -179,12 +222,143 @@ $lang_colors : (
         }
 
         .topic-list {
-            display   : flex;
-            flex-wrap : wrap;
+            display               : grid;
+            grid-template-columns : 1fr 1fr;
+            background-color      : darken($border_color, 7%);
+            width                 : 100%;
+            margin                : 0;
+            padding               : 0;
+
+            li {
+                flex-grow : 1;
+            }
+
+            li button {
+                width            : 100%;
+                background-color : $background;
+                color            : $active;
+                text-align       : left;
+                padding          : 0.25rem;
+                height           : 100%;
+                border           : 1px solid $border_color;
+                border-radius    : 0.25rem;
+                transition       : 20ms all;
+                cursor           : pointer;
+                margin           : 0;
+                font-size        : 0.65rem;
+                font-family      : Retron2000, monospace;
+
+                &:hover {
+                    color : map-get($nav-links, projects);
+                }
+
+                &.active {
+                    box-shadow : inset 0 0 10px 0 $pink;
+                }
+            }
         }
     }
 
     .projects-list {
         width : 100%;
+
+        .project {
+            border           : 2px solid $border_color;
+            border-radius    : 1rem;
+            margin-bottom    : 2rem;
+            background-color : $background;
+            overflow         : hidden;
+            box-shadow       : 0 0 5px rgba(#000, 0.5);
+
+            .title {
+                display          : flex;
+                justify-content  : space-between;
+                align-items      : center;
+                width            : 100%;
+                padding          : 1rem;
+                background-image : linear-gradient(to right, transparent 10%, rgba($active, 0.02) 40%, rgba($active, 0.04), rgba($active, 0.06), rgba($active, 0.08));
+
+                h2 {
+                    margin  : 0;
+                    padding : 0;
+
+                    span {
+                        display        : block;
+                        filter         : drop-shadow(0 0 10px #bbb);
+                        font-family    : Orbitron, monospace;
+                        font-size      : 1rem;
+                        letter-spacing : 2px;
+                        font-weight    : 300;
+                    }
+                }
+
+                div {
+                    font-family    : Orbitron, monospace;
+                    padding        : 0;
+                    margin         : 0;
+                    font-size      : 0.65rem;
+                    letter-spacing : 2px;
+                }
+            }
+
+            a {
+                float: right;
+                display         : inline-flex;
+                align-items     : center;
+                font-size       : 0.65rem;
+                letter-spacing  : 0;
+                font-family     : "Montserrat", sans-serif;
+                filter          : none;
+                border          : 1px solid gray;
+                border-radius: 2rem;
+                background-color: gray;
+                padding         : 0.5rem;
+                margin: 1.5rem;
+                text-decoration : none;
+
+                svg {
+                    height       : 1.2rem;
+                    margin-right : 1rem;
+                }
+            }
+
+            .project-meta {
+                display         : flex;
+                justify-content : space-between;
+                padding         : 0.25rem 1rem;
+                font-size       : 0.75rem;
+                font-family     : CamingoCode, monospace;
+                border-bottom   : 1px solid $border_color;
+                border-top      : 1px solid $border_color;
+
+                div {
+                    height : 100%;
+                }
+            }
+
+            p.description {
+                padding : 1rem;
+            }
+
+            .footer {
+                ul {
+                    width: 100%;
+                    display               : grid;
+                    grid-template-columns : 1fr 1fr 1fr 1fr;
+                    margin                : 0;
+                    padding               : 0;
+                    list-style            : none;
+                    font-family: CamingoCode, monospace;
+                    font-size: 0.75rem;
+                    color: #aaa;
+
+                    li {
+                        border: 1px solid darken($border_color, 5%);
+                        border-radius: 2px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
     }
 }

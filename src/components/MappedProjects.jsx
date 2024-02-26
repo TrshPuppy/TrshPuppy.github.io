@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import GitHub from './svg/GitHub.jsx';
 
 const MappedProjects = ({ repos }) => {
    const [filteredRepos, setFilteredRepos] = useState(repos);
@@ -88,7 +89,7 @@ const MappedProjects = ({ repos }) => {
                               return (
                                  <li key={ `language-${ i }` }>
                                     <button
-                                       className={ repoFilter === topic ? `${topic} active` : `${topic}` }
+                                       className={ repoFilter === topic ? `${ topic } active` : `${ topic }` }
                                        onClick={ () => handleFilterOnClick(topic) }>{ topic }</button>
                                  </li>
                               );
@@ -102,7 +103,7 @@ const MappedProjects = ({ repos }) => {
                               return (
                                  <li key={ `topic-${ i }` }>
                                     <button
-                                       className={ repoFilter === topic ? `${topic} active` : `${topic}` }
+                                       className={ repoFilter === topic ? `${ topic } active` : `${ topic }` }
                                        onClick={ () => handleFilterOnClick(topic) }>{ topic }</button>
                                  </li>
                               );
@@ -113,7 +114,7 @@ const MappedProjects = ({ repos }) => {
                </aside>
 
                <div className="projects-list">
-               {
+                  {
                      filteredRepos.map((project, i) => {
                         const {
                            name,
@@ -126,27 +127,32 @@ const MappedProjects = ({ repos }) => {
                            description,
                            open_issues,
                            watchers,
+                           html_url,
                         } = project;
 
                         return (
 
-                           <div key={ `project-${ i }` }>
-                              <h2>{ name }</h2>
+                           <div className={ `project ${ language }` } key={ `project-${ i }` }>
+                              <div className="title">
+                                 <h2>
+                                    <span>{ name }</span>
+                                 </h2>
+                                 <div className="language">{ language }</div>
+                              </div>
                               <div className="project-meta">
                                  <div className="last-updated">
                                     <span>Last updated on: </span>{ formatUpdatedLastDate(updated_at) }</div>
-                                 <div className="watchers-count"><span>Watchers count: </span>{ watchers_count }</div>
-                                 <div className="language"><span>Language: </span>{ language }</div>
-                                 <a href={ archive_url } className="archive-url"
-                                    aria-label={ `View the ${ name } project on github` }>View
-                                    it on GitHub</a>
-                                 <a className="open-issues"
-                                    aria-label={ `View the issues on github` }>{ open_issues } open issues</a>
+                                 <div className="watchers-count"><span>Watchers: </span>{ watchers_count }</div>
+                                 <div className="open-issues"
+                                      aria-label={ `View the issues on github` }>Issues: { open_issues }</div>
                               </div>
+                              <a href={ html_url } className="repo-link"><GitHub /> View on GitHub</a>
                               <p className="description">{ description }</p>
-                              <ul className="topics">
-                                 { topics.map((topic, i) => <li key={ `topic-${ i }` }>{ topic }</li>) }
-                              </ul>
+                              <div className="footer">
+                                 <ul className="topics">
+                                    { topics.map((topic, i) => <li key={ `topic-${ i }` }>{ topic }</li>) }
+                                 </ul>
+                              </div>
                            </div>
 
                         );

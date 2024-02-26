@@ -13,6 +13,7 @@ const Projects = () => {
             .catch(err => console.log(err))
             .finally(() => setLoading(false));
       }
+      console.log(repos);
    }, []);
 
    return (
