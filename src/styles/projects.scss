@@ -95,7 +95,7 @@ $lang_colors : (
 }
 
 .projects.view {
-    margin-top : 4rem;
+    margin-top : 2rem;
 
     .projects-hero {
         display             : grid;
@@ -174,7 +174,7 @@ $lang_colors : (
                 padding          : 0.75rem 1rem;
                 background-color : transparent;
                 border           : 0;
-                font-weight      : 700;
+                font-weight      : 500;
                 border-bottom    : 1px solid $border_color;
                 cursor           : pointer;
                 text-align       : left;
@@ -228,6 +228,8 @@ $lang_colors : (
             width                 : 100%;
             margin                : 0;
             padding               : 0;
+            max-height            : 20rem;
+            overflow              : scroll;
 
             li {
                 flex-grow : 1;
@@ -245,8 +247,7 @@ $lang_colors : (
                 transition       : 20ms all;
                 cursor           : pointer;
                 margin           : 0;
-                font-size        : 0.65rem;
-                font-family      : Retron2000, monospace;
+                font-size        : 0.85rem;
 
                 &:hover {
                     color : map-get($nav-links, projects);
@@ -302,19 +303,18 @@ $lang_colors : (
             }
 
             a {
-                float: right;
-                display         : inline-flex;
-                align-items     : center;
-                font-size       : 0.65rem;
-                letter-spacing  : 0;
-                font-family     : "Montserrat", sans-serif;
-                filter          : none;
-                border          : 1px solid gray;
-                border-radius: 2rem;
-                background-color: gray;
-                padding         : 0.5rem;
-                margin: 1.5rem;
-                text-decoration : none;
+                float            : right;
+                display          : inline-flex;
+                align-items      : center;
+                letter-spacing   : 0;
+                font-family      : "Montserrat", sans-serif;
+                filter           : none;
+                color: #000;
+                background-color: #ccc;
+                border-radius: 1rem;
+                padding          : 0.5rem;
+                margin           : 1.5rem;
+                text-decoration  : none;
 
                 svg {
                     height       : 1.2rem;
@@ -325,8 +325,7 @@ $lang_colors : (
             .project-meta {
                 display         : flex;
                 justify-content : space-between;
-                padding         : 0.25rem 1rem;
-                font-size       : 0.75rem;
+                padding         : 0.5rem 1rem;
                 font-family     : CamingoCode, monospace;
                 border-bottom   : 1px solid $border_color;
                 border-top      : 1px solid $border_color;
@@ -342,20 +341,21 @@ $lang_colors : (
 
             .footer {
                 ul {
-                    width: 100%;
+                    width                 : 100%;
                     display               : grid;
                     grid-template-columns : 1fr 1fr 1fr 1fr;
                     margin                : 0;
                     padding               : 0;
                     list-style            : none;
-                    font-family: CamingoCode, monospace;
-                    font-size: 0.75rem;
-                    color: #aaa;
+                    font-family           : CamingoCode, monospace;
+                    font-size             : 0.85rem;
+                    color                 : #aaa;
 
                     li {
-                        border: 1px solid darken($border_color, 5%);
-                        border-radius: 2px;
-                        text-align: center;
+                        border        : 1px solid darken($border_color, 5%);
+                        border-radius : 2px;
+                        text-align    : center;
+                        margin: 0.1rem;
                     }
                 }
             }

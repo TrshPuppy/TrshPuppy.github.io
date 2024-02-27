@@ -5,7 +5,7 @@
     width            : 100%;
     justify-content  : center;
     align-items      : flex-start;
-    margin           : 4rem 0;
+    margin           : 2rem 0;
     background-color : #1c131c;
     border           : 0.25rem solid #2f2734;
     border-top       : 1.75rem solid #2f2734;
@@ -110,7 +110,7 @@
     }
 
     .hero {
-        height              : 600px;
+        height              : 520px;
         width               : 100%;
         //noinspection CssUnknownTarget This is in the Public Dir
         background-image    : url("/img/logo-1.webp");
