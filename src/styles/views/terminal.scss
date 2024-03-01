@@ -6,10 +6,10 @@
     justify-content  : center;
     align-items      : flex-start;
     margin           : 2rem 0;
-    background-color : #1c131c;
+    background-color : $container_bg;
     border           : 0.25rem solid #2f2734;
     border-top       : 1.75rem solid #2f2734;
-    border-radius    : 8px;
+    border-radius    : 0.5rem;
     font-family      : "CamingoCode", monospace;
 
     .content {
@@ -130,7 +130,6 @@
             line-height     : 2rem;
             margin          : 1rem 1.5rem 0 0.5rem;
             padding         : 0.5rem;
-            border-bottom   : 1px solid #333;
             color           : $active;
             text-shadow     : 0 0 1px #fff;
             cursor          : pointer;
@@ -175,7 +174,7 @@
     .traffic-lights {
         display  : flex;
         position : absolute;
-        top      : -21px;
+        top      : -1.25rem;
         left     : 0.5rem;
 
         .traffic-light {
@@ -184,8 +183,8 @@
             opacity                   : 0.25;
             animation-name            : sparkle;
             animation-iteration-count : infinite;
-            height                    : 10px;
-            width                     : 10px;
+            height                    : 0.75rem;
+            width                     : 0.75rem;
             background-color          : currentColor;
             margin-right              : 0.4rem;
             filter                    : drop-shadow(0 0 8px currentColor);
@@ -211,6 +210,7 @@
                     opacity : 0.1;
                     height  : 1800%;
                     width   : 1800%;
+                    pointer-events : none;
                 }
             }
         }
