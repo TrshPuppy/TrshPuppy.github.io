@@ -91,42 +91,15 @@ $lang_colors : (
 .projects.view {
     margin-top : 2rem;
 
-    .projects-hero {
-        display             : grid;
-        position            : relative;
-        align-items         : flex-end;
-        background-image    : url("./img/projects-hero.webp");
-        height              : 180px;
-        width               : 100%;
-        background-size     : cover;
-        background-repeat   : no-repeat;
-        background-position : center;
-        z-index             : 1;
-
-        h1 {
-            padding     : 1rem;
-            margin      : 0;
-            color       : map-get($nav-links, projects);
-            filter      : drop-shadow(0 0 8px map-get($nav-links, projects));
-            font-family : CamingoCode, monospace;
-        }
-
-        &:after {
-            content          : "";
-            position         : absolute;
-            display          : block;
-            height           : 100%;
-            width            : 100%;
-            background-image : linear-gradient(to bottom, transparent, #000);
-            z-index          : -1;
-        }
-    }
-
     .projects-container {
         position       : relative;
         width          : 100%;
         display        : flex;
         flex-direction : row;
+
+        @media screen and (max-width : 1000px) {
+            flex-direction : column;
+        }
     }
 
     .filters {
@@ -141,6 +114,37 @@ $lang_colors : (
         border-radius    : 0.5rem;
         overflow         : hidden;
         box-shadow       : 0 0 5px rgba(#000, 0.5);
+
+        .projects-hero {
+            display             : grid;
+            position            : relative;
+            align-items         : flex-end;
+            background-image    : url("./img/projects-hero.webp");
+            height              : 180px;
+            width               : 100%;
+            background-size     : cover;
+            background-repeat   : no-repeat;
+            background-position : center;
+            z-index             : 1;
+
+            h1 {
+                padding     : 1rem;
+                margin      : 0;
+                color       : map-get($nav-links, projects);
+                filter      : drop-shadow(0 0 8px map-get($nav-links, projects));
+                font-family : CamingoCode, monospace;
+            }
+
+            &:after {
+                content          : "";
+                position         : absolute;
+                display          : block;
+                height           : 100%;
+                width            : 100%;
+                background-image : linear-gradient(to bottom, transparent, #000);
+                z-index          : -1;
+            }
+        }
 
         h2 {
             margin    : 0;
@@ -222,9 +226,10 @@ $lang_colors : (
             background-color      : darken($border_color, 7%);
             width                 : 100%;
             margin                : 0;
-            padding               : 0;
+            padding               : 0.5rem;
             max-height            : 20rem;
             overflow              : scroll;
+            box-shadow: inset 0 0 10px #000;
 
             li {
                 flex-grow : 1;
@@ -250,6 +255,40 @@ $lang_colors : (
 
                 &.active {
                     box-shadow : inset 0 0 10px 0 $pink;
+                }
+            }
+        }
+
+        @media screen and (max-width : 1000px) {
+            width        : 100%;
+            margin-right : 0;
+            margin-bottom: 2rem;
+
+            .projects-hero {
+                float  : right;
+                width  : 100%;
+                height : 100%;
+                background-color: transparent;
+                background-image: unset;
+
+                &:after {
+                    background-image: unset;
+                }
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+
+                ul {
+                    width: 100%;
+                }
+
+                .topic-list {
+                    li button {
+                        padding: 1rem;
+                    }
                 }
             }
         }
@@ -310,16 +349,16 @@ $lang_colors : (
                 padding          : 0.75rem;
                 margin           : 2.5rem 1rem;
                 text-decoration  : none;
-                transition: 200ms all;
+                transition       : 200ms all;
 
                 &:hover,
                 &:focus {
-                    filter: drop-shadow(0 0 10px rgba(#fff, 0.25));
-                    background-color: #fff;
+                    filter           : drop-shadow(0 0 10px rgba(#fff, 0.25));
+                    background-color : #fff;
                 }
 
                 &:active {
-                    box-shadow:inset 0 0 20px 0 $background;
+                    box-shadow : inset 0 0 20px 0 $background;
                 }
 
                 svg {
