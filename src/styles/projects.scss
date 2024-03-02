@@ -114,6 +114,7 @@ $lang_colors : (
         border-radius    : 0.5rem;
         overflow         : hidden;
         box-shadow       : 0 0 5px rgba(#000, 0.5);
+        z-index          : 100;
 
         .projects-hero {
             display             : grid;
@@ -229,7 +230,7 @@ $lang_colors : (
             padding               : 0.5rem;
             max-height            : 20rem;
             overflow              : scroll;
-            box-shadow: inset 0 0 10px #000;
+            box-shadow            : inset 0 0 10px #000;
 
             li {
                 flex-grow : 1;
@@ -260,34 +261,34 @@ $lang_colors : (
         }
 
         @media screen and (max-width : 1000px) {
-            width        : 100%;
-            margin-right : 0;
-            margin-bottom: 2rem;
+            width         : 100%;
+            margin-right  : 0;
+            margin-bottom : 2rem;
 
             .projects-hero {
-                float  : right;
-                width  : 100%;
-                height : 100%;
-                background-color: transparent;
-                background-image: unset;
+                float            : right;
+                width            : 100%;
+                height           : 100%;
+                background-color : transparent;
+                background-image : unset;
 
                 &:after {
-                    background-image: unset;
+                    background-image : unset;
                 }
             }
 
             nav {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
+                display   : flex;
+                flex-wrap : wrap;
+                width     : 100%;
 
                 ul {
-                    width: 100%;
+                    width : 100%;
                 }
 
                 .topic-list {
                     li button {
-                        padding: 1rem;
+                        padding : 1rem;
                     }
                 }
             }
@@ -380,6 +381,16 @@ $lang_colors : (
                 div {
                     height : 100%;
                 }
+
+                .watchers-count {
+                    display : flex;
+
+                    svg {
+                        height       : 1.25rem;
+                        fill         : #ddd;
+                        stroke-width : 0.25rem;
+                    }
+                }
             }
 
             p.description {
@@ -405,6 +416,18 @@ $lang_colors : (
                         text-align : center;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1250px) {
+    .projects.view {
+        .filters {
+            top: 0;
+
+            &.hidden nav {
+                display : none;
             }
         }
     }

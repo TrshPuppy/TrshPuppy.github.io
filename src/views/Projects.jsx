@@ -6,14 +6,24 @@ const Projects = () => {
    const [loading, setLoading] = useState(true);
 
    useEffect(() => {
-      if (loading) {
-         fetch('https://api.github.com/users/trshpuppy/repos?visibility=public&sort=updated&direction=desc&per_page=999')
-            .then(res => res.ok ? res.json() : undefined)
-            .then(data => setRepos(data))
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false));
-      }
-      console.log(repos);
+      const fetchData = async () => {
+         if (!loading) return;
+
+         try {
+            const response = await fetch('https://api.github.com/users/trshpuppy/repos?visibility=public&sort=updated&direction=desc&per_page=999');
+            if (!response.ok) {
+               throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setRepos(data);
+         } catch (error) {
+            console.error("Fetching error: ", error);
+         } finally {
+            setLoading(false);
+         }
+      };
+
+      void fetchData();
    }, []);
 
    return (

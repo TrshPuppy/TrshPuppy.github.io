@@ -19,10 +19,6 @@ html {
         background-attachment : fixed;
         font-family           : "Montserrat", sans-serif;
 
-        @media screen and (max-width : 668px) {
-            margin-bottom : 5rem;
-        }
-
         &:before {
             position         : fixed;
             content          : "";

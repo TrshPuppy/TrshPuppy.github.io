@@ -189,5 +189,26 @@
                 }
             }
         }
+
+        .nav-meta {
+            display: flex;
+            align-items: center;
+
+            .site-brand-img {
+                display: block;
+                height: 4rem;
+                width: 4rem;
+                background-size: cover;
+                background-image: url('./img/logo-1.webp');
+                border-radius: 50%;
+                margin-left: 1rem;
+            }
+
+            @media screen and (max-width: 950px) {
+                .site-brand-img {
+                    display: none;
+                }
+            }
+        }
     }
 }

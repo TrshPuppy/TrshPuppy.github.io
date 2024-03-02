@@ -4,18 +4,6 @@ import Terminal from '../components/Terminal.jsx';
 import Socials from '../components/Socials.jsx';
 
 const Home = () => {
-   function getCurrentDate() {
-      const currentDate = new Date();
-      const dayOfWeek = currentDate.toLocaleString('en', { weekday: 'short' });
-      const month = currentDate.toLocaleString('en', { month: 'short' });
-      const dayOfMonth = currentDate.getDate();
-      const hours = String(currentDate.getHours()).padStart(2, '0');
-      const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-      const seconds = String(currentDate.getSeconds()).padStart(2, '0');
-
-      return `${ dayOfWeek } ${ month } ${ dayOfMonth } ${ hours }:${ minutes }:${ seconds }`;
-   }
-
    return (
       <article id="home-view" className="home view">
          <Terminal windowTitle="TrshPuppy.github.io">
@@ -25,6 +13,9 @@ const Home = () => {
                   <div>
                      <h2>Welcome to the Trash Heap!</h2>
                      <small>Here is some trash to sift through. You may find some treasures!</small>
+                     <p>
+                        
+                     </p>
                   </div>
                </div>
                <div className="short-links">

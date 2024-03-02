@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import GitHub from './svg/GitHub.jsx';
+import Star from "./svg/Star.jsx";
 
 const MappedProjects = ({repos}) => {
     const [filteredRepos, setFilteredRepos] = useState(repos);
     const [repoFilter, setRepoFilter] = useState('');
+    const [asideHidden, setAsideHidden] = useState(true);
     let languageSet = new Set([]);
     let topicSet = new Set([]);
 
@@ -76,10 +78,11 @@ const MappedProjects = ({repos}) => {
         return (
             <>
                 <div className="projects-container">
-                    <aside className="filters">
+                    <aside className={asideHidden ? 'filters hidden' : 'filters'}>
                         <div aria-hidden="true" className="projects-hero">
                             <h1>Projects</h1>
                         </div>
+                        <button className="aside-expand" onClick={() => setAsideHidden(!asideHidden)}>Expand</button>
                         <h2>Languages</h2>
                         <nav>
                             { languageSet.size > 0 &&
@@ -142,7 +145,10 @@ const MappedProjects = ({repos}) => {
                                             <div className="last-updated">
                                                 <span>Last updated on: </span>{ formatUpdatedLastDate(updated_at) }
                                             </div>
-                                            <div className="watchers-count"><span>Watchers: </span>{ watchers_count }
+                                            <div className="watchers-count">
+                                                <span><Star/></span>
+                                                <span>Stars: </span>
+                                                <span>{ watchers_count }</span>
                                             </div>
                                             <div className="open-issues"
                                                  aria-label={ `View the issues on github` }>Issues: { open_issues }</div>
