@@ -4,7 +4,7 @@ import Star from "./svg/Star.jsx";
 
 const MappedProjects = ({repos}) => {
     const [filteredRepos, setFilteredRepos] = useState(repos);
-    const [repoFilter, setRepoFilter] = useState('');
+    const [repoFilter, setRepoFilter] = useState('all');
     const [asideHidden, setAsideHidden] = useState(true);
     let languageSet = new Set([]);
     let topicSet = new Set([]);
@@ -40,16 +40,16 @@ const MappedProjects = ({repos}) => {
      * @param topic
      */
     const handleFilterOnClick = topic => {
-        if (repoFilter === topic) {
+        if (repoFilter === topic || topic === 'all') {
             setFilteredRepos(repos);
-            setRepoFilter('');
-            return;
-        }
-
+            setRepoFilter('all');
+        } else {
         setRepoFilter(topic);
-
         const newFilteredRepos = repos.filter(repo => repo.topics.includes(topic) || repo.language === topic);
         setFilteredRepos(newFilteredRepos);
+        }
+
+        setAsideHidden(true);
     };
 
     /**
@@ -86,11 +86,20 @@ const MappedProjects = ({repos}) => {
                     <aside className={asideHidden ? 'filters hidden' : 'filters'}>
                         <div aria-hidden="true" className="projects-hero">
                             <h1>Projects</h1>
+                            <button className="aside-expand" onClick={() => setAsideHidden(!asideHidden)}><div>Filters</div></button>
                         </div>
                         <h2>Languages</h2>
                         <nav>
                             { languageSet.size > 0 &&
                                 <ul className="language-list">
+                                    <li>
+                                    <button
+                                        onClick={() => handleFilterOnClick('all')}
+                                        className={ repoFilter === 'all' ? `all active` : `all` }
+                                    >
+                                        All Projects
+                                    </button>
+                                    </li>
                                     { [...languageSet].map((topic, i) => {
                                         return (
                                             <li key={ `language-${ i }` }>
@@ -117,7 +126,6 @@ const MappedProjects = ({repos}) => {
                                 </ul>
                             }
                         </nav>
-                        <button className="aside-expand" onClick={() => setAsideHidden(!asideHidden)}>Filters</button>
                     </aside>
 
                     <div className="projects-list">

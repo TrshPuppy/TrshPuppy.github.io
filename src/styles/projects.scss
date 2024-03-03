@@ -3,6 +3,7 @@
 $pink        : #CE174E;
 $pink_medium : #6C243A;
 $lang_colors : (
+        all: #ff0059,
         Shell: #ff1be1,
         JavaScript: #ff4141,
         Python: #aaff00,
@@ -103,16 +104,20 @@ $lang_colors : (
     }
 
     .aside-mask {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        display          : none;
+        position         : absolute;
+        top              : 0;
+        left             : 0;
+        height           : 100%;
+        width            : 100%;
+        background-color : rgba($pink-medium, 0.05);
+        backdrop-filter  : blur(2rem);
+        z-index          : 50;
 
-        &.show {
-          display: block;
+        @media screen and (max-width : 1000px) {
+            &.show {
+                display : block;
+            }
         }
     }
 
@@ -243,7 +248,7 @@ $lang_colors : (
             margin                : 0;
             padding               : 0.5rem;
             max-height            : 20rem;
-            overflow-y              : scroll;
+            overflow-y            : scroll;
             box-shadow            : inset 0 0 10px #000;
 
             li {
@@ -436,20 +441,58 @@ $lang_colors : (
 }
 
 .aside-expand {
-    display: none;
+    display          : none;
+    width            : 100%;
+    box-shadow       : none;
+    border           : none;
+    height           : 100%;
+    color            : $active;
+    background-color : transparent;
+    font-family      : CamingoCode, monospace;
+    border-left      : 1px solid #333;
+    cursor           : pointer;
 
-    @media screen and (max-width: 1000px) {
-        display: block;
-        width: 100%;
-        background: unset;
-        box-shadow: none;
-        border: unset;
+
+
+    &:hover {
+        background-color: rgba(#fff, 0.04);
+
+        div {
+            color  : map-get($nav-links, projects);
+            filter : drop-shadow(0 0 10px #fff);
+        }
+    }
+
+    div {
+        position : relative;
+        display  : inline-block;
+        transition: all 200ms;
+
+        &:after {
+            position  : absolute;
+            display   : inline-block;
+            content   : "↓";
+            right     : -1.5rem;
+            top       : -0.3rem;
+            font-size : 1.6rem;
+            transform: rotateX(180deg);
+            transition: all 200ms;
+        }
+    }
+
+
+    @media screen and (max-width : 1000px) {
+        display : block;
     }
 }
 
 @media screen and (max-width : 1000px) {
     .projects.view {
         margin-top : 2rem;
+
+        .projects-hero {
+            grid-template-columns : auto 1fr;
+        }
 
         .filters {
             top : 0;
@@ -462,7 +505,17 @@ $lang_colors : (
                 nav {
                     display : none;
                 }
+
+                .aside-expand div:after {
+                    transform: rotate(0);
+                }
             }
         }
+    }
+}
+
+@media screen and (max-width : 668px) {
+    .projects.view {
+        margin-top : 0;
     }
 }
