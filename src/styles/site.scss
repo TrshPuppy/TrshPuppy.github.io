@@ -53,15 +53,15 @@ html {
 
 .wrapper main .view {
     position  : relative;
-    animation : entry 200ms ease-in-out;
+    transform-origin: top;
 
     @keyframes entry {
         0% {
-            transform : rotateX(90deg);
+            transform : rotateY(90deg);
             opacity   : 0;
         }
         100% {
-            transform : rotateX(0);
+            transform : rotateY(0);
             opacity   : 1;
         }
     }

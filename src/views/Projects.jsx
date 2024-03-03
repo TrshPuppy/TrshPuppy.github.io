@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import MappedProjects from '../components/MappedProjects.jsx';
+import Loader from "../components/Loader.jsx";
 
 const Projects = () => {
    const [repos, setRepos] = useState([]);
@@ -28,7 +29,7 @@ const Projects = () => {
 
    return (
       <article id="projects-view" className="projects view">
-         { loading && <div>loading</div> }
+         { loading && <Loader/> }
          {
             !loading &&
             <MappedProjects repos={ repos } />
