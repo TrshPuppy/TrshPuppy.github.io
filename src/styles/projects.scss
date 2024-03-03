@@ -201,6 +201,10 @@ $lang_colors : (
                 color            : #fff;
                 outline          : 1px solid transparent;
 
+                @media screen and (max-width : 668px) {
+                    padding : 1.5rem;
+                }
+
                 &:after {
                     content          : "";
                     display          : block;
@@ -396,18 +400,30 @@ $lang_colors : (
                 border-top       : 1px solid $border_color;
                 background-color : $border_color;
                 color            : $border_text;
+                line-height: 1.75rem;
 
                 div {
                     height : 100%;
                 }
 
                 .watchers-count {
-                    display : flex;
-
                     svg {
-                        height       : 1.25rem;
-                        fill         : #ddd;
-                        stroke-width : 0.25rem;
+                        position : relative;
+                        height   : 1rem;
+                        fill     : #ddd;
+                        top      : 0.05rem;
+                        margin-right: 0.3rem;
+                    }
+                }
+
+                .open-issues {
+                    svg {
+                        position     : relative;
+                        stroke       : #ddd;
+                        stroke-width : 1rem;
+                        height       : 1rem;
+                        top          : 0.05rem;
+                        margin-right : 0.3rem;
                     }
                 }
             }
@@ -453,9 +469,8 @@ $lang_colors : (
     cursor           : pointer;
 
 
-
     &:hover {
-        background-color: rgba(#fff, 0.04);
+        background-color : rgba(#fff, 0.04);
 
         div {
             color  : map-get($nav-links, projects);
@@ -464,19 +479,19 @@ $lang_colors : (
     }
 
     div {
-        position : relative;
-        display  : inline-block;
-        transition: all 200ms;
+        position   : relative;
+        display    : inline-block;
+        transition : all 200ms;
 
         &:after {
-            position  : absolute;
-            display   : inline-block;
-            content   : "↓";
-            right     : -1.5rem;
-            top       : -0.3rem;
-            font-size : 1.6rem;
-            transform: rotateX(180deg);
-            transition: all 200ms;
+            position   : absolute;
+            display    : inline-block;
+            content    : "↓";
+            right      : -1.5rem;
+            top        : -0.3rem;
+            font-size  : 1.6rem;
+            transform  : rotateX(180deg);
+            transition : all 200ms;
         }
     }
 
@@ -507,7 +522,7 @@ $lang_colors : (
                 }
 
                 .aside-expand div:after {
-                    transform: rotate(0);
+                    transform : rotate(0);
                 }
             }
         }
@@ -516,6 +531,11 @@ $lang_colors : (
 
 @media screen and (max-width : 668px) {
     .projects.view {
-        margin-top : 0;
+        margin-top    : 0;
+        margin-bottom : 5rem;
+
+        .project-meta {
+            flex-direction : column;
+        }
     }
 }

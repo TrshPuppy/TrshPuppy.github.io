@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import GitHub from './svg/GitHub.jsx';
 import Star from "./svg/Star.jsx";
+import IssuesSVG from "./svg/Issues.jsx";
 
 const MappedProjects = ({repos}) => {
     const [filteredRepos, setFilteredRepos] = useState(repos);
@@ -44,9 +45,9 @@ const MappedProjects = ({repos}) => {
             setFilteredRepos(repos);
             setRepoFilter('all');
         } else {
-        setRepoFilter(topic);
-        const newFilteredRepos = repos.filter(repo => repo.topics.includes(topic) || repo.language === topic);
-        setFilteredRepos(newFilteredRepos);
+            setRepoFilter(topic);
+            const newFilteredRepos = repos.filter(repo => repo.topics.includes(topic) || repo.language === topic);
+            setFilteredRepos(newFilteredRepos);
         }
 
         setAsideHidden(true);
@@ -79,26 +80,28 @@ const MappedProjects = ({repos}) => {
             <>
                 <div className="projects-container">
                     <div
-                        className={`aside-mask ${asideHidden ? '' : 'show'}`}
-                        onClick={() => setAsideHidden(!asideHidden)}
+                        className={ `aside-mask ${ asideHidden ? '' : 'show' }` }
+                        onClick={ () => setAsideHidden(!asideHidden) }
                         aria-hidden="true">
                     </div>
-                    <aside className={asideHidden ? 'filters hidden' : 'filters'}>
+                    <aside className={ asideHidden ? 'filters hidden' : 'filters' }>
                         <div aria-hidden="true" className="projects-hero">
                             <h1>Projects</h1>
-                            <button className="aside-expand" onClick={() => setAsideHidden(!asideHidden)}><div>Filters</div></button>
+                            <button className="aside-expand" onClick={ () => setAsideHidden(!asideHidden) }>
+                                <div>Filters</div>
+                            </button>
                         </div>
                         <h2>Languages</h2>
                         <nav>
                             { languageSet.size > 0 &&
                                 <ul className="language-list">
                                     <li>
-                                    <button
-                                        onClick={() => handleFilterOnClick('all')}
-                                        className={ repoFilter === 'all' ? `all active` : `all` }
-                                    >
-                                        All Projects
-                                    </button>
+                                        <button
+                                            onClick={ () => handleFilterOnClick('all') }
+                                            className={ repoFilter === 'all' ? `all active` : `all` }
+                                        >
+                                            All Projects
+                                        </button>
                                     </li>
                                     { [...languageSet].map((topic, i) => {
                                         return (
@@ -159,8 +162,11 @@ const MappedProjects = ({repos}) => {
                                                 <span>Stars: </span>
                                                 <span>{ watchers_count }</span>
                                             </div>
-                                            <div className="open-issues"
-                                                 aria-label={ `View the issues on github` }>Issues: { open_issues }</div>
+                                            <div className="open-issues" aria-label="View the issues on github">
+                                                <span><IssuesSVG/></span>
+                                                <span>Issues: </span>
+                                                <span>{ open_issues }</span>
+                                            </div>
                                         </div>
                                         <a href={ html_url } className="repo-link"><GitHub/> View on GitHub</a>
                                         <p className="description">{ description || <i>(no description)</i> }</p>
