@@ -102,6 +102,20 @@ $lang_colors : (
         }
     }
 
+    .aside-mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        &.show {
+          display: block;
+        }
+    }
+
     .filters {
         position         : sticky;
         box-sizing       : content-box;
@@ -229,7 +243,7 @@ $lang_colors : (
             margin                : 0;
             padding               : 0.5rem;
             max-height            : 20rem;
-            overflow              : scroll;
+            overflow-y              : scroll;
             box-shadow            : inset 0 0 10px #000;
 
             li {
@@ -421,13 +435,33 @@ $lang_colors : (
     }
 }
 
-@media screen and (max-width : 1250px) {
-    .projects.view {
-        .filters {
-            top: 0;
+.aside-expand {
+    display: none;
 
-            &.hidden nav {
-                display : none;
+    @media screen and (max-width: 1000px) {
+        display: block;
+        width: 100%;
+        background: unset;
+        box-shadow: none;
+        border: unset;
+    }
+}
+
+@media screen and (max-width : 1000px) {
+    .projects.view {
+        margin-top : 2rem;
+
+        .filters {
+            top : 0;
+
+            &.hidden {
+                &:after {
+                    display : none;
+                }
+
+                nav {
+                    display : none;
+                }
             }
         }
     }

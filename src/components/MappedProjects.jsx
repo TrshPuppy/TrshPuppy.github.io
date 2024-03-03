@@ -78,11 +78,15 @@ const MappedProjects = ({repos}) => {
         return (
             <>
                 <div className="projects-container">
+                    <div
+                        className={`aside-mask ${asideHidden ? '' : 'show'}`}
+                        onClick={() => setAsideHidden(!asideHidden)}
+                        aria-hidden="true">
+                    </div>
                     <aside className={asideHidden ? 'filters hidden' : 'filters'}>
                         <div aria-hidden="true" className="projects-hero">
                             <h1>Projects</h1>
                         </div>
-                        <button className="aside-expand" onClick={() => setAsideHidden(!asideHidden)}>Expand</button>
                         <h2>Languages</h2>
                         <nav>
                             { languageSet.size > 0 &&
@@ -113,6 +117,7 @@ const MappedProjects = ({repos}) => {
                                 </ul>
                             }
                         </nav>
+                        <button className="aside-expand" onClick={() => setAsideHidden(!asideHidden)}>Filters</button>
                     </aside>
 
                     <div className="projects-list">
@@ -124,16 +129,12 @@ const MappedProjects = ({repos}) => {
                                     updated_at,
                                     watchers_count,
                                     language,
-                                    archive_url,
-                                    clone_url,
                                     description,
                                     open_issues,
-                                    watchers,
                                     html_url,
                                 } = project;
 
                                 return (
-
                                     <div className={ `project ${ language }` } key={ `project-${ i }` }>
                                         <div className="title">
                                             <h2>
