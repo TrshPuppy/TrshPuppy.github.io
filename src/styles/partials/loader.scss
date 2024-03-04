@@ -23,18 +23,20 @@
             position: relative;
             animation: loader 2s infinite;
             background-color: $background;
+            margin: 0 0.25rem;
+            border-radius: 0.5rem;
             opacity: 0;
         }
 
         $delay: 0;
 
         @each $name, $color in $nav-links {
-            $delay: $delay + 0.2;
-
             .light.#{$name} {
                 animation-delay: $delay + s;
                 outline: 1px solid $color;
             }
+
+            $delay: $delay + 0.1;
         }
     }
 }
@@ -42,8 +44,10 @@
 @keyframes loader {
     0% {
         opacity: 1;
-        transform: rotateX(-260deg);
-        filter: drop-shadow(0 0 30px #ff0096);
+        transform: rotateX(-200deg);
+        filter: drop-shadow(0 0 2rem #ff0096);
+        background-color: #fff;
+        outline-color: #fff;
     }
     100% {
         opacity: 0;
