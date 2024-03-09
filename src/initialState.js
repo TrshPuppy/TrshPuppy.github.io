@@ -1,8 +1,5 @@
-const initialState = {
-    hoveredLinkName: '',
-    hoveredLinkColor: '',
-    hoveredTextColor: '',
-    projects: []
+export default {
+    reposFetched: false,
+    fetching: false,
+    repos: []
 };
-
-export default initialState;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import GitHub from './svg/GitHub.jsx';
 import Star from "./svg/Star.jsx";
 import IssuesSVG from "./svg/Issues.jsx";
@@ -7,6 +7,8 @@ const MappedProjects = ({repos}) => {
     const [filteredRepos, setFilteredRepos] = useState(repos);
     const [repoFilter, setRepoFilter] = useState('all');
     const [asideHidden, setAsideHidden] = useState(true);
+    const [animating, setAnimating] = useState(false);
+    const [animatingTimeout, setAnimatingTimeout] = useState(null);
     let languageSet = new Set([]);
     let topicSet = new Set([]);
 
@@ -41,6 +43,11 @@ const MappedProjects = ({repos}) => {
      * @param topic
      */
     const handleFilterOnClick = topic => {
+        if (!animating) {
+            setAnimatingTimeout(setTimeout(() => setAnimating(false), 300));
+        }
+        setAnimating(true);
+
         if (repoFilter === topic || topic === 'all') {
             setFilteredRepos(repos);
             setRepoFilter('all');
@@ -146,7 +153,8 @@ const MappedProjects = ({repos}) => {
                                 } = project;
 
                                 return (
-                                    <div className={ `project ${ language }` } key={ `project-${ i }` }>
+                                    <div className={ `project ${ language } ${ animating ? 'animating' : '' }` }
+                                         key={ `project-${ i }` }>
                                         <div className="title">
                                             <h2>
                                                 <span>{ name }</span>
@@ -179,7 +187,6 @@ const MappedProjects = ({repos}) => {
                                             }
                                         </div>
                                     </div>
-
                                 );
                             })
                         }

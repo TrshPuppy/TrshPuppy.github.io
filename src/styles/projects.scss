@@ -322,12 +322,29 @@ $lang_colors : (
         width : 100%;
 
         .project {
+            position         : relative;
             border           : 1px solid $border_color;
             margin-bottom    : 2rem;
             background-color : $container_bg;
             overflow         : hidden;
             border-radius    : 0.5rem;
             box-shadow       : 0 0 5px rgba(#000, 0.5);
+            top              : 0;
+
+            &.animating {
+                animation : dropin 300ms cubic-bezier(0.1, 0.5, 0.8, 1);
+            }
+
+            @keyframes dropin {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.5);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
 
             .title {
                 display          : flex;
@@ -400,7 +417,7 @@ $lang_colors : (
                 border-top       : 1px solid $border_color;
                 background-color : $border_color;
                 color            : $border_text;
-                line-height: 1.75rem;
+                line-height      : 1.75rem;
 
                 div {
                     height : 100%;
@@ -408,11 +425,11 @@ $lang_colors : (
 
                 .watchers-count {
                     svg {
-                        position : relative;
-                        height   : 1rem;
-                        fill     : #ddd;
-                        top      : 0.05rem;
-                        margin-right: 0.3rem;
+                        position     : relative;
+                        height       : 1rem;
+                        fill         : #ddd;
+                        top          : 0.05rem;
+                        margin-right : 0.3rem;
                     }
                 }
 

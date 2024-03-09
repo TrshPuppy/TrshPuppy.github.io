@@ -5,6 +5,7 @@ import Loader from "../components/Loader.jsx";
 const Projects = () => {
    const [repos, setRepos] = useState([]);
    const [loading, setLoading] = useState(true);
+   const [responseOK, setResponseOK] = useState(false);
 
    useEffect(() => {
       const fetchData = async () => {
@@ -12,10 +13,11 @@ const Projects = () => {
 
          try {
             const response = await fetch('https://api.github.com/users/trshpuppy/repos?visibility=public&sort=updated&direction=desc&per_page=999');
-            if (!response.ok) {
-               throw new Error('Network response was not ok');
+            if (response.ok) {
+               setResponseOK(true);
             }
             const data = await response.json();
+            console.log('fetched');
             setRepos(data);
          } catch (error) {
             console.error("Fetching error: ", error);
@@ -31,8 +33,12 @@ const Projects = () => {
       <article id="projects-view" className="projects view">
          { loading && <Loader/> }
          {
-            !loading &&
+            !loading && responseOK &&
             <MappedProjects repos={ repos } />
+         }
+         {
+            !responseOK && !loading &&
+             <div>Something went wrong</div>
          }
       </article>
    );
