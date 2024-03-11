@@ -4,23 +4,24 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Blog = () => {
     const markdownFilesGlob = import.meta.glob('/public/md/*.md');
-    const markdownFilePaths = [];
-
-    for (const path in markdownFilesGlob) markdownFilePaths.push(path);
+    const markdownFilePaths = Object.keys(markdownFilesGlob);
 
     const location = useLocation();
     const params = new URLSearchParams(location.search);
-    const filePath = params.get('filePath');
+    const fileParam = params.get('file');
+    const [currentFilePath, setCurrentFilePath] = useState( markdownFilePaths[0] || '');
+    const [currentFile, setCurrentFile] = useState('');
 
-    const [currentFilePath, _] = useState(filePath || markdownFilePaths[0] || '');
-    const [currentText, setCurrentText] = useState('');
+    const handleMDLinkClick = path => {
+        setCurrentFilePath(path);
+    }
 
     const fetchCurrentFileText = async () => {
         try {
             const publicPath = formatPublicPath(currentFilePath);
             let res = await fetch(publicPath);
             res = await res.text();
-            setCurrentText(res);
+            setCurrentFile(res);
         } catch (err) {
             console.log(err);
         }
@@ -52,7 +53,15 @@ const Blog = () => {
     }, [currentFilePath]);
 
     useEffect(() => {
-        void fetchCurrentFileText();
+        if (fileParam) {
+            for (const path of markdownFilePaths) {
+                if (formatTitleToSlug(formatPathToTitle(path)) === fileParam) {
+                    setCurrentFilePath(path);
+                }
+            }
+        } else {
+            void fetchCurrentFileText();
+        }
     }, []);
 
     return (
@@ -66,7 +75,7 @@ const Blog = () => {
 
                            return (
                               <li key={`aside-file-${i}`}>
-                                  <Link to={`?file=${slug}`}>{title}</Link>
+                                  <Link to={`?file=${slug}`} onClick={() => handleMDLinkClick(path)}>{title}</Link>
                               </li>
                            );
                        })}
@@ -74,7 +83,7 @@ const Blog = () => {
                </nav>
            </aside>
            <article>
-               <ReactMarkdown>{currentText}</ReactMarkdown>
+               <ReactMarkdown>{currentFile}</ReactMarkdown>
            </article>
        </div>
     );
