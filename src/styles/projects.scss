@@ -129,8 +129,8 @@ $lang_colors : (
         height           : 100%;
         width            : 350px;
         background-color : $container_bg;
-        border           : 1px solid $border_color;
-        border-radius    : 0.5rem;
+        border           : 3px solid $border_color;
+        border-radius: 0.5rem;
         overflow         : hidden;
         box-shadow       : 0 0 5px rgba(#000, 0.5);
         z-index          : 100;
@@ -323,11 +323,11 @@ $lang_colors : (
 
         .project {
             position         : relative;
-            border           : 1px solid $border_color;
-            margin-bottom    : 2rem;
+            border           : 3px solid $border_color;
+            margin-bottom    : 4rem;
             background-color : $container_bg;
             overflow         : hidden;
-            border-radius    : 0.5rem;
+            border-radius: 0.5rem;
             box-shadow       : 0 0 5px rgba(#000, 0.5);
             top              : 0;
 

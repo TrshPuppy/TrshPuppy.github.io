@@ -70,12 +70,12 @@
 
     article {
         background-color: #241E24;
-        border-radius: 1rem;
         padding: 2rem;
-        border: 1px solid $border_color;
+        border: 3px solid $border_color;
         min-width: 0;
         color: rgba(254, 245, 255, 0.86);
         line-height: 2rem;
+        flex-grow: 1;
 
         code, pre {
             overflow-x: scroll;
@@ -93,8 +93,6 @@
             background-image: linear-gradient(to right top, #200b29, #3a1442, #581a5b, #7a1e73, #9f1f89);
             font-weight: 200;
             font-size: 1.6rem;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
         }
 
         h2 {

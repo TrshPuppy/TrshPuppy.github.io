@@ -6,7 +6,7 @@
         display         : flex;
         justify-content : space-between;
         align-items     : center;
-        border-bottom   : 1px solid $border_color;
+        border-bottom   : 3px solid $border_color;
 
         @media screen and (max-width: 1400px) {
             width: calc(1040px - 10rem);
@@ -68,7 +68,7 @@
             left                      : -5rem;
             height                    : 100%;
             width                     : 5rem;
-            border                    : 1px solid $border_color;
+            border                    : 3px solid $border_color;
             border-right              : none;
             border-top                : none;
             border-bottom-left-radius : 5rem;
