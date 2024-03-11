@@ -2,7 +2,8 @@
 @use 'site';
 @use 'main';
 @use 'projects';
-@use "views/terminal";
+@use 'views/terminal';
+@use 'views/about';
 @use 'partials/pong';
 @use 'partials/site-brand';
 @use 'partials/site-header';

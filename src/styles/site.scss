@@ -25,7 +25,7 @@ html {
             height           : 100%;
             width            : 100%;
             background-image : linear-gradient($background 75%, transparent);
-            z-index          : -10;
+            z-index          : 0;
         }
 
         & * {
@@ -54,7 +54,6 @@ html {
 .wrapper main .view {
     position  : relative;
     transform-origin: top;
-    animation: entry 300ms ease-out;
 
     @keyframes entry {
         0% {

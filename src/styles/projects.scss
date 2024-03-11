@@ -139,7 +139,7 @@ $lang_colors : (
             display             : grid;
             position            : relative;
             align-items         : flex-end;
-            background-image    : url("./img/projects-hero.webp");
+            background-image    : url("/img/projects-hero.webp");
             height              : 180px;
             width               : 100%;
             background-size     : cover;
@@ -208,7 +208,7 @@ $lang_colors : (
                 &:after {
                     content          : "";
                     display          : block;
-                    background-image : url("./img/button-lattice.png");
+                    background-image : url("/img/button-lattice.png");
                     height           : 0.75rem;
                     width            : 0.75rem;
                     border-radius    : 50%;
