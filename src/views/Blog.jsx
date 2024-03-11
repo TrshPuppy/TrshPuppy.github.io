@@ -9,6 +9,7 @@ const Blog = () => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const fileParam = params.get('file');
+    const [asideHidden, setAsideHidden] = useState(false);
     const [currentFilePath, setCurrentFilePath] = useState( markdownFilePaths[0] || '');
     const [currentFile, setCurrentFile] = useState('');
 
@@ -65,16 +66,22 @@ const Blog = () => {
     }, []);
 
     return (
-       <div id="about-view" className="view">
+       <div id="blog-view" className="view">
            <aside>
+               <div className="blog-hero">
+                   <h1>Blog</h1>
+                   <button className="aside-expand" onClick={ () => setAsideHidden(!asideHidden) }>
+                       <div>Filters</div>
+                   </button>
+               </div>
                <nav>
                    <ul>
-                       {markdownFilePaths.map((path, i) => {
+                       { markdownFilePaths.map((path, i) => {
                            const title = formatPathToTitle(path);
                            const slug = formatTitleToSlug(title);
 
                            return (
-                              <li key={`aside-file-${i}`}>
+                              <li key={ `aside-file-${i}`}>
                                   <Link to={`?file=${slug}`} onClick={() => handleMDLinkClick(path)}>{title}</Link>
                               </li>
                            );
