@@ -1,7 +1,5 @@
 @use "./variables" as *;
 
-$pink        : #CE174E;
-$pink_medium : #6C243A;
 $lang_colors : (
         all: #ff0059,
         Shell: #ff1be1,
@@ -127,10 +125,11 @@ $lang_colors : (
         top              : 1rem;
         margin-right     : 2rem;
         height           : 100%;
-        width            : 350px;
+        min-width        : 16rem;
+        width            : 16rem;
         background-color : $container_bg;
         border           : 3px solid $border_color;
-        border-radius: 0.5rem;
+        border-radius    : 1rem;
         overflow         : hidden;
         box-shadow       : 0 0 5px rgba(#000, 0.5);
         z-index          : 100;
@@ -192,13 +191,12 @@ $lang_colors : (
                 padding          : 1rem 1rem;
                 background-color : transparent;
                 border           : 0;
-                font-weight      : 200;
                 line-height      : 0.8rem;
                 border-bottom    : 1px solid $border_color;
                 cursor           : pointer;
                 text-align       : left;
                 transition       : all 200ms;
-                color            : #fff;
+                color            : #e0e0e0;
                 outline          : 1px solid transparent;
 
                 @media screen and (max-width : 668px) {
@@ -327,7 +325,7 @@ $lang_colors : (
             margin-bottom    : 4rem;
             background-color : $container_bg;
             overflow         : hidden;
-            border-radius: 0.5rem;
+            border-radius    : 1rem;
             box-shadow       : 0 0 5px rgba(#000, 0.5);
             top              : 0;
 
@@ -337,12 +335,12 @@ $lang_colors : (
 
             @keyframes dropin {
                 0% {
-                    opacity: 0;
-                    transform: scale(0.5);
+                    opacity   : 0;
+                    transform : scale(0.5);
                 }
                 100% {
-                    opacity: 1;
-                    transform: scale(1);
+                    opacity   : 1;
+                    transform : scale(1);
                 }
             }
 
@@ -362,7 +360,7 @@ $lang_colors : (
                     span {
                         display     : block;
                         font-size   : 1.2rem;
-                        font-weight : 300;
+                        font-weight : 400;
                         color       : #fff;
                         filter      : drop-shadow(10px, map-get($nav-links, projects));
                     }

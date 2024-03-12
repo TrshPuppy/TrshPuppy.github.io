@@ -34,6 +34,7 @@ const Blog = () => {
         result = result.replace('.md', '');
         result = result.replace(/[^\w\s]/gi, ' ');
         result = result.replace(/\b\w/g, match => match.toUpperCase());
+        result = result.replace(/_/g, ' ');
         return result.trim();
     }
 
@@ -82,7 +83,7 @@ const Blog = () => {
 
                            return (
                               <li key={ `aside-file-${i}`}>
-                                  <Link to={`?file=${slug}`} onClick={() => handleMDLinkClick(path)}>{title}</Link>
+                                  <Link className={currentFilePath === path ? "active" : ""} to={`?file=${slug}`} onClick={() => handleMDLinkClick(path)}>{title}</Link>
                               </li>
                            );
                        })}

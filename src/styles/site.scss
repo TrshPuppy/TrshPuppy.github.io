@@ -34,7 +34,7 @@ html {
 
         #root {
             width     : 100vw;
-            max-width : 1000px;
+            max-width : 1200px;
 
             @media screen and (max-width : 1240px) {
                 max-width : 900px;
@@ -54,6 +54,7 @@ html {
 .wrapper main .view {
     position  : relative;
     transform-origin: top;
+    animation: entry 200ms ease-in;
 
     @keyframes entry {
         0% {
