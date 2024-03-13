@@ -138,13 +138,14 @@ $lang_colors : (
             display             : grid;
             position            : relative;
             align-items         : flex-end;
-            background-image    : url("/img/projects-hero.webp");
-            height              : 10rem;
+            background-image    : url("img/pixel/p-projects.webp");
+            height              : 12rem;
             width               : 100%;
             background-size     : cover;
             background-repeat   : no-repeat;
-            background-position : center;
+            background-position : top;
             z-index             : 1;
+            filter: grayscale(0.6);
 
             &:after {
                 content          : "";
@@ -152,7 +153,7 @@ $lang_colors : (
                 display          : block;
                 height           : 100%;
                 width            : 100%;
-                background-image : linear-gradient(to bottom, transparent, #000);
+                background-image : linear-gradient(to bottom, transparent, rgba(#000, 0.75));
                 z-index          : -1;
             }
         }

@@ -54,7 +54,7 @@
             }
 
             &.hero-projects {
-                background-image : url("img/trshpuppy-projects.webp");
+                background-image : url("img/pixel/p-projects.webp");
 
                 svg {
                     fill: map-get($nav-links, projects);
@@ -62,7 +62,7 @@
             }
 
             &.hero-blog {
-                background-image : url("img/trshpuppy-blog.webp");
+                background-image : url("img/pixel/p-blog.webp");
 
                 svg {
                     fill: map-get($nav-links, blog);
@@ -70,7 +70,7 @@
             }
 
             &.hero-about {
-                background-image : url("img/trshpuppy-about.jpg");
+                background-image : url("img/pixel/p-about.webp");
 
                 svg {
                     fill: map-get($nav-links, about);
@@ -78,7 +78,7 @@
             }
 
             &.hero-contact {
-                background-image : url("img/heap-purple.webp");
+                background-image : url("img/pixel/p-contact.webp");
 
                 svg {
                     fill: map-get($nav-links, contact);
@@ -96,12 +96,12 @@
         a {
             display                    : block;
             text-align                 : center;
-            font-family                : CamingoCode, monospace;
             padding                    : 1rem;
             width                      : 100%;
             text-decoration            : none;
-            background-color           : $active;
-            font-weight                : 700;
+            background-color           : $foreground;
+            font-family: CamingoCode, monospace;
+            font-weight: 700;
             color                      : #000;
             transition                 : all 200ms;
             border-bottom-left-radius  : 1rem;
@@ -109,8 +109,7 @@
 
             &:hover,
             &:focus {
-                filter  : drop-shadow(0 0 4px $pink);
-                outline : 10px solid rgba($pink, 0.05);
+                background-color: $active;
             }
         }
     }

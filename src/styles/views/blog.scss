@@ -19,17 +19,19 @@
             display                 : grid;
             position                : relative;
             align-items             : flex-end;
-            background-image        : url("/img/trshpuppy-blog.webp");
-            height                  : 9rem;
+            background-image        : url("/img/pixel/p-blog.webp");
+            height                  : 11rem;
             width                   : 100%;
             background-size         : cover;
             background-repeat       : no-repeat;
-            background-position     : bottom;
+            background-position     : center;
             z-index                 : 1;
             border-top-left-radius  : 1rem;
             border-top-right-radius : 1rem;
+            filter: grayscale(0.5);
 
             h1 {
+                display: none;
                 padding     : 1rem;
                 margin      : 0;
                 color       : map-get($nav-links, blog);
@@ -43,7 +45,7 @@
                 display          : block;
                 height           : 100%;
                 width            : 100%;
-                background-image : linear-gradient(to bottom, transparent, #000);
+                background-image : linear-gradient(to bottom, transparent, rgba(#000, 0.8));
                 z-index          : -1;
             }
         }
