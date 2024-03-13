@@ -2,14 +2,15 @@
 
 .home-links {
     margin          : 4rem 0;
-    display         : flex;
+    display         : grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
     justify-content : center;
     align-items     : center;
 
     .card {
-        width                   : 100%;
-        margin                  : 2rem;
         display                 : flex;
+        width                   : 100%;
         flex-direction          : column;
         justify-content         : center;
         align-items             : center;
@@ -22,7 +23,7 @@
             justify-content: center;
             align-items: flex-end;
             position                   : relative;
-            height                     : 12rem;
+            height                     : 14rem;
             border                     : 1px solid $border_color;
             border-bottom-left-radius  : 0;
             border-bottom-right-radius : 0;

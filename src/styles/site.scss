@@ -24,7 +24,7 @@ html {
             content          : "";
             height           : 100%;
             width            : 100%;
-            background-image : linear-gradient($background 75%, transparent);
+            background-image : linear-gradient(rgba($background, 0.85) 75%, transparent);
             z-index          : 0;
         }
 

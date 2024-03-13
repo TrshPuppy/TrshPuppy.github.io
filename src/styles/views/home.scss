@@ -1,6 +1,7 @@
 @use "../variables" as *;
 
 .home.view {
+
     section {
         display               : grid;
         justify-content       : space-between;
@@ -8,8 +9,11 @@
         align-items           : center;
         gap                   : 4rem;
         margin-top            : 8rem;
-        border-bottom         : 3px solid $border_color;
         padding-bottom        : 8rem;
+
+        &.socials {
+            align-items: flex-start;
+        }
     }
 
     .welcome {

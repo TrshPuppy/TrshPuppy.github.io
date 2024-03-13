@@ -1,4 +1,4 @@
-import Socials from '../components/Socials-old.jsx';
+import Socials from '../components/Socials.jsx';
 import PageTitle from '../components/PageTitle.jsx';
 import HomeLinks from '../components/HomeLinks.jsx';
 
