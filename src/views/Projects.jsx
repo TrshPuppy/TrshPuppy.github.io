@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import MappedProjects from '../components/MappedProjects.jsx';
-import Loader from "../components/Loader.jsx";
+import Loader from '../components/Loader.jsx';
+import PageTitle from '../components/PageTitle.jsx';
 
 const Projects = () => {
    const [repos, setRepos] = useState([]);
@@ -20,7 +21,7 @@ const Projects = () => {
             console.log('fetched');
             setRepos(data);
          } catch (error) {
-            console.error("Fetching error: ", error);
+            console.error('Fetching error: ', error);
          } finally {
             setLoading(false);
          }
@@ -30,17 +31,20 @@ const Projects = () => {
    }, []);
 
    return (
-      <article id="projects-view" className="projects view">
-         { loading && <Loader/> }
-         {
-            !loading && responseOK &&
-            <MappedProjects repos={ repos } />
-         }
-         {
-            !responseOK && !loading &&
-             <div>Something went wrong</div>
-         }
-      </article>
+      <>
+         <PageTitle title="Projects" color="#b2ffae" />
+         <article id="projects-view" className="projects view">
+            { loading && <Loader /> }
+            {
+               !loading && responseOK &&
+               <MappedProjects repos={ repos } />
+            }
+            {
+               !responseOK && !loading &&
+               <div>Something went wrong</div>
+            }
+         </article>
+      </>
    );
 };
 

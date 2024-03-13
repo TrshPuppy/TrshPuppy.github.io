@@ -1,9 +1,9 @@
-import Socials from './Socials.jsx';
+import SocialsOld from './Socials-old.jsx';
 
 const SiteFooter = () => {
    return (
       <footer className="site-footer">
-         <Socials />
+         <SocialsOld />
       </footer>
    );
 };

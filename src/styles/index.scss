@@ -2,8 +2,10 @@
 @use 'site';
 @use 'main';
 @use 'projects';
-@use 'views/terminal';
+@use 'views/home';
 @use "views/blog";
+@use "partials/page-title";
+@use "partials/home-links";
 @use 'partials/pong';
 @use 'partials/site-brand';
 @use 'partials/site-header';

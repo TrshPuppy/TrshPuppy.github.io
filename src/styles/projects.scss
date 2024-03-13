@@ -146,14 +146,6 @@ $lang_colors : (
             background-position : center;
             z-index             : 1;
 
-            h1 {
-                padding     : 1rem;
-                margin      : 0;
-                color       : map-get($nav-links, projects);
-                filter      : drop-shadow(0 0 8px map-get($nav-links, projects));
-                font-family : CamingoCode, monospace;
-            }
-
             &:after {
                 content          : "";
                 position         : absolute;
@@ -538,6 +530,14 @@ $lang_colors : (
 
                 .aside-expand div:after {
                     transform : rotate(0);
+                }
+
+                .aside-expand {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 1rem;
                 }
             }
         }

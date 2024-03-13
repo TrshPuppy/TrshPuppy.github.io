@@ -93,7 +93,6 @@ const MappedProjects = ({repos}) => {
                     </div>
                     <aside className={ asideHidden ? 'filters hidden' : 'filters' }>
                         <div aria-hidden="true" className="projects-hero">
-                            <h1>Projects</h1>
                             <button className="aside-expand" onClick={ () => setAsideHidden(!asideHidden) }>
                                 <div>Filters</div>
                             </button>

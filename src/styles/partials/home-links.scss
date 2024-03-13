@@ -1,0 +1,117 @@
+@use "../variables" as *;
+
+.home-links {
+    margin          : 4rem 0;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+
+    .card {
+        width                   : 100%;
+        margin                  : 2rem;
+        display                 : flex;
+        flex-direction          : column;
+        justify-content         : center;
+        align-items             : center;
+        background-color        : $background;
+        border-top-left-radius  : 1rem;
+        border-top-right-radius : 1rem;
+
+        .hero {
+            display: grid;
+            justify-content: center;
+            align-items: flex-end;
+            position                   : relative;
+            height                     : 12rem;
+            border                     : 1px solid $border_color;
+            border-bottom-left-radius  : 0;
+            border-bottom-right-radius : 0;
+
+            &:after {
+                position: absolute;
+                content : "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-top-left-radius  : 1rem;
+                border-top-right-radius : 1rem;
+                background-image: linear-gradient(to bottom, transparent, rgba(#000, 0.55));
+            }
+
+            svg {
+                position: relative;
+                height: 3.5rem;
+                width: 3.5rem;
+                fill: #000;
+                z-index: 1;
+                padding: 0.5rem;
+                background-color: $background_alt;
+                border: 1px solid $border_color;
+                border-radius: 0.5rem;
+                bottom: -1.75rem;
+                box-shadow: inset 0 0 5px 1px rgba(#fff, 0.1);
+            }
+
+            &.hero-projects {
+                background-image : url("img/trshpuppy-projects.webp");
+
+                svg {
+                    fill: map-get($nav-links, projects);
+                }
+            }
+
+            &.hero-blog {
+                background-image : url("img/trshpuppy-blog.webp");
+
+                svg {
+                    fill: map-get($nav-links, blog);
+                }
+            }
+
+            &.hero-about {
+                background-image : url("img/trshpuppy-about.jpg");
+
+                svg {
+                    fill: map-get($nav-links, about);
+                }
+            }
+
+            &.hero-contact {
+                background-image : url("img/heap-purple.webp");
+
+                svg {
+                    fill: map-get($nav-links, contact);
+                }
+            }
+        }
+
+        .description {
+            width      : 100%;
+            border     : 1px solid $border_color;
+            padding    : 1.5rem 1rem 1rem 1rem;
+            text-align : center;
+        }
+
+        a {
+            display                    : block;
+            text-align                 : center;
+            font-family                : CamingoCode, monospace;
+            padding                    : 1rem;
+            width                      : 100%;
+            text-decoration            : none;
+            background-color           : $active;
+            font-weight                : 700;
+            color                      : #000;
+            transition                 : all 200ms;
+            border-bottom-left-radius  : 1rem;
+            border-bottom-right-radius : 1rem;
+
+            &:hover,
+            &:focus {
+                filter  : drop-shadow(0 0 4px $pink);
+                outline : 10px solid rgba($pink, 0.05);
+            }
+        }
+    }
+}

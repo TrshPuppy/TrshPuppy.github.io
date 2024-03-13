@@ -1,42 +1,26 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import Terminal from '../components/Terminal.jsx';
-import Socials from '../components/Socials.jsx';
+import Socials from '../components/Socials-old.jsx';
+import PageTitle from '../components/PageTitle.jsx';
+import HomeLinks from '../components/HomeLinks.jsx';
 
 const Home = () => {
    return (
-      <article id="home-view" className="home view">
-         <Terminal windowTitle="TrshPuppy.github.io">
-            <section>
-               <div className="terminal-entry">
-                  <div className="sparkles"></div>
-                  <div>
-                     <h2>Welcome to the Trash Heap!</h2>
-                     <small>Here is some trash to sift through. You may find some treasures!</small>
-                     <p>
-                        
-                     </p>
-                  </div>
+      <>
+         <PageTitle title="TrshPuppy" color="#ff91f8" />
+         <article id="home-view" className="home view">
+            <section className="welcome">
+               <div>
+                  <h2>Welcome to the Trash Heap.</h2>
+                  <p>
+                     Here you'll find various writeups and projects I've been working on, all related to cybersecurity
+                     and coding!
+                  </p>
                </div>
-               <div className="short-links">
-                  <NavLink to={ '/blog' }>
-                     <div>My Content</div>
-                     <img className="short-link-img" src="/animated/paper.webp" alt="" />
-                  </NavLink>
-                  <NavLink to={ '/contact' }>
-                     <div>Want to Chat?</div>
-                     <img className="short-link-img" src="/animated/tp-wag.webp" alt="" />
-                  </NavLink>
-                  <NavLink to={ '/projects' }>
-                     <div>My Projects</div>
-                     <img className="short-link-img" src="/animated/dumpster.gif" alt="" />
-                  </NavLink>
-               </div>
-               <Socials />
+               <div className="hero hero-welcome" aria-hidden="true"></div>
             </section>
-            <div className="hero"></div>
-         </Terminal>
-      </article>
+            <HomeLinks/>
+            <Socials />
+         </article>
+      </>
    )
       ;
 };

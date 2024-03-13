@@ -1,59 +1,54 @@
 @font-face {
     font-family : "Montserrat";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/Montserrat.ttf") format("truetype");
 }
 
 @font-face {
     font-family : "Montserrat";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/Montserrat-Italic.ttf") format("truetype");
     font-style  : italic;
 }
 
 @font-face {
     font-family : "Retron2000";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/Retron2000.ttf") format("truetype");
 }
 
 @font-face {
     font-family : "Orbitron";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/Orbitron.ttf") format("truetype");
 }
 
 @font-face {
     font-family : "CamingoCode";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/CamingoCode-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family : "CamingoCode";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/CamingoCode-Bold.ttf") format("truetype");
     font-weight: bold;
 }
 
 @font-face {
     font-family : "CamingoCode";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/CamingoCode-BoldItalic.ttf") format("truetype");
     font-weight: bold;
     font-style: italic;
 }
 
-
 @font-face {
     font-family : "CamingoCode";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/CamingoCode-Italic.ttf") format("truetype");
     font-style: italic;
 }
 
 @font-face {
     font-family : "PressStart2P";
-    //noinspection CssUnknownTarget
     src         : url("/fonts/PressStart2P-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family : "Nickainley-Normal";
+    src         : url("/fonts/Nickainley-Normal.otf") format("opentype");
 }
