@@ -1,7 +1,5 @@
-import { useReducer, useEffect, useState } from 'react';
 import SiteHeader from './SiteHeader.jsx';
-import reducer from '../reducer.js';
-import initialState from '../initialState.js';
+import SiteFooter from './SiteFooter.jsx';
 
 const Wrapper = ({ View }) => {
    return (
@@ -10,6 +8,7 @@ const Wrapper = ({ View }) => {
          <main>
             <View />
          </main>
+         <SiteFooter />
       </div>
    );
 };

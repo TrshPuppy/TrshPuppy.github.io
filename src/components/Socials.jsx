@@ -22,7 +22,6 @@ const Socials = () => {
    return (
       <div id="socials">
          <h2>Socials</h2>
-         <samp className="polka-dot">{ samp }</samp>
          <ul className="external-links">
             <li className="link-github">
                <a
@@ -122,6 +121,7 @@ const Socials = () => {
                   <HackTheBoxSVG />
                </a>
             </li>
+            <samp aria-live="polite" className="polka-dot">{ samp }</samp>
          </ul>
       </div>
    );
