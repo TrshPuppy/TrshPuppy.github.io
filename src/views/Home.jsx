@@ -14,11 +14,11 @@ const Home = () => {
                      Here you'll find various writeups and projects I've been working on, all related to cybersecurity
                      and coding!
                   </p>
+                  <Socials />
                </div>
                <div className="hero hero-welcome" aria-hidden="true"></div>
             </section>
             <HomeLinks/>
-            <Socials />
          </article>
       </>
    )

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import HackTheBoxSVG from './svg/HackTheBox';
 import TryHackMeSVG from './svg/TryHackMe';
 import CodeWarsSVG from './svg/CodeWars';
@@ -6,135 +7,123 @@ import YouTubeSVG from './svg/YouTube';
 import GitHubSVG from './svg/GitHub';
 import TwitchSVG from './svg/Twitch';
 
-
 const Socials = () => {
+   const [samp, setSamp] = useState('...');
+
+   const handleHover = linkName => {
+      if (!linkName) {
+         setSamp('...');
+      } else {
+         setSamp(linkName);
+      }
+
+   };
+
    return (
-      <section className="socials">
+      <div id="socials">
          <h2>Socials</h2>
-         <div className="socials-inner">
-            <div className="hero socials-hero" aria-hidden="true"></div>
-            <ul className="external-links">
-               <li className="link-github">
-                  <div className="description">
-                     <h3>Github</h3>
-                     <p>This is where I keep all of my trash projects. Feel free to star some!</p>
-                  </div>
-                  <a
-                     className="link github"
-                     data-name="GitHub"
-                     href="https://github.com/TrshPuppy"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Github"
-                  >
-                     <GitHubSVG />
-                  </a>
-               </li>
-               <li className="link-twitch">
-                  <div className="description">
-                     <h3>Twitch</h3>
-                     <p>I stream all kinds of content regularly on Twitch. Drop by and say hi!</p>
-                  </div>
-                  <a
-                     className="link twitch"
-                     data-name="Twitch"
-                     href="https://www.twitch.tv/trshpuppy"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Twitch"
-                  >
-                     <TwitchSVG />
-                  </a>
-               </li>
-               <li className="link-youtube">
-                  <div className="description">
-                     <h3>Youtube</h3>
-                     <p>
-                        My vlog for my journey into the dev world. My videos highlight important milestones in learning.
-                     </p>
-                  </div>
-                  <a
-                     className="link youtube"
-                     data-name="YouTube"
-                     href="https://youtube.com/@TrshPuppy"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Youtube"
-                  >
-                     <YouTubeSVG />
-                  </a>
-               </li>
-               <li className="link-twitter">
-                  <div className="description">
-                     <h3>Twitter</h3>
-                     <p>It isn't all trash! See what hot topics are being discussed.</p>
-                  </div>
-                  <a
-                     className="link twitter"
-                     data-name="Twitter"
-                     href="https://twitter.com/trshpuppy"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Twitter"
-                  >
-                     <TwitterSVG />
-                  </a>
-               </li>
-               <li className="link-codewars">
-                  <div className="description">
-                     <h3>CodeWars</h3>
-                     <p>Coding challenges? Yes please! Join our clan!</p>
-                  </div>
-                  <a
-                     className="link codewars"
-                     data-name="CodeWars"
-                     href="https://www.codewars.com/users/TrshPuppy"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Codewars"
-                  >
-                     <CodeWarsSVG />
-                  </a>
-               </li>
-               <li className="link-tryhackme">
-                  <div className="description">
-                     <h3>TryHackMe</h3>
-                     <p>
-                        A dark room, a black hoodie, and hacking challenges are a must for a trshpuppy.
-                     </p>
-                  </div>
-                  <a
-                     className="link tryhackme"
-                     data-name="TryHackMe"
-                     href="https://tryhackme.com/p/TrshPuppy"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Try hack me"
-                  >
-                     <TryHackMeSVG />
-                  </a>
-               </li>
-               <li className="link-hackthebox">
-                  <div className="description">
-                     <h3>HackTheBox</h3>
-                     <p>
-                        Tearing down the firewalls with my mighty puppy teeth, I will SSH into the whole world!
-                     </p>
-                  </div>
-                  <a
-                     className="link hackthebox"
-                     data-name="HackTheBox"
-                     href="https://app.hackthebox.com/profile/1343592"
-                     target="_blank"
-                     rel="noreferrer"
-                     aria-label="Hack the box"
-                  >
-                     <HackTheBoxSVG />
-                  </a>
-               </li>
-            </ul>
-         </div>
-      </section>
+         <samp className="polka-dot">{ samp }</samp>
+         <ul className="external-links">
+            <li className="link-github">
+               <a
+                  className="link github"
+                  data-name="GitHub"
+                  href="https://github.com/TrshPuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Github"
+                  onMouseEnter={ () => handleHover('Github') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <GitHubSVG />
+               </a>
+            </li>
+            <li className="link-twitch">
+               <a
+                  className="link twitch"
+                  data-name="Twitch"
+                  href="https://www.twitch.tv/trshpuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Twitch"
+                  onMouseEnter={ () => handleHover('Twitch') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <TwitchSVG />
+               </a>
+            </li>
+            <li className="link-youtube">
+               <a
+                  className="link youtube"
+                  data-name="YouTube"
+                  href="https://youtube.com/@TrshPuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Youtube"
+                  onMouseEnter={ () => handleHover('YouTube') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <YouTubeSVG />
+               </a>
+            </li>
+            <li className="link-twitter">
+               <a
+                  className="link twitter"
+                  data-name="Twitter"
+                  href="https://twitter.com/trshpuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Twitter"
+                  onMouseEnter={ () => handleHover('Twitter') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <TwitterSVG />
+               </a>
+            </li>
+            <li className="link-codewars">
+               <a
+                  className="link codewars"
+                  data-name="CodeWars"
+                  href="https://www.codewars.com/users/TrshPuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Codewars"
+                  onMouseEnter={ () => handleHover('CodeWars') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <CodeWarsSVG />
+               </a>
+            </li>
+            <li className="link-tryhackme">
+               <a
+                  className="link tryhackme"
+                  data-name="TryHackMe"
+                  href="https://tryhackme.com/p/TrshPuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Try hack me"
+                  onMouseEnter={ () => handleHover('TryHackMe') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <TryHackMeSVG />
+               </a>
+            </li>
+            <li className="link-hackthebox">
+               <a
+                  className="link hackthebox"
+                  data-name="HackTheBox"
+                  href="https://app.hackthebox.com/profile/1343592"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Hack the box"
+                  onMouseEnter={ () => handleHover('Hack the Box') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <HackTheBoxSVG />
+               </a>
+            </li>
+         </ul>
+      </div>
    );
 };
 

@@ -1,5 +1,8 @@
 @use "../variables" as *;
 
+$socials_bg: #679497;
+$socials_btn: #FED8E5;
+
 $socials : (
         github: #E6EDF3,
         twitch: #A960FF,
@@ -12,93 +15,106 @@ $socials : (
 
 @each $class, $color in $socials {
     li.link-#{$class} {
-        background-image : linear-gradient(to left, rgba($color, 0.05) 10%, transparent 50%);
-
-        &:has(a:hover) {
-            background-image : linear-gradient(to left, rgba($color, 0.15) 10%, transparent 70%);
-        }
-
         a {
-            border: 2px solid rgba($color, 0.5);
-            color: $color;
-
             svg {
-                fill  : rgba($color, 0.85);
-                color : rgba($color, 0.5);
-            }
-
-            &:after {
-                color : $color;
+                fill: $pink_medium;
             }
 
             &:hover,
             &:focus {
-                filter : drop-shadow(0 0 8px $color) brightness(1.2);
-
+                border: 3px solid $color;
                 svg {
+                    stroke: $pink_medium;
+                    stroke-width: 1px;
                     fill: $color;
                 }
-            }
-
-            &:active {
-                background-image : linear-gradient(to left, rgba($color, 0.02) 10%, transparent 40%);
-                box-shadow: none;
             }
         }
     }
 }
 
-section.socials {
-    display: block;
+#socials {
+    margin-top: 4rem;
+    position: relative;
 
     h2 {
-        position                : relative;
-        font-size               : 2.6rem;
-        padding                 : 2rem 1rem;
-        font-weight             : 900;
-        font-family             : Orbitron, Montserrat, sans-serif;
-        margin                  : 0;
-        background-image        : linear-gradient(45deg, $active, $pink);
-        -webkit-background-clip : text;
-        color                   : transparent;
-        z-index                 : 0;
+        display: inline-block;
+        position: absolute;
+        font-family: Nickainley-Normal, sans-serif;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        text-shadow: 0 0 3px $pink_medium;
+        margin: 0;
+        background: $socials_bg;
+        color: $socials_btn;
+        padding: 0.5rem 2.5rem 0;
+        border: 3px solid $pink_medium;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-bottom: none;
+        z-index: 10;
+        top: -1.2rem;
+        left: 1rem;
+        transition: all 200ms;
+
+        &:before {
+            display: none;
+        }
     }
 
-    .hero.socials-hero {
-        position         : sticky;
-        top              : 2rem;
-        background-image : url("img/trshpuppy-socials.webp");
-    }
 
-    #linkInfo {
-        display : none;
-    }
-
-    .socials-inner {
-        display          : grid;
-        grid-template-columns: 1fr 1fr;
+    samp {
+        position: absolute;
+        display: block;
+        font-size: 0.8rem;
+        font-family: PressStart2P, monospace;
+        color: $socials_btn;
+        line-height: 1rem;
+        transition: all 200ms;
+        left: 0;
+        padding: 1rem;
         width: 100%;
+        background-color: $background;
+        border: 3px solid $pink-medium;
+        bottom: 0;
+        transform: translateY(calc(50% + 3px));
+        z-index: 1000;
+        background-image: radial-gradient(rgba($socials_btn, 0.2) 10%, transparent 11%),
+        radial-gradient(rgba($socials_btn, 0.2) 10%, transparent 11%);
+        background-size: 1rem 1rem;
+        background-position: 0 0, 0.5rem 0.5rem;
+        background-repeat: repeat;
+        text-align: center;
+        border-radius : 0 0 0.5rem 0.5rem;
+
+        .polka-dot {
+            width: 240px;
+            height: 240px;
+            background-color: #000;
+            background-image: radial-gradient(#fff 10%, transparent 11%),
+            radial-gradient(#fff 10%, transparent 11%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+            background-repeat: repeat;
+        }
     }
 
     .external-links {
-        list-style       : none;
-        margin           : 0;
-        background-color : $background;
-        border           : 3px solid $border_color;
-        border-radius    : 2rem;
-        padding          : 0;
+        list-style: none;
+        display: inline-flex;
+        gap: 1rem;
+        background-color: $socials_bg;
+        padding: 1rem 1rem 1.5rem 1rem;
+        border-radius : 0.5rem 0.5rem 0 0;
+        border: 3px solid $pink_medium;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
 
         li {
-            display         : flex;
-            justify-content : space-between;
-            transition      : all 200ms;
-            padding         : 1rem;
-            transition: all 200ms;
-
             h3 {
                 font-size   : 1.4rem;
                 font-weight : 500;
-                color: $active;
             }
 
             .description {
@@ -113,63 +129,30 @@ section.socials {
             justify-content : center;
             align-items     : center;
             padding         : 1rem;
-            border-radius   : 1rem;
+            border-radius   : 50%;
             text-decoration : none;
             justify-self    : flex-end;
             align-self      : center;
-            margin          : 1rem 0 1rem 1rem;
-            transition      : all 200ms;
-            box-shadow: 0 0 2rem 0.5rem #000;
-
-            div {
-                color      : #f5bfe2;
-                transition : all 120ms;
-            }
+            background-color: $socials_btn;
+            border: 2px solid $pink_medium;
+            box-shadow: 0 0.75rem 0 0 rgba(darken($pink_medium, 10%), 0.8);
+            top: 0;
+            transition: all 120ms;
 
             svg {
-                height     : 2rem;
-                width      : 2rem;
-                transition : all 120ms;
-            }
-
-            &:after {
-                content        : "";
-                display        : block;
-                position       : absolute;
-                height         : 15rem;
-                width          : 15rem;
-                opacity        : 0.05;
-                background     : radial-gradient(circle, currentColor 0%, currentColor 1%, hsla(0, 0%, 0%, 0) 50%);
-                z-index        : 50;
-                pointer-events : none;
-                transition     : all 200ms;
-                animation      : pulse 5s infinite ease;
+                height     : 1.5rem;
+                width      : 1.5rem;
             }
 
             &:hover,
             &:focus {
-                outline : none;
-                z-index : 10;
-
-
-                &:after {
-                    height  : 30rem;
-                    width   : 30rem;
-                    opacity : 0.05;
-                }
-
-                div {
-                    color : currentColor;
-                }
+                top: 0.25rem;
+                box-shadow: 0 0.5rem 0 0 rgba(darken($pink_medium, 10%), 0.8);
             }
 
             &:active {
-                filter: drop-shadow(0 0 2px currentColor);
-
-                &:after {
-                    height: 1rem;
-                    width: 1rem;
-                }
+                top: 0.5rem;
+                box-shadow: 0 0.25rem 0 0 rgba(darken($pink_medium, 10%), 0.8);
             }
         }
     }
