@@ -70,6 +70,7 @@ $socials     : (
         background-position : 0 0, 0.5rem 0.5rem;
         background-repeat   : repeat;
         text-align          : center;
+        text-transform: uppercase;
         background-image    : radial-gradient(rgba($socials_btn, 0.2) 10%, transparent 11%), radial-gradient(rgba($socials_btn, 0.2) 10%, transparent 11%);
 
         &:before {

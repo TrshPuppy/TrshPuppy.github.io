@@ -8,7 +8,6 @@ const Wrapper = ({ View }) => {
          <main>
             <View />
          </main>
-         <SiteFooter />
       </div>
    );
 };

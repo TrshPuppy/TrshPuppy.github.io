@@ -1,7 +1,7 @@
 const SiteFooter = () => {
    return (
       <footer className="site-footer">
-         test
+         <p>TrshPuppy.github.io</p>
       </footer>
    );
 };
