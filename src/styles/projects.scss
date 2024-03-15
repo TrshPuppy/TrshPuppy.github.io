@@ -42,7 +42,7 @@ $lang_colors : (
 
         &.active {
             animation        : none;
-            background-image : linear-gradient(to bottom left, transparent 10%, rgba($color, 0.1));
+            box-shadow: inset 0 0 2rem 4px rgba($color, 0.15);
 
             &:after {
                 background-color : $color;
@@ -342,7 +342,7 @@ $lang_colors : (
                 align-items      : center;
                 width            : 100%;
                 padding          : 1.25rem 1rem;
-                background-color : $container_bg;
+                background-color : darken($container_bg, 2%);
                 background-image : linear-gradient(to right, transparent 10%, rgba($active, 0.02) 40%, rgba($active, 0.04), rgba($active, 0.06), rgba($active, 0.08));
 
                 h2 {
