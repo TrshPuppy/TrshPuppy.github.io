@@ -41,6 +41,15 @@
         span {
             filter : drop-shadow(0 0 20px currentColor);
         }
+
+        &:hover {
+            cursor: default;
+            text-shadow: 0 0 8px currentColor;
+
+            span {
+                filter: drop-shadow(0 0 30px currentColor);
+            }
+        }
     }
 
     h2 {

@@ -1,7 +1,6 @@
 @use "../variables" as *;
 
 .home.view {
-
     section {
         display               : grid;
         justify-content       : space-between;
@@ -9,7 +8,7 @@
         align-items           : center;
         gap                   : 4rem;
         margin-top            : 8rem;
-        padding-bottom        : 8rem;
+        margin-bottom        : 8rem;
 
         &.socials {
             align-items: flex-start;
@@ -56,13 +55,37 @@
         width               : 100%;
         flex-grow           : 0;
         background-position : center center;
-        background-size     : cover;
+        background-size     : 100%;
         border-radius       : 2rem;
         border              : 3px solid $border_color;
         filter              : grayscale(0.25) sepia(0.25);
+        transition: background-size 100ms;
+
+
+        &:hover {
+            background-size: 105%;
+        }
 
         &.hero-welcome {
             background-image : url("/img/compoter.jpg");
+        }
+    }
+
+    @media screen and (max-width: 1240px) {
+        margin: 0 2rem;
+
+        .welcome {
+            margin-top: 2rem;
+            grid-template-columns: 1fr;
+
+            .hero.hero-welcome {
+                order: -1;
+                height: 20rem;
+            }
+
+            h2 {
+                font-size: 3.2rem;
+            }
         }
     }
 }

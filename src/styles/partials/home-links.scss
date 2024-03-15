@@ -1,22 +1,35 @@
 @use "../variables" as *;
 
 .home-links {
-    margin                : 4rem 0;
+    margin                : 4rem 0 8rem;
     display               : grid;
     grid-template-columns : 1fr 1fr 1fr 1fr;
     gap                   : 2rem;
     justify-content       : center;
     align-items           : center;
 
+    @media screen and (max-width : 1240px) {
+        grid-template-columns : 1fr 1fr;
+    }
+
+    @media screen and (max-width : 668px) {
+        grid-template-columns : 1fr;
+
+        .card .hero {
+            height : 40rem;
+        }
+    }
+
     .card {
-        display                 : flex;
-        width                   : 100%;
-        flex-direction          : column;
-        justify-content         : center;
-        align-items             : center;
-        background-color        : $background;
-        border-top-left-radius  : 1rem;
-        border-top-right-radius : 1rem;
+        display          : flex;
+        width            : 100%;
+        flex-direction   : column;
+        justify-content  : center;
+        align-items      : center;
+        background-color : $background;
+        border-radius    : 1rem;
+        overflow         : hidden;
+        color            : $socials_btn;
 
         .hero {
             display                    : grid;
@@ -27,6 +40,12 @@
             border                     : 1px solid $border_color;
             border-bottom-left-radius  : 0;
             border-bottom-right-radius : 0;
+            background-size: 100%;
+            transition: background-size 200ms;
+
+            &:hover {
+                background-size: 150%;
+            }
 
             &:after {
                 position                : absolute;
@@ -90,27 +109,38 @@
         .description {
             width      : 100%;
             border     : 1px solid $border_color;
-            padding    : 1.5rem 1rem 1rem 1rem;
+            padding    : 1.5rem 2rem;
             text-align : center;
+            color: #fff;
         }
 
         a {
-            display                    : block;
-            text-align                 : center;
-            padding                    : 1rem;
-            width                      : 100%;
-            text-decoration            : none;
-            background-color           : $foreground;
-            font-family                : CamingoCode, monospace;
-            font-weight                : 700;
-            color                      : #000;
-            transition                 : all 200ms;
-            border-bottom-left-radius  : 1rem;
-            border-bottom-right-radius : 1rem;
+            display          : block;
+            top              : 0;
+            position         : relative;
+            text-align       : center;
+            padding          : 1.5rem;
+            text-decoration  : none;
+            border           : 3px solid $pink_medium;
+            border-radius    : 0.5rem;
+            background-color : $socials_bg;
+            font-weight      : 500;
+            color            : $background;
+            transition       : all 120ms;
+            box-shadow       : 0 0.5rem 0 0 $pink_medium;
+            margin-bottom    : 1rem;
 
             &:hover,
             &:focus {
-                background-color : $active;
+                background-color: lighten($socials_bg, 10%);
+                filter: drop-shadow(0 0 8px rgba($socials_bg, 0.65));
+                top        : 0.25rem;
+                box-shadow : 0 0.25rem 0 0 $pink_medium;
+            }
+
+            &:active {
+                top        : 0.4rem;
+                box-shadow : 0 0.1rem 0 0 $pink_medium;
             }
         }
     }

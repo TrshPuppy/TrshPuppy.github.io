@@ -14,12 +14,12 @@ const HomeLinks = () => {
             <div className="description">
                <h3>Projects</h3>
                <p>
-                  thing
+                  All of my github projects.
                </p>
+               <NavLink to={ '/projects' }>
+                  <div>View</div>
+               </NavLink>
             </div>
-            <NavLink to={ '/projects' }>
-               <div>View</div>
-            </NavLink>
          </div>
 
          <div className="card">
@@ -29,12 +29,12 @@ const HomeLinks = () => {
             <div className="description">
                <h3>Blog</h3>
                <p>
-                  Thing
+                  Original content about hacker stuff.
                </p>
+               <NavLink to={ '/blog' }>
+                  <div>View</div>
+               </NavLink>
             </div>
-            <NavLink to={ '/blog' }>
-               <div>View</div>
-            </NavLink>
          </div>
 
          <div className="card">
@@ -44,12 +44,12 @@ const HomeLinks = () => {
             <div className="description">
                <h3>About</h3>
                <p>
-                  Thing
+                  Learn more about TrshPuppy herself!
                </p>
+               <NavLink to={ '/about' }>
+                  <div>View</div>
+               </NavLink>
             </div>
-            <NavLink to={ '/about' }>
-               <div>View</div>
-            </NavLink>
          </div>
 
          <div className="card">
@@ -59,12 +59,12 @@ const HomeLinks = () => {
             <div className="description">
                <h3>Contact</h3>
                <p>
-                  thing
+                  Get in touch!
                </p>
+               <NavLink to={ '/contact' }>
+                  <div>View</div>
+               </NavLink>
             </div>
-            <NavLink to={ '/contact' }>
-               <div>View</div>
-            </NavLink>
          </div>
       </div>
    );

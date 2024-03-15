@@ -32,7 +32,6 @@ $lang_colors : (
         Perl: #ffffff,
 );
 
-// Loop through the map to generate styles
 @each $class, $color in $lang_colors {
     aside.filters .language-list button.#{$class} {
         &:hover,
@@ -496,7 +495,7 @@ $lang_colors : (
             display    : inline-block;
             content    : "↓";
             right      : -1.5rem;
-            top        : -0.3rem;
+            top        : -0.5rem;
             font-size  : 1.6rem;
             transform  : rotateX(180deg);
             transition : all 200ms;
@@ -513,7 +512,8 @@ $lang_colors : (
     .projects.view {
         margin-top : 2rem;
 
-        .projects-hero {
+        .filters .projects-hero {
+            display: block;
             grid-template-columns : auto 1fr;
         }
 
@@ -532,14 +532,14 @@ $lang_colors : (
                 .aside-expand div:after {
                     transform : rotate(0);
                 }
+            }
 
-                .aside-expand {
-                    position: relative;
-                    display: block;
-                    width: 100%;
-                    justify-content: space-between;
-                    padding: 1rem;
-                }
+            .aside-expand {
+                position: relative;
+                display: block;
+                width: 100%;
+                justify-content: space-between;
+                padding: 1rem;
             }
         }
     }
