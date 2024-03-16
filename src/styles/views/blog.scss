@@ -14,6 +14,7 @@
         width         : 14rem;
         flex-shrink   : 0;
         margin-right  : 2rem;
+        margin-bottom : 2rem;
 
         .blog-hero {
             display                 : grid;
@@ -28,10 +29,10 @@
             z-index                 : 1;
             border-top-left-radius  : 1rem;
             border-top-right-radius : 1rem;
-            filter: grayscale(0.5);
+            filter                  : grayscale(0.5);
 
             h1 {
-                display: none;
+                display     : none;
                 padding     : 1rem;
                 margin      : 0;
                 color       : map-get($nav-links, blog);
@@ -102,6 +103,7 @@
         font-size        : 1.2rem;
         line-height      : 2.8rem;
         flex-grow        : 1;
+        margin-bottom    : 5rem;
         border-radius    : 1rem;
 
         code, pre {
@@ -163,6 +165,45 @@
             &:focus {
                 color  : #ffffff;
                 filter : drop-shadow(0 0 8px #ffffff);
+            }
+        }
+    }
+
+    @media screen and (max-width : 1000px) {
+        flex-direction : column;
+
+        aside {
+            width            : 100%;
+            background-color : $background;
+            z-index          : 100;
+            top              : 0;
+            border-radius    : 0;
+            border-right     : none;
+            border-left      : none;
+
+            .blog-hero {
+                background-image : none;
+                height           : 4rem;
+            }
+
+            &:not(.expanded) {
+                nav {
+                    display : none;
+                }
+
+                .blog-hero {
+                    button div:after {
+                        transform : rotateY(180deg);
+                    }
+                }
+            }
+
+            &.expanded {
+                box-shadow : 0 0 1rem 1rem rgba(#000, 0.5);
+            }
+
+            nav ul li a {
+                padding : 2rem;
             }
         }
     }

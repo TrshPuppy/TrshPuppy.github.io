@@ -13,8 +13,14 @@ const Blog = () => {
    const [asideHidden, setAsideHidden] = useState(false);
    const [currentFilePath, setCurrentFilePath] = useState(markdownFilePaths[0] || '');
    const [currentFile, setCurrentFile] = useState('');
+   const [expanded, setExpanded] = useState(false);
 
    const handleMDLinkClick = path => {
+      window.scrollTo({
+         top: 0
+      });
+
+      setExpanded(false);
       setCurrentFilePath(path);
    };
 
@@ -72,10 +78,10 @@ const Blog = () => {
          <ReloadOnNavigation />
          <PageTitle title="Blog" color="#ffffff" />
          <div id="blog-view" className="view">
-            <aside>
+            <aside className={expanded ? "expanded" : ""}>
                <div className="blog-hero">
                   <h1>Blog</h1>
-                  <button className="aside-expand" onClick={ () => setAsideHidden(!asideHidden) }>
+                  <button className="aside-expand" onClick={ () => setExpanded(!expanded) }>
                      <div>Filters</div>
                   </button>
                </div>

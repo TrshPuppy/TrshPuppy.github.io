@@ -43,6 +43,10 @@ const MappedProjects = ({repos}) => {
      * @param topic
      */
     const handleFilterOnClick = topic => {
+        window.scrollTo({
+            top: 0
+        });
+
         if (!animating) {
             setAnimatingTimeout(setTimeout(() => setAnimating(false), 300));
         }
