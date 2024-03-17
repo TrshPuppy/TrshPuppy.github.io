@@ -82,7 +82,7 @@ const Blog = () => {
                <div className="blog-hero">
                   <h1>Blog</h1>
                   <button className="aside-expand" onClick={ () => setExpanded(!expanded) }>
-                     <div>Filters</div>
+                     <div>Articles</div>
                   </button>
                </div>
                <nav>

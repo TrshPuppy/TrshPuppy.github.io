@@ -1,9 +1,10 @@
 @use 'fonts';
 @use 'site';
 @use 'main';
-@use 'projects';
+@use "views/projects";
 @use 'views/home';
 @use "views/blog";
+@use "views/about";
 @use "partials/page-title";
 @use "partials/home-links";
 @use 'partials/pong';
