@@ -1,4 +1,5 @@
 import Loader from '../components/Loader.jsx';
+import TwitchSVG from '../components/svg/Twitch.jsx';
 
 const Contact = () => {
    return (
@@ -13,7 +14,23 @@ const Contact = () => {
          <section>
             <div className="info">
                <h2>Twitch</h2>
-               <p>About twitch</p>
+               <p>Join us in our thriving Twitch community where we explore cybersecurity, programming, and a bit of
+                  everything in between - from AI art horrors to coding, and even chair building.
+                  We have a large and friendly community, come say hi!
+               </p>
+               <a
+                  className="link twitch"
+                  data-name="Twitch"
+                  href="https://www.twitch.tv/trshpuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Twitch"
+                  onMouseEnter={ () => handleHover('Twitch') }
+                  onMouseLeave={ () => handleHover('') }
+               >
+                  <span>Visit the Trash Heap </span>
+                  <TwitchSVG />
+               </a>
             </div>
             <div className="hero hero-twitch"></div>
          </section>
