@@ -58,7 +58,7 @@
         background-size     : 100%;
         border-radius       : 2rem;
         border              : 3px solid $border_color;
-        filter              : grayscale(0.25) sepia(0.25);
+        filter              : $hero_filter;
         transition: background-size 100ms;
 
 

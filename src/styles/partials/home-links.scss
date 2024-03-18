@@ -42,9 +42,10 @@
             border-bottom-right-radius : 0;
             background-size: 100%;
             transition: background-size 200ms;
+            filter: $hero_filter;
 
             &:hover {
-                background-size: 150%;
+                background-size: 130%;
             }
 
             &:after {
@@ -56,7 +57,7 @@
                 height                  : 100%;
                 border-top-left-radius  : 1rem;
                 border-top-right-radius : 1rem;
-                background-image        : linear-gradient(to bottom, transparent, rgba(#000, 0.55));
+                background-image        : $card_after_bg;
             }
 
             svg {

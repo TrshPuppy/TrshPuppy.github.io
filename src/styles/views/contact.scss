@@ -1,0 +1,62 @@
+@use "../variables" as *;
+
+#contact-view.contact.view {
+    section {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+        width: 100%;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .hero {
+        height: 20rem;
+        width: 20rem;
+        border: 0.25rem solid $border_color;
+        flex-shrink: 0;
+        border-radius: 2rem;
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition          : background-size 200ms, transform 120ms;
+
+        &:hover {
+            background-size : 120%;
+            transform       : scale(120%);
+            border-width    : 0.15rem;
+        }
+
+        &:nth-child(odd) {
+            margin-right: 2rem;
+        }
+
+        &:nth-child(even) {
+            margin-left: 2rem;
+        }
+    }
+
+    .hero-about {
+        position: relative;
+        background-image: url("img/pixel/p-contact.webp");
+        filter: $hero_filter;
+
+        &:after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-image: $card_after_bg;
+
+        }
+    }
+
+    .hero-twitch {
+        background-image: url("img/twitch.webp");
+        width: 35rem;
+    }
+}
