@@ -25,8 +25,6 @@ const Contact = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Twitch"
-                  onMouseEnter={ () => handleHover('Twitch') }
-                  onMouseLeave={ () => handleHover('') }
                >
                   <span>Visit the Trash Heap </span>
                   <TwitchSVG />

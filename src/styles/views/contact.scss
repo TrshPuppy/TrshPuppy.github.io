@@ -26,11 +26,12 @@
         width: 20rem;
         border: 0.25rem solid $border_color;
         flex-shrink: 0;
-        border-radius: 2rem;
+        border-radius: 50%;
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
         transition          : background-size 200ms, transform 120ms;
+        filter: $hero_filter;
 
         &:hover {
             background-size : 120%;
@@ -49,23 +50,14 @@
 
     .hero-about {
         position: relative;
-        background-image: url("/img/pixel/p-contact.webp");
-        filter: $hero_filter;
-
-        &:after {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-image: $card_after_bg;
-
-        }
+        background-image: url("/img/contact-phone.webp");
     }
 
     .hero-twitch {
-        background-image: url("/img/twitch.webp");
-        width: 35rem;
+        background-image: url("/img/contact-twitch.webp");
+    }
+
+    .hero-youtube {
+        background-image: url("/img/contact-youtube.webp");
     }
 }
