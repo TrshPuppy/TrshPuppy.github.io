@@ -75,7 +75,7 @@
             }
 
             &.hero-projects {
-                background-image : url("img/pixel/p-projects.webp");
+                background-image : url("/img/pixel/p-projects.webp");
 
                 svg {
                     fill : map-get($nav-links, projects);
@@ -83,7 +83,7 @@
             }
 
             &.hero-blog {
-                background-image : url("img/pixel/p-blog.webp");
+                background-image : url("/img/pixel/p-blog.webp");
 
                 svg {
                     fill : map-get($nav-links, blog);
@@ -91,7 +91,7 @@
             }
 
             &.hero-about {
-                background-image : url("img/pixel/p-about.webp");
+                background-image : url("/img/pixel/p-about.webp");
 
                 svg {
                     fill : map-get($nav-links, about);
@@ -99,7 +99,7 @@
             }
 
             &.hero-contact {
-                background-image : url("img/pixel/p-contact.webp");
+                background-image : url("/img/pixel/p-contact.webp");
 
                 svg {
                     fill : map-get($nav-links, contact);
