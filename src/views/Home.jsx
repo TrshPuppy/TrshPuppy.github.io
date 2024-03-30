@@ -18,11 +18,10 @@ const Home = () => {
                </div>
                <div className="hero hero-welcome" aria-hidden="true"></div>
             </section>
-            <HomeLinks/>
+            <HomeLinks />
          </article>
       </>
-   )
-      ;
+   );
 };
 
 export default Home;

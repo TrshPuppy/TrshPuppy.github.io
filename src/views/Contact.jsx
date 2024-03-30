@@ -1,5 +1,5 @@
-import Loader from '../components/Loader.jsx';
 import TwitchSVG from '../components/svg/Twitch.jsx';
+import YouTubeSVG from '../components/svg/YouTube.jsx';
 
 const Contact = () => {
    return (
@@ -14,9 +14,10 @@ const Contact = () => {
          <section>
             <div className="info">
                <h2>Twitch</h2>
-               <p>Join us in our thriving Twitch community where we explore cybersecurity, programming, and a bit of
-                  everything in between - from AI art horrors to coding, and even chair building.
-                  We have a large and friendly community, come say hi!
+               <p>
+                  Join us in our thriving Twitch community where we explore cybersecurity, programming, and a bit of
+                  everything in between - from AI art horrors to coding, and even chair building. We have a large and
+                  friendly community, come say hi!
                </p>
                <a
                   className="link twitch"
@@ -26,18 +27,32 @@ const Contact = () => {
                   rel="noreferrer"
                   aria-label="Twitch"
                >
-                  <span>Visit the Trash Heap </span>
+                  <span>Visit the Trash Heap on Twitch</span>
                   <TwitchSVG />
                </a>
             </div>
             <div className="hero hero-twitch"></div>
          </section>
          <section>
-            <div className="hero hero-youtube"></div>
             <div className="info">
                <h2>Youtube</h2>
-               <p>About youtube</p>
+               <p>
+                  I keep a video blog documenting my journey and tech findings since I left my job as a nurse. Don't
+                  forget to subscribe!
+               </p>
+               <a
+                  className="link youtube"
+                  data-name="YouTube"
+                  href="https://www.youtube.com/@TrshPuppy"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Twitch"
+               >
+                  <span>Watch my YouTube videos</span>
+                  <YouTubeSVG />
+               </a>
             </div>
+            <div className="hero hero-youtube"></div>
          </section>
          <section>
             <h2>Github</h2>
