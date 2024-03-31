@@ -6,11 +6,14 @@
       align-items: center;
       margin: 2rem 0;
       width: 100%;
-   }
 
-   /**
-   test
-   **/
+      &:first-of-type {
+         background-color: unset;
+         border: none;
+         margin: 3rem 0;
+         text-align: center;
+      }
+   }
 
    .info {
       width: 100%;
@@ -20,13 +23,14 @@
       .link {
          display: inline-flex;
          gap: 0.5rem;
-         background-color: $active;
-         color: $pink_medium;
+         background-color: rgba(255, 0, 0, 0.05);
+         backdrop-filter: blur(5px);
+         color: lighten($pink, 35%);
          text-decoration: none;
-         font-weight: 500;
-         padding: 0.75rem 1rem;
-         border-radius: 0.5rem;
+         padding: 0.5rem 1rem;
          filter: drop-shadow(0 0 2rem rgba($active, 0.15));
+         border: 1px solid $pink_medium;
+         border-radius: 2rem;
          transition:
             color 200ms,
             background-color 200ms,
@@ -35,15 +39,14 @@
 
          &:hover,
          &:focus {
-            color: $active;
+            color: #fff;
             background-color: $pink_medium;
             filter: drop-shadow(0 0 5rem rgba($active, 0.5));
-            transform: scale(1.1);
          }
 
          &:active {
-            background-color: #fff;
-            color: #000000;
+            background-color: lighten($active, 8%);
+            color: $background;
          }
 
          svg {
@@ -93,6 +96,9 @@
 
    .hero-about {
       position: relative;
+      border-radius: 0.25rem;
+      height: 8rem;
+      width: 8rem;
       background-image: url('/img/contact-phone.webp');
    }
 
@@ -102,5 +108,13 @@
 
    .hero-youtube {
       background-image: url('/img/contact-youtube.webp');
+   }
+
+   .hero-twitter {
+      background-image: url('/img/contact-twitter.webp');
+   }
+
+   .hero-github {
+      background-image: url('/img/contact-github.webp');
    }
 }
