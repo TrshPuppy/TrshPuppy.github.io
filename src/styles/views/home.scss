@@ -1,91 +1,85 @@
-@use "../variables" as *;
+@use '../variables' as *;
 
 .home.view {
-    section {
-        display               : grid;
-        justify-content       : space-between;
-        grid-template-columns : 1fr 1fr;
-        align-items           : center;
-        gap                   : 4rem;
-        margin-top            : 8rem;
-        margin-bottom        : 8rem;
+   section {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+      margin-top: 8rem;
+      margin-bottom: 8rem;
 
-        &.socials {
-            align-items: flex-start;
-        }
-    }
+      &.socials {
+         align-items: flex-start;
+      }
+   }
 
-    .welcome {
-        h2 {
-            position                : relative;
-            font-size               : 4rem;
-            font-weight             : 900;
-            font-family             : Orbitron, Montserrat, sans-serif;
-            margin                  : 0;
-            background-image        : linear-gradient(45deg, $active, $pink);
-            -webkit-background-clip : text;
-            color                   : transparent;
-            z-index: 0;
+   .welcome {
+      h2 {
+         position: relative;
+         font-size: 4rem;
+         font-weight: 900;
+         font-family: Orbitron, Montserrat, sans-serif;
+         margin: 0;
+         background-image: linear-gradient(45deg, $active, $pink);
+         -webkit-background-clip: text;
+         color: transparent;
+         z-index: 0;
 
-            &:before {
-                content          : "";
-                position         : absolute;
-                display          : block;
-                background-image : url("/animated/star.webp");
-                height           : 10rem;
-                width            : 10rem;
-                background-size  : contain;
-                top              : -7rem;
-                left             : -4rem;
-                opacity: 0.5;
-                transform: rotate(80deg);
-                z-index: -10;
-            }
-        }
+         &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            background-image: url('/animated/star.webp');
+            height: 10rem;
+            width: 10rem;
+            background-size: contain;
+            top: -7rem;
+            left: -4rem;
+            opacity: 0.5;
+            transform: rotate(80deg);
+            z-index: -10;
+         }
+      }
 
-        p {
-            font-size   : 1.2rem;
-            line-height : 2rem;
-        }
-    }
+      p {
+         font-size: 1.2rem;
+         line-height: 2rem;
+      }
+   }
 
-    .hero {
-        display             : block;
-        height              : 30rem;
-        width               : 100%;
-        flex-grow           : 0;
-        background-position : center center;
-        background-size     : 100%;
-        border-radius       : 2rem;
-        border              : 3px solid $border_color;
-        filter              : $hero_filter;
-        transition: background-size 100ms;
+   .hero {
+      display: block;
+      height: 30rem;
+      width: 100%;
+      flex-grow: 0;
+      background-position: center center;
+      background-size: 100%;
+      border: 3px solid $border_color;
+      filter: $hero_filter;
 
+      &.hero-welcome {
+         background-image: url('/img/compoter.jpg');
+         border-radius: 1rem;
+      }
+   }
 
-        &:hover {
-            background-size: 105%;
-        }
+   @media screen and (max-width: 1240px) {
+      margin: 0 2rem;
 
-        &.hero-welcome {
-            background-image : url("/img/compoter.jpg");
-        }
-    }
+      .welcome {
+         margin-top: 2rem;
+         grid-template-columns: 1fr;
 
-    @media screen and (max-width: 1240px) {
-        margin: 0 2rem;
+         .hero.hero-welcome {
+            order: -1;
+            height: 20rem;
+         }
 
-        .welcome {
-            margin-top: 2rem;
-            grid-template-columns: 1fr;
-
-            .hero.hero-welcome {
-                order: -1;
-                height: 20rem;
-            }
-
-            h2 {
-                font-size: 3.2rem;
-            }
-        }
-    }
+         h2 {
+            font-size: 3.2rem;
+         }
+      }
+   }
 }

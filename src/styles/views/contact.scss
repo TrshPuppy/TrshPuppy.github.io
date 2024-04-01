@@ -6,12 +6,32 @@
       align-items: center;
       margin: 2rem 0;
       width: 100%;
+      margin-bottom: 4rem;
+      border-bottom: 3pxsolid $border_color;
 
       &:first-of-type {
          background-color: unset;
          border: none;
-         margin: 3rem 0;
+         margin: 8rem 0;
          text-align: center;
+
+         h2 {
+            display: block;
+         }
+      }
+
+      @media screen and (max-width: 1000px) {
+         padding: 2rem;
+         flex-direction: column-reverse;
+         text-align: center;
+
+         .hero {
+            margin-left: 0 !important;
+         }
+
+         h2 {
+            flex-direction: column;
+         }
       }
    }
 
@@ -22,50 +42,54 @@
 
       .link {
          display: inline-flex;
-         gap: 0.5rem;
-         background-color: rgba(255, 0, 0, 0.05);
-         backdrop-filter: blur(5px);
-         color: lighten($pink, 35%);
+         gap: 1rem;
+         color: map-get($nav-links, about);
          text-decoration: none;
-         padding: 0.5rem 1rem;
-         filter: drop-shadow(0 0 2rem rgba($active, 0.15));
-         border: 1px solid $pink_medium;
-         border-radius: 2rem;
-         transition:
-            color 200ms,
-            background-color 200ms,
-            transform 120ms,
-            filter 200ms;
+         padding: 0.25rem 1rem;
+         margin: 1rem 0 2rem;
+         filter: drop-shadow(0 0 2rem rgba(map-get($nav-links, about), 0.15));
+         border: 1px solid rgba(map-get($nav-links, about), 0.25);
+         transition: 120ms;
+
+         &:after {
+            content: '➞';
+         }
 
          &:hover,
          &:focus {
-            color: #fff;
-            background-color: $pink_medium;
-            filter: drop-shadow(0 0 5rem rgba($active, 0.5));
+            color: lighten(map-get($nav-links, about), 10%);
+            background-color: darken(map-get($nav-links, about), 60%);
+            filter: drop-shadow(0 0 2rem rgba(map-get($nav-links, about), 0.25));
          }
 
          &:active {
             background-color: lighten($active, 8%);
             color: $background;
          }
-
-         svg {
-            padding: 0.25rem;
-            height: 2rem;
-            width: 2rem;
-            fill: currentColor;
-         }
       }
    }
 
    h2 {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      align-items: center;
       font-family: Orbitron, monospace;
-      background-image: linear-gradient(45deg, $active, $pink);
+      background-image: linear-gradient(45deg, $active, map-get($nav-links, contact));
       -webkit-background-clip: text;
+      padding: 0;
+      margin: 0;
       color: transparent;
+
+      svg {
+         height: 2rem;
+         width: 2rem;
+         margin: 1rem;
+         fill: map-get($nav-links, contact);
+      }
    }
 
    .hero {
+      position: relative;
       height: 20rem;
       width: 20rem;
       border: 0.25rem solid $border_color;
@@ -78,6 +102,17 @@
          background-size 200ms,
          transform 120ms;
       filter: $hero_filter;
+
+      &:after {
+         content: '';
+         display: block;
+         top: 0;
+         left: 0;
+         border-radius: 50%;
+         height: 100%;
+         width: 100%;
+         background-color: rgba($pink, 0.25);
+      }
 
       &:hover {
          background-size: 120%;
@@ -92,6 +127,10 @@
       &:nth-child(even) {
          margin-left: 2rem;
       }
+   }
+
+   p {
+      margin: 1rem 0;
    }
 
    .hero-about {

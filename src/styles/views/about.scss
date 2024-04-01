@@ -5,6 +5,24 @@
       display: flex;
       align-items: center;
 
+      @media screen and (max-width: 1000px) {
+         margin: 5rem 0;
+         flex-direction: column;
+         justify-content: center;
+         align-content: center;
+         align-items: center;
+         text-align: center;
+         padding: 1rem;
+
+         &:nth-child(even) {
+            flex-direction: column-reverse;
+         }
+
+         .hero {
+            margin: 0 !important;
+         }
+      }
+
       .info {
          font-size: 1.2rem;
          line-height: 2rem;
@@ -40,7 +58,7 @@
 
       h2 {
          font-family: Orbitron, monospace;
-         background-image: linear-gradient(45deg, $active, $pink);
+         background-image: linear-gradient(45deg, $active, map-get($nav-links, about));
          -webkit-background-clip: text;
          color: transparent;
       }
