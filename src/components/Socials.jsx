@@ -10,13 +10,12 @@ import TwitchSVG from './svg/Twitch';
 const Socials = () => {
    const [samp, setSamp] = useState('...');
 
-   const handleHover = linkName => {
+   const handleHover = (linkName) => {
       if (!linkName) {
          setSamp('...');
       } else {
          setSamp(linkName);
       }
-
    };
 
    return (
@@ -31,8 +30,8 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Github"
-                  onMouseEnter={ () => handleHover('Github') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('Github')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <GitHubSVG />
                </a>
@@ -45,8 +44,8 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Twitch"
-                  onMouseEnter={ () => handleHover('Twitch') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('Twitch')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <TwitchSVG />
                </a>
@@ -59,8 +58,8 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Youtube"
-                  onMouseEnter={ () => handleHover('YouTube') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('YouTube')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <YouTubeSVG />
                </a>
@@ -73,8 +72,8 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Twitter"
-                  onMouseEnter={ () => handleHover('Twitter') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('Twitter')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <TwitterSVG />
                </a>
@@ -87,8 +86,8 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Codewars"
-                  onMouseEnter={ () => handleHover('CodeWars') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('CodeWars')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <CodeWarsSVG />
                </a>
@@ -101,8 +100,8 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Try hack me"
-                  onMouseEnter={ () => handleHover('TryHackMe') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('TryHackMe')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <TryHackMeSVG />
                </a>
@@ -115,13 +114,15 @@ const Socials = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Hack the box"
-                  onMouseEnter={ () => handleHover('Hack the Box') }
-                  onMouseLeave={ () => handleHover('') }
+                  onMouseEnter={() => handleHover('Hack the Box')}
+                  onMouseLeave={() => handleHover('')}
                >
                   <HackTheBoxSVG />
                </a>
             </li>
-            <samp aria-live="polite" className="polka-dot">{ samp }</samp>
+            <samp aria-live="polite" className="polka-dot">
+               {samp}
+            </samp>
          </ul>
       </div>
    );
