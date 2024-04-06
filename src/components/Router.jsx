@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import Home from '../views/Home';
 import NotFound from '../views/404';
@@ -7,9 +7,9 @@ import About from '../views/About';
 import Blog from '../views/Blog';
 import Contact from '../views/Contact';
 
-const Router = createBrowserRouter([
+const Router = createHashRouter([
    {
-      path: '/',
+      path: '',
       element: <Wrapper View={Home} />,
       errorElement: <NotFound />,
    },

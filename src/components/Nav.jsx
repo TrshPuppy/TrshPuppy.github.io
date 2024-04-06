@@ -10,13 +10,6 @@ import DigitalClock from './DigitalClock.jsx';
 import SiteBrand from './SiteBrand.jsx';
 
 const Nav = () => {
-   const playClickSound = () => {
-      const audio = new Audio('/audio/click.mp3');
-      audio.volume = 0.3;
-
-      if (audio) audio.play().finally();
-   };
-
    return (
       <nav>
          <ul>
@@ -26,7 +19,6 @@ const Nav = () => {
                   className={({ isActive, isPending }) => {
                      return isActive ? 'nav-link active' : isPending ? 'nav-link pending' : 'nav-link';
                   }}
-                  onClick={() => playClickSound()}
                >
                   <span>Home</span>
                   <HomeSVG />
@@ -38,7 +30,6 @@ const Nav = () => {
                   className={({ isActive, isPending }) => {
                      return isActive ? 'nav-link active' : isPending ? 'nav-link pending' : 'nav-link';
                   }}
-                  onClick={() => playClickSound()}
                >
                   <span>Projects</span>
                   <FlaskSVG />
@@ -50,7 +41,6 @@ const Nav = () => {
                   className={({ isActive, isPending }) => {
                      return isActive ? 'nav-link active' : isPending ? 'nav-link pending' : 'nav-link';
                   }}
-                  onClick={() => playClickSound()}
                >
                   <span>Blog</span>
                   <BlogSVG />
@@ -62,7 +52,6 @@ const Nav = () => {
                   className={({ isActive, isPending }) => {
                      return isActive ? 'nav-link active' : isPending ? 'nav-link pending' : 'nav-link';
                   }}
-                  onClick={() => playClickSound()}
                >
                   <span>About</span>
                   <PawSVG />
@@ -74,7 +63,6 @@ const Nav = () => {
                   className={({ isActive, isPending }) => {
                      return isActive ? 'nav-link active' : isPending ? 'nav-link pending' : 'nav-link';
                   }}
-                  onClick={() => playClickSound()}
                >
                   <span>Contact</span>
                   <CoffeeSVG />
