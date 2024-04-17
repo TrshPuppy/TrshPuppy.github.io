@@ -21,6 +21,3 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
-
-# TP custom:
-dist
