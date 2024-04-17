@@ -72,4 +72,28 @@ html {
          margin-bottom: calc(57px + 2rem);
       }
    }
+
+   #arth-tribute {
+      margin-top: 30px;
+      margin-bottom: 30px; 
+      position:absolute;
+      z-index: 1000;
+      
+      p {
+         color: $socials_btn;
+         &:hover {
+            color: #8ffff6;
+         }
+      }
+
+      a { 
+         cursor: pointer !important;
+         &:visited {
+            color: #8ffff6;
+         }
+         &:hover {
+            color: #ffffff;
+         }
+      }
+   }
 }
