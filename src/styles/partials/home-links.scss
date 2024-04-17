@@ -1,0 +1,146 @@
+@use '../variables' as *;
+
+.home-links {
+   margin: 4rem 0 8rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   gap: 2rem;
+   justify-content: center;
+   align-items: center;
+
+   @media screen and (max-width: 1240px) {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   @media screen and (max-width: 668px) {
+      grid-template-columns: 1fr;
+
+      .card .hero {
+         height: 40rem;
+      }
+   }
+
+   .card {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $background;
+      overflow: hidden;
+      color: $socials_btn;
+
+      .hero {
+         display: grid;
+         justify-content: center;
+         align-items: flex-end;
+         position: relative;
+         height: 18rem;
+         border: 3px solid $border_color;
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+         background-size: 100%;
+         transition: background-size 200ms;
+         filter: $hero_filter;
+
+         &:hover {
+            background-size: 130%;
+         }
+
+         &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            background-image: $card_after_bg;
+         }
+
+         svg {
+            position: relative;
+            height: 3.5rem;
+            width: 3.5rem;
+            fill: #000;
+            z-index: 1;
+            padding: 0.5rem;
+            background-color: $background_alt;
+            border: 1px solid $border_color;
+            border-radius: 0.5rem;
+            bottom: -1.75rem;
+            box-shadow: inset 0 0 5px 1px rgba(#fff, 0.1);
+         }
+
+         &.hero-projects {
+            background-image: url('/img/cards/projects.webp');
+
+            svg {
+               fill: map-get($nav-links, projects);
+            }
+         }
+
+         &.hero-blog {
+            background-image: url('/img/cards/blog.webp');
+
+            svg {
+               fill: map-get($nav-links, blog);
+            }
+         }
+
+         &.hero-about {
+            background-image: url('/img/cards/about.webp');
+
+            svg {
+               fill: map-get($nav-links, about);
+            }
+         }
+
+         &.hero-contact {
+            background-image: url('/img/cards/contact.webp');
+
+            svg {
+               fill: map-get($nav-links, contact);
+            }
+         }
+      }
+
+      .description {
+         width: 100%;
+         border: 1px solid $border_color;
+         padding: 1.5rem 2rem;
+         text-align: center;
+         color: #fff;
+      }
+
+      a {
+         display: block;
+         top: 0;
+         position: relative;
+         text-align: center;
+         padding: 1rem;
+         text-decoration: none;
+         border-radius: 0.5rem;
+         border: 3px solid $pink_medium;
+         background-color: #c8a2af;
+         font-weight: 500;
+         color: $background;
+         transition: all 120ms;
+         box-shadow: 0 0.5rem 0 0 $pink_medium;
+         margin-bottom: 1rem;
+         margin-top: 2rem;
+
+         &:hover,
+         &:focus {
+            top: 0.25rem;
+            box-shadow: 0 0.25rem 0 0 $pink_medium;
+         }
+
+         &:active {
+            top: 0.4rem;
+            box-shadow: 0 0.1rem 0 0 $pink_medium;
+         }
+      }
+   }
+}

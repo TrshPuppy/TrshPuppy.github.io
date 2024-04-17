@@ -1,0 +1,39 @@
+@use "../variables" as *;
+
+footer {
+    display: grid;
+    position: relative;
+    justify-content: center;
+    justify-self: flex-end;
+    color: #ffffff;
+    margin-top: 12rem;
+    padding: 1rem;
+    border-top: 3px solid $border_color;
+    background-color: rgba(#000, 0.5);
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 8rem;
+        height: 100%;
+        top: -3px;
+        border-top-right-radius: 5rem;
+        border: 3px solid $border_color;
+        border-bottom: none;
+        background-color: rgba(#000, 0.5);
+    }
+
+    &:before {
+        left: -8rem;
+        border-top-right-radius: 0;
+        border-top-left-radius: 5rem;
+        border-right: none;
+    }
+
+    &:after {
+        right: -8rem;
+        border-left: none;
+    }
+}

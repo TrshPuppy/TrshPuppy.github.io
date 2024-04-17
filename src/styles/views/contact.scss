@@ -1,0 +1,159 @@
+@use '../variables' as *;
+
+#contact-view.contact.view {
+   section {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      width: 100%;
+      margin-bottom: 4rem;
+      border-bottom: 3pxsolid $border_color;
+
+      &:first-of-type {
+         background-color: unset;
+         border: none;
+         margin: 8rem 0;
+         text-align: center;
+
+         h2 {
+            display: block;
+         }
+      }
+
+      @media screen and (max-width: 1000px) {
+         padding: 2rem;
+         flex-direction: column-reverse;
+         text-align: center;
+
+         .hero {
+            margin-left: 0 !important;
+         }
+
+         h2 {
+            flex-direction: column;
+         }
+      }
+   }
+
+   .info {
+      width: 100%;
+      font-size: 1.2rem;
+      line-height: 2rem;
+
+      .link {
+         display: inline-flex;
+         gap: 1rem;
+         color: map-get($nav-links, about);
+         text-decoration: none;
+         padding: 0.25rem 1rem;
+         margin: 1rem 0 2rem;
+         filter: drop-shadow(0 0 2rem rgba(map-get($nav-links, about), 0.15));
+         border: 1px solid rgba(map-get($nav-links, about), 0.25);
+         transition: 120ms;
+
+         &:after {
+            content: '➞';
+         }
+
+         &:hover,
+         &:focus {
+            color: lighten(map-get($nav-links, about), 10%);
+            background-color: darken(map-get($nav-links, about), 60%);
+            filter: drop-shadow(0 0 2rem rgba(map-get($nav-links, about), 0.25));
+         }
+
+         &:active {
+            background-color: lighten($active, 8%);
+            color: $background;
+         }
+      }
+   }
+
+   h2 {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      font-family: Orbitron, monospace;
+      background-image: linear-gradient(45deg, $active, map-get($nav-links, contact));
+      -webkit-background-clip: text;
+      padding: 0;
+      margin: 0;
+      color: transparent;
+
+      svg {
+         height: 2rem;
+         width: 2rem;
+         margin: 1rem;
+         fill: map-get($nav-links, contact);
+      }
+   }
+
+   .hero {
+      position: relative;
+      height: 20rem;
+      width: 20rem;
+      border: 0.25rem solid $border_color;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition:
+         background-size 200ms,
+         transform 120ms;
+      filter: $hero_filter;
+
+      &:after {
+         content: '';
+         display: block;
+         top: 0;
+         left: 0;
+         border-radius: 50%;
+         height: 100%;
+         width: 100%;
+         background-color: rgba($pink, 0.25);
+      }
+
+      &:hover {
+         background-size: 120%;
+         transform: scale(120%);
+         border-width: 0.15rem;
+      }
+
+      &:nth-child(odd) {
+         margin-right: 2rem;
+      }
+
+      &:nth-child(even) {
+         margin-left: 2rem;
+      }
+   }
+
+   p {
+      margin: 1rem 0;
+   }
+
+   .hero-about {
+      position: relative;
+      border-radius: 0.25rem;
+      height: 8rem;
+      width: 8rem;
+      background-image: url('/img/contact-phone.webp');
+   }
+
+   .hero-twitch {
+      background-image: url('/img/contact-twitch.webp');
+   }
+
+   .hero-youtube {
+      background-image: url('/img/contact-youtube.webp');
+   }
+
+   .hero-twitter {
+      background-image: url('/img/contact-twitter.webp');
+   }
+
+   .hero-github {
+      background-image: url('/img/contact-github.webp');
+   }
+}

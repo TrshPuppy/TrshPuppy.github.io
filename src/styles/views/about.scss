@@ -1,0 +1,78 @@
+@use '../variables' as *;
+
+#about-view.about.view {
+   .about-trshpuppy {
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 1000px) {
+         margin: 5rem 0;
+         flex-direction: column;
+         justify-content: center;
+         align-content: center;
+         align-items: center;
+         text-align: center;
+         padding: 1rem;
+
+         &:nth-child(even) {
+            flex-direction: column-reverse;
+         }
+
+         .hero {
+            margin: 0 !important;
+         }
+      }
+
+      .info {
+         font-size: 1.2rem;
+         line-height: 2rem;
+      }
+
+      .hero {
+         flex-shrink: 0;
+         width: 20rem;
+         height: 20rem;
+         background-repeat: no-repeat;
+         background-size: 100%;
+         background-position: center;
+         border-radius: 50%;
+         border: 0.25rem solid $border_color;
+         transition:
+            background-size 200ms,
+            transform 120ms;
+
+         &:hover {
+            background-size: 120%;
+            transform: scale(120%);
+            border-width: 0.15rem;
+         }
+
+         &:nth-child(odd) {
+            margin-right: 2rem;
+         }
+
+         &:nth-child(even) {
+            margin-left: 2rem;
+         }
+      }
+
+      h2 {
+         font-family: Orbitron, monospace;
+         background-image: linear-gradient(45deg, $active, map-get($nav-links, about));
+         -webkit-background-clip: text;
+         color: transparent;
+      }
+
+      .hero.loki-and-rose {
+         background-image: url('/img/loki-and-rose.webp');
+      }
+
+      .hero.rose {
+         background-image: url('/img/rose.webp');
+      }
+
+      .hero.loki-sunset {
+         background-image: url('/img/loki-sunset.webp');
+      }
+   }
+}

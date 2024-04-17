@@ -1,0 +1,198 @@
+@use '../variables' as *;
+
+$socials: (
+   github: #e6edf3,
+   twitch: #a960ff,
+   youtube: #f50003,
+   twitter: #2c96e8,
+   codewars: #f05656,
+   tryhackme: #ffeb81,
+   hackthebox: #d3ee98,
+);
+
+@each $class, $color in $socials {
+   @media screen and (max-width: 1240px) {
+      li.link-#{$class} a:after {
+         content: '#{$class}';
+         color: $pink_medium;
+         margin-top: 0.5rem;
+      }
+   }
+
+   ul:has(li.link-#{$class}:hover) {
+      samp {
+         &:before {
+            background-color: rgba($color, 0.1);
+            box-shadow: inset 0 0 1rem 0.25rem rgba($color, 0.4);
+         }
+      }
+   }
+}
+
+#socials {
+   margin-top: 4rem;
+   position: relative;
+
+   h2 {
+      display: inline-block;
+      position: absolute;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      text-shadow: 0 0 3px $pink_medium;
+      margin: 0;
+      background: $socials_bg;
+      color: $socials_btn;
+      padding: 0.5rem 2.5rem 0;
+      border: 3px solid $pink_medium;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-bottom: none;
+      z-index: 10;
+      top: -1.3rem;
+      left: 1rem;
+      transition: all 200ms;
+
+      &:before {
+         display: none;
+      }
+   }
+
+   samp {
+      position: relative;
+      display: block;
+      font-family: Orbitron, monospace;
+      font-weight: 700;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      line-height: 0.8rem;
+      color: $socials_btn;
+      transition: all 200ms;
+      left: 0;
+      padding: 1rem;
+      width: 100%;
+      background-color: $background;
+      z-index: 1000;
+      background-size: 1rem 1rem;
+      background-position:
+         0 0,
+         0.5rem 0.5rem;
+      background-repeat: repeat;
+      text-align: center;
+      text-transform: uppercase;
+      background-image: radial-gradient(rgba($socials_btn, 0.2) 10%, transparent 11%),
+         radial-gradient(rgba($socials_btn, 0.2) 10%, transparent 11%);
+
+      &:before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: -1;
+         transition: all 500ms;
+      }
+
+      .polka-dot {
+         width: 240px;
+         height: 240px;
+         background-color: #000;
+         background-image: radial-gradient(#fff 10%, transparent 11%), radial-gradient(#fff 10%, transparent 11%);
+         background-size: 60px 60px;
+         background-position:
+            0 0,
+            30px 30px;
+         background-repeat: repeat;
+      }
+   }
+
+   .external-links {
+      list-style: none;
+      display: inline-flex;
+      gap: 1rem;
+      background-color: $socials_bg;
+      padding: 0.5rem 0 0 0;
+      border-radius: 0.5rem;
+      border: 3px solid $pink_medium;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+
+      li {
+         h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+         }
+
+         .description {
+            width: 100%;
+         }
+      }
+
+      li a.link {
+         position: relative;
+         display: inline-flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         padding: 1rem;
+         border-radius: 50%;
+         text-decoration: none;
+         justify-self: flex-end;
+         align-self: center;
+         background-color: $socials_btn;
+         border: 2px solid $pink_medium;
+         box-shadow: 0 0.75rem 0 0 rgba(darken($pink_medium, 10%), 0.8);
+         top: 0;
+         transition: all 120ms;
+
+         svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            fill: $pink_medium;
+         }
+
+         &:hover,
+         &:focus {
+            top: 0.25rem;
+            box-shadow: 0 0.5rem 0 0 rgba(darken($pink_medium, 10%), 0.8);
+         }
+
+         &:active {
+            top: 0.5rem;
+            box-shadow: 0 0.25rem 0 0 rgba(darken($pink_medium, 10%), 0.8);
+         }
+      }
+   }
+
+   @media screen and (max-width: 1240px) {
+      margin-top: 6rem;
+
+      & h2 {
+         top: -2.25rem;
+      }
+
+      .external-links {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         padding: 1rem;
+
+         li {
+            padding: 0.25rem;
+         }
+
+         li a.link {
+            width: 100%;
+            border-radius: 0.5rem;
+         }
+
+         samp.polka-dot {
+            border-top: 3px solid $pink_medium;
+            border-left: 3px solid $pink_medium;
+            border-top-left-radius: 0.5rem;
+            display: none;
+         }
+      }
+   }
+}
