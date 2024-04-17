@@ -3,6 +3,7 @@ import YouTubeSVG from '../components/svg/YouTube.jsx';
 import GitHubSVG from '../components/svg/GitHub.jsx';
 import TwitterSVG from '../components/svg/Twitter.jsx';
 import PageTitle from '../components/PageTitle.jsx';
+import ArthTribute from '../components/ArthTribute.jsx';
 
 const Contact = () => {
    return (
@@ -109,6 +110,7 @@ const Contact = () => {
                </div>
                <div className="hero hero-twitter"></div>
             </section>
+            <ArthTribute />
          </article>
       </>
    );

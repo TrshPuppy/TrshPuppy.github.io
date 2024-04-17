@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { Link, useLocation } from 'react-router-dom';
 import PageTitle from '../components/PageTitle.jsx';
 import ReloadOnNavigation from '../components/ReloadOnNavigation.jsx';
+import ArthTribute from '../components/ArthTribute.jsx';
 
 const Blog = () => {
    const markdownFilesGlob = import.meta.glob('/public/md/*.md');
@@ -15,9 +16,9 @@ const Blog = () => {
    const [currentFile, setCurrentFile] = useState('');
    const [expanded, setExpanded] = useState(false);
 
-   const handleMDLinkClick = path => {
+   const handleMDLinkClick = (path) => {
       window.scrollTo({
-         top: 0
+         top: 0,
       });
 
       setExpanded(false);
@@ -35,17 +36,17 @@ const Blog = () => {
       }
    };
 
-   const formatPathToTitle = path => {
+   const formatPathToTitle = (path) => {
       let result = path;
       result = result.replace('/public/md', '');
       result = result.replace('.md', '');
       result = result.replace(/[^\w\s]/gi, ' ');
-      result = result.replace(/\b\w/g, match => match.toUpperCase());
+      result = result.replace(/\b\w/g, (match) => match.toUpperCase());
       result = result.replace(/_/g, ' ');
       return result.trim();
    };
 
-   const formatTitleToSlug = title => {
+   const formatTitleToSlug = (title) => {
       return title
          .toLowerCase()
          .replace(/[^a-z0-9\s-]/g, '')
@@ -54,8 +55,7 @@ const Blog = () => {
          .trim();
    };
 
-
-   const formatPublicPath = path => path.replace('/public', '');
+   const formatPublicPath = (path) => path.replace('/public', '');
 
    useEffect(() => {
       void fetchCurrentFileText();
@@ -78,33 +78,39 @@ const Blog = () => {
          <ReloadOnNavigation />
          <PageTitle title="Blog" color="#ffffff" />
          <div id="blog-view" className="view">
-            <aside className={expanded ? "expanded" : ""}>
+            <aside className={expanded ? 'expanded' : ''}>
                <div className="blog-hero">
                   <h1>Blog</h1>
-                  <button className="aside-expand" onClick={ () => setExpanded(!expanded) }>
+                  <button className="aside-expand" onClick={() => setExpanded(!expanded)}>
                      <div>Articles</div>
                   </button>
                </div>
                <nav>
                   <ul>
-                     { markdownFilePaths.map((path, i) => {
+                     {markdownFilePaths.map((path, i) => {
                         const title = formatPathToTitle(path);
                         const slug = formatTitleToSlug(title);
 
                         return (
-                           <li key={ `aside-file-${ i }` }>
-                              <Link className={ currentFilePath === path ? 'active' : '' } to={ `?file=${ slug }` }
-                                    onClick={ () => handleMDLinkClick(path) }>{ title }</Link>
+                           <li key={`aside-file-${i}`}>
+                              <Link
+                                 className={currentFilePath === path ? 'active' : ''}
+                                 to={`?file=${slug}`}
+                                 onClick={() => handleMDLinkClick(path)}
+                              >
+                                 {title}
+                              </Link>
                            </li>
                         );
-                     }) }
+                     })}
                   </ul>
                </nav>
             </aside>
             <article>
-               <ReactMarkdown>{ currentFile }</ReactMarkdown>
+               <ReactMarkdown>{currentFile}</ReactMarkdown>
             </article>
          </div>
+         <ArthTribute />
       </>
    );
 };

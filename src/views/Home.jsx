@@ -1,6 +1,7 @@
 import Socials from '../components/Socials.jsx';
 import PageTitle from '../components/PageTitle.jsx';
 import HomeLinks from '../components/HomeLinks.jsx';
+import ArthTribute from '../components/ArthTribute.jsx';
 
 const Home = () => {
    return (
@@ -19,6 +20,7 @@ const Home = () => {
                <div className="hero hero-welcome" aria-hidden="true"></div>
             </section>
             <HomeLinks />
+            <ArthTribute />
          </article>
       </>
    );
