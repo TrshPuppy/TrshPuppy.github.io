@@ -1,0 +1,209 @@
+@use '../variables' as *;
+
+#blog-view.view {
+   position: relative;
+   display: flex;
+   margin-top: 2rem;
+
+   aside {
+      position: sticky;
+      top: 2rem;
+      border: 3px solid $border_color;
+      height: 100%;
+      width: 14rem;
+      flex-shrink: 0;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+
+      .blog-hero {
+         display: grid;
+         position: relative;
+         align-items: flex-end;
+         background-image: url('/img/cards/blog.webp');
+         height: 11rem;
+         width: 100%;
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         z-index: 1;
+         border-top-left-radius: 1rem;
+         border-top-right-radius: 1rem;
+         filter: grayscale(0.5);
+
+         h1 {
+            display: none;
+            padding: 1rem;
+            margin: 0;
+            color: map-get($nav-links, blog);
+            filter: drop-shadow(0 0 8px map-get($nav-links, projects));
+            font-family: CamingoCode, monospace;
+         }
+
+         &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to bottom, transparent, rgba(#000, 0.8));
+            z-index: -1;
+         }
+      }
+
+      nav {
+         width: 100%;
+
+         li:last-child a {
+            border-bottom-left-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
+         }
+
+         ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+               width: 100%;
+
+               a {
+                  display: block;
+                  width: 100%;
+                  padding: 0.75rem 0.5rem;
+                  text-decoration: none;
+                  border-bottom: 1px solid $border_color;
+                  color: $active;
+                  transition: all 200ms;
+                  font-size: 0.9rem;
+
+                  &:hover,
+                  &:focus {
+                     color: #fff;
+                  }
+
+                  &.active {
+                     color: #fff;
+                     box-shadow: inset 0 0 8px rgba(#fff, 0.12);
+                     background-color: rgba(#fff, 0.025);
+                     filter: drop-shadow(0 0 10px rgba(#fff, 0.75));
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   article {
+      background-color: #1a171a;
+      padding: 2rem;
+      border: 3px solid $border_color;
+      min-width: 0;
+      color: rgba(254, 245, 255, 0.86);
+      font-size: 1.2rem;
+      line-height: 2.8rem;
+      flex-grow: 1;
+      margin-bottom: 5rem;
+
+      code,
+      pre {
+         overflow-x: scroll;
+         font-family: CamingoCode, monospace;
+      }
+
+      pre code {
+         padding: 1rem;
+      }
+
+      h1 {
+         margin: -2rem;
+         margin-bottom: 2rem;
+         padding: 1rem 2rem;
+         border-bottom: 1px solid rgba(#fff, 0.15);
+         font-size: 2rem;
+         font-weight: 200;
+         line-height: 4rem;
+         border-top-left-radius: 1rem;
+         border-top-right-radius: 1rem;
+         color: #ffffff;
+         filter: drop-shadow(0 0 10px rgba(#fff, 0.25));
+      }
+
+      h2 {
+         margin-top: 4rem;
+      }
+
+      code {
+         display: inline-block;
+         padding: 0 0.5rem;
+         background-color: #000;
+         border: 1px solid $border_color;
+         border-radius: 0.5rem;
+         color: #fff;
+         font-size: 0.9rem;
+      }
+
+      p code,
+      h1 code,
+      h2 code,
+      h3 code,
+      h4 code,
+      h5 code,
+      h6 code {
+         display: inline;
+      }
+
+      img {
+         width: 100%;
+      }
+
+      a {
+         color: $active;
+         transition: all 200ms;
+
+         &:hover,
+         &:focus {
+            color: #ffffff;
+            filter: drop-shadow(0 0 8px #ffffff);
+         }
+      }
+   }
+
+   @media screen and (max-width: 1000px) {
+      flex-direction: column;
+
+      aside {
+         width: 100%;
+         background-color: $background;
+         z-index: 100;
+         top: 0;
+         border-radius: 0;
+         border-right: none;
+         border-left: none;
+
+         .blog-hero {
+            background-image: none;
+            height: 4rem;
+         }
+
+         &:not(.expanded) {
+            nav {
+               display: none;
+            }
+
+            .blog-hero {
+               button div:after {
+                  transform: rotateY(180deg);
+               }
+            }
+         }
+
+         &.expanded {
+            box-shadow: 0 0 1rem 1rem rgba(#000, 0.5);
+         }
+
+         nav ul li a {
+            padding: 2rem;
+         }
+      }
+   }
+}

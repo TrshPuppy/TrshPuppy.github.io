@@ -1,0 +1,66 @@
+@use "../variables" as *;
+
+.loader {
+    width: 100%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        padding: 0.75rem;
+        font-size: 1.4rem;
+        font-family: CamingoCode, monospace;
+        color: $active;
+    }
+
+    .lights {
+        position: relative;
+        display : flex;
+
+        .light {
+            position: relative;
+            animation: loader 2s infinite;
+            background-color: $background;
+            margin: 0 0.5rem;
+            opacity: 0;
+        }
+
+        $delay: 0;
+
+        @each $name, $color in $nav-links {
+            .light.#{$name} {
+                animation-delay: $delay + ms;
+                outline: 1px solid $color;
+            }
+
+            $delay: $delay + 100;
+        }
+    }
+}
+
+@keyframes loader {
+    0%, 100% {
+        opacity: 1;
+        transform: rotateX(-200deg);
+        filter: drop-shadow(0 0 2rem #ff0096);
+        background-color: #fff;
+        top: 0;
+    }
+    10% {
+        top: -1rem;
+    }
+
+    20% {
+        top: 0;
+    }
+
+    50% {
+        opacity: 0;
+        background-color: $background;
+        transform: rotateX(0deg);
+        border-color: #fff;
+        top: 0;
+    }
+}

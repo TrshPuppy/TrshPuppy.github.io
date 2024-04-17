@@ -1,0 +1,212 @@
+@use '../variables' as *;
+
+.pong {
+   position: relative;
+   font-family: 'Orbitron', monospace;
+   position: relative;
+   border-left: 4px solid $foreground;
+   border-right: 4px solid $foreground;
+   margin: 5rem 0;
+   border-radius: 0.5rem;
+   overflow: hidden;
+
+   .background {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: -10;
+
+      &::after {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.92);
+      }
+   }
+
+   canvas {
+      position: relative;
+      box-sizing: content-box;
+      border-top: 4px solid $foreground;
+      border-bottom: 4px solid $foreground;
+      border-radius: 0.5rem;
+   }
+
+   .net {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 500px;
+      width: 1px;
+      border: 5px dashed lighten($background, 5%);
+      top: 4px;
+      left: 50%;
+      pointer-events: none;
+   }
+
+   .overlay {
+      position: absolute;
+      display: flex;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+
+      .lives {
+         min-width: 200px;
+      }
+
+      .lives {
+         display: flex;
+         padding: 0.25rem;
+         padding-left: 2rem;
+         flex-direction: row;
+         font-size: 1.4rem;
+         color: $foreground;
+
+         div {
+            color: rgb(255, 54, 188);
+            filter: drop-shadow(0 0 6px rgb(255, 54, 188));
+            padding-right: 0.5rem;
+         }
+      }
+
+      .ball-speed {
+         display: flex;
+         position: relative;
+         padding: 0.25rem 4rem;
+         margin: 0.25rem 1rem;
+         position: relative;
+         color: #444;
+         font-size: 1rem;
+         border: 1px solid #685870;
+         background: linear-gradient(
+            to right,
+            rgb(56, 125, 126),
+            rgb(249, 199, 0),
+            rgb(255, 98, 0),
+            rgb(255, 0, 0),
+            rgb(255, 0, 0)
+         );
+
+         .speed-fill {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            top: 0;
+            right: 0;
+            transition: width 1s;
+
+            &.not-playing {
+               transition: width 1s;
+            }
+         }
+
+         span {
+            z-index: 10;
+            color: $foreground;
+         }
+      }
+   }
+
+   .level {
+      display: flex;
+      list-style: none;
+      width: 100%;
+      margin: 0;
+      padding: 1rem 0;
+      border-bottom: 4px solid $foreground;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+
+      h3 {
+         font-size: 1rem;
+         margin: 1rem;
+         color: $foreground;
+      }
+
+      li {
+         text-align: center;
+         width: 100%;
+         padding: 0.5rem;
+         border-radius: 20rem;
+         color: $foreground;
+         border: 2px solid transparent;
+         transition: all 10s;
+
+         span {
+            font-size: 0.75rem;
+         }
+
+         &.current {
+            filter: drop-shadow(0 0 10px rgb(255, 54, 188));
+            border: 2px solid rgb(255, 54, 188);
+            color: rgb(255, 54, 188);
+         }
+      }
+   }
+
+   .title {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      border-top: 4px solid $foreground;
+      border-bottom: 4px solid $foreground;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0.5rem;
+      text-transform: uppercase;
+
+      h2 {
+         font-size: 3.2rem;
+         filter: drop-shadow(0 0 4px #c66edf);
+         margin: 0 0 1rem;
+         color: transparent;
+         background: linear-gradient(90deg, #ffffff, #d900ff, #ff0095);
+         background-size: 200% 100%;
+         animation: colorChange 5s ease infinite;
+         -webkit-background-clip: text;
+         background-clip: text;
+
+         @keyframes colorChange {
+            0% {
+               background-position: 100% 0%;
+            }
+            100% {
+               background-position: -100% 0%;
+            }
+         }
+      }
+
+      button {
+         font-size: 1.2rem;
+         font-weight: 900;
+         font-family: 'Orbitron', monospace;
+         text-transform: uppercase;
+         padding: 0.5rem 4rem;
+         margin-bottom: 2rem;
+         background-color: rgb(255, 54, 188);
+         border: none;
+         cursor: pointer;
+         filter: drop-shadow(0 0 4px #c66edf);
+         transition: all 200ms;
+
+         &:hover,
+         &:focus {
+            filter: drop-shadow(0 0 10px #c66edf);
+            background-color: rgb(255, 105, 205);
+         }
+      }
+   }
+}

@@ -1,0 +1,75 @@
+@use 'variables' as *;
+
+html {
+   font-size: 16px;
+
+   @media screen and (max-height: 1100px) {
+      font-size: 12px;
+   }
+
+   body {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      min-height: 100vh;
+      margin: 0;
+      background-color: $background;
+      background-image: url('/img/retro-grid.webp');
+      background-size: auto 100%;
+      background-attachment: fixed;
+      font-family: 'Montserrat', sans-serif;
+
+      &:before {
+         position: fixed;
+         content: '';
+         height: 100%;
+         width: 100%;
+         background-image: linear-gradient(rgba($background, 0.9) 75%, transparent);
+         z-index: 0;
+      }
+
+      & * {
+         box-sizing: border-box;
+      }
+
+      #root {
+         width: 100vw;
+         max-width: 1200px;
+
+         @media screen and (max-width: 1240px) {
+            max-width: 900px;
+         }
+
+         @media screen and (max-width: 950px) {
+            margin: 0 0.5rem;
+         }
+
+         @media screen and (max-width: 668px) {
+            margin: 0;
+         }
+      }
+   }
+}
+
+.wrapper {
+   main .view {
+      position: relative;
+      transform-origin: top;
+      animation: entry 200ms ease-in;
+
+      @keyframes entry {
+         0% {
+            transform: scale(0.8);
+            opacity: 0;
+         }
+         100% {
+            transform: scale(1);
+            opacity: 1;
+         }
+      }
+
+      @media screen and (max-width: 1000px) {
+         margin-bottom: calc(57px + 2rem);
+      }
+   }
+}

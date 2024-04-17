@@ -1,0 +1,81 @@
+@use '../variables' as *;
+
+.bad-project-res {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   color: #ffffff;
+   opacity: 1;
+   z-index: 1000;
+   margin-top: 4rem;
+   text-align: center;
+   font-size: 1.2rem;
+   line-height: 2rem;
+
+   .bad-project-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      height: 30rem;
+      width: 30rem;
+      background-size: contain;
+      background-image: url('/img/res-400.webp');
+      border-radius: 50% 50% 50% 0;
+      filter: hue-rotate(128deg);
+      border: 1px solid $socials_bg;
+
+      &:before,
+      &:after {
+         line-height: 3rem;
+         left: 0;
+         top: 0;
+         font-size: 2rem;
+         color: #fff;
+         text-shadow: 0 0 5px #000;
+         background-color: rgba($background, 0.9);
+         padding: 0.25rem 0.5rem;
+         border-right: 1px solid $socials_bg;
+      }
+
+      &:before {
+         content: '429';
+      }
+
+      &:after {
+         content: '"Too Many Requests"';
+         font-size: 1rem;
+      }
+   }
+
+   a {
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      background-color: #eee;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #000000;
+
+      svg {
+         height: 2rem;
+         margin-left: 0.5rem;
+      }
+
+      &:hover,
+      &:focus {
+         background-color: #fff;
+         filter: drop-shadow(0 0 8px rgba(#fff, 0.25));
+      }
+
+      &:focus {
+         outline: 1rem solid rgba($active, 0.25);
+      }
+
+      &:active {
+      }
+   }
+}

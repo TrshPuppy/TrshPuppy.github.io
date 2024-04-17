@@ -1,0 +1,35 @@
+/**
+* Colors
+*/
+$background: #131013;
+$background_alt: #1c131c;
+$container_bg: #161317;
+$border_color: #242225;
+$border_text: #b1adb3;
+$foreground: #89669f;
+$blue: #5a3ebe;
+$active: #c3b1ce;
+$pink: #ce174e;
+$pink_medium: #6c243a;
+$socials_bg: #679497;
+$socials_btn: #fed8e5;
+$card_after_bg: linear-gradient(to bottom, transparent, rgba(#000, 0.55));
+$hero_filter: grayscale(0.25) sepia(0.25);
+
+/**
+* Header
+*/
+$nav-links: (
+   home: #ff91f8,
+   projects: #b2ffae,
+   blog: #ffffff,
+   about: #8ffff6,
+   contact: #ff93b7,
+);
+
+/**
+* Utility
+*/
+$img_box_shadow:
+   0 19px 38px rgba(0, 0, 0, 0.3),
+   0 15px 12px rgba(0, 0, 0, 0.22);
