@@ -206,9 +206,10 @@
       }
    }
 
-   @media screen and (max-width: 668px) {
+   @media screen and (max-width: 1000px) {
       position: sticky;
       top: 0;
       z-index: 1000;
+      background-color: #000;
    }
 }

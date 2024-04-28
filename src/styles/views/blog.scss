@@ -104,6 +104,15 @@
       flex-grow: 1;
       margin-bottom: 5rem;
 
+      *:not(pre) code {
+         font-size: 1rem;
+         color: #ffffb6;
+      }
+
+      li code {
+         border: none;
+      }
+
       code,
       pre {
          overflow-x: scroll;
@@ -136,7 +145,6 @@
       code {
          display: inline-block;
          padding: 0 0.5rem;
-         border: 1px solid #000;
          line-height: 2rem;
       }
 
@@ -158,13 +166,13 @@
       }
 
       a {
-         color: $active;
-         transition: all 200ms;
+         color: map-get($nav-links, about);
+         filter: drop-shadow(0 0 20px rgba(#ffffff, 0.25));
 
          &:hover,
          &:focus {
             color: #ffffff;
-            filter: drop-shadow(0 0 8px #ffffff);
+            filter: drop-shadow(0 0 20px #ffffff);
          }
       }
    }
@@ -173,18 +181,29 @@
       flex-direction: column;
       margin: 0.25rem;
 
+      article {
+         padding-left: 0.5rem;
+         padding-right: 0.5rem;
+      }
+
+      code {
+         font-size: 0.75rem;
+         line-height: 1.2rem !important;
+      }
+
       aside {
          width: 100%;
          background-color: $background;
          z-index: 100;
-         top: 0;
+         top: 5rem;
          border-radius: 0;
          box-sizing: border-box;
-         border: none;
+         border-radius: 0;
+         border-width: 1px;
+         box-shadow: none;
 
          .blog-hero {
             background-image: none;
-            border: 1px solid $border_color;
             border-radius: 0;
             height: 3.5rem;
          }
@@ -207,12 +226,8 @@
             }
          }
 
-         &.expanded {
-            box-shadow: 0 0 1rem 1rem rgba(#000, 0.5);
-         }
-
          nav ul li a {
-            padding: 2rem;
+            padding: 1.5rem;
          }
       }
    }

@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import PageTitle from '../components/PageTitle.jsx';
 import ReloadOnNavigation from '../components/ReloadOnNavigation.jsx';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/ir-black.css';
+import 'highlight.js/styles/github-dark.css';
 import ArthTribute from '../components/ArthTribute.jsx';
 
 const Blog = () => {

@@ -327,11 +327,10 @@ $lang_colors: (
 
       .project {
          position: relative;
-         border: 2px solid $border_color;
-         margin-bottom: 2rem;
+         border: 1px solid $border_color;
+         margin-bottom: 4rem;
          background-color: $container_bg;
          overflow: hidden;
-         box-shadow: 0 0 5px rgba(#000, 0.5);
          top: 0;
 
          &.animating {
@@ -374,7 +373,7 @@ $lang_colors: (
                   font-size: 1.2rem;
                   font-weight: 400;
                   color: #fff;
-                  filter: drop-shadow(10px, map-get($nav-links, projects));
+                  filter: drop-shadow(0 0 10px rgba(#fff, 0.6));
                }
             }
 
@@ -425,7 +424,6 @@ $lang_colors: (
             font-family: CamingoCode, monospace;
             border-bottom: 1px solid $border_color;
             border-top: 1px solid $border_color;
-            background-color: $border_color;
             color: $border_text;
             line-height: 1.75rem;
 
