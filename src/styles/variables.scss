@@ -15,6 +15,7 @@ $socials_bg: #679497;
 $socials_btn: #fed8e5;
 $card_after_bg: linear-gradient(to bottom, transparent, rgba(#000, 0.55));
 $hero_filter: grayscale(0.25) sepia(0.25);
+$article_background: $border_color;
 
 /**
 * Header
@@ -30,6 +31,4 @@ $nav-links: (
 /**
 * Utility
 */
-$img_box_shadow:
-   0 19px 38px rgba(0, 0, 0, 0.3),
-   0 15px 12px rgba(0, 0, 0, 0.22);
+$img_box_shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);

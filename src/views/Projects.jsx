@@ -40,7 +40,6 @@ const Projects = () => {
             {loading && <Loader />}
             {!loading && responseOK && <MappedProjects repos={repos} />}
             {!responseOK && !loading && <BadProjectsRes />}
-            {!loading && responseOK && <ArthTribute />}
          </article>
       </>
    );

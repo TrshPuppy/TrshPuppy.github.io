@@ -8,7 +8,7 @@
    aside {
       position: sticky;
       top: 2rem;
-      border: 3px solid $border_color;
+      border: 2px solid $border_color;
       height: 100%;
       width: 14rem;
       flex-shrink: 0;
@@ -94,9 +94,9 @@
    }
 
    article {
-      background-color: #1a171a;
+      background-color: $article_background;
       padding: 2rem;
-      border: 3px solid $border_color;
+      border: 2px solid $border_color;
       min-width: 0;
       color: rgba(254, 245, 255, 0.86);
       font-size: 1.2rem;
@@ -108,6 +108,7 @@
       pre {
          overflow-x: scroll;
          font-family: CamingoCode, monospace;
+         width: 100%;
       }
 
       pre code {
@@ -135,11 +136,8 @@
       code {
          display: inline-block;
          padding: 0 0.5rem;
-         background-color: #000;
-         border: 1px solid $border_color;
-         border-radius: 0.5rem;
-         color: #fff;
-         font-size: 0.9rem;
+         border: 1px solid #000;
+         line-height: 2rem;
       }
 
       p code,
@@ -153,7 +151,10 @@
       }
 
       img {
-         width: 100%;
+         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+         border: 2px solid $border_color;
+         object-fit: contain;
+         max-width: 100%;
       }
 
       a {
@@ -170,6 +171,7 @@
 
    @media screen and (max-width: 1000px) {
       flex-direction: column;
+      margin: 0.25rem;
 
       aside {
          width: 100%;
@@ -177,12 +179,18 @@
          z-index: 100;
          top: 0;
          border-radius: 0;
-         border-right: none;
-         border-left: none;
+         box-sizing: border-box;
+         border: none;
 
          .blog-hero {
             background-image: none;
-            height: 4rem;
+            border: 1px solid $border_color;
+            border-radius: 0;
+            height: 3.5rem;
+         }
+
+         button {
+            border: none;
          }
 
          &:not(.expanded) {
@@ -191,6 +199,8 @@
             }
 
             .blog-hero {
+               height: 3.5rem;
+
                button div:after {
                   transform: rotateY(180deg);
                }

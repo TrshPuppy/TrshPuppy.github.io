@@ -110,7 +110,6 @@ const Contact = () => {
                </div>
                <div className="hero hero-twitter"></div>
             </section>
-            <ArthTribute />
          </article>
       </>
    );

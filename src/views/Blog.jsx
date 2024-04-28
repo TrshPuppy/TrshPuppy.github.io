@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import PageTitle from '../components/PageTitle.jsx';
 import ReloadOnNavigation from '../components/ReloadOnNavigation.jsx';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/ir-black.css';
 import ArthTribute from '../components/ArthTribute.jsx';
 
 const Blog = () => {
@@ -72,6 +74,18 @@ const Blog = () => {
          void fetchCurrentFileText();
       }
    }, []);
+
+   useLayoutEffect(() => {
+      const $codes = document.getElementsByTagName('code');
+
+      for (let i = 0; i < $codes.length; i++) {
+         if ($codes[i].getAttribute('data-highlighted')) {
+            $codes[i].removeAttribute('data-highlighted');
+         }
+      }
+
+      hljs.highlightAll();
+   });
 
    return (
       <>

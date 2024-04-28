@@ -38,7 +38,6 @@ const About = () => {
                   </p>
                </div>
             </section>
-            <ArthTribute />
          </article>
       </>
    );

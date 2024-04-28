@@ -1,0 +1,44 @@
+{
+   "tabWidth": 2,
+   "semi": false,
+   "singleQuote": true,
+   "trailingComma": "es5",
+   "jsxSingleQuote": false,
+   "jsxBracketSameLine": false,
+   "arrowParens": "always",
+   "printWidth": 140,
+   "overrides": [
+      {
+         "files": "*.json",
+         "options": {
+            "parser": "json"
+         }
+      },
+      {
+         "files": "*.html",
+         "options": {
+            "parser": "html",
+            "printWidth": 140,
+            "htmlWhitespaceSensitivity": "ignore"
+         }
+      },
+      {
+         "files": "*.yml",
+         "options": {
+            "parser": "yaml",
+            "singleQuote": false,
+            "tabWidth": 2
+         }
+      },
+      {
+         "files": "*.jsx",
+         "options": {
+            "semi": true,
+            "singleQuote": false,
+            "trailingComma": "none",
+            "jsxSingleQuote": true,
+            "jsxBracketSameLine": true
+         }
+      }
+   ]
+}

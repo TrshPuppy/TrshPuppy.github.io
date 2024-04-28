@@ -7,7 +7,7 @@
       margin: 2rem 0;
       width: 100%;
       margin-bottom: 4rem;
-      border-bottom: 3pxsolid $border_color;
+      border-top: 2px solid $border_color;
 
       &:first-of-type {
          background-color: unset;
@@ -98,9 +98,7 @@
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
-      transition:
-         background-size 200ms,
-         transform 120ms;
+      transition: background-size 200ms, transform 120ms;
       filter: $hero_filter;
 
       &:after {

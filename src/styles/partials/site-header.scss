@@ -1,206 +1,214 @@
-@use "../variables" as *;
+@use '../variables' as *;
 
 .site-header {
-    nav {
-        position        : relative;
-        display         : flex;
-        justify-content : space-between;
-        align-items     : center;
-        border-bottom   : 3px solid $border_color;
+   nav {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid $border_color;
 
-        @media screen and (max-width: 1360px){
-            &:before,
-            &:after {
-                display: none;
-            }
-        }
+      @media screen and (max-width: 1360px) {
+         &:before,
+         &:after {
+            display: none;
+         }
+      }
 
-        @media screen and (max-width : 1000px) {
-            .digital-clock {
-                display : none;
-            }
+      @media screen and (max-width: 1000px) {
+         .digital-clock {
+            display: none;
+         }
 
-            ul, li {
-                width : 100%;
-            }
-
-            ul, ul li a.nav-link {
-                padding: 0;
-                margin-left     : 0;
-
-                span {
-                    margin: 0;
-                }
-            }
-        }
-        
-        @media screen and (max-width: 668px) {
-            position: fixed;
-            bottom: 0;
-            height: 5rem;
+         ul,
+         li {
             width: 100%;
+         }
+
+         ul,
+         ul li a.nav-link {
+            padding: 0;
             margin-left: 0;
-            z-index: 1000;
-            background-color: #000;
-            border-top: 2px solid #333;
 
-            &:before,
-            &:after {
-                display: none;
+            span {
+               margin: 0;
             }
-        }
+         }
+      }
 
-        .digital-clock {
-            color       : $active;
-            font-family : "CamingoCode", monospace;
-        }
+      @media screen and (max-width: 668px) {
+         position: sticky;
+         top: 0;
+         height: 5rem;
+         width: 100%;
+         margin-left: 0;
+         z-index: 1000;
+         background-color: #000;
+         border-bottom: 1px solid $border_color;
 
-        &:before,
-        &:after {
-            content                   : "";
-            position                  : absolute;
-            left                      : -5rem;
-            height                    : 100%;
-            width                     : 5rem;
-            border                    : 3px solid $border_color;
-            border-right              : none;
-            border-top                : none;
-            border-bottom-left-radius : 5rem;
-        }
+         &:before,
+         &:after {
+            display: none;
+         }
+      }
 
-        &:after {
-            left      : unset;
-            right     : -5rem;
-            transform : rotateY(180deg);
-        }
+      .digital-clock {
+         color: $active;
+         font-family: 'CamingoCode', monospace;
+      }
 
-        ul {
-            display    : flex;
-            list-style : none;
-            margin     : 0;
-            padding    : 1rem 0;
+      &:before,
+      &:after {
+         content: '';
+         position: absolute;
+         left: -5rem;
+         height: 100%;
+         width: 5rem;
+         border: 2px solid $border_color;
+         border-right: none;
+         border-top: none;
+         border-bottom-left-radius: 5rem;
+      }
 
-            li {
-                .nav-link {
-                    display         : flex;
-                    align-items     : center;
-                    flex-direction  : column-reverse;
-                    text-decoration : none;
-                    padding         : 0.85rem 1rem 0;
-                    transition      : all 200ms;
+      &:after {
+         left: unset;
+         right: -5rem;
+         transform: rotateY(180deg);
+      }
 
-                    svg {
-                        stroke     : $foreground;
-                        height     : 1.75rem;
-                        width      : 2rem;
-                        transition : all 100ms;
-                    }
+      ul {
+         display: flex;
+         list-style: none;
+         margin: 0;
+         padding: 1rem 0;
 
-                    span {
-                        margin-top  : 0.4rem;
-                        font-size   : 0.75rem;
-                        font-weight : 700;
-                        color       : transparent;
-                        transition  : transform 100ms;
-                    }
+         li {
+            .nav-link {
+               display: flex;
+               align-items: center;
+               flex-direction: column-reverse;
+               text-decoration: none;
+               padding: 0.85rem 1rem 0;
+               transition: all 200ms;
 
-                    &:hover {
-                        svg {
-                            stroke : $active;
-                        }
+               svg {
+                  stroke: $foreground;
+                  height: 1.75rem;
+                  width: 2rem;
+                  transition: all 100ms;
+               }
 
-                        span {
-                            color : $active;
-                        }
-                    }
+               span {
+                  margin-top: 0.4rem;
+                  font-size: 0.75rem;
+                  font-weight: 700;
+                  color: transparent;
+                  transition: transform 100ms;
+               }
 
-                    &:focus {
-                        span {
-                            fill : $active;
-                        }
-                    }
+               &:hover {
+                  svg {
+                     stroke: $active;
+                  }
 
-                    &.active {
-                        color : #ffc38e;
+                  span {
+                     color: $active;
+                  }
+               }
 
-                        span {
-                            transition : color 0.5s;
-                        }
+               &:focus {
+                  span {
+                     fill: $active;
+                  }
+               }
 
-                        svg {
-                            fill      : $active;
-                            stroke    : $active;
-                            filter    : drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
-                            animation : wiggle 0.5s ease-out;
-                        }
-                    }
+               &.active {
+                  color: #ffc38e;
 
-                    @keyframes wiggle {
-                        0% {
-                            transform : scaleX(1) scaleY(1) translateY(0);
-                            filter    : drop-shadow(0 0 8px rgba(#ffc38e, 0));
-                            fill      : transparent;
-                            stroke    : $foreground;
-                        }
-                        25% {
-                            transform : scaleX(1.6) scaleY(0.6) translateY(15px);
-                            filter    : drop-shadow(0 0 8px rgba(#ffc38e, 0));
-                            stroke    : $foreground;
-                            fill      : transparent;
-                        }
-                        50% {
-                            transform : scaleX(0.4) scaleY(1.2) translateY(-10px);
-                        }
-                        75% {
-                            transform : scaleX(1) scaleY(1) translateY(0);
-                        }
-                        85% {
-                            transform : scaleX(1) scaleY(1) translateY(0);
-                        }
-                        100% {
-                            transform : scaleX(1) scaleY(1);
-                        }
-                    }
-                }
+                  span {
+                     transition: color 0.5s;
+                  }
 
-                @each $key, $color in $nav-links {
-                    &.nav-link-#{$key} .nav-link {
-                        &.active {
-                            span {
-                                color  : $color;
-                                filter : drop-shadow(0 0 12px rgba($color, 1));
-                            }
+                  svg {
+                     fill: $active;
+                     stroke: $active;
+                     filter: drop-shadow(0 0 8px rgba(#ffc38e, 0.75));
+                     animation: wiggle 0.5s ease-out;
+                  }
+               }
 
-                            svg {
-                                fill   : $color;
-                                stroke : $color;
-                                filter : drop-shadow(0 0 16px rgba($color, 1));
-                            }
-                        }
-                    }
-                }
+               @keyframes wiggle {
+                  0% {
+                     transform: scaleX(1) scaleY(1) translateY(0);
+                     filter: drop-shadow(0 0 8px rgba(#ffc38e, 0));
+                     fill: transparent;
+                     stroke: $foreground;
+                  }
+                  25% {
+                     transform: scaleX(1.6) scaleY(0.6) translateY(15px);
+                     filter: drop-shadow(0 0 8px rgba(#ffc38e, 0));
+                     stroke: $foreground;
+                     fill: transparent;
+                  }
+                  50% {
+                     transform: scaleX(0.4) scaleY(1.2) translateY(-10px);
+                  }
+                  75% {
+                     transform: scaleX(1) scaleY(1) translateY(0);
+                  }
+                  85% {
+                     transform: scaleX(1) scaleY(1) translateY(0);
+                  }
+                  100% {
+                     transform: scaleX(1) scaleY(1);
+                  }
+               }
             }
-        }
 
-        .nav-meta {
-            display: flex;
-            align-items: center;
+            @each $key, $color in $nav-links {
+               &.nav-link-#{$key} .nav-link {
+                  &.active {
+                     span {
+                        color: $color;
+                        filter: drop-shadow(0 0 12px rgba($color, 1));
+                     }
 
+                     svg {
+                        fill: $color;
+                        stroke: $color;
+                        filter: drop-shadow(0 0 16px rgba($color, 1));
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      .nav-meta {
+         display: flex;
+         align-items: center;
+
+         .site-brand-img {
+            display: block;
+            height: 4rem;
+            width: 4rem;
+            background-size: cover;
+            background-image: url('/img/logo-1.webp');
+            border-radius: 50%;
+            margin-left: 1rem;
+         }
+
+         @media screen and (max-width: 1000px) {
             .site-brand-img {
-                display: block;
-                height: 4rem;
-                width: 4rem;
-                background-size: cover;
-                background-image: url('/img/logo-1.webp');
-                border-radius: 50%;
-                margin-left: 1rem;
+               display: none;
             }
+         }
+      }
+   }
 
-            @media screen and (max-width: 1000px) {
-                .site-brand-img {
-                    display: none;
-                }
-            }
-        }
-    }
+   @media screen and (max-width: 668px) {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+   }
 }

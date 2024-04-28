@@ -20,7 +20,6 @@ const Home = () => {
                <div className="hero hero-welcome" aria-hidden="true"></div>
             </section>
             <HomeLinks />
-            <ArthTribute />
          </article>
       </>
    );
