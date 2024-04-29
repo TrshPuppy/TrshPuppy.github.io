@@ -101,7 +101,9 @@ const MappedProjects = ({ repos }) => {
                         <div>Filters</div>
                      </button>
                   </div>
-                  <h2>Languages</h2>
+                  <h2>
+                     <span>Filter by lang or topic ↴</span>
+                  </h2>
                   <nav>
                      {languageSet.size > 0 && (
                         <ul className="language-list">
@@ -127,7 +129,6 @@ const MappedProjects = ({ repos }) => {
                            })}
                         </ul>
                      )}
-                     <h2>Topics</h2>
                      {topicSet.size > 0 && (
                         <ul className="topic-list">
                            {[...topicSet].map((topic, i) => {

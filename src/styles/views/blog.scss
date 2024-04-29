@@ -105,6 +105,7 @@
       background-color: $active;
       color: #000;
       border: none;
+      border-radius: 2rem;
 
       &:hover {
          background-color: lighten($active, 10%);
@@ -197,6 +198,22 @@
             filter: drop-shadow(0 0 20px #ffffff);
          }
       }
+
+      .aside-mask {
+         background-color: rgba($active, 0.25);
+         backdrop-filter: blur(2rem);
+         position: fixed;
+         height: 100vh;
+         width: 100vw;
+         top: 0;
+         left: 0;
+         z-index: 1;
+         visibility: hidden;
+
+         &.show {
+            visibility: visible;
+         }
+      }
    }
 
    @media screen and (max-width: 1000px) {
@@ -211,15 +228,15 @@
       }
 
       code {
-         font-size: 0.75rem;
-         line-height: 1.2rem !important;
+         font-size: 0.9rem;
+         line-height: 1.4rem !important;
       }
 
       aside {
          width: 12rem;
          background-color: $background;
          z-index: 100;
-         top: 5rem;
+         top: 5.5rem;
          border-radius: 0;
          box-sizing: border-box;
          border-radius: 0;
@@ -237,7 +254,9 @@
 
          .blog-hero {
             filter: none;
-            background-image: none;
+            background-image: transparent;
+            background-color: transparent;
+            box-shadow: none;
             height: 3rem;
          }
 

@@ -171,7 +171,14 @@ $lang_colors: (
          margin: 0;
          padding: 0;
          font-size: 1rem;
-         display: none;
+         text-align: center;
+         font-weight: 500;
+         width: 100%;
+         background-color: $container_bg;
+         border-top: 2px solid $border_color;
+         border-bottom: 2px solid $border_color;
+         padding: 0.5rem 1rem;
+         color: #d0d0d0;
       }
 
       nav ul {
@@ -564,6 +571,10 @@ $lang_colors: (
          border-radius: 1rem;
          overflow: hidden;
 
+         h2 {
+            padding-top: 4rem;
+         }
+
          .aside-expand {
             display: block;
          }
@@ -571,6 +582,10 @@ $lang_colors: (
          &.hidden {
             background-color: transparent;
             border: none;
+
+            h2 {
+               display: none;
+            }
 
             &:after {
                display: none;

@@ -43,7 +43,6 @@
          width: 100%;
          margin-left: 0;
          z-index: 1000;
-         background-color: #000;
          border-bottom: 1px solid $border_color;
 
          &:before,
@@ -210,6 +209,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: #000;
+      background-image: $card_after_bg;
+      background-color: #010101;
    }
 }

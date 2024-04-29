@@ -18,6 +18,7 @@ html {
       background-size: auto 100%;
       background-attachment: fixed;
       font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
 
       &:before {
          position: fixed;
