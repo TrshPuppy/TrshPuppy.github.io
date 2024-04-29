@@ -30,6 +30,12 @@ Artwork created by Dall-E 3
 
 ## Changelog
 
+### 2.1.0
+
+-  Added sytax highlighting to blog
+-  Cleaned up mobile styles and menus
+-  Added footer with new attribute
+
 ### 2.0.1
 
 -  Build of static site
