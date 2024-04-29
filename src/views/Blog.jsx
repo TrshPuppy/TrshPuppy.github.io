@@ -5,7 +5,6 @@ import PageTitle from '../components/PageTitle.jsx';
 import ReloadOnNavigation from '../components/ReloadOnNavigation.jsx';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github-dark.css';
-import ArthTribute from '../components/ArthTribute.jsx';
 
 const Blog = () => {
    const markdownFilesGlob = import.meta.glob('/public/md/*.md');
@@ -16,7 +15,6 @@ const Blog = () => {
    const [currentFilePath, setCurrentFilePath] = useState(markdownFilePaths[0] || '');
    const [currentFile, setCurrentFile] = useState('');
    const [expanded, setExpanded] = useState(false);
-   const [reHighlight, setReHighlight] = useState(false);
 
    const handleMDLinkClick = (path) => {
       window.scrollTo({
@@ -161,7 +159,6 @@ const Blog = () => {
                <ReactMarkdown>{currentFile}</ReactMarkdown>
             </article>
          </div>
-         <ArthTribute />
       </>
    );
 };

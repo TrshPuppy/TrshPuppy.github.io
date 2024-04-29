@@ -1,5 +1,4 @@
 import PageTitle from '../components/PageTitle.jsx';
-import ArthTribute from '../components/ArthTribute.jsx';
 
 const About = () => {
    return (

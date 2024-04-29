@@ -153,6 +153,8 @@ $lang_colors: (
          background-size: cover;
          background-repeat: no-repeat;
          background-position: top;
+         border-top-right-radius: 0.5rem;
+         border-top-left-radius: 0.5rem;
          z-index: 1;
          filter: grayscale(0.6);
 
@@ -262,6 +264,8 @@ $lang_colors: (
          max-height: 20rem;
          overflow-y: scroll;
          box-shadow: inset 0 0 10px #000;
+         border-bottom-left-radius: 0.5rem;
+         border-bottom-right-radius: 0.5rem;
 
          li {
             flex-grow: 1;
@@ -503,7 +507,7 @@ $lang_colors: (
    padding: 0.75rem 1rem;
    border-radius: 0;
    border: none;
-   background-color: $border_text;
+   background-color: $active;
    color: #000;
    box-sizing: border-box;
    transition: outline 120ms;
@@ -527,7 +531,7 @@ $lang_colors: (
 
    &:hover,
    &:focus {
-      outline: 1rem solid rgba($active, 0);
+      background-color: lighten($active, 10%);
    }
 
    @media screen and (max-width: 1000px) {
@@ -563,7 +567,7 @@ $lang_colors: (
       }
 
       .filters {
-         top: 5.5rem;
+         top: 6rem;
          border-top: none;
          padding: 0;
          min-width: 0;
@@ -601,11 +605,6 @@ $lang_colors: (
 
             .aside-expand {
                border-radius: 2rem;
-
-               &:hover,
-               &:focus {
-                  outline: 0.5rem solid rgba($active, 0.4);
-               }
             }
          }
 

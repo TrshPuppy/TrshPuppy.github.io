@@ -208,6 +208,7 @@
    @media screen and (max-width: 1000px) {
       position: sticky;
       top: 0;
+      padding-top: 0.5rem;
       z-index: 1000;
       background-image: $card_after_bg;
       background-color: #010101;

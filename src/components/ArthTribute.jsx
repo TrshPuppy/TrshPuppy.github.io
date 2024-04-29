@@ -1,12 +1,14 @@
 const ArthTribute = () => {
    return (
-      <div id="arth-tribute">
+      <div class="arth-tribute">
          <p>
-            {'Thank you to '}
+            <span>Thank you to</span>
+            &nbsp;
             <a href="https://github.com/arthvadrr" target="_blank" rel="noreferrer">
                arthvadrr
             </a>
-            {' who took my site & made it beautiful!'}
+            &nbsp;
+            <span>who took my site & made it beautiful!</span>
          </p>
       </div>
    );

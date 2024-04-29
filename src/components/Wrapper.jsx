@@ -1,4 +1,5 @@
 import SiteHeader from './SiteHeader.jsx';
+import SiteFooter from './SiteFooter.jsx';
 
 const Wrapper = ({ View }) => {
    return (
@@ -7,6 +8,7 @@ const Wrapper = ({ View }) => {
          <main>
             <View />
          </main>
+         <SiteFooter />
       </div>
    );
 };

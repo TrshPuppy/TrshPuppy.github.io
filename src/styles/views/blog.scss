@@ -8,12 +8,13 @@
    aside {
       position: sticky;
       top: 2rem;
-      border: 2px solid $border_color;
       height: 100%;
       width: 14rem;
       flex-shrink: 0;
       margin-right: 2rem;
       margin-bottom: 2rem;
+      border: 2px solid $border_color;
+      border-radius: 1rem;
 
       .blog-hero {
          display: grid;
@@ -106,6 +107,8 @@
       color: #000;
       border: none;
       border-radius: 2rem;
+      overflow: hidden;
+      line-height: 1rem;
 
       &:hover {
          background-color: lighten($active, 10%);
@@ -113,6 +116,8 @@
 
       & div:after {
          content: '+';
+         top: -0.125rem;
+         right: -1.25rem;
       }
    }
 
@@ -126,6 +131,7 @@
       line-height: 2.8rem;
       flex-grow: 1;
       margin-bottom: 5rem;
+      border-radius: 1rem;
 
       *:not(pre) code {
          font-size: 1rem;
@@ -197,6 +203,10 @@
             color: #ffffff;
             filter: drop-shadow(0 0 20px #ffffff);
          }
+
+         &:visited {
+            color: $active;
+         }
       }
 
       .aside-mask {
@@ -233,13 +243,12 @@
       }
 
       aside {
-         width: 12rem;
+         width: 10rem;
          background-color: $background;
          z-index: 100;
-         top: 5.5rem;
-         border-radius: 0;
+         top: 6rem;
+         border-radius: 2rem;
          box-sizing: border-box;
-         border-radius: 0;
          border-width: 1px;
          box-shadow: none;
          align-self: center;
@@ -248,8 +257,12 @@
          margin-right: 0;
 
          &.expanded {
-            width: 100%;
+            width: 80vw;
             box-shadow: 0 0 1000px 0 #000;
+
+            .blog-hero button.aside-expand {
+               border-radius: 0;
+            }
          }
 
          .blog-hero {
@@ -257,16 +270,31 @@
             background-image: transparent;
             background-color: transparent;
             box-shadow: none;
-            height: 3rem;
+            height: 2.625rem;
+            border-radius: 2rem;
+            overflow: hidden;
+
+            &:after {
+               display: none;
+            }
          }
 
          &:not(.expanded) {
             nav {
                display: none;
             }
+         }
+
+         &.expanded {
+            border-radius: 1rem;
+            overflow: hidden;
 
             .blog-hero {
-               height: 3rem;
+               border-radius: 0;
+            }
+
+            .aside-expand {
+               border-radius: 0;
             }
          }
 
