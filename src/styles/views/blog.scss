@@ -91,6 +91,28 @@
             }
          }
       }
+
+      &.expanded {
+         .aside-expand {
+            & div:after {
+               content: '-';
+            }
+         }
+      }
+   }
+
+   .aside-expand {
+      background-color: $active;
+      color: #000;
+      border: none;
+
+      &:hover {
+         background-color: lighten($active, 10%);
+      }
+
+      & div:after {
+         content: '+';
+      }
    }
 
    article {
@@ -125,7 +147,7 @@
       }
 
       h1 {
-         margin: -2rem;
+         margin-top: -2rem;
          margin-bottom: 2rem;
          padding: 1rem 2rem;
          border-bottom: 1px solid rgba(#fff, 0.15);
@@ -184,6 +206,8 @@
       article {
          padding-left: 0.5rem;
          padding-right: 0.5rem;
+         margin-right: 0.5rem;
+         margin-left: 0.5rem;
       }
 
       code {
@@ -192,7 +216,7 @@
       }
 
       aside {
-         width: 100%;
+         width: 12rem;
          background-color: $background;
          z-index: 100;
          top: 5rem;
@@ -201,15 +225,20 @@
          border-radius: 0;
          border-width: 1px;
          box-shadow: none;
+         align-self: center;
+         transition: all 500ms;
+         margin-left: 0;
+         margin-right: 0;
 
-         .blog-hero {
-            background-image: none;
-            border-radius: 0;
-            height: 3.5rem;
+         &.expanded {
+            width: 100%;
+            box-shadow: 0 0 1000px 0 #000;
          }
 
-         button {
-            border: none;
+         .blog-hero {
+            filter: none;
+            background-image: none;
+            height: 3rem;
          }
 
          &:not(.expanded) {
@@ -218,11 +247,7 @@
             }
 
             .blog-hero {
-               height: 3.5rem;
-
-               button div:after {
-                  transform: rotateY(180deg);
-               }
+               height: 3rem;
             }
          }
 

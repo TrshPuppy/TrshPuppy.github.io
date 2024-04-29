@@ -57,14 +57,10 @@
       font-weight: 800;
    }
 
-   @media screen and (max-width: 668px) {
+   @media screen and (max-width: 1000px) {
       h1 {
-         width: 100%;
-         margin: 0;
-         border-bottom: 1px solid $border_color;
-         border-radius: 0;
          background-color: #000;
-         padding: 2rem;
+         min-width: 90vw;
       }
    }
 }
