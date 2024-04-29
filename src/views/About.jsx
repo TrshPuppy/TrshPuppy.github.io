@@ -1,6 +1,11 @@
+import { useLayoutEffect } from 'react';
 import PageTitle from '../components/PageTitle.jsx';
 
 const About = () => {
+   useLayoutEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
    return (
       <>
          <PageTitle title="About" color="#8ffff6" />

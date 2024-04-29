@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import TwitchSVG from '../components/svg/Twitch.jsx';
 import YouTubeSVG from '../components/svg/YouTube.jsx';
 import GitHubSVG from '../components/svg/GitHub.jsx';
@@ -5,6 +6,10 @@ import TwitterSVG from '../components/svg/Twitter.jsx';
 import PageTitle from '../components/PageTitle.jsx';
 
 const Contact = () => {
+   useLayoutEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
    return (
       <>
          <PageTitle title="Contact" color="#ff93b7" />

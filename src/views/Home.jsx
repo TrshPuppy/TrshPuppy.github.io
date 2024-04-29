@@ -1,8 +1,13 @@
+import { useLayoutEffect } from 'react';
 import Socials from '../components/Socials.jsx';
 import PageTitle from '../components/PageTitle.jsx';
 import HomeLinks from '../components/HomeLinks.jsx';
 
 const Home = () => {
+   useLayoutEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
    return (
       <>
          <PageTitle title="TrshPuppy" color="#ff91f8" />

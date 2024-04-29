@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import SiteHeader from './SiteHeader.jsx';
 import SiteFooter from './SiteFooter.jsx';
 
