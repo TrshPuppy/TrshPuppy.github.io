@@ -18,6 +18,7 @@ html {
       background-size: auto 100%;
       background-attachment: fixed;
       font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
 
       &:before {
          position: fixed;
@@ -65,34 +66,6 @@ html {
          100% {
             transform: scale(1);
             opacity: 1;
-         }
-      }
-
-      @media screen and (max-width: 1000px) {
-         margin-bottom: calc(57px + 2rem);
-      }
-   }
-
-   #arth-tribute {
-      margin-top: 30px;
-      margin-bottom: 30px; 
-      position:absolute;
-      z-index: 1000;
-      
-      p {
-         color: $socials_btn;
-         &:hover {
-            color: #8ffff6;
-         }
-      }
-
-      a { 
-         cursor: pointer !important;
-         &:visited {
-            color: #8ffff6;
-         }
-         &:hover {
-            color: #ffffff;
          }
       }
    }

@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import PageTitle from '../components/PageTitle.jsx';
 import ReloadOnNavigation from '../components/ReloadOnNavigation.jsx';
-import ArthTribute from '../components/ArthTribute.jsx';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-dark.css';
 
 const Blog = () => {
    const markdownFilesGlob = import.meta.glob('/public/md/*.md');
@@ -11,7 +12,6 @@ const Blog = () => {
    const location = useLocation();
    const params = new URLSearchParams(location.search);
    const fileParam = params.get('file');
-   const [asideHidden, setAsideHidden] = useState(false);
    const [currentFilePath, setCurrentFilePath] = useState(markdownFilePaths[0] || '');
    const [currentFile, setCurrentFile] = useState('');
    const [expanded, setExpanded] = useState(false);
@@ -57,8 +57,34 @@ const Blog = () => {
 
    const formatPublicPath = (path) => path.replace('/public', '');
 
+   function resetHLJS() {
+      const $codes = document.querySelectorAll('code');
+
+      /**
+       * We need to "reset" HLJS for re-renders
+       * The outerHTML => innerHTML unwraps the html from the text
+       * I.E. <span>hi</span> => hi (unwrapped!)
+       *
+       * If we don't do this then HLJS will spam the console with warnings.
+       */
+      for (let i = 0; i < $codes.length; i++) {
+         if ($codes[i].getAttribute('data-highlighted')) {
+            $codes[i].removeAttribute('data-highlighted');
+            $codes[i].classList.remove('hljs');
+
+            const $spans = $codes[i].querySelectorAll('*');
+
+            for (let j = 0; j < $spans.length; j++) {
+               $spans[j].outerHTML = $spans[j].innerHTML;
+               $spans[j].remove();
+            }
+         }
+      }
+   }
+
    useEffect(() => {
       void fetchCurrentFileText();
+      resetHLJS();
    }, [currentFilePath]);
 
    useEffect(() => {
@@ -72,6 +98,24 @@ const Blog = () => {
          void fetchCurrentFileText();
       }
    }, []);
+
+   useLayoutEffect(() => {
+      /**
+       * HLJS Please kindly STFU
+       */
+      const storeLogger = console.log;
+      const storeWarn = console.warn;
+      console.log = () => {};
+      console.warn = () => {};
+
+      hljs.highlightAll();
+
+      /**
+       * Restore the loggers
+       */
+      console.log = storeLogger;
+      console.warn = storeWarn;
+   });
 
    return (
       <>
@@ -107,10 +151,14 @@ const Blog = () => {
                </nav>
             </aside>
             <article>
+               <div
+                  className={`aside-mask ${expanded ? 'show' : ''}`}
+                  onClick={() => setExpanded(!expanded)}
+                  aria-hidden="true"
+               ></div>
                <ReactMarkdown>{currentFile}</ReactMarkdown>
             </article>
          </div>
-         <ArthTribute />
       </>
    );
 };

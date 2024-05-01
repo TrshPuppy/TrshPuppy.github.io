@@ -1,9 +1,13 @@
+import { useLayoutEffect } from 'react';
 import Socials from '../components/Socials.jsx';
 import PageTitle from '../components/PageTitle.jsx';
 import HomeLinks from '../components/HomeLinks.jsx';
-import ArthTribute from '../components/ArthTribute.jsx';
 
 const Home = () => {
+   useLayoutEffect(() => {
+      window.scrollTo(0, 0);
+   }, []);
+
    return (
       <>
          <PageTitle title="TrshPuppy" color="#ff91f8" />
@@ -20,7 +24,6 @@ const Home = () => {
                <div className="hero hero-welcome" aria-hidden="true"></div>
             </section>
             <HomeLinks />
-            <ArthTribute />
          </article>
       </>
    );

@@ -1,39 +1,95 @@
-@use "../variables" as *;
+@use '../variables' as *;
 
 footer {
-    display: grid;
-    position: relative;
-    justify-content: center;
-    justify-self: flex-end;
-    color: #ffffff;
-    margin-top: 12rem;
-    padding: 1rem;
-    border-top: 3px solid $border_color;
-    background-color: rgba(#000, 0.5);
+   display: grid;
+   position: relative;
+   justify-content: center;
+   justify-self: flex-end;
+   color: $border_text;
+   margin-top: 4rem;
+   padding: 0.25rem 1rem;
+   border-top: 2px solid $border_color;
+   backdrop-filter: blur(5px);
 
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        display: block;
-        width: 8rem;
-        height: 100%;
-        top: -3px;
-        border-top-right-radius: 5rem;
-        border: 3px solid $border_color;
-        border-bottom: none;
-        background-color: rgba(#000, 0.5);
-    }
+   &:before,
+   &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 8rem;
+      height: 100%;
+      top: -2px;
+      border-top-right-radius: 5rem;
+      border: 2px solid $border_color;
+      border-bottom: none;
+      backdrop-filter: blur(5px);
 
-    &:before {
-        left: -8rem;
-        border-top-right-radius: 0;
-        border-top-left-radius: 5rem;
-        border-right: none;
-    }
+      @media screen and (max-width: 1200px) {
+         display: none;
+      }
+   }
 
-    &:after {
-        right: -8rem;
-        border-left: none;
-    }
+   &:before {
+      left: -8rem;
+      border-top-right-radius: 0;
+      border-top-left-radius: 5rem;
+      border-right: none;
+   }
+
+   &:after {
+      right: -8rem;
+      border-left: none;
+   }
+
+   a {
+      color: map-get($nav-links, about);
+      filter: drop-shadow(0 0 20px rgba(#ffffff, 0.25));
+
+      &:hover,
+      &:focus {
+         color: #ffffff;
+         filter: drop-shadow(0 0 20px #ffffff);
+      }
+   }
+
+   .arth-tribute {
+      p {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-content: center;
+         align-items: center;
+      }
+
+      a {
+         position: relative;
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         margin: 0 0.5rem;
+         border-radius: 2rem;
+
+         transition: all 120ms;
+
+         &:before {
+            content: '';
+            display: block;
+            background-image: url('/img/arthvadrr.png');
+            height: 3rem;
+            width: 3rem;
+            top: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 0.5rem;
+            border: 1px solid #000;
+            border-radius: 50%;
+
+            &:hover {
+               height: 5rem;
+               width: 5rem;
+               transform: rotate(-20deg);
+            }
+         }
+      }
+   }
 }

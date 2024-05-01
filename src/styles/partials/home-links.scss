@@ -29,6 +29,7 @@
       background-color: $background;
       overflow: hidden;
       color: $socials_btn;
+      border-radius: 1rem;
 
       .hero {
          display: grid;
@@ -42,6 +43,8 @@
          background-size: 100%;
          transition: background-size 200ms;
          filter: $hero_filter;
+         border-top-right-radius: 1rem;
+         border-top-left-radius: 1rem;
 
          &:hover {
             background-size: 130%;

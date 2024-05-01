@@ -104,23 +104,27 @@ $lang_colors: (
 
       @media screen and (max-width: 1000px) {
          flex-direction: column;
+         align-items: center;
       }
    }
 
    .aside-mask {
-      display: none;
+      visibility: hidden;
       position: absolute;
-      top: 0;
+      top: -5rem;
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba($pink-medium, 0.05);
-      backdrop-filter: blur(2rem);
+      background-color: rgba(#fff, 0);
+      backdrop-filter: blur(0);
       z-index: 50;
+      transition: all 200ms;
 
       @media screen and (max-width: 1000px) {
          &.show {
-            display: block;
+            visibility: visible;
+            background-color: rgba(#000, 0.6);
+            backdrop-filter: blur(1rem);
          }
       }
    }
@@ -134,9 +138,9 @@ $lang_colors: (
       min-width: 16rem;
       width: 16rem;
       background-color: $container_bg;
-      border: 3px solid $border_color;
-      overflow: hidden;
-      box-shadow: 0 0 5px rgba(#000, 0.5);
+      border: 2px solid $border_color;
+      box-shadow: 0 0 2rem rgba(#000, 0.5);
+      border-radius: 0.75rem;
       z-index: 100;
 
       .projects-hero {
@@ -149,6 +153,8 @@ $lang_colors: (
          background-size: cover;
          background-repeat: no-repeat;
          background-position: top;
+         border-top-right-radius: 0.5rem;
+         border-top-left-radius: 0.5rem;
          z-index: 1;
          filter: grayscale(0.6);
 
@@ -167,7 +173,14 @@ $lang_colors: (
          margin: 0;
          padding: 0;
          font-size: 1rem;
-         display: none;
+         text-align: center;
+         font-weight: 500;
+         width: 100%;
+         background-color: $container_bg;
+         border-top: 2px solid $border_color;
+         border-bottom: 2px solid $border_color;
+         padding: 0.5rem 1rem;
+         color: #d0d0d0;
       }
 
       nav ul {
@@ -251,6 +264,8 @@ $lang_colors: (
          max-height: 20rem;
          overflow-y: scroll;
          box-shadow: inset 0 0 10px #000;
+         border-bottom-left-radius: 0.5rem;
+         border-bottom-right-radius: 0.5rem;
 
          li {
             flex-grow: 1;
@@ -259,7 +274,7 @@ $lang_colors: (
          li button {
             width: 100%;
             background-color: $container_bg;
-            color: $active;
+            color: #e0e0e0;
             text-align: left;
             padding: 0.25rem;
             height: 100%;
@@ -280,9 +295,16 @@ $lang_colors: (
       }
 
       @media screen and (max-width: 1000px) {
-         width: 100%;
          margin-right: 0;
+         margin-left: 0;
+         box-shadow: none;
          margin-bottom: 2rem;
+         box-sizing: border-box;
+         transition: all 325ms;
+
+         &:not(.hidden) {
+            width: 90%;
+         }
 
          .projects-hero {
             float: right;
@@ -319,11 +341,12 @@ $lang_colors: (
 
       .project {
          position: relative;
-         border: 3px solid $border_color;
-         margin-bottom: 2rem;
+         border: 1px solid $border_color;
+         margin-bottom: 4rem;
          background-color: $container_bg;
          overflow: hidden;
-         box-shadow: 0 0 5px rgba(#000, 0.5);
+         border-radius: 0.75rem;
+         box-shadow: 0 0 2rem rgba(#000, 0.5);
          top: 0;
 
          &.animating {
@@ -366,7 +389,7 @@ $lang_colors: (
                   font-size: 1.2rem;
                   font-weight: 400;
                   color: #fff;
-                  filter: drop-shadow(10px, map-get($nav-links, projects));
+                  filter: drop-shadow(0 0 10px rgba(#fff, 0.6));
                }
             }
 
@@ -406,7 +429,7 @@ $lang_colors: (
 
             svg {
                height: 1.2rem;
-               margin-right: 1rem;
+               margin-right: 0.75rem;
             }
          }
 
@@ -417,7 +440,6 @@ $lang_colors: (
             font-family: CamingoCode, monospace;
             border-bottom: 1px solid $border_color;
             border-top: 1px solid $border_color;
-            background-color: $border_color;
             color: $border_text;
             line-height: 1.75rem;
 
@@ -477,24 +499,19 @@ $lang_colors: (
 
 .aside-expand {
    display: none;
+   position: relative;
    width: 100%;
-   box-shadow: none;
-   border: none;
    height: 100%;
-   color: $active;
-   background-color: transparent;
    font-family: CamingoCode, monospace;
-   border-left: 1px solid #333;
    cursor: pointer;
-
-   &:hover {
-      background-color: rgba(#fff, 0.04);
-
-      div {
-         color: map-get($nav-links, projects);
-         filter: drop-shadow(0 0 10px #fff);
-      }
-   }
+   padding: 0.75rem 1rem;
+   border-radius: 0;
+   border: none;
+   background-color: $active;
+   color: #000;
+   box-sizing: border-box;
+   transition: outline 120ms;
+   outline: 0.5rem solid rgba($active, 0.05);
 
    div {
       position: relative;
@@ -504,13 +521,17 @@ $lang_colors: (
       &:after {
          position: absolute;
          display: inline-block;
-         content: '↓';
+         content: '-';
          right: -1.5rem;
-         top: -0.5rem;
+         top: -0.65rem;
          font-size: 1.6rem;
-         transform: rotateX(180deg);
          transition: all 200ms;
       }
+   }
+
+   &:hover,
+   &:focus {
+      background-color: lighten($active, 10%);
    }
 
    @media screen and (max-width: 1000px) {
@@ -520,17 +541,56 @@ $lang_colors: (
 
 @media screen and (max-width: 1000px) {
    .projects.view {
-      margin-top: 2rem;
+      margin-top: 0;
+      margin-bottom: 5rem;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
 
-      .filters .projects-hero {
-         display: block;
-         grid-template-columns: auto 1fr;
+      .projects-list .project {
+         display: grid;
+         margin-left: 1rem;
+         margin-right: 1rem;
+
+         .repo-link {
+            justify-self: flex-end;
+            order: 1;
+            margin: 1rem 0 0 0;
+            border-radius: 1rem 0 0 0;
+            width: 12rem;
+
+            text-align: center;
+         }
+      }
+
+      .project-meta {
+         flex-direction: column;
       }
 
       .filters {
-         top: 0;
+         top: 6rem;
+         border-top: none;
+         padding: 0;
+         min-width: 0;
+         width: 10rem;
+         border-radius: 1rem;
+         overflow: hidden;
+
+         h2 {
+            padding-top: 4rem;
+         }
+
+         .aside-expand {
+            display: block;
+         }
 
          &.hidden {
+            background-color: transparent;
+            border: none;
+
+            h2 {
+               display: none;
+            }
+
             &:after {
                display: none;
             }
@@ -540,28 +600,29 @@ $lang_colors: (
             }
 
             .aside-expand div:after {
-               transform: rotate(0);
+               content: '+';
+            }
+
+            .aside-expand {
+               border-radius: 2rem;
             }
          }
 
-         .aside-expand {
-            position: relative;
+         .projects-hero {
+            filter: none;
             display: block;
-            width: 100%;
-            justify-content: space-between;
-            padding: 1rem;
+            grid-template-columns: auto 1fr;
+
+            &:after {
+               display: none;
+            }
          }
-      }
-   }
-}
 
-@media screen and (max-width: 668px) {
-   .projects.view {
-      margin-top: 0;
-      margin-bottom: 5rem;
-
-      .project-meta {
-         flex-direction: column;
+         .topic-list {
+            border: 0.5rem solid $background;
+            border-top-color: #000;
+            overflow-y: scroll;
+         }
       }
    }
 }

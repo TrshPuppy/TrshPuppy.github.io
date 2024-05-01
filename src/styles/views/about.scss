@@ -4,6 +4,7 @@
    .about-trshpuppy {
       display: flex;
       align-items: center;
+      margin: 4rem 0;
 
       @media screen and (max-width: 1000px) {
          margin: 5rem 0;
@@ -37,9 +38,7 @@
          background-position: center;
          border-radius: 50%;
          border: 0.25rem solid $border_color;
-         transition:
-            background-size 200ms,
-            transform 120ms;
+         transition: background-size 200ms, transform 120ms;
 
          &:hover {
             background-size: 120%;

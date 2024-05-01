@@ -4,10 +4,12 @@
    section {
       display: flex;
       align-items: center;
-      margin: 2rem 0;
+      align-content: center;
+      justify-content: center;
+      padding: 4rem 0;
       width: 100%;
-      margin-bottom: 4rem;
-      border-bottom: 3pxsolid $border_color;
+      border-top: 1px solid $border_color;
+      backdrop-filter: blur(10px);
 
       &:first-of-type {
          background-color: unset;
@@ -98,9 +100,7 @@
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
-      transition:
-         background-size 200ms,
-         transform 120ms;
+      transition: background-size 200ms, transform 120ms;
       filter: $hero_filter;
 
       &:after {

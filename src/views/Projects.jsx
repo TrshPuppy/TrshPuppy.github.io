@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import MappedProjects from '../components/MappedProjects.jsx';
 import Loader from '../components/Loader.jsx';
 import PageTitle from '../components/PageTitle.jsx';
-import ArthTribute from '../components/ArthTribute.jsx';
 
 const Projects = () => {
    const [repos, setRepos] = useState([]);
@@ -40,7 +39,6 @@ const Projects = () => {
             {loading && <Loader />}
             {!loading && responseOK && <MappedProjects repos={repos} />}
             {!responseOK && !loading && <BadProjectsRes />}
-            {!loading && responseOK && <ArthTribute />}
          </article>
       </>
    );
