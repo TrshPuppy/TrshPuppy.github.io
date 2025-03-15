@@ -61,5 +61,14 @@
         "description": "Using the program's instructions against it!",
         "id": "current-writeup",
         "to_link": "rop-gadgets"
+    },
+    {
+        "name": "Update",
+        "path": "/markdown-src/Update-03-14-2025.md",
+        "type": "writeup",
+        "img_path": "",
+        "description": "Where the hell is TP?",
+        "id": "cwriteup",
+        "to_link": "update-3-14-25"
     }
 ]
