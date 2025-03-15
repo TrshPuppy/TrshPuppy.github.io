@@ -2,7 +2,7 @@
 
 ## Testing #freeNavi
 
-## LIVE PREVIEW HERE: https://trshpuppy.github.io
+## LIVE SITE HERE: https://trashpuppy.io
 
 This is the new and improv(ing) TrshPuppy.io! All of the same retro-pixelart vibes you love, served now statically (thanks Vite)!
 
